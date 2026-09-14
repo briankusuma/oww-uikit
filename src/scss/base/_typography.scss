@@ -1,0 +1,107 @@
+@use 'sass:map';
+@use '../abstract/variables' as vars;
+@use '../abstract/functions' as func;
+@use '../abstract/mixins' as mixins;
+
+// =============================================================================
+// Base Typography (Figma: Ad Platform Maker Athian Phase 2)
+// =============================================================================
+
+body {
+  font-family: vars.$font-family-base;
+  font-size: func.rem(vars.$font-size-md);
+  font-weight: vars.$font-weight-regular;
+  line-height: vars.$line-height-150;
+  letter-spacing: vars.$letter-spacing-base;
+  color: vars.$color-text-primary;
+  background-color: vars.$bg-white;
+}
+
+// Headings mapped to scale
+h1 {
+  @include mixins.text('5xl', 'bold');
+}
+
+h2 {
+  @include mixins.text('4xl', 'bold');
+}
+
+h3 {
+  @include mixins.text('3xl', 'semibold');
+}
+
+h4 {
+  @include mixins.text('2xl', 'semibold');
+}
+
+h5 {
+  @include mixins.text('xl', 'medium');
+}
+
+h6 {
+  @include mixins.text('lg', 'medium');
+}
+
+p {
+  @include mixins.text('md', 'regular');
+}
+
+small {
+  @include mixins.text('xs', 'regular');
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: vars.$font-family-mono;
+  font-size: func.rem(vars.$font-size-sm);
+  letter-spacing: normal;
+}
+
+a {
+  color: vars.$color-base-info-600; // #008BFF from Figma link style
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Typography Utility Classes (Figma: Text {size}/{weight})
+// -----------------------------------------------------------------------------
+
+// Size utilities (sets font-size, line-height, letter-spacing)
+@each $size, $spec in vars.$typography-scale {
+  .text-#{$size} {
+    font-size: func.rem(map.get($spec, 'font-size'));
+    line-height: map.get($spec, 'line-height');
+    letter-spacing: map.get($spec, 'letter-spacing');
+  }
+}
+
+// Font weight utilities
+.font-regular  { font-weight: vars.$font-weight-regular; }
+.font-medium   { font-weight: vars.$font-weight-medium; }
+.font-semibold { font-weight: vars.$font-weight-semibold; }
+.font-bold     { font-weight: vars.$font-weight-bold; }
+
+// Direct Figma compound classes (e.g. .text-sm-medium, .text-md-regular, etc.)
+$weights: (
+  'regular':  vars.$font-weight-regular,
+  'medium':   vars.$font-weight-medium,
+  'semibold': vars.$font-weight-semibold,
+  'bold':     vars.$font-weight-bold
+);
+
+@each $size, $spec in vars.$typography-scale {
+  @each $weight-name, $weight-val in $weights {
+    .text-#{$size}-#{$weight-name} {
+      font-size: func.rem(map.get($spec, 'font-size'));
+      line-height: map.get($spec, 'line-height');
+      letter-spacing: map.get($spec, 'letter-spacing');
+      font-weight: $weight-val;
+    }
+  }
+}

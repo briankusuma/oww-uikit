@@ -1,0 +1,26 @@
+{
+  "name": "oww-uikit",
+  "version": "0.1.0",
+  "description": "OWW Design System & UI Kit Sass Architecture",
+  "main": "dist/uikit.css",
+  "scripts": {
+    "build": "npm run build:css",
+    "build:css": "sass src/scss/uikit.scss dist/uikit.css --style=expanded --no-source-map",
+    "build:min": "sass src/scss/uikit.scss dist/uikit.min.css --style=compressed --no-source-map",
+    "watch": "sass --watch src/scss/uikit.scss dist/uikit.css --style=expanded",
+    "open": "open index.html",
+    "serve": "npx -y serve ."
+  },
+  "keywords": [
+    "design-system",
+    "uikit",
+    "sass",
+    "scss",
+    "css"
+  ],
+  "author": "Brian",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.85.0"
+  }
+}

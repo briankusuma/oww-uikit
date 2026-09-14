@@ -1,0 +1,97 @@
+@use '../abstract/variables' as vars;
+@use '../abstract/functions' as func;
+@use '../abstract/mixins' as mixins;
+
+// =============================================================================
+// Alert Component (Figma: Alert #22517:4042)
+// Variants: Success, Warning (with Danger and Info extensions)
+// =============================================================================
+
+.oww-alert {
+  display: inline-flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 100%;
+  padding: vars.$spacing-3;
+  border-radius: vars.$radius-lg;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  transition: box-shadow vars.$transition-duration-base vars.$transition-timing-base;
+
+  &__content {
+    @include mixins.flex(row, center, flex-start, vars.$spacing-2);
+    width: 100%;
+  }
+
+  &__icon {
+    @include mixins.flex-center;
+    width: func.rem(20px);
+    height: func.rem(20px);
+    flex-shrink: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__text {
+    @include mixins.text('sm', 'medium');
+    color: vars.$color-text-primary;
+    margin: 0;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Variants
+  // ---------------------------------------------------------------------------
+
+  // Success Variant (Figma: Variant=Success #22517:4041)
+  &--success {
+    background-color: vars.$bg-soft-success;
+    border-color: vars.$color-border-success;
+    box-shadow: vars.$shadow-md;
+
+    .oww-alert__icon {
+      color: vars.$color-base-success-600;
+    }
+  }
+
+  // Warning Variant (Figma: Variant=Warning #22517:4040)
+  &--warning {
+    background-color: vars.$bg-soft-warning;
+    border-color: vars.$color-border-warning;
+    box-shadow: vars.$shadow-none;
+
+    .oww-alert__icon {
+      color: vars.$color-base-warning-600;
+    }
+  }
+
+  // Danger / Error Variant (Design System extension)
+  &--danger {
+    background-color: vars.$bg-soft-danger;
+    border-color: vars.$color-border-danger;
+    box-shadow: vars.$shadow-none;
+
+    .oww-alert__icon {
+      color: vars.$color-base-danger-600;
+    }
+  }
+
+  // Info Variant (Design System extension)
+  &--info {
+    background-color: vars.$bg-soft-info;
+    border-color: vars.$color-border-info;
+    box-shadow: vars.$shadow-none;
+
+    .oww-alert__icon {
+      color: vars.$color-base-info-600;
+    }
+  }
+
+  // Full-width modifier if needed by layout
+  &--full {
+    width: 100%;
+  }
+}

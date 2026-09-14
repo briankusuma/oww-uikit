@@ -1,0 +1,32 @@
+@use '../abstract/variables' as vars;
+@use '../abstract/mixins' as mixins;
+
+// =============================================================================
+// Global Layout: Section & Container
+// =============================================================================
+
+// Global Section (width: 100%)
+section,
+.section,
+.oww-section {
+  width: vars.$section-width;
+  box-sizing: border-box;
+  position: relative;
+}
+
+// Global Container (max-width: 1440px)
+.container,
+.oww-container {
+  width: 100%;
+  max-width: vars.$container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: vars.$container-padding-x;
+  padding-right: vars.$container-padding-x;
+  box-sizing: border-box;
+
+  // Fluid container modifier (full width with padding)
+  &--fluid {
+    max-width: 100%;
+  }
+}

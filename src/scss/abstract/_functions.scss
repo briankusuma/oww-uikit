@@ -1,0 +1,42 @@
+@use 'sass:math';
+@use 'sass:meta';
+
+/// Strip unit from a number
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+  @return $number;
+}
+
+/// Convert pixels to rem
+/// @param {Number} $px - Target pixel value
+/// @param {Number} $base - Context/base font size (default: 16px)
+/// @return {Number} - Value in rem
+@function rem($px, $base: 16px) {
+  $unitless-px: strip-unit($px);
+  $unitless-base: strip-unit($base);
+
+  @if $unitless-px == 0 {
+    @return 0;
+  }
+
+  @return math.div($unitless-px, $unitless-base) * 1rem;
+}
+
+/// Convert pixels to em
+/// @param {Number} $px - Target pixel value
+/// @param {Number} $base - Context/base font size (default: 16px)
+/// @return {Number} - Value in em
+@function em($px, $base: 16px) {
+  $unitless-px: strip-unit($px);
+  $unitless-base: strip-unit($base);
+
+  @if $unitless-px == 0 {
+    @return 0;
+  }
+
+  @return math.div($unitless-px, $unitless-base) * 1em;
+}

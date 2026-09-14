@@ -1,0 +1,376 @@
+// =============================================================================
+// OWW UIKit Design System - Design Tokens
+// Derived from Figma: "Ad Platform Maker Athian Phase 2"
+// Node 19868:638 (Typography) & Node 19868:639 (Variables Documentation)
+// All variables use !default to allow consumer overrides.
+// =============================================================================
+
+// =============================================================================
+// 1. TYPOGRAPHY (Figma Node: 19868:638)
+// =============================================================================
+$font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !default;
+$font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !default;
+$font-family-base: $font-family-sans !default;
+
+// Font Weights
+$font-weight-regular:  400 !default; // Regular (400)
+$font-weight-medium:   500 !default; // Medium (500)
+$font-weight-semibold: 600 !default; // Semi Bold (600)
+$font-weight-bold:     700 !default; // Bold (700)
+
+// Font Sizes (px)
+$font-size-xs:   12px !default;
+$font-size-sm:   14px !default;
+$font-size-md:   16px !default;
+$font-size-base: $font-size-md !default;
+$font-size-lg:   18px !default;
+$font-size-xl:   20px !default;
+$font-size-2xl:  24px !default;
+$font-size-3xl:  30px !default;
+$font-size-4xl:  36px !default;
+$font-size-5xl:  48px !default;
+
+// Line Heights (em / unitless)
+$line-height-none:    1 !default;
+$line-height-120:     1.2 !default; // 120% (for xl, 2xl)
+$line-height-130:     1.3 !default; // 130% (for 3xl, 4xl, 5xl)
+$line-height-150:     1.5 !default; // 150% (for xs, sm, md, lg)
+$line-height-base:    $line-height-150 !default;
+
+// Letter Spacings (-2% / -0.02em across all sizes in Figma)
+$letter-spacing-base:    -0.02em !default;
+$letter-spacing-tight:   -0.02em !default;
+$letter-spacing-normal:   0em !default;
+
+// Typography Scale Map
+$typography-scale: (
+  'xs':  (font-size: $font-size-xs,  line-height: $line-height-150, letter-spacing: $letter-spacing-base),
+  'sm':  (font-size: $font-size-sm,  line-height: $line-height-150, letter-spacing: $letter-spacing-base),
+  'md':  (font-size: $font-size-md,  line-height: $line-height-150, letter-spacing: $letter-spacing-base),
+  'lg':  (font-size: $font-size-lg,  line-height: $line-height-150, letter-spacing: $letter-spacing-base),
+  'xl':  (font-size: $font-size-xl,  line-height: $line-height-120, letter-spacing: $letter-spacing-base),
+  '2xl': (font-size: $font-size-2xl, line-height: $line-height-120, letter-spacing: $letter-spacing-base),
+  '3xl': (font-size: $font-size-3xl, line-height: $line-height-130, letter-spacing: $letter-spacing-base),
+  '4xl': (font-size: $font-size-4xl, line-height: $line-height-130, letter-spacing: $letter-spacing-base),
+  '5xl': (font-size: $font-size-5xl, line-height: $line-height-130, letter-spacing: $letter-spacing-base),
+) !default;
+
+// =============================================================================
+// 2. COLLECTION BASE: RAW PALETTES & SIZING (Figma Node: 19868:639)
+// =============================================================================
+
+// --- Branding / Primary ---
+$color-base-primary-50:  #f5f5f5 !default;
+$color-base-primary-100: #e9e9e9 !default;
+$color-base-primary-200: #d9d9d9 !default;
+$color-base-primary-300: #c4c4c4 !default;
+$color-base-primary-400: #9d9d9d !default;
+$color-base-primary-500: #7b7b7b !default;
+$color-base-primary-600: #555555 !default;
+$color-base-primary-700: #434343 !default;
+$color-base-primary-800: #262626 !default;
+$color-base-primary-900: #000000 !default;
+
+// --- Branding / Secondary ---
+$color-base-secondary-50:  #ffd9df !default;
+$color-base-secondary-500: #ff425f !default;
+$color-base-secondary-600: #d4374f !default;
+
+// --- Branding / Tertiary ---
+$color-base-tertiary-50:  #ffebdb !default;
+$color-base-tertiary-500: #ff9b49 !default;
+$color-base-tertiary-600: #d4813d !default;
+
+// --- System / White ---
+$color-base-white-50:  #ffffff !default;
+$color-base-white-500: #ffffff !default;
+$color-base-white-600: #d4d4d4 !default;
+
+// --- System / Black ---
+$color-base-black-50:  #cccccc !default;
+$color-base-black-100: #aaaaaa !default;
+$color-base-black-500: #000000 !default;
+$color-base-black-600: #555555 !default;
+
+// --- System / Grey ---
+$color-base-grey-50:  #fbfbfb !default;
+$color-base-grey-100: #f8f8f8 !default;
+$color-base-grey-200: #f1f1f1 !default;
+$color-base-grey-300: #e4e4e4 !default;
+$color-base-grey-400: #c1c1c1 !default;
+$color-base-grey-500: #a2a2a2 !default;
+$color-base-grey-600: #797979 !default;
+$color-base-grey-700: #656565 !default;
+$color-base-grey-800: #464646 !default;
+$color-base-grey-900: #242424 !default;
+
+// --- System / Success ---
+$color-base-success-50:  #e9f6e7 !default;
+$color-base-success-100: #cae8c3 !default;
+$color-base-success-200: #a7da9d !default;
+$color-base-success-300: #83cd74 !default;
+$color-base-success-400: #66c254 !default;
+$color-base-success-500: #4ab632 !default;
+$color-base-success-600: #40a729 !default;
+$color-base-success-700: #33951d !default;
+$color-base-success-800: #258410 !default;
+$color-base-success-900: #006500 !default;
+
+// --- System / Warning ---
+$color-base-warning-50:   #ffeace !default;
+$color-base-warning-100:  #ffddad !default;
+$color-base-warning-200:  #ffcb84 !default;
+$color-base-warning-300:  #ffba5b !default;
+$color-base-warning-400:  #ffa932 !default;
+$color-base-warning-500:  #ff9809 !default;
+$color-base-warning-600:  #d47f08 !default;
+$color-base-warning-800:  #804c05 !default;
+$color-base-warning-900:  #553303 !default;
+$color-base-warning-a100: #331e02 !default;
+
+// --- System / Danger ---
+$color-base-danger-50:  #ffe9ec !default;
+$color-base-danger-100: #ffc7cb !default;
+$color-base-danger-200: #fa908c !default;
+$color-base-danger-300: #f2615f !default;
+$color-base-danger-400: #fb3434 !default;
+$color-base-danger-500: #ff0909 !default;
+$color-base-danger-600: #f1000f !default;
+$color-base-danger-700: #df0009 !default;
+$color-base-danger-800: #d30000 !default;
+$color-base-danger-900: #c50000 !default;
+
+// --- System / Info ---
+$color-base-info-50:  #e2f3ff !default;
+$color-base-info-100: #bae0ff !default;
+$color-base-info-200: #8bceff !default;
+$color-base-info-300: #53baff !default;
+$color-base-info-400: #14aaff !default;
+$color-base-info-500: #009aff !default;
+$color-base-info-600: #008bff !default;
+$color-base-info-700: #0077ff !default;
+$color-base-info-800: #1564ec !default;
+$color-base-info-900: #2242cd !default;
+
+// --- System / Gold ---
+$color-base-gold-50:  #f8f9e5 !default;
+$color-base-gold-100: #eeeebf !default;
+$color-base-gold-200: #e3e295 !default;
+$color-base-gold-300: #d9d76e !default;
+$color-base-gold-400: #d3d052 !default;
+$color-base-gold-500: #cdc937 !default;
+$color-base-gold-600: #cbb830 !default;
+$color-base-gold-700: #c9a227 !default;
+$color-base-gold-800: #c58d1d !default;
+$color-base-gold-900: #be6a09 !default;
+
+// --- Convenience Aliases ---
+$color-white: $color-base-white-500 !default;
+$color-black: $color-base-black-500 !default;
+$color-gray-900: $color-base-grey-900 !default;
+$color-gray-100: $color-base-grey-100 !default;
+
+// --- Base Sizing Values (px) ---
+$sizing-0:    0px !default;
+$sizing-px:   1px !default;
+$sizing-0-5:  2px !default;
+$sizing-1:    4px !default;
+$sizing-1-5:  6px !default;
+$sizing-2:    8px !default;
+$sizing-2-5:  10px !default;
+$sizing-3:    12px !default;
+$sizing-3-5:  14px !default;
+$sizing-4:    16px !default;
+$sizing-5:    18px !default;
+$sizing-6:    20px !default;
+$sizing-7:    22px !default;
+$sizing-8:    24px !default;
+$sizing-9:    28px !default;
+$sizing-10:   32px !default;
+$sizing-11:   36px !default;
+$sizing-12:   40px !default;
+$sizing-14:   56px !default;
+$sizing-16:   64px !default;
+$sizing-20:   80px !default;
+$sizing-24:   96px !default;
+$sizing-28:   112px !default;
+$sizing-32:   128px !default;
+$sizing-36:   144px !default;
+$sizing-40:   160px !default;
+$sizing-44:   176px !default;
+$sizing-48:   192px !default;
+$sizing-52:   208px !default;
+$sizing-56:   224px !default;
+$sizing-60:   240px !default;
+$sizing-64:   256px !default;
+$sizing-72:   288px !default;
+$sizing-80:   320px !default;
+$sizing-96:   999999px !default;
+
+// --- Base Radius Values (px) ---
+$radius-base-0:  0px !default;
+$radius-base-1:  2px !default;
+$radius-base-2:  4px !default;
+$radius-base-3:  6px !default;
+$radius-base-4:  8px !default;
+$radius-base-5:  12px !default;
+$radius-base-6:  16px !default;
+$radius-base-7:  24px !default;
+$radius-base-8:  32px !default;
+$radius-base-9:  40px !default;
+$radius-base-10: 48px !default;
+$radius-base-11: 99999px !default;
+
+// =============================================================================
+// 3. COLLECTION TOKEN: SEMANTIC TOKENS (Figma Node: 19868:639)
+// =============================================================================
+
+// --- Default Backgrounds ---
+$bg-primary:   $color-base-primary-400 !default; // #9D9D9D
+$bg-secondary: $color-base-secondary-500 !default; // #FF425F
+$bg-tertiary:  $color-base-tertiary-500 !default; // #FF9B49
+$bg-disable:   $color-base-black-100 !default;   // #AAAAAA
+$bg-white:     $color-base-white-500 !default;   // #FFFFFF
+$bg-black:     $color-base-black-500 !default;   // #000000
+$bg-grey:      $color-base-grey-500 !default;    // #A2A2A2
+$bg-success:   $color-base-success-500 !default; // #4AB632
+$bg-info:      $color-base-info-500 !default;    // #009AFF
+$bg-danger:    $color-base-danger-500 !default;  // #FF0909
+$bg-warning:   $color-base-warning-500 !default; // #FF9809
+
+// --- Soft Backgrounds ---
+$bg-soft-primary:   $color-base-primary-50 !default;   // #F5F5F5
+$bg-soft-secondary: $color-base-secondary-50 !default; // #FFD9DF
+$bg-soft-tertiary:  $color-base-tertiary-50 !default;  // #FFEBDB
+$bg-soft-white:     $color-base-white-50 !default;     // #FFFFFF
+$bg-soft-black:     $color-base-black-50 !default;     // #CCCCCC
+$bg-soft-grey:      $color-base-grey-50 !default;      // #FBFBFB
+$bg-soft-success:   $color-base-success-50 !default;   // #E9F6E7
+$bg-soft-info:      $color-base-info-50 !default;      // #E2F3FF
+$bg-soft-danger:    $color-base-danger-50 !default;    // #FFE9EC
+$bg-soft-warning:   $color-base-warning-50 !default;   // #FFEACE
+
+// --- Hover Backgrounds ---
+$bg-hover-primary:   $color-base-primary-500 !default;   // #7B7B7B
+$bg-hover-secondary: $color-base-secondary-600 !default; // #D4374F
+$bg-hover-tertiary:  $color-base-tertiary-600 !default;  // #D4813D
+$bg-hover-white:     $color-base-white-600 !default;     // #D4D4D4
+$bg-hover-black:     $color-base-black-600 !default;     // #555555
+$bg-hover-grey:      $color-base-grey-600 !default;      // #797979
+$bg-hover-success:   $color-base-success-600 !default;   // #40A729
+$bg-hover-info:      $color-base-info-600 !default;      // #008BFF
+$bg-hover-danger:    $color-base-danger-600 !default;    // #F1000F
+$bg-hover-warning:   $color-base-warning-600 !default;   // #D47F08
+
+// --- Text & Stroke Colors ---
+$color-text-primary:   $color-base-primary-900 !default;
+$color-text-secondary: $color-base-secondary-500 !default;
+$color-text-tertiary:  $color-base-tertiary-500 !default;
+$color-text-disable:   $color-base-black-100 !default;
+$color-text-white:     $color-base-white-500 !default;
+$color-text-black:     $color-base-black-500 !default;
+$color-text-grey:      $color-base-grey-500 !default;
+$color-text-success:   $color-base-success-700 !default;
+$color-text-info:      $color-base-info-700 !default;
+$color-text-danger:    $color-base-danger-700 !default;
+$color-text-warning:   $color-base-warning-800 !default;
+
+// --- Border / Stroke Colors ---
+$color-border-primary:   $color-base-primary-300 !default;
+$color-border-secondary: $color-base-secondary-500 !default;
+$color-border-tertiary:  $color-base-tertiary-500 !default;
+$color-border-disable:   $color-base-black-50 !default;
+$color-border-grey:      $color-base-grey-300 !default;
+$color-border-success:   $color-base-success-100 !default; // #CAE8C3 (Figma Alert border)
+$color-border-warning:   $color-base-warning-100 !default; // #FFDDAD (Figma Alert border)
+$color-border-danger:    $color-base-danger-100 !default;  // #FFC7CB
+$color-border-info:      $color-base-info-100 !default;    // #BAE0FF
+
+// --- Spacing Tokens (Aliased to Base/Sizing) ---
+$spacing-0:    $sizing-0 !default;    // 0px
+$spacing-px:   $sizing-px !default;   // 1px
+$spacing-0-5:  $sizing-0-5 !default; // 2px
+$spacing-1:    $sizing-1 !default;    // 4px
+$spacing-1-5:  $sizing-1-5 !default; // 6px
+$spacing-2:    $sizing-2 !default;    // 8px
+$spacing-3:    $sizing-3 !default;    // 12px
+$spacing-4:    $sizing-4 !default;    // 16px
+$spacing-5:    $sizing-5 !default;    // 18px
+$spacing-6:    $sizing-6 !default;    // 20px
+$spacing-7:    $sizing-7 !default;    // 22px
+$spacing-8:    $sizing-8 !default;    // 24px
+$spacing-9:    $sizing-9 !default;    // 28px
+$spacing-10:   $sizing-10 !default;   // 32px
+$spacing-11:   $sizing-11 !default;   // 36px
+$spacing-12:   $sizing-12 !default;   // 40px
+$spacing-13:   $sizing-14 !default;   // 56px
+$spacing-14:   $sizing-16 !default;   // 64px
+$spacing-20:   $sizing-20 !default;   // 80px
+$spacing-24:   $sizing-24 !default;   // 96px
+$spacing-28:   $sizing-28 !default;   // 112px
+$spacing-32:   $sizing-32 !default;   // 128px
+$spacing-36:   $sizing-36 !default;   // 144px
+$spacing-40:   $sizing-40 !default;   // 160px
+
+// --- Radius Tokens (Aliased to Base/Radius) ---
+$radius-null:  $radius-base-0 !default;  // 0px
+$radius-1:     $radius-base-1 !default;  // 2px
+$radius-2:     $radius-base-2 !default;  // 4px
+$radius-3:     $radius-base-3 !default;  // 6px
+$radius-4:     $radius-base-4 !default;  // 8px
+$radius-5:     $radius-base-5 !default;  // 12px
+$radius-6:     $radius-base-6 !default;  // 16px
+$radius-7:     $radius-base-7 !default;  // 24px
+$radius-8:     $radius-base-8 !default;  // 32px
+$radius-9:     $radius-base-9 !default;  // 40px
+$radius-10:    $radius-base-10 !default; // 48px
+$radius-pills: $radius-base-11 !default; // 99999px
+
+// Semantic Radius Aliases
+$radius-none: $radius-null !default;
+$radius-xs:   $radius-1 !default;
+$radius-sm:   $radius-2 !default;
+$radius-md:   $radius-4 !default;
+$radius-lg:   $radius-5 !default; // 12px (Alert radius)
+$radius-xl:   $radius-6 !default;
+$radius-2xl:  $radius-7 !default;
+$radius-full: $radius-pills !default;
+
+// --- Focus Ring ---
+$color-focus-ring: rgba(0, 154, 255, 0.4) !default;
+
+// =============================================================================
+// 4. BOX SHADOWS & ELEVATION
+// =============================================================================
+$shadow-none: none !default;
+$shadow-sm:   0 1px 2px 0 rgba(0, 0, 0, 0.05) !default;
+$shadow-md:   0px 6px 12px 0px rgba(0, 0, 0, 0.08) !default; // Alert success shadow
+$shadow-lg:   0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
+$shadow-xl:   0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !default;
+
+// =============================================================================
+// 5. MOTION & TRANSITIONS
+// =============================================================================
+$transition-duration-fast: 150ms !default;
+$transition-duration-base: 200ms !default;
+$transition-duration-slow: 300ms !default;
+$transition-timing-base:   ease-in-out !default;
+$transition-timing-out:    cubic-bezier(0.16, 1, 0.3, 1) !default;
+
+// =============================================================================
+// 6. Z-INDEX SCALE
+// =============================================================================
+$z-index-dropdown: 1000 !default;
+$z-index-sticky:   1020 !default;
+$z-index-fixed:    1030 !default;
+$z-index-modal:    1050 !default;
+$z-index-popover:  1060 !default;
+$z-index-tooltip:  1070 !default;
+
+// =============================================================================
+// 7. LAYOUT & CONTAINERS
+// =============================================================================
+$section-width:       100% !default;
+$container-max-width: 1440px !default;
+$container-padding-x: $spacing-8 !default; // 24px (Base/Sizing/8)
+

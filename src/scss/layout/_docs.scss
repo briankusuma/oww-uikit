@@ -1,0 +1,460 @@
+@use '../abstract/variables' as vars;
+@use '../abstract/functions' as func;
+@use '../abstract/mixins' as mixins;
+
+// =============================================================================
+// Documentation Layout (Bootstrap-style 3-Column: Sidebar, Content, TOC)
+// =============================================================================
+
+:root {
+  --doc-bg: #001928;
+  --doc-surface: #032338;
+  --doc-surface-hover: #07314d;
+  --doc-border: #0e3d5e;
+  --doc-border-subtle: #082940;
+  --doc-text: #f0f6fc;
+  --doc-text-muted: #8faec5;
+  --doc-text-dim: #547794;
+  --doc-primary: #244BD6;
+  --doc-primary-soft: rgba(36, 75, 214, 0.18);
+  --doc-sidebar-w: 240px;
+  --doc-toc-w: 220px;
+  --doc-navbar-h: 64px;
+}
+
+// Light theme support
+[data-theme="light"] {
+  --doc-bg: #f4f7fb;
+  --doc-surface: #ffffff;
+  --doc-surface-hover: #e8f0f8;
+  --doc-border: #d2e1ef;
+  --doc-border-subtle: #e3edf7;
+  --doc-text: #001928;
+  --doc-text-muted: #3a576f;
+  --doc-text-dim: #6d8ba5;
+  --doc-primary: #244BD6;
+  --doc-primary-soft: rgba(36, 75, 214, 0.12);
+}
+
+body.doc-body {
+  background-color: var(--doc-bg);
+  color: var(--doc-text);
+  font-family: vars.$font-family-base;
+  min-height: 100vh;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+// -----------------------------------------------------------------------------
+// 1. Top Navbar
+// -----------------------------------------------------------------------------
+.doc-navbar {
+  position: sticky;
+  top: 0;
+  z-index: vars.$z-index-sticky;
+  width: 100%;
+  height: var(--doc-navbar-h);
+  background: var(--doc-surface);
+  border-bottom: 1px solid var(--doc-border);
+  backdrop-filter: blur(12px);
+
+  &__inner {
+    height: 100%;
+    @include mixins.flex(row, center, space-between, vars.$spacing-4);
+  }
+
+  &__left {
+    @include mixins.flex(row, center, flex-start, vars.$spacing-6);
+  }
+
+  &__brand {
+    @include mixins.flex(row, center, flex-start, vars.$spacing-2);
+    text-decoration: none;
+    color: var(--doc-text);
+    font-weight: vars.$font-weight-bold;
+    font-size: func.rem(vars.$font-size-lg);
+    letter-spacing: vars.$letter-spacing-tight;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #244BD6 0%, #15329c 100%);
+      color: #ffffff;
+      border-radius: vars.$radius-md;
+      font-weight: 800;
+      font-size: 16px;
+      box-shadow: 0 2px 10px rgba(36, 75, 214, 0.45);
+    }
+  }
+
+  &__nav {
+    display: none;
+    list-style: none;
+    gap: vars.$spacing-1;
+
+    @media (min-width: 768px) {
+      @include mixins.flex(row, center, flex-start, vars.$spacing-1);
+    }
+
+    &-link {
+      padding: vars.$spacing-2 vars.$spacing-3;
+      color: var(--doc-text-muted);
+      font-size: func.rem(vars.$font-size-sm);
+      font-weight: vars.$font-weight-medium;
+      border-radius: vars.$radius-md;
+      transition: color 150ms ease, background-color 150ms ease;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--doc-text);
+        background: var(--doc-surface-hover);
+        text-decoration: none;
+      }
+
+      &.is-active {
+        color: var(--doc-primary);
+        background: var(--doc-primary-soft);
+      }
+    }
+  }
+
+  &__right {
+    @include mixins.flex(row, center, flex-end, vars.$spacing-3);
+  }
+
+  &__search {
+    position: relative;
+    display: none;
+
+    @media (min-width: 640px) {
+      display: block;
+    }
+
+    &-input {
+      width: 220px;
+      height: 36px;
+      background: var(--doc-bg);
+      border: 1px solid var(--doc-border);
+      border-radius: vars.$radius-md;
+      padding: 0 36px 0 12px;
+      color: var(--doc-text);
+      font-size: func.rem(vars.$font-size-sm);
+      transition: width 200ms ease, border-color 200ms ease;
+
+      &:focus {
+        width: 260px;
+        border-color: var(--doc-primary);
+        outline: none;
+      }
+
+      &::placeholder {
+        color: var(--doc-text-dim);
+      }
+    }
+
+    &-kbd {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--doc-surface);
+      color: var(--doc-text-dim);
+      border: 1px solid var(--doc-border);
+      pointer-events: none;
+    }
+  }
+
+  &__theme-btn {
+    @include mixins.reset-button;
+    @include mixins.flex-center;
+    width: 36px;
+    height: 36px;
+    border-radius: vars.$radius-md;
+    border: 1px solid var(--doc-border);
+    background: var(--doc-surface);
+    color: var(--doc-text-muted);
+    transition: all 150ms ease;
+
+    &:hover {
+      color: var(--doc-text);
+      background: var(--doc-surface-hover);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 2. Main 3-Column Layout Container
+// -----------------------------------------------------------------------------
+.doc-layout {
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - var(--doc-navbar-h));
+  position: relative;
+  box-sizing: border-box;
+}
+
+// -----------------------------------------------------------------------------
+// 3. Left Sidebar (Navigation)
+// -----------------------------------------------------------------------------
+.doc-sidebar {
+  width: var(--doc-sidebar-w);
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--doc-navbar-h);
+  height: calc(100vh - var(--doc-navbar-h));
+  overflow-y: auto;
+  padding: vars.$spacing-6 0;
+  border-right: 1px solid var(--doc-border);
+  box-sizing: border-box;
+
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--doc-border);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 991px) {
+    display: none; // Collapsible on mobile/tablet
+  }
+
+  &__group {
+    margin-bottom: vars.$spacing-6;
+  }
+
+  &__title {
+    @include mixins.flex(row, center, flex-start, vars.$spacing-2);
+    font-size: func.rem(vars.$font-size-xs);
+    font-weight: vars.$font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--doc-text-dim);
+    padding: 0 vars.$spacing-4;
+    margin-bottom: vars.$spacing-2;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: var(--doc-primary);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 2px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: vars.$spacing-2 vars.$spacing-4;
+    font-size: func.rem(vars.$font-size-sm);
+    color: var(--doc-text-muted);
+    text-decoration: none;
+    border-radius: vars.$radius-md;
+    margin: 0 vars.$spacing-2;
+    transition: all 150ms ease;
+
+    &:hover {
+      color: var(--doc-text);
+      background: var(--doc-surface-hover);
+      text-decoration: none;
+    }
+
+    &.is-active {
+      color: var(--doc-text);
+      background: var(--doc-primary-soft);
+      font-weight: vars.$font-weight-semibold;
+      border-left: 3px solid var(--doc-primary);
+      border-radius: 0 vars.$radius-md vars.$radius-md 0;
+    }
+
+    &-badge {
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: vars.$radius-full;
+      background: var(--doc-primary);
+      color: #ffffff;
+      font-weight: vars.$font-weight-bold;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 4. Center Content (Documentation Body)
+// -----------------------------------------------------------------------------
+.doc-content {
+  flex: 1;
+  min-width: 0;
+  padding: vars.$spacing-8 vars.$spacing-6;
+  box-sizing: border-box;
+
+  @media (min-width: 992px) {
+    padding: vars.$spacing-8 vars.$spacing-8;
+  }
+
+  &__header {
+    margin-bottom: vars.$spacing-8;
+    border-bottom: 1px solid var(--doc-border);
+    padding-bottom: vars.$spacing-6;
+  }
+
+  &__lead {
+    font-size: func.rem(vars.$font-size-lg);
+    line-height: vars.$line-height-150;
+    color: var(--doc-text-muted);
+    margin-top: vars.$spacing-2;
+  }
+
+  &__section {
+    margin-bottom: vars.$spacing-10;
+    scroll-margin-top: calc(var(--doc-navbar-h) + 24px);
+
+    &-title {
+      font-size: func.rem(vars.$font-size-2xl);
+      font-weight: vars.$font-weight-bold;
+      margin-bottom: vars.$spacing-2;
+      color: var(--doc-text);
+    }
+
+    &-desc {
+      color: var(--doc-text-muted);
+      font-size: func.rem(vars.$font-size-sm);
+      margin-bottom: vars.$spacing-4;
+    }
+  }
+}
+
+// Preview Box Container
+.doc-example {
+  background: var(--doc-surface);
+  border: 1px solid var(--doc-border);
+  border-radius: vars.$radius-xl;
+  overflow: hidden;
+  margin-bottom: vars.$spacing-6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  &__preview {
+    padding: vars.$spacing-8;
+    display: flex;
+    flex-direction: column;
+    gap: vars.$spacing-4;
+    align-items: flex-start;
+    background: var(--doc-surface);
+    border-bottom: 1px solid var(--doc-border);
+  }
+
+  &__code {
+    position: relative;
+    background: var(--doc-bg);
+    padding: vars.$spacing-4 vars.$spacing-6;
+    margin: 0;
+    overflow-x: auto;
+    font-family: vars.$font-family-mono;
+    font-size: func.rem(vars.$font-size-xs);
+    line-height: 1.6;
+    color: #38bdf8;
+
+    pre {
+      margin: 0;
+    }
+  }
+
+  &__copy-btn {
+    @include mixins.reset-button;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    border-radius: vars.$radius-md;
+    background: var(--doc-surface);
+    border: 1px solid var(--doc-border);
+    color: var(--doc-text-muted);
+    font-size: 12px;
+    font-weight: vars.$font-weight-medium;
+    transition: all 150ms ease;
+
+    &:hover {
+      color: var(--doc-text);
+      background: var(--doc-surface-hover);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 5. Right Sidebar (On this page Indexing / TOC)
+// -----------------------------------------------------------------------------
+.doc-toc {
+  width: var(--doc-toc-w);
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--doc-navbar-h);
+  height: calc(100vh - var(--doc-navbar-h));
+  overflow-y: auto;
+  padding: vars.$spacing-8 vars.$spacing-4;
+  box-sizing: border-box;
+
+  @media (max-width: 1200px) {
+    display: none; // Hidden on medium screens
+  }
+
+  &__title {
+    font-size: func.rem(vars.$font-size-xs);
+    font-weight: vars.$font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--doc-text-dim);
+    margin-bottom: vars.$spacing-3;
+    padding-left: vars.$spacing-3;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid var(--doc-border);
+  }
+
+  &__item {
+    margin-bottom: vars.$spacing-1;
+  }
+
+  &__link {
+    display: block;
+    padding: vars.$spacing-1 vars.$spacing-3;
+    font-size: func.rem(vars.$font-size-sm);
+    color: var(--doc-text-muted);
+    text-decoration: none;
+    transition: all 150ms ease;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+
+    &:hover {
+      color: var(--doc-text);
+      text-decoration: none;
+    }
+
+    &.is-active {
+      color: var(--doc-primary);
+      border-left-color: var(--doc-primary);
+      font-weight: vars.$font-weight-semibold;
+    }
+  }
+}

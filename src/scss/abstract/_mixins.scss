@@ -1,0 +1,172 @@
+@use 'sass:map';
+@use 'functions' as func;
+@use 'variables' as vars;
+
+// -----------------------------------------------------------------------------
+// Typography Helpers (Figma: Text {size}/{weight})
+// -----------------------------------------------------------------------------
+
+/// Apply typography scale and optional weight from Figma
+/// @param {String} $size - Size token ('xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl')
+/// @param {String|Number} $weight - Font weight ('regular', 'medium', 'semibold', 'bold' or number)
+@mixin text($size: 'md', $weight: null) {
+  $spec: map.get(vars.$typography-scale, $size);
+
+  @if $spec {
+    font-size: func.rem(map.get($spec, 'font-size'));
+    line-height: map.get($spec, 'line-height');
+    letter-spacing: map.get($spec, 'letter-spacing');
+  }
+
+  @if $weight == 'regular' or $weight == 400 {
+    font-weight: vars.$font-weight-regular;
+  } @else if $weight == 'medium' or $weight == 500 {
+    font-weight: vars.$font-weight-medium;
+  } @else if $weight == 'semibold' or $weight == 600 {
+    font-weight: vars.$font-weight-semibold;
+  } @else if $weight == 'bold' or $weight == 700 {
+    font-weight: vars.$font-weight-bold;
+  } @else if $weight != null {
+    font-weight: $weight;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Flexbox Helpers
+// -----------------------------------------------------------------------------
+
+/// Center child elements horizontally and vertically using flexbox
+/// @param {String} $direction - Flex direction (row | column)
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+/// Generic flexbox layout helper
+/// @param {String} $direction - Flex direction
+/// @param {String} $align - Align items
+/// @param {String} $justify - Justify content
+/// @param {Number} $gap - Gap between items
+@mixin flex($direction: row, $align: stretch, $justify: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Accessibility & Focus States
+// -----------------------------------------------------------------------------
+
+/// Accessible focus ring for interactive elements
+/// @param {Color} $color - Color of the outline / shadow
+/// @param {Number} $offset - Outline offset
+/// @param {Number} $width - Width of outline or shadow ring
+@mixin focus-ring($color: vars.$color-focus-ring, $offset: 2px, $width: 2px) {
+  outline: none;
+
+  &:focus-visible {
+    outline: $width solid $color;
+    outline-offset: $offset;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Element Resets
+// -----------------------------------------------------------------------------
+
+/// Reset native button styles
+@mixin reset-button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  appearance: none;
+  user-select: none;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+/// Reset native list styles (ul, ol)
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/// Reset native input styles
+@mixin reset-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+}
+
+// -----------------------------------------------------------------------------
+// Utilities
+// -----------------------------------------------------------------------------
+
+/// Truncate text with an ellipsis
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/// Visually hide an element while keeping it accessible to screen readers
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// -----------------------------------------------------------------------------
+// Layout Mixins
+// -----------------------------------------------------------------------------
+
+/// Apply section full width styling
+@mixin section {
+  width: vars.$section-width;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/// Apply container responsive centered max-width styling
+/// @param {Number} $max-width - Container maximum width (default: 1440px)
+/// @param {Number} $padding-x - Horizontal padding (default: 24px)
+@mixin container($max-width: vars.$container-max-width, $padding-x: vars.$container-padding-x) {
+  width: 100%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding-x;
+  padding-right: $padding-x;
+  box-sizing: border-box;
+}
+
