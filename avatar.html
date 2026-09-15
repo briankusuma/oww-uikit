@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alert - OWW UIKit Documentation</title>
+  <title>Avatar - OWW UIKit Documentation</title>
 
   <!-- Inter Font from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
     rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 27'%3E%3Cpath d='M6.10102 12.202C9.47054 12.202 12.202 9.47054 12.202 6.10102C12.202 2.73151 9.47054 0 6.10102 0C2.73151 0 0 2.73151 0 6.10102C0 9.47054 2.73151 12.202 6.10102 12.202Z' fill='white'/%3E%3Cpath d='M30.7088 0L27.1826 6.10801L19.0456 20.1991V20.2341C17.9733 22.0801 16.4349 23.6119 14.5845 24.6766C12.7341 25.7411 10.6365 26.301 8.50175 26.3002H6.08789L9.58614 20.1991L17.7512 6.10801C18.8205 4.25165 20.36 2.70973 22.2146 1.63747C24.0693 0.565198 26.1737 0.000426904 28.316 0H30.7088Z' fill='white'/%3E%3Cpath d='M43.0155 0L39.4962 6.10801L31.3521 20.1991V20.2341C30.2799 22.0801 30.7416 23.6119 26.8911 24.6766C25.0407 25.7411 22.9432 26.301 20.8083 26.3002H18.3945L21.8928 20.1991L30.0858 6.10801C31.1527 4.25575 32.6878 2.71647 34.5371 1.64445C36.3865 0.572433 38.4851 0.00533528 40.6226 0H43.0155Z' fill='white'/%3E%3Cpath d='M55.3163 0L51.776 6.10801L43.653 20.1991V20.2341C42.5807 22.0801 41.0424 23.6119 39.192 24.6766C37.3416 25.7411 35.2439 26.301 33.1092 26.3002H30.6953L34.1936 20.1991L42.3586 6.10801C43.4279 4.25165 44.9675 2.70973 46.8221 1.63747C48.6767 0.565198 50.7812 0.000426904 52.9235 0H55.3163Z' fill='white'/%3E%3C/svg%3E" />
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 27'%3E%3Cpath d='M6.10102 12.202C9.47054 12.202 12.202 9.47054 12.202 6.10102C12.202 2.73151 9.47054 0 6.10102 0C2.73151 0 0 2.73151 0 6.10102C0 9.47054 2.73151 12.202 6.10102 12.202Z' fill='white'/%3E%3Cpath d='M30.7088 0L27.1826 6.10801L19.0456 20.1991V20.2341C17.9733 22.0801 16.4349 23.6119 14.5845 24.6766C12.7341 25.7411 10.6365 26.301 8.50175 26.3002H6.08789L9.58614 20.1991L17.7512 6.10801C18.8205 4.25165 20.36 2.70973 22.2146 1.63747C24.0693 0.565198 26.1737 0.000426904 28.316 0H30.7088Z' fill='white'/%3E%3Cpath d='M43.0155 0L39.4962 6.10801L31.3521 20.1991V20.2341C30.2799 22.0801 28.7416 23.6119 26.8911 24.6766C25.0407 25.7411 22.9432 26.301 20.8083 26.3002H18.3945L21.8928 20.1991L30.0858 6.10801C31.1527 4.25575 32.6878 2.71647 34.5371 1.64445C36.3865 0.572433 38.4851 0.00533528 40.6226 0H43.0155Z' fill='white'/%3E%3Cpath d='M55.3163 0L51.776 6.10801L43.653 20.1991V20.2341C42.5807 22.0801 41.0424 23.6119 39.192 24.6766C37.3416 25.7411 35.2439 26.301 33.1092 26.3002H30.6953L34.1936 20.1991L42.3586 6.10801C43.4279 4.25165 44.9675 2.70973 46.8221 1.63747C48.6767 0.565198 50.7812 0.000426904 52.9235 0H55.3163Z' fill='white'/%3E%3C/svg%3E" />
 
   <!-- OWW UIKit Compiled CSS -->
   <link rel="stylesheet" href="./dist/uikit.css">
@@ -114,6 +114,26 @@
       transform: translateY(0);
       opacity: 1;
     }
+
+    .avatar-preview-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .avatar-preview-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .avatar-preview-label {
+      font-size: 11px;
+      color: var(--doc-text-muted);
+      font-family: monospace;
+    }
   </style>
 </head>
 
@@ -149,9 +169,9 @@
         <!-- Top Nav Links -->
         <nav>
           <ul class="doc-navbar__nav">
-            <li><a href="#overview" class="doc-navbar__nav-link">Docs</a></li>
-            <li><a href="#overview" class="doc-navbar__nav-link is-active">Components</a></li>
-            <li><a href="#design-tokens" class="doc-navbar__nav-link">Tokens</a></li>
+            <li><a href="alert.html#overview" class="doc-navbar__nav-link">Docs</a></li>
+            <li><a href="avatar.html" class="doc-navbar__nav-link is-active">Components</a></li>
+            <li><a href="alert.html#design-tokens" class="doc-navbar__nav-link">Tokens</a></li>
           </ul>
         </nav>
       </div>
@@ -268,9 +288,9 @@
             Components
           </div>
           <ul class="doc-sidebar__list">
-            <!-- Alert (Active) -->
+            <!-- Alert -->
             <li class="doc-sidebar__item">
-              <a href="alert.html" class="doc-sidebar__link is-active">
+              <a href="alert.html" class="doc-sidebar__link">
                 Alert
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
@@ -282,9 +302,9 @@
                 <span class="doc-sidebar__link-badge">370</span>
               </a>
             </li>
-            <!-- Avatar -->
+            <!-- Avatar (Active on this page) -->
             <li class="doc-sidebar__item">
-              <a href="avatar.html" class="doc-sidebar__link">
+              <a href="avatar.html" class="doc-sidebar__link is-active">
                 Avatar
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
@@ -330,47 +350,57 @@
       <main class="doc-content">
         <!-- Breadcrumb -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="#">Docs</a>
+          <a href="alert.html">Docs</a>
           <span>/</span>
-          <a href="#">Components</a>
+          <a href="avatar.html">Components</a>
           <span>/</span>
-          <span style="color: var(--doc-text); font-weight: 500;">Alert</span>
+          <span style="color: var(--doc-text); font-weight: 500;">Avatar</span>
         </nav>
 
         <!-- Page Header -->
         <header class="doc-content__header">
-          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Alert</h1>
+          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Avatar</h1>
           <p class="doc-content__lead">
-            Memberikan pesan umpan balik kontekstual untuk tindakan pengguna. Dibangun dengan spesifikasi presisi tinggi
-            dari Figma <em>Ad Platform Maker Athian Phase 2</em>.
+            Komponen Avatar digunakan untuk merepresentasikan entitas pengguna, tim, atau identitas profil. Didesain secara presisi dari Figma <em>Ad Platform Maker Athian Phase 2</em>: <strong>Avatar Component Set (#22451:417)</strong> dan <strong>Initials Avatar (#22847:16374)</strong>.
           </p>
         </header>
 
-        <!-- Section: Overview -->
+        <!-- =================================================================== -->
+        <!-- Section 1: Overview -->
+        <!-- =================================================================== -->
         <section id="overview" class="doc-content__section">
           <h2 class="doc-content__section-title">Overview</h2>
           <p class="doc-content__section-desc">
-            Komponen Alert menggunakan arsitektur BEM dengan nama kelas <code>.oww-alert</code>. Sesuai spesifikasi
-            Figma, alert memiliki border radius <code>12px</code>, padding <code>12px</code>, tipografi
-            <code>Inter 14px Medium</code>, serta ikon <code>20x20px</code>.
+            Avatar mendukung tiga jenis tampilan utama: <strong>Foto/Gambar (Image)</strong>, <strong>Inisial Nama (Initials)</strong>, dan <strong>Ikon Cadangan (Dummy/Placeholder)</strong>. Komponen memiliki 4 skala ukuran standar: <code>xs (22px)</code>, <code>sm (32px)</code>, <code>md (40px)</code>, dan <code>lg (48px)</code>.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview">
-              <!-- Live Alert Success -->
-              <div class="oww-alert oww-alert--success" role="alert">
-                <div class="oww-alert__content">
-                  <span class="oww-alert__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.13415 13.0003 9.06522 13.0464 8.98934 13.0779C8.91347 13.1093 8.83214 13.1255 8.75 13.1255C8.66787 13.1255 8.58654 13.1093 8.51067 13.0779C8.43479 13.0464 8.36586 13.0003 8.30782 12.9422L6.43282 11.0672C6.31554 10.9499 6.24966 10.7909 6.24966 10.625C6.24966 10.4591 6.31554 10.3001 6.43282 10.1828C6.55009 10.0655 6.70915 9.99965 6.875 9.99965C7.04086 9.99965 7.19992 10.0655 7.31719 10.1828L8.75 11.6164L12.6828 7.68281C12.7409 7.62474 12.8098 7.57868 12.8857 7.54725C12.9616 7.51583 13.0429 7.49965 13.125 7.49965C13.2071 7.49965 13.2884 7.51583 13.3643 7.54725C13.4402 7.57868 13.5091 7.62474 13.5672 7.68281C13.6253 7.74088 13.6713 7.80982 13.7027 7.88569C13.7342 7.96156 13.7504 8.04288 13.7504 8.125C13.7504 8.20712 13.7342 8.28844 13.7027 8.36431C13.6713 8.44018 13.6253 8.50912 13.5672 8.56719Z"
-                        fill="currentColor" />
-                    </svg>
-                  </span>
-                  <p class="oww-alert__text">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+            <div class="doc-example__preview" style="gap: 32px;">
+              <!-- Image Avatar -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg">
+                  <img src="./src/assets/images/avatar/avatar-user.png" alt="User Avatar" class="oww-avatar__image">
                 </div>
+                <span class="avatar-preview-label">Image (48px)</span>
+              </div>
+
+              <!-- Initials Avatar -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg oww-avatar--initials">
+                  <span class="oww-avatar__initials">MA</span>
+                </div>
+                <span class="avatar-preview-label">Initials (48px)</span>
+              </div>
+
+              <!-- Dummy / Placeholder Avatar -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder">
+                  <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder Avatar" class="oww-avatar__image">
+                </div>
+                <span class="avatar-preview-label">Dummy (48px)</span>
               </div>
             </div>
+
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)">
                 <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
@@ -379,54 +409,207 @@
                     d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
                     fill="currentColor" />
                 </svg>Copy</button>
-              <pre><code>&lt;div class="oww-alert oww-alert--success" role="alert"&gt;
-  &lt;div class="oww-alert__content"&gt;
-    &lt;span class="oww-alert__icon" aria-hidden="true"&gt;...&lt;/span&gt;
-    &lt;p class="oww-alert__text"&gt;Lorem ipsum dolor sit amet consectetur adipiscing elit&lt;/p&gt;
-  &lt;/div&gt;
+              <pre><code>&lt;!-- Image Avatar --&gt;
+&lt;div class="oww-avatar oww-avatar--lg"&gt;
+  &lt;img src="avatar.png" alt="User" class="oww-avatar__image"&gt;
+&lt;/div&gt;
+
+&lt;!-- Initials Avatar --&gt;
+&lt;div class="oww-avatar oww-avatar--lg oww-avatar--initials"&gt;
+  &lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Placeholder / Dummy Avatar --&gt;
+&lt;div class="oww-avatar oww-avatar--lg oww-avatar--placeholder"&gt;
+  &lt;img src="placeholder.png" alt="Placeholder" class="oww-avatar__image"&gt;
 &lt;/div&gt;</code></pre>
             </div>
           </div>
         </section>
 
-        <!-- Section: Figma Variants -->
-        <section id="figma-variants" class="doc-content__section">
-          <h2 class="doc-content__section-title">Figma Variants</h2>
+        <!-- =================================================================== -->
+        <!-- Section 2: Size Scale -->
+        <!-- =================================================================== -->
+        <section id="sizes" class="doc-content__section">
+          <h2 class="doc-content__section-title">Sizes Scale</h2>
           <p class="doc-content__section-desc">
-            Varian resmi yang didefinisikan pada komponen Figma (Node <code>22517:4042</code>): <strong>Success</strong>
-            dan <strong>Warning</strong>.
+            Empat skala ukuran resmi Figma OWW Design System: <code>--lg (48px)</code>, <code>--md (40px)</code>, <code>--sm (32px)</code>, dan <code>--xs (22px)</code>.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview">
-              <!-- Success -->
-              <div class="oww-alert oww-alert--success" role="alert">
-                <div class="oww-alert__content">
-                  <span class="oww-alert__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.13415 13.0003 9.06522 13.0464 8.98934 13.0779C8.91347 13.1093 8.83214 13.1255 8.75 13.1255C8.66787 13.1255 8.58654 13.1093 8.51067 13.0779C8.43479 13.0464 8.36586 13.0003 8.30782 12.9422L6.43282 11.0672C6.31554 10.9499 6.24966 10.7909 6.24966 10.625C6.24966 10.4591 6.31554 10.3001 6.43282 10.1828C6.55009 10.0655 6.70915 9.99965 6.875 9.99965C7.04086 9.99965 7.19992 10.0655 7.31719 10.1828L8.75 11.6164L12.6828 7.68281C12.7409 7.62474 12.8098 7.57868 12.8857 7.54725C12.9616 7.51583 13.0429 7.49965 13.125 7.49965C13.2071 7.49965 13.2884 7.51583 13.3643 7.54725C13.4402 7.57868 13.5091 7.62474 13.5672 7.68281C13.6253 7.74088 13.6713 7.80982 13.7027 7.88569C13.7342 7.96156 13.7504 8.04288 13.7504 8.125C13.7504 8.20712 13.7342 8.28844 13.7027 8.36431C13.6713 8.44018 13.6253 8.50912 13.5672 8.56719Z"
-                        fill="currentColor" />
-                    </svg>
-                  </span>
-                  <p class="oww-alert__text">Variant=Success: Operasi telah berhasil dilaksanakan.</p>
+            <div class="doc-example__preview avatar-preview-row">
+              <!-- Large -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg">
+                  <img src="./src/assets/images/avatar/avatar-user.png" alt="LG" class="oww-avatar__image">
                 </div>
+                <span class="avatar-preview-label">lg · 48px</span>
+              </div>
+
+              <!-- Medium -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--md">
+                  <img src="./src/assets/images/avatar/avatar-user.png" alt="MD" class="oww-avatar__image">
+                </div>
+                <span class="avatar-preview-label">md · 40px</span>
+              </div>
+
+              <!-- Small -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--sm">
+                  <img src="./src/assets/images/avatar/avatar-user.png" alt="SM" class="oww-avatar__image">
+                </div>
+                <span class="avatar-preview-label">sm · 32px</span>
+              </div>
+
+              <!-- Extra Small -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--xs">
+                  <img src="./src/assets/images/avatar/avatar-user.png" alt="XS" class="oww-avatar__image">
+                </div>
+                <span class="avatar-preview-label">xs · 22px</span>
+              </div>
+            </div>
+
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
+                  style="vertical-align: -2px; margin-right: 4px;">
+                  <path
+                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+                    fill="currentColor" />
+                </svg>Copy</button>
+              <pre><code>&lt;div class="oww-avatar oww-avatar--lg"&gt;...&lt;/div&gt; &lt;!-- 48px --&gt;
+&lt;div class="oww-avatar oww-avatar--md"&gt;...&lt;/div&gt; &lt;!-- 40px (Default) --&gt;
+&lt;div class="oww-avatar oww-avatar--sm"&gt;...&lt;/div&gt; &lt;!-- 32px --&gt;
+&lt;div class="oww-avatar oww-avatar--xs"&gt;...&lt;/div&gt; &lt;!-- 22px --&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- Section 3: Core Variants -->
+        <!-- =================================================================== -->
+        <section id="variants" class="doc-content__section">
+          <h2 class="doc-content__section-title">Core Variants</h2>
+          <p class="doc-content__section-desc">
+            Tiga variasi visual sesuai spesifikasi desain Figma (Node <code>#22451:417</code> dan <code>#22847:16374</code>).
+          </p>
+
+          <div class="doc-example">
+            <div class="doc-example__preview" style="gap: 40px; justify-content: flex-start;">
+              <!-- Variant: Image -->
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">1. Image Variant</span>
+                <div class="avatar-preview-row">
+                  <div class="oww-avatar oww-avatar--lg"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--md"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--sm"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--xs"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
+                </div>
+              </div>
+
+              <!-- Variant: Initials -->
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">2. Initials Variant (Figma #22847:16374)</span>
+                <div class="avatar-preview-row">
+                  <div class="oww-avatar oww-avatar--lg oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
+                  <div class="oww-avatar oww-avatar--md oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
+                  <div class="oww-avatar oww-avatar--sm oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
+                  <div class="oww-avatar oww-avatar--xs oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
+                </div>
+              </div>
+
+              <!-- Variant: Dummy / Placeholder -->
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">3. Dummy / Placeholder (Figma #23105:51322)</span>
+                <div class="avatar-preview-row">
+                  <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Dummy" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--md oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Dummy" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--sm oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Dummy" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--xs oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Dummy" class="oww-avatar__image"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
+                  style="vertical-align: -2px; margin-right: 4px;">
+                  <path
+                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+                    fill="currentColor" />
+                </svg>Copy</button>
+              <pre><code>&lt;!-- 1. Image Variant --&gt;
+&lt;div class="oww-avatar oww-avatar--md"&gt;
+  &lt;img src="user.jpg" alt="Alex" class="oww-avatar__image"&gt;
+&lt;/div&gt;
+
+&lt;!-- 2. Initials Variant (Official Figma: bg=#E2F3FF, text=#0077FF) --&gt;
+&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials"&gt;
+  &lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- 3. Dummy Placeholder Variant --&gt;
+&lt;div class="oww-avatar oww-avatar--md oww-avatar--placeholder"&gt;
+  &lt;img src="placeholder.png" alt="Guest" class="oww-avatar__image"&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- Section 4: Initials Semantic Color Palettes -->
+        <!-- =================================================================== -->
+        <section id="initials" class="doc-content__section">
+          <h2 class="doc-content__section-title">Initials Color Palettes</h2>
+          <p class="doc-content__section-desc">
+            Varian inisial mendukung berbagai kombinasi warna semantik harmonis untuk membedakan kategori pengguna, departemen, atau peran tim.
+          </p>
+
+          <div class="doc-example">
+            <div class="doc-example__preview avatar-preview-row" style="gap: 24px;">
+              <!-- Primary (Default Figma) -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--primary">
+                  <span class="oww-avatar__initials">MA</span>
+                </div>
+                <span class="avatar-preview-label">Primary (#0077FF)</span>
+              </div>
+
+              <!-- Success -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--success">
+                  <span class="oww-avatar__initials">BK</span>
+                </div>
+                <span class="avatar-preview-label">Success (#2E7D32)</span>
               </div>
 
               <!-- Warning -->
-              <div class="oww-alert oww-alert--warning" role="alert">
-                <div class="oww-alert__content">
-                  <span class="oww-alert__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM9.375 6.25C9.375 6.08424 9.44085 5.92527 9.55806 5.80806C9.67527 5.69085 9.83424 5.625 10 5.625C10.1658 5.625 10.3247 5.69085 10.4419 5.80806C10.5592 5.92527 10.625 6.08424 10.625 6.25V10.625C10.625 10.7908 10.5592 10.9497 10.4419 11.0669C10.3247 11.1842 10.1658 11.25 10 11.25C9.83424 11.25 9.67527 11.1842 9.55806 11.0669C9.44085 10.9497 9.375 10.7908 9.375 10.625V6.25ZM10 14.375C9.81458 14.375 9.63333 14.32 9.47916 14.217C9.32499 14.114 9.20482 13.9676 9.13387 13.7963C9.06291 13.625 9.04434 13.4365 9.08052 13.2546C9.11669 13.0727 9.20598 12.9057 9.33709 12.7746C9.4682 12.6435 9.63525 12.5542 9.81711 12.518C9.99896 12.4818 10.1875 12.5004 10.3588 12.5714C10.5301 12.6423 10.6765 12.7625 10.7795 12.9167C10.8825 13.0708 10.9375 13.2521 10.9375 13.4375C10.9375 13.6861 10.8387 13.9246 10.6629 14.1004C10.4871 14.2762 10.2486 14.375 10 14.375Z"
-                        fill="currentColor" />
-                    </svg>
-                  </span>
-                  <p class="oww-alert__text">Variant=Warning: Periksa kembali pengaturan anggaran iklan Anda.</p>
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--warning">
+                  <span class="oww-avatar__initials">AT</span>
                 </div>
+                <span class="avatar-preview-label">Warning (#ED6C02)</span>
+              </div>
+
+              <!-- Danger -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--danger">
+                  <span class="oww-avatar__initials">RD</span>
+                </div>
+                <span class="avatar-preview-label">Danger (#D32F2F)</span>
+              </div>
+
+              <!-- Neutral -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--neutral">
+                  <span class="oww-avatar__initials">OW</span>
+                </div>
+                <span class="avatar-preview-label">Neutral (#475569)</span>
               </div>
             </div>
+
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)">
                 <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
@@ -435,39 +618,63 @@
                     d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
                     fill="currentColor" />
                 </svg>Copy</button>
-              <pre><code>&lt;!-- Success Variant --&gt;
-&lt;div class="oww-alert oww-alert--success" role="alert"&gt;...&lt;/div&gt;
-
-&lt;!-- Warning Variant --&gt;
-&lt;div class="oww-alert oww-alert--warning" role="alert"&gt;...&lt;/div&gt;</code></pre>
+              <pre><code>&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--primary"&gt;&lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;&lt;/div&gt;
+&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--success"&gt;&lt;span class="oww-avatar__initials"&gt;BK&lt;/span&gt;&lt;/div&gt;
+&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--warning"&gt;&lt;span class="oww-avatar__initials"&gt;AT&lt;/span&gt;&lt;/div&gt;
+&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--danger"&gt;&lt;span class="oww-avatar__initials"&gt;RD&lt;/span&gt;&lt;/div&gt;
+&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--neutral"&gt;&lt;span class="oww-avatar__initials"&gt;OW&lt;/span&gt;&lt;/div&gt;</code></pre>
             </div>
           </div>
         </section>
 
-        <!-- Section: Full Width Modifier -->
-        <section id="full-width" class="doc-content__section">
-          <h2 class="doc-content__section-title">Full Width Modifier</h2>
+        <!-- =================================================================== -->
+        <!-- Section 5: Status Indicators -->
+        <!-- =================================================================== -->
+        <section id="status-indicator" class="doc-content__section">
+          <h2 class="doc-content__section-title">Status Indicators</h2>
           <p class="doc-content__section-desc">
-            Gunakan kelas <code>.oww-alert--full</code> untuk merentangkan lebar alert hingga 100% dari kontainer
-            induknya.
+            Indikator status kehadiran (presence badge) yang diposisikan di sudut kanan bawah avatar untuk menunjukkan ketersediaan pengguna.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview">
-              <div class="oww-alert oww-alert--success oww-alert--full" role="alert">
-                <div class="oww-alert__content">
-                  <span class="oww-alert__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.13415 13.0003 9.06522 13.0464 8.98934 13.0779C8.91347 13.1093 8.83214 13.1255 8.75 13.1255C8.66787 13.1255 8.58654 13.1093 8.51067 13.0779C8.43479 13.0464 8.36586 13.0003 8.30782 12.9422L6.43282 11.0672C6.31554 10.9499 6.24966 10.7909 6.24966 10.625C6.24966 10.4591 6.31554 10.3001 6.43282 10.1828C6.55009 10.0655 6.70915 9.99965 6.875 9.99965C7.04086 9.99965 7.19992 10.0655 7.31719 10.1828L8.75 11.6164L12.6828 7.68281C12.7409 7.62474 12.8098 7.57868 12.8857 7.54725C12.9616 7.51583 13.0429 7.49965 13.125 7.49965C13.2071 7.49965 13.2884 7.51583 13.3643 7.54725C13.4402 7.57868 13.5091 7.62474 13.5672 7.68281C13.6253 7.74088 13.6713 7.80982 13.7027 7.88569C13.7342 7.96156 13.7504 8.04288 13.7504 8.125C13.7504 8.20712 13.7342 8.28844 13.7027 8.36431C13.6713 8.44018 13.6253 8.50912 13.5672 8.56719Z"
-                        fill="currentColor" />
-                    </svg>
-                  </span>
-                  <p class="oww-alert__text">Perubahan data kampanye iklan Anda berhasil disimpan dan disinkronkan
-                    secara global.</p>
+            <div class="doc-example__preview avatar-preview-row" style="gap: 32px;">
+              <!-- Online -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg">
+                  <img src="./src/assets/images/avatar/avatar-user.png" alt="Online" class="oww-avatar__image">
+                  <span class="oww-avatar__status oww-avatar__status--online" title="Online"></span>
                 </div>
+                <span class="avatar-preview-label">Online</span>
+              </div>
+
+              <!-- Busy -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg">
+                  <img src="./src/assets/images/avatar/avatar-user.png" alt="Busy" class="oww-avatar__image">
+                  <span class="oww-avatar__status oww-avatar__status--busy" title="Busy"></span>
+                </div>
+                <span class="avatar-preview-label">Busy</span>
+              </div>
+
+              <!-- Away -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg oww-avatar--initials">
+                  <span class="oww-avatar__initials">MA</span>
+                  <span class="oww-avatar__status oww-avatar__status--away" title="Away"></span>
+                </div>
+                <span class="avatar-preview-label">Away</span>
+              </div>
+
+              <!-- Offline -->
+              <div class="avatar-preview-card">
+                <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder">
+                  <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Offline" class="oww-avatar__image">
+                  <span class="oww-avatar__status oww-avatar__status--offline" title="Offline"></span>
+                </div>
+                <span class="avatar-preview-label">Offline</span>
               </div>
             </div>
+
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)">
                 <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
@@ -476,51 +683,43 @@
                     d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
                     fill="currentColor" />
                 </svg>Copy</button>
-              <pre><code>&lt;div class="oww-alert oww-alert--success oww-alert--full" role="alert"&gt;
-  &lt;div class="oww-alert__content"&gt;...&lt;/div&gt;
+              <pre><code>&lt;div class="oww-avatar oww-avatar--lg"&gt;
+  &lt;img src="user.png" class="oww-avatar__image"&gt;
+  &lt;span class="oww-avatar__status oww-avatar__status--online"&gt;&lt;/span&gt;
 &lt;/div&gt;</code></pre>
             </div>
           </div>
         </section>
 
-        <!-- Section: Extended Variants -->
-        <section id="extended-variants" class="doc-content__section">
-          <h2 class="doc-content__section-title">Extended System Variants</h2>
+        <!-- =================================================================== -->
+        <!-- Section 6: Avatar Group -->
+        <!-- =================================================================== -->
+        <section id="avatar-group" class="doc-content__section">
+          <h2 class="doc-content__section-title">Avatar Group</h2>
           <p class="doc-content__section-desc">
-            Varian tambahan yang diintegrasikan dari token sistem OWW: <strong>Danger</strong> (Error) dan
-            <strong>Info</strong>.
+            Gunakan kelas <code>.oww-avatar-group</code> untuk menumpuk beberapa avatar secara horizontal dengan efek border ring pemisah dan counter sisa anggota (<code>.oww-avatar-group__more</code>).
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview">
-              <!-- Danger -->
-              <div class="oww-alert oww-alert--danger" role="alert">
-                <div class="oww-alert__content">
-                  <span class="oww-alert__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M12.9422 7.94219L10.8836 10L12.9422 12.0578C13.0003 12.1159 13.0463 12.1848 13.0777 12.2607C13.1092 12.3366 13.1254 12.4179 13.1254 12.5C13.1254 12.5821 13.1092 12.6634 13.0777 12.7393C13.0463 12.8152 13.0003 12.8841 12.9422 12.9422C12.8841 13.0003 12.8152 13.0463 12.7393 13.0777C12.6634 13.1092 12.5821 13.1253 12.5 13.1253C12.4179 13.1253 12.3366 13.1092 12.2607 13.0777C12.1848 13.0463 12.1159 13.0003 12.0578 12.9422L10 10.8836L7.94219 12.9422C7.88412 13.0003 7.81518 13.0463 7.73931 13.0777C7.66344 13.1092 7.58213 13.1253 7.5 13.1253C7.41788 13.1253 7.33656 13.1092 7.26069 13.0777C7.18482 13.0463 7.11588 13.0003 7.05782 12.9422C6.99975 12.8841 6.95368 12.8152 6.92226 12.7393C6.89083 12.6634 6.87466 12.5821 6.87466 12.5C6.87466 12.4179 6.89083 12.3366 6.92226 12.2607C6.95368 12.1848 6.99975 12.1159 7.05782 12.0578L9.11641 10L7.05782 7.94219C6.94054 7.82491 6.87466 7.66585 6.87466 7.5C6.87466 7.33415 6.94054 7.17509 7.05782 7.05781C7.17509 6.94054 7.33415 6.87465 7.5 6.87465C7.66586 6.87465 7.82492 6.94054 7.94219 7.05781L10 9.11641L12.0578 7.05781C12.1159 6.99974 12.1848 6.95368 12.2607 6.92225C12.3366 6.89083 12.4179 6.87465 12.5 6.87465C12.5821 6.87465 12.6634 6.89083 12.7393 6.92225C12.8152 6.95368 12.8841 6.99974 12.9422 7.05781C13.0003 7.11588 13.0463 7.18482 13.0777 7.26069C13.1092 7.33656 13.1254 7.41788 13.1254 7.5C13.1254 7.58212 13.1092 7.66344 13.0777 7.73931C13.0463 7.81518 13.0003 7.88412 12.9422 7.94219ZM18.125 10C18.125 11.607 17.6485 13.1779 16.7557 14.514C15.8629 15.8502 14.594 16.8916 13.1093 17.5065C11.6247 18.1215 9.99099 18.2824 8.4149 17.9689C6.8388 17.6554 5.39106 16.8815 4.25476 15.7452C3.11846 14.6089 2.34463 13.1612 2.03112 11.5851C1.71762 10.009 1.87852 8.37535 2.49348 6.8907C3.10844 5.40605 4.14985 4.1371 5.486 3.24431C6.82214 2.35152 8.39303 1.875 10 1.875C12.1542 1.87727 14.2195 2.73403 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM16.875 10C16.875 8.64025 16.4718 7.31104 15.7164 6.18045C14.9609 5.04987 13.8872 4.16868 12.631 3.64833C11.3747 3.12798 9.99238 2.99183 8.65876 3.2571C7.32514 3.52237 6.10013 4.17716 5.13864 5.13864C4.17716 6.10013 7.32514 3.52237 8.65876 3.2571C9.99238 2.99183 11.3747 3.12798 12.631 3.64833C13.8872 4.16868 14.9609 5.04987 15.7164 6.18045C16.4718 7.31104 16.875 8.64025 16.875 10C16.8729 11.8227 16.1479 13.5702 14.8591 14.8591C16.1479 13.5702 16.8729 11.8227 16.875 10Z"
-                        fill="currentColor" />
-                    </svg>
-                  </span>
-                  <p class="oww-alert__text">Variant=Danger: Terjadi kesalahan pemrosesan pada server.</p>
+            <div class="doc-example__preview" style="flex-direction: column; align-items: flex-start; gap: 24px;">
+              <!-- Group with Mixed Avatars -->
+              <div class="oww-avatar-group">
+                <div class="oww-avatar oww-avatar--md">
+                  <img src="./src/assets/images/avatar/avatar-user.png" alt="User 1" class="oww-avatar__image">
                 </div>
-              </div>
-
-              <!-- Info -->
-              <div class="oww-alert oww-alert--info" role="alert">
-                <div class="oww-alert__content">
-                  <span class="oww-alert__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM10 16.875C8.64026 16.875 7.31105 16.4718 6.18046 15.7164C5.04987 14.9609 4.16868 13.8872 3.64833 12.6309C3.12798 11.3747 2.99183 9.99237 3.2571 8.65875C3.52238 7.32513 4.17716 6.10013 5.13864 5.13864C4.17716 6.10013 7.32514 3.52237 8.65876 3.2571C9.99238 2.99183 11.3747 3.12798 12.631 3.64833C13.8872 4.16868 14.9609 5.04987 15.7164 6.18045C16.4718 7.31104 16.875 8.64025 16.875 10C16.8729 11.8227 16.1479 13.5702 14.8591 14.8591C16.1479 13.5702 16.8729 11.8227 16.875 10Z"
-                        fill="currentColor" />
-                    </svg>
-                  </span>
-                  <p class="oww-alert__text">Variant=Info: Informasi pembaruan versi platform terbaru.</p>
+                <div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--primary">
+                  <span class="oww-avatar__initials">MA</span>
                 </div>
+                <div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--success">
+                  <span class="oww-avatar__initials">BK</span>
+                </div>
+                <div class="oww-avatar oww-avatar--md oww-avatar--placeholder">
+                  <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="User 4" class="oww-avatar__image">
+                </div>
+                <span class="oww-avatar-group__more">+5</span>
               </div>
             </div>
+
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)">
                 <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
@@ -529,86 +728,85 @@
                     d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
                     fill="currentColor" />
                 </svg>Copy</button>
-              <pre><code>&lt;!-- Danger Variant --&gt;
-&lt;div class="oww-alert oww-alert--danger" role="alert"&gt;...&lt;/div&gt;
-
-&lt;!-- Info Variant --&gt;
-&lt;div class="oww-alert oww-alert--info" role="alert"&gt;...&lt;/div&gt;</code></pre>
+              <pre><code>&lt;div class="oww-avatar-group"&gt;
+  &lt;div class="oww-avatar oww-avatar--md"&gt;&lt;img src="user1.png" class="oww-avatar__image"&gt;&lt;/div&gt;
+  &lt;div class="oww-avatar oww-avatar--md oww-avatar--initials"&gt;&lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="oww-avatar oww-avatar--md oww-avatar--placeholder"&gt;&lt;img src="dummy.png" class="oww-avatar__image"&gt;&lt;/div&gt;
+  &lt;span class="oww-avatar-group__more"&gt;+5&lt;/span&gt;
+&lt;/div&gt;</code></pre>
             </div>
           </div>
         </section>
 
-        <!-- Section: Design Tokens -->
+        <!-- =================================================================== -->
+        <!-- Section 7: Design Tokens -->
+        <!-- =================================================================== -->
         <section id="design-tokens" class="doc-content__section">
-          <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
+          <h2 class="doc-content__section-title">Design Tokens</h2>
           <p class="doc-content__section-desc">
-            Setiap nilai visual pada Alert merujuk ke token SCSS terdaftar dengan flag <code>!default</code>.
+            Nilai token desain yang digunakan untuk membangun komponen Avatar sesuai spesifikasi Figma.
           </p>
 
           <table class="token-table">
             <thead>
               <tr>
-                <th>Element</th>
-                <th>Token SCSS</th>
-                <th>Resolved Value</th>
+                <th>Token</th>
+                <th>Nilai Spesifikasi</th>
+                <th>Referensi Figma</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Success Background</td>
-                <td><code class="token-badge">$bg-soft-success</code></td>
-                <td><span class="color-swatch" style="background: #E9F6E7;"></span> #E9F6E7</td>
+                <td>Size: LG</td>
+                <td><code class="token-badge">48px &times; 48px</code></td>
+                <td>Figma Node <code>#22451:415</code></td>
               </tr>
               <tr>
-                <td>Success Border</td>
-                <td><code class="token-badge">$color-border-success</code></td>
-                <td><span class="color-swatch" style="background: #CAE8C3;"></span> #CAE8C3</td>
+                <td>Size: MD</td>
+                <td><code class="token-badge">40px &times; 40px</code></td>
+                <td>Figma Node <code>#22451:416</code></td>
               </tr>
               <tr>
-                <td>Success Shadow</td>
-                <td><code class="token-badge">$shadow-md</code></td>
-                <td>0px 6px 12px 0px rgba(0,0,0,0.08)</td>
+                <td>Size: SM</td>
+                <td><code class="token-badge">32px &times; 32px</code></td>
+                <td>Figma Node <code>#22451:414</code></td>
               </tr>
               <tr>
-                <td>Warning Background</td>
-                <td><code class="token-badge">$bg-soft-warning</code></td>
-                <td><span class="color-swatch" style="background: #FFEACE;"></span> #FFEACE</td>
-              </tr>
-              <tr>
-                <td>Warning Border</td>
-                <td><code class="token-badge">$color-border-warning</code></td>
-                <td><span class="color-swatch" style="background: #FFDDAD;"></span> #FFDDAD</td>
+                <td>Size: XS</td>
+                <td><code class="token-badge">22px &times; 22px</code></td>
+                <td>Figma Node <code>#22847:15973</code>, <code>#22847:16374</code></td>
               </tr>
               <tr>
                 <td>Border Radius</td>
-                <td><code class="token-badge">$radius-lg</code></td>
-                <td>12px</td>
+                <td><code class="token-badge">50% (Circle)</code></td>
+                <td>Figma <code>borderRadius: 45.83px</code></td>
               </tr>
               <tr>
-                <td>Padding</td>
-                <td><code class="token-badge">$spacing-3</code></td>
-                <td>12px</td>
+                <td>Initials Background</td>
+                <td><code class="token-badge">#E2F3FF</code></td>
+                <td>Figma Node <code>#22847:16374</code> fills</td>
               </tr>
               <tr>
-                <td>Content Gap</td>
-                <td><code class="token-badge">$spacing-2</code></td>
-                <td>8px</td>
+                <td>Initials Text Color</td>
+                <td><code class="token-badge">#0077FF</code></td>
+                <td>Figma Node <code>#22847:16372</code> fills</td>
               </tr>
               <tr>
-                <td>Typography</td>
-                <td><code class="token-badge">@include text('sm', 'medium')</code></td>
-                <td>Inter, 14px, 500, -0.02em</td>
+                <td>Initials Typography</td>
+                <td><code class="token-badge">Inter SemiBold 600, -0.02em</code></td>
+                <td>Figma textStyle <code>fontWeight: 600</code></td>
               </tr>
             </tbody>
           </table>
         </section>
 
-        <!-- Section: Installation / Rules -->
+        <!-- =================================================================== -->
+        <!-- Section 8: Architecture & Installation -->
+        <!-- =================================================================== -->
         <section id="installation" class="doc-content__section">
           <h2 class="doc-content__section-title">Architecture &amp; Rules</h2>
           <p class="doc-content__section-desc">
-            Komponen ini mematuhi standar ketat <code>AGENT.md</code>. Komponen mandiri disimpan di
-            <code>src/scss/components/_alert.scss</code> dan diimpor melalui <code>src/scss/uikit.scss</code>.
+            Komponen Avatar tersimpan secara terisolasi pada <code>src/scss/components/_avatar.scss</code> dan diekspor ke master stylesheet <code>src/scss/uikit.scss</code>.
           </p>
 
           <div class="doc-example">
@@ -630,11 +828,11 @@
 @use 'base/layout';
 
 @use 'components/alert';
+@use 'components/avatar';  // &lt;-- Avatar Component
 @use 'layout/docs';</code></pre>
             </div>
           </div>
         </section>
-
 
       </main>
 
@@ -648,13 +846,19 @@
             <a href="#overview" class="doc-toc__link is-active">Overview</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#figma-variants" class="doc-toc__link">Figma Variants</a>
+            <a href="#sizes" class="doc-toc__link">Sizes Scale</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#full-width" class="doc-toc__link">Full Width Modifier</a>
+            <a href="#variants" class="doc-toc__link">Core Variants</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#extended-variants" class="doc-toc__link">Extended Variants</a>
+            <a href="#initials" class="doc-toc__link">Initials Colors</a>
+          </li>
+          <li class="doc-toc__item">
+            <a href="#status-indicator" class="doc-toc__link">Status Indicators</a>
+          </li>
+          <li class="doc-toc__item">
+            <a href="#avatar-group" class="doc-toc__link">Avatar Group</a>
           </li>
           <li class="doc-toc__item">
             <a href="#design-tokens" class="doc-toc__link">Design Tokens</a>
