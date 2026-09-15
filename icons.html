@@ -89,14 +89,13 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: #001928;
+      background: #244bd6;
       color: #ffffff;
-      border: 1px solid #244BD6;
-      padding: 10px 16px;
+      padding: 10px 18px;
       border-radius: 8px;
       font-size: 13px;
-      font-weight: 500;
-      box-shadow: 0 4px 20px rgba(0, 25, 40, 0.4);
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(36, 75, 214, 0.45);
       transform: translateY(100px);
       opacity: 0;
       transition: all 250ms ease;
@@ -113,10 +112,10 @@
 <body class="doc-body">
 
   <!-- ========================================================================= -->
-  <!-- Top Navigation Header -->
+  <!-- 1. Top Navbar (Header) -->
   <!-- ========================================================================= -->
   <header class="doc-navbar">
-    <div class="doc-container doc-navbar__inner">
+    <div class="container doc-navbar__inner">
       <div class="doc-navbar__left">
         <!-- Brand Logo -->
         <a href="index.html" class="doc-navbar__brand">
@@ -140,14 +139,13 @@
         </a>
 
         <!-- Top Nav Links -->
-        <ul class="doc-navbar__nav">
-          <li class="doc-navbar__nav-item">
-            <a href="index.html" class="doc-navbar__nav-link is-active">Documentation</a>
-          </li>
-          <li class="doc-navbar__nav-item">
-            <a href="#overview" class="doc-navbar__nav-link">Components</a>
-          </li>
-        </ul>
+        <nav>
+          <ul class="doc-navbar__nav">
+            <li><a href="alert.html" class="doc-navbar__nav-link">Docs</a></li>
+            <li><a href="icons.html" class="doc-navbar__nav-link is-active">Components</a></li>
+            <li><a href="alert.html#design-tokens" class="doc-navbar__nav-link">Tokens</a></li>
+          </ul>
+        </nav>
       </div>
 
       <div class="doc-navbar__right">
@@ -196,10 +194,10 @@
   </header>
 
   <!-- ========================================================================= -->
-  <!-- Three-Column Documentation Layout (Max 1440px Container) -->
+  <!-- 2. Main Section (Width 100%) with Container (Max-Width 1440px) -->
   <!-- ========================================================================= -->
-  <section class="doc-layout">
-    <div class="doc-container doc-layout__inner">
+  <section class="section">
+    <div class="container doc-layout">
 
       <!-- --------------------------------------------------------------------- -->
       <!-- Left Sidebar Navigation -->
