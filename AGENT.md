@@ -59,6 +59,7 @@ Dokumen ini mendefinisikan aturan ketat yang wajib dipatuhi oleh seluruh AI agen
 ## 7. Bahasa Dokumentasi & Preview HTML (Documentation & Preview Rules)
 1. **Bahasa Inggris Penuh**: Seluruh teks konten, deskripsi, heading, tabel, tooltip, placeholder, dan komentar kode di semua file HTML preview (`index.html`, `alert.html`, `avatar.html`, `icons.html`, dll) **wajib menggunakan Bahasa Inggris (English)**.
 2. **Tanpa Nomor / Node ID Figma**: Dilarang keras menampilkan angka yang merujuk pada nomor komponen / node ID Figma (contoh: `#22451:417`, `#22847:16374`, `22517:4042`) di dalam teks preview HTML. Gunakan penamaan semantik yang bersih (contoh: `Avatar Component Set`, `Initials Avatar`). Aturan ini berlaku seterusnya untuk semua komponen.
+3. **Urutan Abjad Komponen Sidebar (A-Z Alphabetical Order)**: Daftar komponen pada sidebar kiri dokumentasi (`.doc-sidebar__list` pada grup Components) **wajib selalu diurutkan sesuai abjad dari A sampai Z** (contoh: Alert, Avatar, Badge, Button, Card, Icons & Flags, Input & Forms, Modal). Setiap penambahan komponen baru di masa mendatang harus disisipkan sesuai urutan abjad ini secara konsisten di semua halaman preview HTML.
 
 ---
 
