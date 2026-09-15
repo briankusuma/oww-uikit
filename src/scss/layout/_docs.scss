@@ -82,8 +82,8 @@ body.doc-body {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       background: linear-gradient(135deg, #244BD6 0%, #15329c 100%);
       color: #ffffff;
       border-radius: vars.$radius-md;
@@ -220,6 +220,7 @@ body.doc-body {
   &::-webkit-scrollbar {
     width: 4px;
   }
+
   &::-webkit-scrollbar-thumb {
     background: var(--doc-border);
     border-radius: 2px;
@@ -643,4 +644,3 @@ body.doc-body {
     color: var(--doc-text-muted);
   }
 }
-
