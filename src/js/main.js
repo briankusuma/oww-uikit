@@ -81,24 +81,18 @@ function initGlobal() {
     });
   }
 
-  // Sidebar Active Component Sync based on current page URL
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  // Sidebar Active Component / Page Sync based on current page URL
+  const currentPath = window.location.pathname.split('/').pop() || 'introduction.html';
+  const effectivePath = (currentPath === 'index.html' || currentPath === '') ? 'introduction.html' : currentPath;
   const sidebarLinks = document.querySelectorAll('.doc-sidebar__link');
   sidebarLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
     const targetFile = href.split('#')[0];
-    if (
-      targetFile === currentPath ||
-      (currentPath === 'index.html' && targetFile === 'alert.html')
-    ) {
-      if (link.closest('.doc-sidebar__group:last-child')) {
-        link.classList.add('is-active');
-      }
-    } else if (targetFile && targetFile !== currentPath) {
-      if (link.closest('.doc-sidebar__group:last-child')) {
-        link.classList.remove('is-active');
-      }
+    if (targetFile === effectivePath) {
+      link.classList.add('is-active');
+    } else if (targetFile && targetFile !== effectivePath) {
+      link.classList.remove('is-active');
     }
   });
 }
