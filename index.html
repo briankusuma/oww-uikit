@@ -341,8 +341,7 @@
         <header class="doc-content__header">
           <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Alert</h1>
           <p class="doc-content__lead">
-            Memberikan pesan umpan balik kontekstual untuk tindakan pengguna. Dibangun dengan spesifikasi presisi tinggi
-            dari Figma <em>Ad Platform Maker Athian Phase 2</em>.
+            Provide contextual feedback messages for typical user actions. Built with high precision following Figma design specifications.
           </p>
         </header>
 
@@ -350,9 +349,7 @@
         <section id="overview" class="doc-content__section">
           <h2 class="doc-content__section-title">Overview</h2>
           <p class="doc-content__section-desc">
-            Komponen Alert menggunakan arsitektur BEM dengan nama kelas <code>.oww-alert</code>. Sesuai spesifikasi
-            Figma, alert memiliki border radius <code>12px</code>, padding <code>12px</code>, tipografi
-            <code>Inter 14px Medium</code>, serta ikon <code>20x20px</code>.
+            The Alert component adheres to BEM architecture with class name <code>.oww-alert</code>. Designed with border radius <code>12px</code>, padding <code>12px</code>, <code>Inter 14px Medium</code> typography, and a <code>20&times;20px</code> icon.
           </p>
 
           <div class="doc-example">
@@ -393,8 +390,7 @@
         <section id="figma-variants" class="doc-content__section">
           <h2 class="doc-content__section-title">Figma Variants</h2>
           <p class="doc-content__section-desc">
-            Varian resmi yang didefinisikan pada komponen Figma (Node <code>22517:4042</code>): <strong>Success</strong>
-            dan <strong>Warning</strong>.
+            Official variants defined in the Figma component design: <strong>Success</strong> and <strong>Warning</strong>.
           </p>
 
           <div class="doc-example">
@@ -409,7 +405,7 @@
                         fill="currentColor" />
                     </svg>
                   </span>
-                  <p class="oww-alert__text">Variant=Success: Operasi telah berhasil dilaksanakan.</p>
+                  <p class="oww-alert__text">Variant=Success: Operation completed successfully.</p>
                 </div>
               </div>
 
@@ -423,7 +419,7 @@
                         fill="currentColor" />
                     </svg>
                   </span>
-                  <p class="oww-alert__text">Variant=Warning: Periksa kembali pengaturan anggaran iklan Anda.</p>
+                  <p class="oww-alert__text">Variant=Warning: Please double check your campaign budget settings.</p>
                 </div>
               </div>
             </div>
@@ -448,8 +444,7 @@
         <section id="full-width" class="doc-content__section">
           <h2 class="doc-content__section-title">Full Width Modifier</h2>
           <p class="doc-content__section-desc">
-            Gunakan kelas <code>.oww-alert--full</code> untuk merentangkan lebar alert hingga 100% dari kontainer
-            induknya.
+            Use the <code>.oww-alert--full</code> class to expand the alert width to 100% of its parent container.
           </p>
 
           <div class="doc-example">
@@ -463,8 +458,7 @@
                         fill="currentColor" />
                     </svg>
                   </span>
-                  <p class="oww-alert__text">Perubahan data kampanye iklan Anda berhasil disimpan dan disinkronkan
-                    secara global.</p>
+                  <p class="oww-alert__text">Your ad campaign changes have been saved and synchronized globally.</p>
                 </div>
               </div>
             </div>
@@ -487,7 +481,7 @@
         <section id="extended-variants" class="doc-content__section">
           <h2 class="doc-content__section-title">Extended System Variants</h2>
           <p class="doc-content__section-desc">
-            Varian tambahan yang diintegrasikan dari token sistem OWW: <strong>Danger</strong> (Error) dan
+            Additional extended variants integrated into the OWW system tokens: <strong>Danger</strong> (Error) and
             <strong>Info</strong>.
           </p>
 
@@ -503,7 +497,7 @@
                         fill="currentColor" />
                     </svg>
                   </span>
-                  <p class="oww-alert__text">Variant=Danger: Terjadi kesalahan pemrosesan pada server.</p>
+                  <p class="oww-alert__text">Variant=Danger: A server processing error occurred.</p>
                 </div>
               </div>
 
@@ -517,7 +511,7 @@
                         fill="currentColor" />
                     </svg>
                   </span>
-                  <p class="oww-alert__text">Variant=Info: Informasi pembaruan versi platform terbaru.</p>
+                  <p class="oww-alert__text">Variant=Info: New platform version updates are now available.</p>
                 </div>
               </div>
             </div>
@@ -542,7 +536,7 @@
         <section id="design-tokens" class="doc-content__section">
           <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            Setiap nilai visual pada Alert merujuk ke token SCSS terdaftar dengan flag <code>!default</code>.
+            All visual styles in Alert reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
           <table class="token-table">
@@ -607,8 +601,7 @@
         <section id="installation" class="doc-content__section">
           <h2 class="doc-content__section-title">Architecture &amp; Rules</h2>
           <p class="doc-content__section-desc">
-            Komponen ini mematuhi standar ketat <code>AGENT.md</code>. Komponen mandiri disimpan di
-            <code>src/scss/components/_alert.scss</code> dan diimpor melalui <code>src/scss/uikit.scss</code>.
+            This component adheres strictly to <code>AGENT.md</code> guidelines. Component styles are isolated in <code>src/scss/components/_alert.scss</code> and imported via <code>src/scss/uikit.scss</code>.
           </p>
 
           <div class="doc-example">
@@ -630,6 +623,7 @@
 @use 'base/layout';
 
 @use 'components/alert';
+@use 'components/avatar';
 @use 'layout/docs';</code></pre>
             </div>
           </div>

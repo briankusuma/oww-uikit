@@ -53,3 +53,15 @@ Dokumen ini mendefinisikan aturan ketat yang wajib dipatuhi oleh seluruh AI agen
 1. Setiap kali melakukan perubahan atau penambahan SCSS:
    - Jalankan script build Sass (`npm run build:css`) untuk memastikan tidak ada syntax error atau deprecation warning.
    - Pastikan file output CSS di `dist/` ter-compile dengan valid dan bersih.
+
+---
+
+## 7. Bahasa Dokumentasi & Preview HTML (Documentation & Preview Rules)
+1. **Bahasa Inggris Penuh**: Seluruh teks konten, deskripsi, heading, tabel, tooltip, placeholder, dan komentar kode di semua file HTML preview (`index.html`, `alert.html`, `avatar.html`, `icons.html`, dll) **wajib menggunakan Bahasa Inggris (English)**.
+2. **Tanpa Nomor / Node ID Figma**: Dilarang keras menampilkan angka yang merujuk pada nomor komponen / node ID Figma (contoh: `#22451:417`, `#22847:16374`, `22517:4042`) di dalam teks preview HTML. Gunakan penamaan semantik yang bersih (contoh: `Avatar Component Set`, `Initials Avatar`). Aturan ini berlaku seterusnya untuk semua komponen.
+
+---
+
+## 8. Aturan Git & Workflow
+1. **Jangan melakukan `git push`** kecuali secara eksplisit diperintahkan oleh pengguna.
+

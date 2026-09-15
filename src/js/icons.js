@@ -1,7 +1,7 @@
 /**
  * OWW UIKit - Icons & Flags Gallery Scripts
- * Figma Component Set 1: #19857:1259 (55 UI Icons x Outline & Fill = 110 variants)
- * Figma Component Set 2: #22540:6160 (260 Country Flags)
+ * Figma Component Set: UI Icons (55 UI Icons x Outline & Fill = 110 variants)
+ * Figma Component Set: Country Flags (260 Country Flags)
  * Handles icon filtering by variant/style, live keyword search, dynamic card rendering, and SVG copying.
  */
 
@@ -29,7 +29,7 @@ function copyIconSvg(arg1, style, pathD, cardEl) {
   }
 
   navigator.clipboard.writeText(svgCode).then(() => {
-    const toastMsg = 'Tersalin: ' + label + ' SVG!';
+    const toastMsg = 'Copied ' + label + ' SVG!';
     if (typeof window.showToast === 'function') {
       window.showToast(toastMsg, 2200);
     } else {
@@ -70,7 +70,7 @@ function initIconGallery() {
     });
 
     if (iconCountBadge) {
-      iconCountBadge.textContent = 'Menampilkan ' + filtered.length + ' ikon (Klik ikon untuk salin SVG)';
+      iconCountBadge.textContent = 'Showing ' + filtered.length + ' icons (Click any card to copy SVG)';
     }
 
     iconGrid.innerHTML = filtered.map(icon => {
@@ -79,7 +79,7 @@ function initIconGallery() {
         : `<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="${icon.d}" fill="currentColor"/></svg>`;
 
       return `
-        <div class="icon-gallery__card" onclick="copyIconSvg('${icon.kebab}')" title="Klik untuk salin SVG code ${icon.name} (${icon.style})">
+        <div class="icon-gallery__card" onclick="copyIconSvg('${icon.kebab}')" title="Click to copy SVG code for ${icon.name} (${icon.style})">
           <div class="icon-gallery__preview">
             ${previewHtml}
           </div>

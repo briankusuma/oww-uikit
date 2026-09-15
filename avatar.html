@@ -361,7 +361,7 @@
         <header class="doc-content__header">
           <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Avatar</h1>
           <p class="doc-content__lead">
-            Komponen Avatar digunakan untuk merepresentasikan entitas pengguna, tim, atau identitas profil. Didesain secara presisi dari Figma <em>Ad Platform Maker Athian Phase 2</em>: <strong>Avatar Component Set (#22451:417)</strong> dan <strong>Initials Avatar (#22847:16374)</strong>.
+            The Avatar component represents user entities, teams, or profile identities. Crafted with precision following official Figma specifications for Avatar and Initials Avatar component systems.
           </p>
         </header>
 
@@ -371,7 +371,7 @@
         <section id="overview" class="doc-content__section">
           <h2 class="doc-content__section-title">Overview</h2>
           <p class="doc-content__section-desc">
-            Avatar mendukung tiga jenis tampilan utama: <strong>Foto/Gambar (Image)</strong>, <strong>Inisial Nama (Initials)</strong>, dan <strong>Ikon Cadangan (Dummy/Placeholder)</strong>. Komponen memiliki 4 skala ukuran standar: <code>xs (22px)</code>, <code>sm (32px)</code>, <code>md (40px)</code>, dan <code>lg (48px)</code>.
+            Avatars support three primary display variants: <strong>Image</strong>, <strong>Initials</strong>, and <strong>Placeholder (Fallback)</strong>. The component comes in 4 standardized size scales: <code>xs (22px)</code>, <code>sm (32px)</code>, <code>md (40px)</code>, and <code>lg (48px)</code>.
           </p>
 
           <div class="doc-example">
@@ -397,7 +397,7 @@
                 <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder">
                   <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder Avatar" class="oww-avatar__image">
                 </div>
-                <span class="avatar-preview-label">Dummy (48px)</span>
+                <span class="avatar-preview-label">Placeholder (48px)</span>
               </div>
             </div>
 
@@ -419,7 +419,7 @@
   &lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;
 &lt;/div&gt;
 
-&lt;!-- Placeholder / Dummy Avatar --&gt;
+&lt;!-- Placeholder Avatar --&gt;
 &lt;div class="oww-avatar oww-avatar--lg oww-avatar--placeholder"&gt;
   &lt;img src="placeholder.png" alt="Placeholder" class="oww-avatar__image"&gt;
 &lt;/div&gt;</code></pre>
@@ -433,7 +433,7 @@
         <section id="sizes" class="doc-content__section">
           <h2 class="doc-content__section-title">Sizes Scale</h2>
           <p class="doc-content__section-desc">
-            Empat skala ukuran resmi Figma OWW Design System: <code>--lg (48px)</code>, <code>--md (40px)</code>, <code>--sm (32px)</code>, dan <code>--xs (22px)</code>.
+            Four standardized size scales defined in the OWW Design System: <code>--lg (48px)</code>, <code>--md (40px)</code>, <code>--sm (32px)</code>, and <code>--xs (22px)</code>.
           </p>
 
           <div class="doc-example">
@@ -493,7 +493,7 @@
         <section id="variants" class="doc-content__section">
           <h2 class="doc-content__section-title">Core Variants</h2>
           <p class="doc-content__section-desc">
-            Tiga variasi visual sesuai spesifikasi desain Figma (Node <code>#22451:417</code> dan <code>#22847:16374</code>).
+            Three core visual variants adhering to design specifications.
           </p>
 
           <div class="doc-example">
@@ -511,7 +511,7 @@
 
               <!-- Variant: Initials -->
               <div style="display: flex; flex-direction: column; gap: 12px;">
-                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">2. Initials Variant (Figma #22847:16374)</span>
+                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">2. Initials Variant</span>
                 <div class="avatar-preview-row">
                   <div class="oww-avatar oww-avatar--lg oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
                   <div class="oww-avatar oww-avatar--md oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
@@ -522,12 +522,12 @@
 
               <!-- Variant: Dummy / Placeholder -->
               <div style="display: flex; flex-direction: column; gap: 12px;">
-                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">3. Dummy / Placeholder (Figma #23105:51322)</span>
+                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">3. Placeholder Variant</span>
                 <div class="avatar-preview-row">
-                  <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Dummy" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--md oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Dummy" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--sm oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Dummy" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--xs oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Dummy" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--md oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--sm oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
+                  <div class="oww-avatar oww-avatar--xs oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
                 </div>
               </div>
             </div>
@@ -545,12 +545,12 @@
   &lt;img src="user.jpg" alt="Alex" class="oww-avatar__image"&gt;
 &lt;/div&gt;
 
-&lt;!-- 2. Initials Variant (Official Figma: bg=#E2F3FF, text=#0077FF) --&gt;
+&lt;!-- 2. Initials Variant (Theme tokens: bg=#E2F3FF, text=#0077FF) --&gt;
 &lt;div class="oww-avatar oww-avatar--md oww-avatar--initials"&gt;
   &lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;
 &lt;/div&gt;
 
-&lt;!-- 3. Dummy Placeholder Variant --&gt;
+&lt;!-- 3. Placeholder Variant --&gt;
 &lt;div class="oww-avatar oww-avatar--md oww-avatar--placeholder"&gt;
   &lt;img src="placeholder.png" alt="Guest" class="oww-avatar__image"&gt;
 &lt;/div&gt;</code></pre>
@@ -564,7 +564,7 @@
         <section id="initials" class="doc-content__section">
           <h2 class="doc-content__section-title">Initials Color Palettes</h2>
           <p class="doc-content__section-desc">
-            Varian inisial mendukung berbagai kombinasi warna semantik harmonis untuk membedakan kategori pengguna, departemen, atau peran tim.
+            The initials variant supports harmonious semantic color combinations to differentiate user categories, departments, or team roles.
           </p>
 
           <div class="doc-example">
@@ -633,7 +633,7 @@
         <section id="status-indicator" class="doc-content__section">
           <h2 class="doc-content__section-title">Status Indicators</h2>
           <p class="doc-content__section-desc">
-            Indikator status kehadiran (presence badge) yang diposisikan di sudut kanan bawah avatar untuk menunjukkan ketersediaan pengguna.
+            Presence badges positioned at the bottom-right corner of the avatar to communicate user availability and real-time state.
           </p>
 
           <div class="doc-example">
@@ -697,7 +697,7 @@
         <section id="avatar-group" class="doc-content__section">
           <h2 class="doc-content__section-title">Avatar Group</h2>
           <p class="doc-content__section-desc">
-            Gunakan kelas <code>.oww-avatar-group</code> untuk menumpuk beberapa avatar secara horizontal dengan efek border ring pemisah dan counter sisa anggota (<code>.oww-avatar-group__more</code>).
+            Use the <code>.oww-avatar-group</code> class to stack multiple avatars horizontally with separating border rings and an overflow member counter (<code>.oww-avatar-group__more</code>).
           </p>
 
           <div class="doc-example">
@@ -744,57 +744,57 @@
         <section id="design-tokens" class="doc-content__section">
           <h2 class="doc-content__section-title">Design Tokens</h2>
           <p class="doc-content__section-desc">
-            Nilai token desain yang digunakan untuk membangun komponen Avatar sesuai spesifikasi Figma.
+            Design token values used to construct the Avatar component adhering to design specifications.
           </p>
 
           <table class="token-table">
             <thead>
               <tr>
                 <th>Token</th>
-                <th>Nilai Spesifikasi</th>
-                <th>Referensi Figma</th>
+                <th>Specification Value</th>
+                <th>Design Source</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Size: LG</td>
                 <td><code class="token-badge">48px &times; 48px</code></td>
-                <td>Figma Node <code>#22451:415</code></td>
+                <td>Avatar Component Set (Large)</td>
               </tr>
               <tr>
                 <td>Size: MD</td>
                 <td><code class="token-badge">40px &times; 40px</code></td>
-                <td>Figma Node <code>#22451:416</code></td>
+                <td>Avatar Component Set (Medium)</td>
               </tr>
               <tr>
                 <td>Size: SM</td>
                 <td><code class="token-badge">32px &times; 32px</code></td>
-                <td>Figma Node <code>#22451:414</code></td>
+                <td>Avatar Component Set (Small)</td>
               </tr>
               <tr>
                 <td>Size: XS</td>
                 <td><code class="token-badge">22px &times; 22px</code></td>
-                <td>Figma Node <code>#22847:15973</code>, <code>#22847:16374</code></td>
+                <td>Avatar Component Set (Extra Small)</td>
               </tr>
               <tr>
                 <td>Border Radius</td>
                 <td><code class="token-badge">50% (Circle)</code></td>
-                <td>Figma <code>borderRadius: 45.83px</code></td>
+                <td>Circular Boundary (Full Radius)</td>
               </tr>
               <tr>
                 <td>Initials Background</td>
                 <td><code class="token-badge">#E2F3FF</code></td>
-                <td>Figma Node <code>#22847:16374</code> fills</td>
+                <td>Primary Light Tint Palette</td>
               </tr>
               <tr>
                 <td>Initials Text Color</td>
                 <td><code class="token-badge">#0077FF</code></td>
-                <td>Figma Node <code>#22847:16372</code> fills</td>
+                <td>Primary Accent Tone</td>
               </tr>
               <tr>
                 <td>Initials Typography</td>
                 <td><code class="token-badge">Inter SemiBold 600, -0.02em</code></td>
-                <td>Figma textStyle <code>fontWeight: 600</code></td>
+                <td>Inter Typography Scale</td>
               </tr>
             </tbody>
           </table>
@@ -806,7 +806,7 @@
         <section id="installation" class="doc-content__section">
           <h2 class="doc-content__section-title">Architecture &amp; Rules</h2>
           <p class="doc-content__section-desc">
-            Komponen Avatar tersimpan secara terisolasi pada <code>src/scss/components/_avatar.scss</code> dan diekspor ke master stylesheet <code>src/scss/uikit.scss</code>.
+            The Avatar component is cleanly isolated in <code>src/scss/components/_avatar.scss</code> and exported to the master stylesheet <code>src/scss/uikit.scss</code>.
           </p>
 
           <div class="doc-example">
