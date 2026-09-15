@@ -88,10 +88,10 @@ function initGlobal() {
   sidebarLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    const targetFile = href.split('#')[0];
-    if (targetFile === effectivePath) {
+    // Only exact page/component link (no hash anchors) should be active
+    if (href === effectivePath) {
       link.classList.add('is-active');
-    } else if (targetFile && targetFile !== effectivePath) {
+    } else {
       link.classList.remove('is-active');
     }
   });
