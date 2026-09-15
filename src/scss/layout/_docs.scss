@@ -631,6 +631,11 @@ body.doc-body {
       background-color: rgba(36, 75, 214, 0.15);
       color: var(--doc-primary);
     }
+
+    &--flag {
+      background-color: rgba(109, 165, 68, 0.15);
+      color: #6da544;
+    }
   }
 
   &__count {
