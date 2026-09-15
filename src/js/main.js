@@ -80,6 +80,27 @@ function initGlobal() {
       });
     });
   }
+
+  // Sidebar Active Component Sync based on current page URL
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const sidebarLinks = document.querySelectorAll('.doc-sidebar__link');
+  sidebarLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    const targetFile = href.split('#')[0];
+    if (
+      targetFile === currentPath ||
+      (currentPath === 'index.html' && targetFile === 'alert.html')
+    ) {
+      if (link.closest('.doc-sidebar__group:last-child')) {
+        link.classList.add('is-active');
+      }
+    } else if (targetFile && targetFile !== currentPath) {
+      if (link.closest('.doc-sidebar__group:last-child')) {
+        link.classList.remove('is-active');
+      }
+    }
+  });
 }
 
 // Expose functions globally for inline HTML event handlers
