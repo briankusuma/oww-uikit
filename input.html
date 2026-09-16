@@ -599,65 +599,170 @@
             </div>
           </div>
 
-          <!-- Variant 5: Segmented Date Picker -->
+          <!-- Variant 5: Segmented Date Picker (Figma Node #19857:196) -->
           <div class="doc-example">
-            <div class="doc-example__preview" style="max-width: 520px; width: 100%;">
-              <div class="oww-form-group">
-                <div class="oww-form-group__label-row">
-                  <label class="oww-form-group__label">Date of Birth</label>
-                  <span class="oww-form-group__required">*</span>
+            <div class="doc-example__preview" style="display: flex; flex-direction: column; gap: 32px; max-width: 560px; width: 100%;">
+              <!-- Interactive Live Date Picker -->
+              <div class="oww-date-picker">
+                <label class="oww-date-picker__label">Date of Birth</label>
+                <div class="oww-date-picker__group">
+                  <!-- Month Box (286px in Figma) -->
+                  <div class="oww-date-picker__item oww-date-picker__item--month">
+                    <div class="oww-date-picker__box">
+                      <span class="oww-date-picker__sublabel">Month</span>
+                      <div class="oww-date-picker__value-row">
+                        <span class="oww-date-picker__value">Select a month</span>
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="oww-date-picker__chevron">
+                          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <select class="oww-date-picker__select" aria-label="Month">
+                        <option value="" disabled selected>Select a month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Day Box (123px in Figma) -->
+                  <div class="oww-date-picker__item oww-date-picker__item--day">
+                    <div class="oww-date-picker__box">
+                      <span class="oww-date-picker__sublabel">Day</span>
+                      <div class="oww-date-picker__value-row">
+                        <span class="oww-date-picker__value">1</span>
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="oww-date-picker__chevron">
+                          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <select class="oww-date-picker__select" aria-label="Day">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Year Box (123px in Figma) -->
+                  <div class="oww-date-picker__item oww-date-picker__item--year">
+                    <div class="oww-date-picker__box">
+                      <span class="oww-date-picker__sublabel">Year</span>
+                      <div class="oww-date-picker__value-row">
+                        <span class="oww-date-picker__value">1990</span>
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="oww-date-picker__chevron">
+                          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <select class="oww-date-picker__select" aria-label="Year">
+                        <option value="2026">2026</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2020">2020</option>
+                        <option value="2010">2010</option>
+                        <option value="2000">2000</option>
+                        <option value="1990" selected>1990</option>
+                        <option value="1980">1980</option>
+                        <option value="1970">1970</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
-                <div class="oww-input-date">
-                  <div class="oww-input-date__item oww-input-date__item--month">
-                    <select>
-                      <option value="" disabled selected>Select a month</option>
-                      <option value="1">January</option>
-                      <option value="2">February</option>
-                      <option value="3">March</option>
-                      <option value="4">April</option>
-                      <option value="5">May</option>
-                      <option value="6">June</option>
-                      <option value="7">July</option>
-                      <option value="8">August</option>
-                      <option value="9">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
-                    </select>
-                    <span class="oww-input-date__caret">
-                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </span>
+              </div>
+
+              <!-- Figma Variant: Selected (November 12, 2025) -->
+              <div class="oww-date-picker">
+                <div class="oww-date-picker__label" style="font-size: 13px; color: var(--doc-text-muted); font-weight: 500;">Figma Variant: Selected</div>
+                <div class="oww-date-picker__group">
+                  <div class="oww-date-picker__item oww-date-picker__item--month">
+                    <div class="oww-date-picker__box">
+                      <span class="oww-date-picker__sublabel">Month</span>
+                      <div class="oww-date-picker__value-row">
+                        <span class="oww-date-picker__value">November</span>
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="oww-date-picker__chevron">
+                          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                  <div class="oww-input-date__item oww-input-date__item--day">
-                    <select>
-                      <option value="" disabled selected>Day</option>
-                      <option value="1">01</option>
-                      <option value="2">02</option>
-                      <option value="15">15</option>
-                      <option value="31">31</option>
-                    </select>
-                    <span class="oww-input-date__caret">
-                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </span>
+                  <div class="oww-date-picker__item oww-date-picker__item--day">
+                    <div class="oww-date-picker__box">
+                      <span class="oww-date-picker__sublabel">Day</span>
+                      <div class="oww-date-picker__value-row">
+                        <span class="oww-date-picker__value">12</span>
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="oww-date-picker__chevron">
+                          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                  <div class="oww-input-date__item oww-input-date__item--year">
-                    <select>
-                      <option value="" disabled selected>Year</option>
-                      <option value="2026">2026</option>
-                      <option value="2025">2025</option>
-                      <option value="2020">2020</option>
-                      <option value="2000">2000</option>
-                      <option value="1990">1990</option>
-                    </select>
-                    <span class="oww-input-date__caret">
-                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </span>
+                  <div class="oww-date-picker__item oww-date-picker__item--year">
+                    <div class="oww-date-picker__box">
+                      <span class="oww-date-picker__sublabel">Year</span>
+                      <div class="oww-date-picker__value-row">
+                        <span class="oww-date-picker__value">2025</span>
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="oww-date-picker__chevron">
+                          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Figma Variant: Disabled -->
+              <div class="oww-date-picker">
+                <div class="oww-date-picker__label" style="font-size: 13px; color: var(--doc-text-muted); font-weight: 500;">Figma Variant: Disable</div>
+                <div class="oww-date-picker__group">
+                  <div class="oww-date-picker__item oww-date-picker__item--month">
+                    <div class="oww-date-picker__box is-disabled">
+                      <span class="oww-date-picker__sublabel">Month</span>
+                      <div class="oww-date-picker__value-row">
+                        <span class="oww-date-picker__value">November</span>
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="oww-date-picker__chevron">
+                          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="oww-date-picker__item oww-date-picker__item--day">
+                    <div class="oww-date-picker__box is-disabled">
+                      <span class="oww-date-picker__sublabel">Day</span>
+                      <div class="oww-date-picker__value-row">
+                        <span class="oww-date-picker__value">12</span>
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="oww-date-picker__chevron">
+                          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="oww-date-picker__item oww-date-picker__item--year">
+                    <div class="oww-date-picker__box is-disabled">
+                      <span class="oww-date-picker__sublabel">Year</span>
+                      <div class="oww-date-picker__value-row">
+                        <span class="oww-date-picker__value">2025</span>
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" class="oww-date-picker__chevron">
+                          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -670,18 +775,43 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;div class="oww-input-date"&gt;
-  &lt;div class="oww-input-date__item oww-input-date__item--month"&gt;
-    &lt;select&gt;
-      &lt;option value="" disabled selected&gt;Select a month&lt;/option&gt;
-      ...
-    &lt;/select&gt;
-  &lt;/div&gt;
-  &lt;div class="oww-input-date__item oww-input-date__item--day"&gt;
-    &lt;select&gt;...&lt;/select&gt;
-  &lt;/div&gt;
-  &lt;div class="oww-input-date__item oww-input-date__item--year"&gt;
-    &lt;select&gt;...&lt;/select&gt;
+              <pre><code>&lt;!-- Date of Birth Picker (Figma Node #19857:196) --&gt;
+&lt;div class="oww-date-picker"&gt;
+  &lt;label class="oww-date-picker__label"&gt;Date of Birth&lt;/label&gt;
+  &lt;div class="oww-date-picker__group"&gt;
+    &lt;!-- Month Box (286px) --&gt;
+    &lt;div class="oww-date-picker__item oww-date-picker__item--month"&gt;
+      &lt;div class="oww-date-picker__box"&gt;
+        &lt;span class="oww-date-picker__sublabel"&gt;Month&lt;/span&gt;
+        &lt;div class="oww-date-picker__value-row"&gt;
+          &lt;span class="oww-date-picker__value"&gt;Select a month&lt;/span&gt;
+          &lt;svg width="16" height="16" ...&gt;...&lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;select class="oww-date-picker__select"&gt;...&lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Day Box (123px) --&gt;
+    &lt;div class="oww-date-picker__item oww-date-picker__item--day"&gt;
+      &lt;div class="oww-date-picker__box"&gt;
+        &lt;span class="oww-date-picker__sublabel"&gt;Day&lt;/span&gt;
+        &lt;div class="oww-date-picker__value-row"&gt;
+          &lt;span class="oww-date-picker__value"&gt;1&lt;/span&gt;
+          &lt;svg width="16" height="16" ...&gt;...&lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;select class="oww-date-picker__select"&gt;...&lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Year Box (123px) --&gt;
+    &lt;div class="oww-date-picker__item oww-date-picker__item--year"&gt;
+      &lt;div class="oww-date-picker__box"&gt;
+        &lt;span class="oww-date-picker__sublabel"&gt;Year&lt;/span&gt;
+        &lt;div class="oww-date-picker__value-row"&gt;
+          &lt;span class="oww-date-picker__value"&gt;1990&lt;/span&gt;
+          &lt;svg width="16" height="16" ...&gt;...&lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;select class="oww-date-picker__select"&gt;...&lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>

@@ -104,6 +104,7 @@ function initGlobal() {
   // Theme Manager
   initTheme();
   initBadgeInputs();
+  initDatePickers();
 
   // TOC Active ScrollSpy
   const sections = document.querySelectorAll('.doc-content__section');
@@ -728,6 +729,21 @@ function initBadgeInputs() {
 
 window.removeInputChip = removeInputChip;
 window.copyShareLink = copyShareLink;
+function initDatePickers() {
+  document.querySelectorAll(".oww-date-picker__select, .oww-input-date__select").forEach(sel => {
+    sel.addEventListener("change", () => {
+      const box = sel.closest(".oww-date-picker__box, .oww-input-date__box");
+      if (box) {
+        const valSpan = box.querySelector(".oww-date-picker__value, .oww-input-date__value");
+        if (valSpan && sel.selectedOptions[0]) {
+          valSpan.textContent = sel.selectedOptions[0].text;
+        }
+      }
+    });
+  });
+}
+
+window.initDatePickers = initDatePickers;
 window.initBadgeInputs = initBadgeInputs;
 
 window.applyTheme = applyTheme;

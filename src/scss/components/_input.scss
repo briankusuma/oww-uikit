@@ -410,75 +410,143 @@
 }
 
 // -----------------------------------------------------------------------------
-// Segmented Date Picker Input (.oww-input-date)
+// Segmented Date of Birth Picker (.oww-date-picker, .oww-input-date) - Figma Node 19857:196
 // -----------------------------------------------------------------------------
+.oww-date-picker,
 .oww-input-date {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 548px;
   width: 100%;
   box-sizing: border-box;
 
+  &__label {
+    @include mixins.text('md', 'semibold');
+    color: vars.$color-text-black;
+    letter-spacing: -0.02em;
+    user-select: none;
+  }
+
+  &__group {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    width: 100%;
+  }
+
   &__item {
     position: relative;
-    display: flex;
-    align-items: center;
     box-sizing: border-box;
 
     &--month {
-      flex: 3;
+      flex: 286;
+      min-width: 0;
     }
 
     &--day {
-      flex: 1.5;
+      flex: 123;
+      min-width: 0;
     }
 
     &--year {
-      flex: 2;
-    }
-
-    select {
-      appearance: none;
-      width: 100%;
-      height: vars.$input-height-lg;
-      padding: 0 36px 0 16px;
-      background-color: vars.$input-bg-default;
-      border: vars.$input-border-width solid vars.$input-border-color-default;
-      border-radius: vars.$input-radius-lg;
-      font-family: vars.$font-family-base;
-      font-size: func.rem(vars.$font-size-md);
-      color: vars.$input-text-color;
-      outline: none;
-      cursor: pointer;
-      transition: all vars.$transition-duration-fast vars.$transition-timing-base;
-
-      &:focus {
-        border-color: vars.$color-base-primary-900;
-        box-shadow: vars.$input-focus-shadow;
-      }
-
-      &:disabled {
-        background-color: vars.$input-bg-disabled;
-        border-color: vars.$input-border-disabled;
-        color: vars.$input-text-disabled;
-        cursor: not-allowed;
-      }
-    }
-
-    &__caret {
-      position: absolute;
-      right: 12px;
-      pointer-events: none;
-      display: inline-flex;
-      align-items: center;
-      color: vars.$color-base-primary-500;
+      flex: 123;
+      min-width: 0;
     }
   }
 
-  &--md &__item select {
-    height: vars.$input-height-md;
-    font-size: func.rem(vars.$font-size-sm);
-    border-radius: vars.$input-radius-md;
+  &__box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 56px;
+    padding: 8px 16px;
+    background-color: vars.$input-bg-default;
+    border: 1px solid vars.$input-border-color-default;
+    border-radius: vars.$input-radius-lg; // 14px
+    box-sizing: border-box;
+    transition: border-color vars.$transition-duration-fast, box-shadow vars.$transition-duration-fast;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #d0d0d0;
+    }
+
+    &:focus-within,
+    &.is-focus {
+      border-color: vars.$color-text-black;
+      box-shadow: vars.$input-focus-shadow;
+    }
+
+    &.is-disabled,
+    &:has(:disabled) {
+      background-color: vars.$input-bg-disabled;
+      border-color: vars.$input-border-disabled;
+      cursor: not-allowed;
+
+      .oww-date-picker__sublabel,
+      .oww-date-picker__value,
+      .oww-date-picker__chevron,
+      .oww-input-date__sublabel,
+      .oww-input-date__value,
+      .oww-input-date__chevron {
+        color: vars.$input-text-disabled;
+      }
+    }
+  }
+
+  &__sublabel {
+    font-family: vars.$font-family-base;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #555555;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__value-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  &__value {
+    @include mixins.text('md', 'regular');
+    color: vars.$color-text-black;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__chevron {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: vars.$color-text-black;
+    transition: transform vars.$transition-duration-fast;
+  }
+
+  &__select {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    z-index: 2;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -611,8 +679,53 @@
     }
   }
 
-  .oww-input-date__item__caret {
-    color: var(--doc-text-dim);
+  .oww-date-picker,
+  .oww-input-date {
+    &__label {
+      color: var(--doc-text);
+    }
+
+    &__box {
+      background-color: var(--doc-surface);
+      border-color: var(--doc-border);
+
+      &:hover {
+        border-color: var(--doc-border-hover);
+      }
+
+      &:focus-within,
+      &.is-focus {
+        border-color: var(--doc-text);
+        box-shadow: 0 0 0 1px var(--doc-text);
+      }
+
+      &.is-disabled,
+      &:has(:disabled) {
+        background-color: var(--doc-surface-hover);
+        border-color: var(--doc-border-subtle);
+
+        .oww-date-picker__sublabel,
+        .oww-date-picker__value,
+        .oww-date-picker__chevron,
+        .oww-input-date__sublabel,
+        .oww-input-date__value,
+        .oww-input-date__chevron {
+          color: var(--doc-text-dim);
+        }
+      }
+    }
+
+    &__sublabel {
+      color: var(--doc-text-muted);
+    }
+
+    &__value {
+      color: var(--doc-text);
+    }
+
+    &__chevron {
+      color: var(--doc-text);
+    }
   }
 
   .oww-input-readable__action {

@@ -20,6 +20,7 @@ Dokumen ini digunakan untuk mencatat keputusan teknis, kesepakatan desain, atau 
 - Item komponen yang belum diimplementasikan diberi label badge `Soon` dan tautan dinonaktifkan sementara.
 - Halaman aktif wajib menyertakan class `.is-active`.
 
----
+## 4. hilangkan info mengenai hasil perbaikan atau ketidaksesauian dan implementasi
+- 
 
 *Catatan: Keputusan yang terbukti stabil dan berlaku secara permanen di seluruh komponen dapat dipromosikan ke `AGENT.md` oleh pengguna.*
