@@ -4,16 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Card - OWW UIKit Documentation</title>
+  <title>File Upload Component - OWW UIKit</title>
   <meta name="description"
-    content="Production-ready Card component documentation for OWW UIKit. Features dialog confirmation cards and e-commerce product cards.">
+    content="File Upload component for OWW UIKit featuring drag and drop, progress indicators, preview covers, and state validation.">
 
-  <!-- Inter Font from Google Fonts -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 27'%3E%3Cpath d='M6.10102 12.202C9.47054 12.202 12.202 9.47054 12.202 6.10102C12.202 2.73151 9.47054 0 6.10102 0C2.73151 0 0 2.73151 0 6.10102C0 9.47054 2.73151 12.202 6.10102 12.202Z' fill='white'/%3E%3Cpath d='M30.7088 0L27.1826 6.10801L19.0456 20.1991V20.2341C17.9733 22.0801 16.4349 23.6119 14.5845 24.6766C12.7341 25.7411 10.6365 26.301 8.50175 26.3002H6.08789L9.58614 20.1991L17.7512 6.10801C18.8205 4.25165 20.36 2.70973 22.2146 1.63747C24.0693 0.565198 26.1737 0.000426904 28.316 0H30.7088Z' fill='white'/%3E%3Cpath d='M43.0155 0L39.4962 6.10801L31.3521 20.1991V20.2341C30.2799 22.0801 28.7416 23.6119 26.8911 24.6766C25.0407 25.7411 22.9432 26.301 20.8083 26.3002H18.3945L21.8928 20.1991L30.0858 6.10801C31.1527 4.25575 32.6878 2.71647 34.5371 1.64445C36.3865 0.572433 38.4851 0.00533528 40.6226 0H43.0155Z' fill='white'/%3E%3Cpath d='M55.3163 0L51.776 6.10801L43.653 20.1991V20.2341C42.5807 22.0801 41.0424 23.6119 39.192 24.6766C37.3416 25.7411 35.2439 26.301 33.1092 26.3002H30.6953L34.1936 20.1991L42.3586 6.10801C43.4279 4.25165 44.9675 2.70973 46.8221 1.63747C48.6767 0.565198 50.7812 0.000426904 52.9235 0H55.3163Z' fill='white'/%3E%3C/svg%3E" />
@@ -74,7 +72,8 @@
         </div>
 
         <!-- Theme Toggle Button -->
-        <button id="themeToggleBtn" class="doc-navbar__theme-btn" title="Switch to light theme" aria-label="Switch to light theme">
+        <button id="themeToggleBtn" class="doc-navbar__theme-btn" title="Switch to light theme"
+          aria-label="Switch to light theme">
           <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -130,10 +129,10 @@
               <a href="introduction.html" class="doc-sidebar__link">Introduction</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="card.html#overview" class="doc-sidebar__link">Overview</a>
+              <a href="file-upload.html#overview" class="doc-sidebar__link">Overview</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="card.html#installation" class="doc-sidebar__link">Architecture &amp; Rules</a>
+              <a href="file-upload.html#installation" class="doc-sidebar__link">Architecture &amp; Rules</a>
             </li>
           </ul>
         </div>
@@ -150,16 +149,16 @@
           </div>
           <ul class="doc-sidebar__list">
             <li class="doc-sidebar__item">
-              <a href="card.html#design-tokens" class="doc-sidebar__link">Typography (Inter)</a>
+              <a href="file-upload.html#design-tokens" class="doc-sidebar__link">Typography (Inter)</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="card.html#design-tokens" class="doc-sidebar__link">Colors &amp; Semantic</a>
+              <a href="file-upload.html#design-tokens" class="doc-sidebar__link">Colors &amp; Semantic</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="card.html#design-tokens" class="doc-sidebar__link">Sizing &amp; Spacing</a>
+              <a href="file-upload.html#design-tokens" class="doc-sidebar__link">Sizing &amp; Spacing</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="card.html#design-tokens" class="doc-sidebar__link">Radius Scale</a>
+              <a href="file-upload.html#design-tokens" class="doc-sidebar__link">Radius Scale</a>
             </li>
           </ul>
         </div>
@@ -217,9 +216,9 @@
                 <span class="upcoming-tag">Soon</span>
               </a>
             </li>
-            <!-- Card (Active) -->
+            <!-- Card -->
             <li class="doc-sidebar__item">
-              <a href="card.html" class="doc-sidebar__link is-active">
+              <a href="card.html" class="doc-sidebar__link">
                 Card
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
@@ -238,9 +237,9 @@
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
             </li>
-            <!-- File Upload -->
+            <!-- File Upload (Active) -->
             <li class="doc-sidebar__item">
-              <a href="file-upload.html" class="doc-sidebar__link">
+              <a href="file-upload.html" class="doc-sidebar__link is-active">
                 File Upload
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
@@ -317,56 +316,121 @@
       <!-- ======================================================================= -->
       <main class="doc-content">
 
-        <!-- Breadcrumb (Standard across UIKit) -->
+        <!-- Breadcrumb -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="introduction.html">Docs</a>
           <span>/</span>
-          <a href="card.html">Components</a>
+          <a href="file-upload.html">Components</a>
           <span>/</span>
-          <span style="color: var(--doc-text); font-weight: 500;">Card</span>
+          <span style="color: var(--doc-text); font-weight: 500;">File Upload</span>
         </nav>
 
         <!-- Header -->
         <header class="doc-content__header">
-          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Card</h1>
-          <p class="doc-content__lead">
-            Cards are versatile, modular surfaces used to group and organize related information, media, and interactive actions.
-            Built in strict alignment with Figma specifications for Confirmation / Dialog Cards and e-commerce Product Cards.
+          <div class="doc-header__title-row">
+            <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">File Upload</h1>
+            <span class="doc-header__badge">Interactive</span>
+          </div>
+          <p class="text-lg-regular doc-content__header-desc">
+            A comprehensive file upload component supporting drag-and-drop, native file browsing, upload progress
+            indicators, applied preview with cover actions, and error handling states.
           </p>
         </header>
 
-        <!-- Section 1: Overview -->
+        <!-- Section 1: Overview & Interactive Dropzone -->
         <section id="overview" class="doc-content__section">
-          <h2 class="doc-content__section-title">Overview</h2>
+          <h2 class="doc-content__section-title">Overview &amp; Interactive Dropzone</h2>
           <p class="doc-content__section-desc">
-            The Deleted Confirmation Card component is designed for critical decision points and modal confirmations. It features a bold title header with a circular close action, a subtle horizontal divider line, descriptive body copy, and a right-aligned footer button group for user confirmation.
+            Try dropping an image or clicking the browse button. The frontend simulates real upload progress, displays
+            the applied cover preview, and allows removing or changing the uploaded file.
           </p>
 
           <div class="doc-example">
             <div class="doc-example__preview">
-              <!-- Dialog Confirmation Card Preview (Figma #22631:9832) -->
-              <div class="oww-card oww-card--dialog" role="dialog" aria-labelledby="dialogCardTitle">
-                <div class="oww-card__header">
-                  <h3 id="dialogCardTitle" class="oww-card__title">Delete This Product?</h3>
-                  <button type="button" class="oww-card__close-btn" aria-label="Close dialog" title="Close" onclick="showToast('Closed dialog')">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M16.2883 14.9617C16.4644 15.1378 16.5633 15.3767 16.5633 15.6258C16.5633 15.8749 16.4644 16.1137 16.2883 16.2898C16.1122 16.466 15.8733 16.5649 15.6242 16.5649C15.3751 16.5649 15.1363 16.466 14.9602 16.2898L10 11.3281L5.03828 16.2883C4.86216 16.4644 4.62329 16.5633 4.37422 16.5633C4.12514 16.5633 3.88627 16.4644 3.71015 16.2883C3.53403 16.1122 3.43509 15.8733 3.43509 15.6242C3.43509 15.3751 3.53403 15.1363 3.71015 14.9602L8.67187 10L3.71172 5.03828C3.53559 4.86216 3.43665 4.62329 3.43665 4.37422C3.43665 4.12515 3.53559 3.88628 3.71172 3.71016C3.88784 3.53404 4.12671 3.43509 4.37578 3.43509C4.62485 3.43509 4.86372 3.53404 5.03984 3.71016L10 8.67187L14.9617 3.70937C15.1378 3.53325 15.3767 3.43431 15.6258 3.43431C15.8748 3.43431 16.1137 3.53325 16.2898 3.70937C16.466 3.88549 16.5649 4.12437 16.5649 4.37344C16.5649 4.62251 16.466 4.86138 16.2898 5.0375L11.3281 10L16.2883 14.9617Z"
-                        fill="currentColor" />
-                    </svg>
-                  </button>
+              <!-- Live Interactive File Upload Component -->
+              <div class="oww-file-upload" id="interactiveUploadDemo">
+                <div class="oww-file-upload__header">
+                  <label class="oww-file-upload__label">Cover Image</label>
+                  <span class="oww-file-upload__required">*</span>
                 </div>
 
-                <hr class="oww-card__divider">
+                <div class="oww-file-upload__dropzone">
+                  <input type="file" accept="image/jpeg,image/png,image/webp" aria-label="Upload cover image">
 
-                <p class="oww-card__body">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+                  <!-- Default State Body -->
+                  <div class="oww-file-upload__body oww-file-upload__body--default">
+                    <div class="oww-file-upload__icon">
+                      <img src="./dist/assets/icons/upload-fill.svg" alt="" width="24" height="24">
+                    </div>
+                    <div class="oww-file-upload__text-group">
+                      <div class="oww-file-upload__title">Choose a file or drag and drop here.</div>
+                      <div class="oww-file-upload__subtitle">Formats: JPG, PNG. Max size 2 MB. Use a landscape image.
+                      </div>
+                    </div>
+                    <div class="oww-file-upload__actions">
+                      <button type="button" class="oww-btn oww-btn--outline oww-btn--sm"
+                        onclick="this.closest('.oww-file-upload__dropzone').querySelector('input[type=file]').click();">Browse
+                        File</button>
+                    </div>
+                  </div>
 
-                <div class="oww-card__footer">
-                  <button type="button" class="oww-btn oww-btn--outline oww-btn--sm" onclick="showToast('Cancelled')">Cancel</button>
-                  <button type="button" class="oww-btn oww-btn--danger oww-btn--sm" onclick="showToast('Product deleted')">Delete</button>
+                  <!-- Uploading State Body -->
+                  <div class="oww-file-upload__body oww-file-upload__body--uploading" style="display: none;">
+                    <div class="oww-file-upload__spinner">
+                      <img src="./dist/assets/icons/spinner-gap-fill.svg" alt="" width="24" height="24">
+                    </div>
+                    <div class="oww-file-upload__text-group">
+                      <div class="oww-file-upload__title">Uploading file...</div>
+                      <div class="oww-file-upload__progress">
+                        <div class="oww-file-upload__progress-bar"></div>
+                      </div>
+                      <div class="oww-file-upload__subtitle oww-file-upload__progress-text">0%</div>
+                    </div>
+                    <div class="oww-file-upload__actions">
+                      <button type="button"
+                        class="oww-btn oww-btn--outline oww-btn--sm oww-file-upload__cancel-btn">Cancel</button>
+                    </div>
+                  </div>
+
+                  <!-- Applied State Body -->
+                  <div class="oww-file-upload__body oww-file-upload__body--applied" style="display: none;">
+                    <div class="oww-file-upload__actions">
+                      <button type="button"
+                        class="oww-btn oww-btn--outline oww-btn--sm oww-file-upload__change-btn">Change Cover</button>
+                      <button type="button"
+                        class="oww-btn oww-btn--danger oww-btn--sm oww-file-upload__remove-btn">Remove</button>
+                    </div>
+                  </div>
+
+                  <!-- Error State Body -->
+                  <div class="oww-file-upload__body oww-file-upload__body--error" style="display: none;">
+                    <div class="oww-file-upload__icon">
+                      <img src="./dist/assets/icons/warning-circle-fill.svg" alt="" width="24" height="24">
+                    </div>
+                    <div class="oww-file-upload__text-group">
+                      <div class="oww-file-upload__title">Choose a file or drag and drop here.</div>
+                      <div class="oww-file-upload__subtitle">Formats: JPG, PNG. Max size 2 MB. Use a landscape image.
+                      </div>
+                    </div>
+                    <div class="oww-file-upload__actions">
+                      <button type="button" class="oww-btn oww-btn--outline oww-btn--sm"
+                        onclick="this.closest('.oww-file-upload__dropzone').querySelector('input[type=file]').click();">Browse
+                        File</button>
+                    </div>
+                  </div>
                 </div>
+
+                <div class="oww-file-upload__error-text" style="display: none;">This is error text.</div>
+              </div>
+
+              <!-- Live Test Simulation Controls -->
+              <div style="display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap;">
+                <button type="button" class="oww-btn oww-btn--outline oww-btn--sm"
+                  onclick="document.getElementById('interactiveUploadDemo')._simulateUpload()">Simulate Upload</button>
+                <button type="button" class="oww-btn oww-btn--outline oww-btn--sm"
+                  onclick="document.getElementById('interactiveUploadDemo')._simulateError()">Simulate Error</button>
+                <button type="button" class="oww-btn oww-btn--outline oww-btn--sm"
+                  onclick="document.getElementById('interactiveUploadDemo')._resetUpload()">Reset to Default</button>
               </div>
             </div>
 
@@ -378,62 +442,61 @@
                     fill="currentColor" />
                 </svg>
               </button>
-              <pre><code>&lt;div class="oww-card oww-card--dialog"&gt;
-  &lt;div class="oww-card__header"&gt;
-    &lt;h3 class="oww-card__title"&gt;Delete This Product?&lt;/h3&gt;
-    &lt;button type="button" class="oww-card__close-btn" aria-label="Close"&gt;
-      &lt;svg width="20" height="20" viewBox="0 0 20 20" fill="none"&gt;
-        &lt;path d="..." fill="currentColor" /&gt;
-      &lt;/svg&gt;
-    &lt;/button&gt;
+              <pre><code>&lt;div class="oww-file-upload"&gt;
+  &lt;div class="oww-file-upload__header"&gt;
+    &lt;label class="oww-file-upload__label"&gt;Cover Image&lt;/label&gt;
+    &lt;span class="oww-file-upload__required"&gt;*&lt;/span&gt;
   &lt;/div&gt;
 
-  &lt;hr class="oww-card__divider"&gt;
-
-  &lt;p class="oww-card__body"&gt;
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  &lt;/p&gt;
-
-  &lt;div class="oww-card__footer"&gt;
-    &lt;button type="button" class="oww-btn oww-btn--outline oww-btn--sm"&gt;Cancel&lt;/button&gt;
-    &lt;button type="button" class="oww-btn oww-btn--danger oww-btn--sm"&gt;Delete&lt;/button&gt;
+  &lt;div class="oww-file-upload__dropzone"&gt;
+    &lt;input type="file" accept="image/jpeg,image/png,image/webp"&gt;
+    &lt;div class="oww-file-upload__body"&gt;
+      &lt;div class="oww-file-upload__icon"&gt;
+        &lt;img src="./dist/assets/icons/upload-fill.svg" alt="" width="24" height="24"&gt;
+      &lt;/div&gt;
+      &lt;div class="oww-file-upload__text-group"&gt;
+        &lt;div class="oww-file-upload__title"&gt;Choose a file or drag and drop here.&lt;/div&gt;
+        &lt;div class="oww-file-upload__subtitle"&gt;Formats: JPG, PNG. Max size 2 MB. Use a landscape image.&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;button type="button" class="oww-btn oww-btn--outline oww-btn--sm"&gt;Browse File&lt;/button&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
           </div>
         </section>
 
-        <!-- Section 2: Confirmation Dialog Card Variants -->
-        <section id="confirmation" class="doc-content__section">
-          <h2 class="doc-content__section-title">Confirmation Dialog Card</h2>
+        <!-- Section 2: Upload Component States -->
+        <section id="states" class="doc-content__section">
+          <h2 class="doc-content__section-title">Upload States</h2>
           <p class="doc-content__section-desc">
-            The Confirmation Card features a 20px border radius, 20px internal padding, 1px subtle stroke, and an elevated shadow (<code>0px 4px 40px rgba(0, 0, 0, 0.16)</code>). It adapts cleanly for multiple confirmation use cases.
+            Static previews of all five core states: Default, Drag File (with file name badge), Uploading (spinner &amp;
+            progress), Applied (preview with cover actions), and Error.
           </p>
 
+          <!-- State: Drag File -->
           <div class="doc-example">
             <div class="doc-example__preview">
-              <!-- Variant: Logout / Session Confirmation -->
-              <div class="oww-card oww-card--dialog" role="dialog">
-                <div class="oww-card__header">
-                  <h3 class="oww-card__title">Sign Out of Account?</h3>
-                  <button type="button" class="oww-card__close-btn" aria-label="Close dialog" title="Close" onclick="showToast('Closed dialog')">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M16.2883 14.9617C16.4644 15.1378 16.5633 15.3767 16.5633 15.6258C16.5633 15.8749 16.4644 16.1137 16.2883 16.2898C16.1122 16.466 15.8733 16.5649 15.6242 16.5649C15.3751 16.5649 15.1363 16.466 14.9602 16.2898L10 11.3281L5.03828 16.2883C4.86216 16.4644 4.62329 16.5633 4.37422 16.5633C4.12514 16.5633 3.88627 16.4644 3.71015 16.2883C3.53403 16.1122 3.43509 15.8733 3.43509 15.6242C3.43509 15.3751 3.53403 15.1363 3.71015 14.9602L8.67187 10L3.71172 5.03828C3.53559 4.86216 3.43665 4.62329 3.43665 4.37422C3.43665 4.12515 3.53559 3.88628 3.71172 3.71016C3.88784 3.53404 4.12671 3.43509 4.37578 3.43509C4.62485 3.43509 4.86372 3.53404 5.03984 3.71016L10 8.67187L14.9617 3.70937C15.1378 3.53325 15.3767 3.43431 15.6258 3.43431C15.8748 3.43431 16.1137 3.53325 16.2898 3.70937C16.466 3.88549 16.5649 4.12437 16.5649 4.37344C16.5649 4.62251 16.466 4.86138 16.2898 5.0375L11.3281 10L16.2883 14.9617Z"
-                        fill="currentColor" />
-                    </svg>
-                  </button>
+              <div class="oww-file-upload">
+                <div class="oww-file-upload__header">
+                  <label class="oww-file-upload__label">Drag File State</label>
+                  <span class="oww-file-upload__required">*</span>
                 </div>
-
-                <hr class="oww-card__divider">
-
-                <p class="oww-card__body">
-                  Are you sure you want to sign out? Any unsaved changes in your active campaign drafts will be kept in local cache.
-                </p>
-
-                <div class="oww-card__footer">
-                  <button type="button" class="oww-btn oww-btn--outline oww-btn--sm" onclick="showToast('Cancelled')">Stay</button>
-                  <button type="button" class="oww-btn oww-btn--primary oww-btn--sm" onclick="showToast('Signed out')">Sign Out</button>
+                <div class="oww-file-upload__dropzone oww-file-upload__dropzone--drag">
+                  <div class="oww-file-upload__drag-badge">cover_image.jpg</div>
+                  <div class="oww-file-upload__body">
+                    <div class="oww-file-upload__icon">
+                      <img src="./dist/assets/icons/upload-fill.svg" alt="" width="24" height="24">
+                    </div>
+                    <div class="oww-file-upload__text-group">
+                      <div class="oww-file-upload__title">Choose a file or drag and drop here.</div>
+                      <div class="oww-file-upload__subtitle">Formats: JPG, PNG. Max size 2 MB. Use a landscape image.
+                      </div>
+                    </div>
+                    <div class="oww-file-upload__actions">
+                      <button type="button" class="oww-btn oww-btn--outline oww-btn--sm">Browse File</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -446,90 +509,77 @@
                     fill="currentColor" />
                 </svg>
               </button>
-              <pre><code>&lt;div class="oww-card oww-card--dialog"&gt;
-  &lt;div class="oww-card__header"&gt;
-    &lt;h3 class="oww-card__title"&gt;Sign Out of Account?&lt;/h3&gt;
-    &lt;button type="button" class="oww-card__close-btn" aria-label="Close"&gt;...&lt;/button&gt;
-  &lt;/div&gt;
+              <pre><code>&lt;div class="oww-file-upload__dropzone is-dragover"&gt;
+  &lt;div class="oww-file-upload__drag-badge"&gt;cover_image.jpg&lt;/div&gt;
+  &lt;!-- body content --&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
 
-  &lt;hr class="oww-card__divider"&gt;
+          <!-- State: Applied / Uploaded Preview -->
+          <div class="doc-example">
+            <div class="doc-example__preview">
+              <div class="oww-file-upload">
+                <div class="oww-file-upload__header">
+                  <label class="oww-file-upload__label">Applied Preview State</label>
+                  <span class="oww-file-upload__required">*</span>
+                </div>
+                <div class="oww-file-upload__dropzone oww-file-upload__dropzone--applied"
+                  style="background-image: url('./dist/assets/images/product-sample.png');">
+                  <div class="oww-file-upload__body">
+                    <div class="oww-file-upload__actions">
+                      <button type="button" class="oww-btn oww-btn--outline oww-btn--sm">Change Cover</button>
+                      <button type="button" class="oww-btn oww-btn--danger oww-btn--sm">Remove</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-  &lt;p class="oww-card__body"&gt;
-    Are you sure you want to sign out? Any unsaved changes in your active campaign drafts will be kept in local cache.
-  &lt;/p&gt;
-
-  &lt;div class="oww-card__footer"&gt;
-    &lt;button type="button" class="oww-btn oww-btn--outline oww-btn--sm"&gt;Stay&lt;/button&gt;
-    &lt;button type="button" class="oww-btn oww-btn--primary oww-btn--sm"&gt;Sign Out&lt;/button&gt;
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+                    fill="currentColor" />
+                </svg>
+              </button>
+              <pre><code>&lt;div class="oww-file-upload__dropzone is-applied" style="background-image: url('cover.jpg');"&gt;
+  &lt;div class="oww-file-upload__body"&gt;
+    &lt;div class="oww-file-upload__actions"&gt;
+      &lt;button type="button" class="oww-btn oww-btn--outline oww-btn--sm"&gt;Change Cover&lt;/button&gt;
+      &lt;button type="button" class="oww-btn oww-btn--danger oww-btn--sm"&gt;Remove&lt;/button&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
           </div>
-        </section>
 
-        <!-- Section 3: Product Card -->
-        <section id="product" class="doc-content__section">
-          <h2 class="doc-content__section-title">Product Card</h2>
-          <p class="doc-content__section-desc">
-            The Product Card component is engineered for e-commerce, catalog, and inventory displays. It features a media slot with a 120px height, product information hierarchy, price badge, and interactive states including hover elevation, a floating action button (three dots), and an image fallback state.
-          </p>
-
+          <!-- State: Error -->
           <div class="doc-example">
-            <div class="doc-example__preview doc-example__preview--row">
-
-              <!-- Card 1: Default State -->
-              <div class="oww-card oww-card--product">
-                <div class="oww-card__media">
-                  <img src="./dist/assets/images/product-sample.png" alt="Product Image" loading="lazy">
+            <div class="doc-example__preview">
+              <div class="oww-file-upload">
+                <div class="oww-file-upload__header">
+                  <label class="oww-file-upload__label">Error State</label>
+                  <span class="oww-file-upload__required">*</span>
                 </div>
-                <div class="oww-card__content">
-                  <h4 class="oww-card__product-title" title="Product Title">Product Title</h4>
-                  <p class="oww-card__product-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-                  </p>
+                <div class="oww-file-upload__dropzone oww-file-upload__dropzone--error">
+                  <div class="oww-file-upload__body">
+                    <div class="oww-file-upload__icon">
+                      <img src="./dist/assets/icons/warning-circle-fill.svg" alt="" width="24" height="24">
+                    </div>
+                    <div class="oww-file-upload__text-group">
+                      <div class="oww-file-upload__title">Choose a file or drag and drop here.</div>
+                      <div class="oww-file-upload__subtitle">Formats: JPG, PNG. Max size 2 MB. Use a landscape image.
+                      </div>
+                    </div>
+                    <div class="oww-file-upload__actions">
+                      <button type="button" class="oww-btn oww-btn--outline oww-btn--sm">Browse File</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="oww-card__price">300,000.00 SSP</div>
+                <div class="oww-file-upload__error-text">This is error text.</div>
               </div>
-
-              <!-- Card 2: Interactive / Action State (Floating Dots Button) -->
-              <div class="oww-card oww-card--product">
-                <div class="oww-card__media">
-                  <img src="./dist/assets/images/product-sample.png" alt="Product Image" loading="lazy">
-                  <button type="button" class="oww-card__action-btn" aria-label="More options" title="More options" onclick="showToast('Options clicked')">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <circle cx="10" cy="4" r="1.5" fill="currentColor" />
-                      <circle cx="10" cy="10" r="1.5" fill="currentColor" />
-                      <circle cx="10" cy="16" r="1.5" fill="currentColor" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="oww-card__content">
-                  <h4 class="oww-card__product-title" title="Interactive Card">Interactive Card</h4>
-                  <p class="oww-card__product-desc">
-                    Features an elevated shadow on hover and quick-access options button on top of the media.
-                  </p>
-                </div>
-                <div class="oww-card__price">450,000.00 SSP</div>
-              </div>
-
-              <!-- Card 3: Image Fallback State -->
-              <div class="oww-card oww-card--product">
-                <div class="oww-card__media oww-card__media--fallback">
-                  <svg width="40" height="40" viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="M17.5 5H2.5C1.81 5 1.25 5.56 1.25 6.25V13.75C1.25 14.44 1.81 15 2.5 15H17.5C18.19 15 18.75 14.44 18.75 13.75V6.25C18.75 5.56 18.19 5 17.5 5ZM17.5 13.75H2.5V6.25H17.5V13.75ZM6.25 8.75C6.94036 8.75 7.5 8.19036 7.5 7.5C7.5 6.80964 6.94036 6.25 6.25 6.25C5.55964 6.25 5 6.80964 5 7.5C5 8.19036 5.55964 8.75 6.25 8.75ZM4.375 12.5H15.625L12.5 8.75L10 11.25L8.125 9.375L4.375 12.5Z"
-                      fill="currentColor" />
-                  </svg>
-                </div>
-                <div class="oww-card__content">
-                  <h4 class="oww-card__product-title" title="Image Fallback">Image Fallback</h4>
-                  <p class="oww-card__product-desc">
-                    Gracefully falls back to a neutral surface with a placeholder broken-image icon when images fail to load.
-                  </p>
-                </div>
-                <div class="oww-card__price">150,000.00 SSP</div>
-              </div>
-
             </div>
 
             <div class="doc-example__code">
@@ -540,43 +590,73 @@
                     fill="currentColor" />
                 </svg>
               </button>
-              <pre><code>&lt;!-- Default Product Card --&gt;
-&lt;div class="oww-card oww-card--product"&gt;
-  &lt;div class="oww-card__media"&gt;
-    &lt;img src="product.jpg" alt="Product Image" loading="lazy"&gt;
-  &lt;/div&gt;
-  &lt;div class="oww-card__content"&gt;
-    &lt;h4 class="oww-card__product-title"&gt;Product Title&lt;/h4&gt;
-    &lt;p class="oww-card__product-desc"&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="oww-card__price"&gt;300,000.00 SSP&lt;/div&gt;
+              <pre><code>&lt;div class="oww-file-upload__dropzone is-error"&gt;
+  &lt;!-- body content --&gt;
+&lt;/div&gt;
+&lt;div class="oww-file-upload__error-text"&gt;This is error text.&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Mini File Upload -->
+        <section id="mini-upload" class="doc-content__section">
+          <h2 class="doc-content__section-title">Mini Upload File Gallery</h2>
+          <p class="doc-content__section-desc">
+            Compact 120x96px file upload cards designed for media galleries, product variants, and multi-file
+            attachments. Includes Uploading, Image Uploaded, and Video Uploaded states with duration indicators.
+          </p>
+
+          <div class="doc-example">
+            <div class="doc-example__preview doc-example__preview--row" style="gap: 16px; flex-wrap: wrap;">
+              <!-- Mini State: Uploading -->
+              <div class="oww-file-upload-mini oww-file-upload-mini--uploading">
+                <div class="oww-file-upload-mini__spinner">
+                  <img src="./dist/assets/icons/spinner-gap-fill.svg" alt="" width="24" height="24">
+                </div>
+                <span class="oww-file-upload-mini__text">Uploading...</span>
+              </div>
+
+              <!-- Mini State: Image Uploaded -->
+              <div class="oww-file-upload-mini oww-file-upload-mini--image"
+                style="background-image: url('./dist/assets/images/product-sample.png');">
+                <button type="button" class="oww-file-upload-mini__remove-btn" onclick="removeMiniUpload(this)"
+                  aria-label="Remove image" title="Remove image">
+                  <img src="./dist/assets/icons/x-close.svg" alt="Close" width="14" height="14">
+                </button>
+              </div>
+
+              <!-- Mini State: Video Uploaded -->
+              <div class="oww-file-upload-mini oww-file-upload-mini--video"
+                style="background-image: url('./dist/assets/images/product-sample.png');">
+                <button type="button" class="oww-file-upload-mini__remove-btn" onclick="removeMiniUpload(this)"
+                  aria-label="Remove video" title="Remove video">
+                  <img src="./dist/assets/icons/x-close.svg" alt="Close" width="14" height="14">
+                </button>
+                <div class="oww-file-upload-mini__badge">00:21</div>
+              </div>
+            </div>
+
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+                    fill="currentColor" />
+                </svg>
+              </button>
+              <pre><code>&lt;!-- Image Uploaded Card (120x96px) --&gt;
+&lt;div class="oww-file-upload-mini oww-file-upload-mini--image" style="background-image: url('thumbnail.jpg');"&gt;
+  &lt;button type="button" class="oww-file-upload-mini__remove-btn" onclick="removeMiniUpload(this)" aria-label="Remove image"&gt;
+    &lt;img src="./dist/assets/icons/x-close.svg" alt="Close" width="14" height="14"&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
 
-&lt;!-- Interactive Card with Floating Actions --&gt;
-&lt;div class="oww-card oww-card--product"&gt;
-  &lt;div class="oww-card__media"&gt;
-    &lt;img src="product.jpg" alt="Product Image"&gt;
-    &lt;button type="button" class="oww-card__action-btn" aria-label="More options"&gt;
-      &lt;!-- 3-dots SVG icon --&gt;
-    &lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class="oww-card__content"&gt;
-    &lt;h4 class="oww-card__product-title"&gt;Interactive Card&lt;/h4&gt;
-    &lt;p class="oww-card__product-desc"&gt;Elevated shadow on hover...&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="oww-card__price"&gt;450,000.00 SSP&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- Image Fallback State --&gt;
-&lt;div class="oww-card oww-card--product"&gt;
-  &lt;div class="oww-card__media oww-card__media--fallback"&gt;
-    &lt;!-- Image broken SVG icon --&gt;
-  &lt;/div&gt;
-  &lt;div class="oww-card__content"&gt;
-    &lt;h4 class="oww-card__product-title"&gt;Image Fallback&lt;/h4&gt;
-    &lt;p class="oww-card__product-desc"&gt;Placeholder when image is unavailable...&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="oww-card__price"&gt;150,000.00 SSP&lt;/div&gt;
+&lt;!-- Video Uploaded Card with Duration Badge --&gt;
+&lt;div class="oww-file-upload-mini oww-file-upload-mini--video" style="background-image: url('video_thumb.jpg');"&gt;
+  &lt;button type="button" class="oww-file-upload-mini__remove-btn" onclick="removeMiniUpload(this)" aria-label="Remove video"&gt;
+    &lt;img src="./dist/assets/icons/x-close.svg" alt="Close" width="14" height="14"&gt;
+  &lt;/button&gt;
+  &lt;div class="oww-file-upload-mini__badge"&gt;00:21&lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
           </div>
@@ -586,90 +666,78 @@
         <section id="design-tokens" class="doc-content__section">
           <h2 class="doc-content__section-title">Design Tokens</h2>
           <p class="doc-content__section-desc">
-            All design tokens mapped to the Card component specifications from Figma.
+            All design tokens and SCSS variables used by the File Upload component.
           </p>
 
           <table class="doc-table">
             <thead>
               <tr>
-                <th>Token Name</th>
-                <th>SCSS Variable</th>
+                <th>Token Variable</th>
                 <th>Value</th>
-                <th>Description</th>
+                <th>CSS Variable</th>
+                <th>Usage</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>card.bg</code></td>
-                <td><code>$card-bg</code></td>
-                <td><code>#FFFFFF</code></td>
-                <td>Default card surface background color</td>
+                <td><code>$file-upload-radius</code></td>
+                <td><code>12px</code></td>
+                <td><code>--oww-radius-lg</code></td>
+                <td>Border radius for dropzone and mini cards</td>
               </tr>
               <tr>
-                <td><code>card.border.dialog</code></td>
-                <td><code>$card-border-color</code></td>
-                <td><code>#E4E4E4</code> (1px)</td>
-                <td>Confirmation dialog card border stroke</td>
+                <td><code>$file-upload-height</code></td>
+                <td><code>200px</code></td>
+                <td>-</td>
+                <td>Fixed standard height for main dropzone</td>
               </tr>
               <tr>
-                <td><code>card.border.product</code></td>
-                <td><code>$card-border-color-product</code></td>
-                <td><code>#C4C4C4</code> (1px)</td>
-                <td>Product card border stroke</td>
+                <td><code>$file-upload-padding</code></td>
+                <td><code>37px 70px</code></td>
+                <td>-</td>
+                <td>Standard inner padding for main dropzone</td>
               </tr>
               <tr>
-                <td><code>card.radius.dialog</code></td>
-                <td><code>$card-radius-dialog</code></td>
-                <td><code>20px</code></td>
-                <td>Border radius for confirmation dialog card</td>
+                <td><code>$file-upload-bg</code></td>
+                <td><code>#F8F8F8</code></td>
+                <td><code>--doc-surface</code></td>
+                <td>Default surface background color</td>
               </tr>
               <tr>
-                <td><code>card.radius.product</code></td>
-                <td><code>$card-radius-product</code></td>
-                <td><code>14px</code></td>
-                <td>Border radius for product catalog card</td>
+                <td><code>$file-upload-border-color</code></td>
+                <td><code>#E9E9E9</code></td>
+                <td><code>--doc-border</code></td>
+                <td>Dashed border color in default state</td>
               </tr>
               <tr>
-                <td><code>card.radius.media</code></td>
-                <td><code>$card-media-radius</code></td>
-                <td><code>10px</code></td>
-                <td>Border radius for product image preview box</td>
+                <td><code>$file-upload-drag-border</code></td>
+                <td><code>#000000</code></td>
+                <td><code>--doc-text</code></td>
+                <td>Dashed border color during active dragover</td>
               </tr>
               <tr>
-                <td><code>card.padding.dialog</code></td>
-                <td><code>$card-padding-dialog</code></td>
-                <td><code>20px ($spacing-6)</code></td>
-                <td>Internal padding for confirmation dialog card</td>
+                <td><code>$file-upload-error-bg</code></td>
+                <td><code>#FFE9EC</code></td>
+                <td><code>--bg-soft-danger</code></td>
+                <td>Soft red background in validation error state</td>
               </tr>
               <tr>
-                <td><code>card.padding.product</code></td>
-                <td><code>$card-padding-product</code></td>
-                <td><code>12px ($spacing-3)</code></td>
-                <td>Internal padding for product card</td>
+                <td><code>$file-upload-error-border</code></td>
+                <td><code>#FF0909</code></td>
+                <td><code>--color-danger</code></td>
+                <td>Dashed red border in validation error state</td>
               </tr>
               <tr>
-                <td><code>card.shadow.dialog</code></td>
-                <td><code>$card-shadow-dialog</code></td>
-                <td><code>0 4px 40px rgba(0,0,0,0.16)</code></td>
-                <td>High elevation drop shadow for modal confirmation dialog</td>
+                <td><code>$file-upload-mini-width</code></td>
+                <td><code>120px</code></td>
+                <td>-</td>
+                <td>Width for compact mini upload cards</td>
               </tr>
               <tr>
-                <td><code>card.shadow.product.hover</code></td>
-                <td><code>$shadow-card-hover</code></td>
-                <td><code>0 1px 8px rgba(0,0,0,0.08)</code></td>
-                <td>Subtle elevation on product card hover</td>
-              </tr>
-              <tr>
-                <td><code>card.close.size</code></td>
-                <td><code>$card-close-btn-size</code></td>
-                <td><code>40px &times; 40px</code></td>
-                <td>Circular close button dimensions</td>
-              </tr>
-              <tr>
-                <td><code>card.action.size</code></td>
-                <td><code>$card-action-btn-size</code></td>
-                <td><code>32px &times; 32px</code></td>
-                <td>Floating three-dots action button dimensions</td>
+                <td><code>$file-upload-mini-height</code></td>
+                <td><code>96px</code></td>
+                <td>-</td>
+                <td>Height for compact mini upload cards</td>
               </tr>
             </tbody>
           </table>
@@ -679,26 +747,33 @@
         <section id="installation" class="doc-content__section">
           <h2 class="doc-content__section-title">Architecture &amp; Rules</h2>
           <p class="doc-content__section-desc">
-            Guidelines and SCSS architecture for integrating the Card component into your application.
+            Guidelines and integration rules for implementing file upload components across the application.
           </p>
 
-          <div class="doc-example">
-            <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>// 1. SCSS Import
-@use "src/scss/components/card";
-
-// 2. Custom Token Override Example
-@use "src/scss/abstract/variables" with (
-  $card-radius-dialog: 24px,
-  $card-border-color: #d1d5db
-);</code></pre>
+          <div class="doc-rules">
+            <div class="doc-rule-card">
+              <div class="doc-rule-card__number">01</div>
+              <h3 class="doc-rule-card__title">Semantic Structure</h3>
+              <p class="doc-rule-card__desc">
+                Always maintain the hidden <code>&lt;input type="file"&gt;</code> accessible via keyboard focus or
+                programmatic click triggers, with explicit <code>accept</code> attribute restrictions.
+              </p>
+            </div>
+            <div class="doc-rule-card">
+              <div class="doc-rule-card__number">02</div>
+              <h3 class="doc-rule-card__title">File Validation</h3>
+              <p class="doc-rule-card__desc">
+                Enforce standard size constraints (max 2 MB) and MIME types (JPG, PNG, WebP) on the client side before
+                initiating network transfers to reduce server load.
+              </p>
+            </div>
+            <div class="doc-rule-card">
+              <div class="doc-rule-card__number">03</div>
+              <h3 class="doc-rule-card__title">State Clear &amp; Reset</h3>
+              <p class="doc-rule-card__desc">
+                When the remove button is triggered, clear the underlying <code>input.value</code> so the user can
+                re-select the same file name if needed.
+              </p>
             </div>
           </div>
         </section>
@@ -706,38 +781,23 @@
       </main>
 
       <!-- ======================================================================= -->
-      <!-- Right Sidebar (On this page / TOC) -->
+      <!-- Right Sidebar (Table of Contents) -->
       <!-- ======================================================================= -->
       <aside class="doc-toc">
         <div class="doc-toc__title">On this page</div>
         <ul class="doc-toc__list">
-          <li class="doc-toc__item">
-            <a href="#overview" class="doc-toc__link is-active">Overview</a>
-          </li>
-          <li class="doc-toc__item">
-            <a href="#confirmation" class="doc-toc__link">Confirmation Card</a>
-          </li>
-          <li class="doc-toc__item">
-            <a href="#product" class="doc-toc__link">Product Card</a>
-          </li>
-          <li class="doc-toc__item">
-            <a href="#design-tokens" class="doc-toc__link">Design Tokens</a>
-          </li>
-          <li class="doc-toc__item">
-            <a href="#installation" class="doc-toc__link">Architecture</a>
-          </li>
+          <li class="doc-toc__item"><a href="#overview" class="doc-toc__link is-active">Overview &amp; Dropzone</a></li>
+          <li class="doc-toc__item"><a href="#states" class="doc-toc__link">Upload States</a></li>
+          <li class="doc-toc__item"><a href="#mini-upload" class="doc-toc__link">Mini Upload File</a></li>
+          <li class="doc-toc__item"><a href="#design-tokens" class="doc-toc__link">Design Tokens</a></li>
+          <li class="doc-toc__item"><a href="#installation" class="doc-toc__link">Architecture &amp; Rules</a></li>
         </ul>
       </aside>
 
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- Toast Notification Container -->
-  <!-- ========================================================================= -->
-  <div id="copyToast" class="doc-toast">Copied to clipboard!</div>
-
-  <!-- Global Javascript -->
+  <!-- Global UI Script -->
   <script src="./src/js/main.js"></script>
 </body>
 

@@ -12,7 +12,6 @@
 @use 'base/typography';
 @use 'base/layout';
 
-
 // 3. Components
 @use 'components/alert';
 @use 'components/avatar';
@@ -20,8 +19,7 @@
 @use 'components/button';
 @use 'components/card';
 @use 'components/dropdown';
+@use 'components/file-upload';
 
 // 4. Documentation Layout
 @use 'layout/docs';
-
-

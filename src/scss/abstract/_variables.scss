@@ -424,3 +424,20 @@ $dropdown-item-hover-bg:    $color-base-grey-100 !default; // #f8f8f8
 $dropdown-item-color:       $color-text-black !default;
 $dropdown-divider-color:    $color-base-grey-200 !default; // #f1f1f1
 $dropdown-z-index:          $z-index-dropdown !default; // 1000
+
+// =============================================================================
+// 10. COMPONENT TOKENS: FILE UPLOAD (Figma Nodes: #22539:1779 & #22613:8475)
+// =============================================================================
+$file-upload-bg:            $color-base-grey-100 !default; // #F8F8F8
+$file-upload-border-color:  $color-base-primary-100 !default; // #E9E9E9
+$file-upload-border-width:  1px !default;
+$file-upload-border-style:  dashed !default;
+$file-upload-radius:        $radius-lg !default; // 12px
+$file-upload-padding:       37px 70px !default;
+$file-upload-height:        200px !default;
+$file-upload-drag-border:   $color-base-black-500 !default; // #000000
+$file-upload-error-bg:      $bg-soft-danger !default; // #FFE9EC
+$file-upload-error-border:  $color-base-danger-500 !default; // #FF0909
+$file-upload-mini-width:    120px !default;
+$file-upload-mini-height:   96px !default;
+$file-upload-mini-radius:   $radius-lg !default; // 12px

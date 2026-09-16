@@ -6,7 +6,8 @@
 // Documentation Layout (Bootstrap-style 3-Column: Sidebar, Content, TOC)
 // =============================================================================
 
-:root {
+:root,
+[data-theme="dark"] {
   --doc-bg: #001928;
   --doc-surface: #032338;
   --doc-surface-hover: #07314d;

@@ -1,0 +1,515 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/functions" as func;
+@use "../abstract/mixins" as mixins;
+
+// =============================================================================
+// File Upload Component
+// Derived from Figma: "Ad Platform Maker Athian Phase 2" (Canvas: ○ File Upload)
+// - File Upload Component Set: #22539:1779
+//   - State=Default: #22539:1778
+//   - State=Drag File: #22539:1776
+//   - State=Uploading: #22539:1777
+//   - State=Applied: #22539:1774
+//   - State=Error: #22539:1775
+// - Mini Upload File Component Set: #22613:8475
+//   - State=Uploading: #22613:8474
+//   - State=Image Uploaded: #22613:8472
+//   - State=Video Uploaded: #22613:8473
+// =============================================================================
+
+@keyframes oww-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.oww-file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-3; // 12px
+  width: 100%;
+  max-width: 588px;
+  font-family: vars.$font-family-base;
+  box-sizing: border-box;
+
+  // ---------------------------------------------------------------------------
+  // Label Header
+  // ---------------------------------------------------------------------------
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-1; // 4px
+    width: 100%;
+  }
+
+  &__label {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-md); // 16px
+    font-weight: vars.$font-weight-semibold; // 600
+    line-height: 1.5;
+    letter-spacing: vars.$letter-spacing-tight;
+    color: vars.$color-text-black;
+  }
+
+  &__required {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-md); // 16px
+    font-weight: vars.$font-weight-semibold;
+    line-height: 1.5;
+    color: vars.$color-base-danger-500; // #FF0909
+  }
+
+  // ---------------------------------------------------------------------------
+  // Main Dropzone Area (Figma Dimensions: 588x200, Radius 12px)
+  // ---------------------------------------------------------------------------
+  &__dropzone {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 200px;
+    padding: 37px 24px;
+    background-color: vars.$file-upload-bg; // #F8F8F8
+    border: 1px dashed vars.$file-upload-border-color; // #E9E9E9 (dash: 8, 4)
+    border-radius: vars.$file-upload-radius; // 12px
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all vars.$transition-duration-fast vars.$transition-timing-base;
+    overflow: hidden;
+    cursor: copy;
+
+    // Hidden File Input overlay
+    input[type="file"] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: copy;
+      z-index: 1;
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
+
+    // Hover state
+    &:hover {
+      background-color: vars.$color-base-grey-200;
+      border-color: vars.$color-base-primary-300;
+    }
+
+    // Active Dragover state (Figma State=Drag File #22539:1776)
+    &.is-dragover,
+    &--drag {
+      background-color: vars.$color-base-grey-200;
+      border-color: vars.$color-base-black-500; // #000000
+    }
+
+    // Uploading state (Figma State=Uploading #22539:1777)
+    &.is-uploading,
+    &--uploading {
+      cursor: default;
+
+      input[type="file"] {
+        pointer-events: none;
+      }
+    }
+
+    // Applied / Uploaded Preview state (Figma State=Applied #22539:1774)
+    &.is-applied,
+    &--applied {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 1px solid vars.$file-upload-border-color;
+      cursor: default;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        transition: opacity vars.$transition-duration-fast;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+    }
+
+    // Error state (Figma State=Error #22539:1775)
+    &.is-error,
+    &--error {
+      background-color: vars.$file-upload-error-bg; // #FFE9EC
+      border-color: vars.$file-upload-error-border; // #FF0909
+
+      &:hover {
+        background-color: vars.$file-upload-error-bg;
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Inner Content Slots
+  // ---------------------------------------------------------------------------
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: vars.$spacing-3; // 12px
+    max-width: 448px;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none; // let clicks pass through to input
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: vars.$color-text-black;
+    flex-shrink: 0;
+
+    svg,
+    img {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+  }
+
+  &__spinner {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: vars.$color-text-black;
+    animation: oww-spin 1s linear infinite;
+
+    svg,
+    img {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+  }
+
+  &__text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm); // 14px
+    font-weight: vars.$font-weight-medium; // 500
+    line-height: 1.5;
+    letter-spacing: vars.$letter-spacing-tight;
+    color: vars.$color-text-black;
+  }
+
+  &__subtitle {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm); // 14px
+    font-weight: vars.$font-weight-regular; // 400
+    line-height: 1.5;
+    letter-spacing: vars.$letter-spacing-tight;
+    color: vars.$color-base-grey-600; // #555555
+  }
+
+  &__progress {
+    width: 180px;
+    height: 6px;
+    background-color: vars.$file-upload-border-color; // #E9E9E9
+    border-radius: 99999px;
+    overflow: hidden;
+    margin: 4px 0;
+
+    &-bar {
+      height: 100%;
+      background-color: vars.$color-base-black-500;
+      border-radius: 99999px;
+      transition: width 0.2s ease;
+      width: 30%;
+    }
+  }
+
+  // Floating Drag Badge (Figma State=Drag File #22537:1680)
+  &__drag-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: vars.$color-base-black-500;
+    color: vars.$color-text-white;
+    font-size: func.rem(vars.$font-size-xs);
+    font-weight: vars.$font-weight-medium;
+    border-radius: 999px;
+    z-index: 3;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  // Action Buttons inside Dropzone
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-2; // 8px
+    z-index: 2;
+    pointer-events: auto;
+
+    .oww-btn {
+      pointer-events: auto;
+    }
+  }
+
+  // Error Text below dropzone
+  &__error-text {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm); // 14px
+    font-weight: vars.$font-weight-regular;
+    line-height: 1.5;
+    letter-spacing: vars.$letter-spacing-tight;
+    color: vars.$color-base-danger-500; // #FF0909
+    margin-top: 2px;
+  }
+}
+
+// =============================================================================
+// Mini Upload File Component (Figma #22613:8475)
+// Dimensions: 120x96, Radius: 12px
+// =============================================================================
+.oww-file-upload-mini {
+  position: relative;
+  box-sizing: border-box;
+  width: 120px;
+  height: 96px;
+  background-color: vars.$file-upload-bg; // #F8F8F8
+  border: 1px dashed vars.$file-upload-border-color; // #E9E9E9
+  border-radius: vars.$file-upload-mini-radius; // 12px
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  overflow: hidden;
+  font-family: vars.$font-family-base;
+  user-select: none;
+  transition: all vars.$transition-duration-fast;
+
+  // Uploading state
+  &--uploading {
+    gap: 8px;
+
+    .oww-file-upload-mini__spinner {
+      width: 24px;
+      height: 24px;
+      animation: oww-spin 1s linear infinite;
+
+      img,
+      svg {
+        width: 24px;
+        height: 24px;
+        display: block;
+      }
+    }
+
+    .oww-file-upload-mini__text {
+      font-size: func.rem(vars.$font-size-sm);
+      font-weight: vars.$font-weight-regular;
+      color: vars.$color-base-grey-600; // #555555
+    }
+  }
+
+  // Image Uploaded state
+  &--image {
+    border-style: solid;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  // Video Uploaded state
+  &--video {
+    border-style: solid;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  // Top-right remove / close button
+  &__remove-btn {
+    @include mixins.reset-button;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: vars.$color-base-grey-100; // #F8F8F8
+    border: 1px solid vars.$color-base-primary-100; // #E9E9E9
+    color: vars.$color-text-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: all vars.$transition-duration-fast;
+
+    svg,
+    img {
+      width: 14px;
+      height: 14px;
+      display: block;
+    }
+
+    &:hover {
+      background-color: vars.$bg-soft-danger;
+      border-color: vars.$color-border-danger;
+      color: vars.$color-base-danger-500;
+    }
+  }
+
+  // Video duration badge
+  &__badge {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 8px;
+    background-color: vars.$color-base-black-500; // #000000
+    color: vars.$color-text-white;
+    font-size: 10px;
+    font-weight: vars.$font-weight-medium;
+    border-radius: 100px;
+    height: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Dark Theme Overrides for File Upload
+// -----------------------------------------------------------------------------
+[data-theme="dark"] .oww-file-upload {
+  &__label {
+    color: var(--doc-text);
+  }
+
+  &__dropzone {
+    background-color: var(--doc-surface);
+    border-color: var(--doc-border);
+
+    &:hover {
+      background-color: var(--doc-surface-hover);
+      border-color: var(--doc-text-muted);
+    }
+
+    &.is-dragover,
+    &--drag {
+      background-color: var(--doc-surface-hover);
+      border-color: var(--doc-text);
+    }
+
+    &.is-applied,
+    &--applied {
+      border-color: var(--doc-border);
+    }
+
+    &.is-error,
+    &--error {
+      background-color: rgba(255, 9, 9, 0.12);
+      border-color: vars.$color-base-danger-500;
+    }
+  }
+
+  &__icon {
+    color: var(--doc-text);
+  }
+
+  &__spinner {
+    color: var(--doc-text);
+  }
+
+  &__title {
+    color: var(--doc-text);
+  }
+
+  &__subtitle {
+    color: var(--doc-text-muted);
+  }
+
+  &__progress {
+    background-color: var(--doc-border);
+
+    &-bar {
+      background-color: var(--doc-text);
+    }
+  }
+
+  &__drag-badge {
+    background-color: var(--doc-text);
+    color: var(--doc-surface);
+  }
+}
+
+[data-theme="dark"] .oww-file-upload-mini {
+  background-color: var(--doc-surface);
+  border-color: var(--doc-border);
+
+  &--uploading {
+    .oww-file-upload-mini__spinner {
+      color: var(--doc-text);
+    }
+
+    .oww-file-upload-mini__text {
+      color: var(--doc-text-muted);
+    }
+  }
+
+  &--image,
+  &--video {
+    border-color: var(--doc-border);
+  }
+
+  &__remove-btn {
+    background-color: var(--doc-surface);
+    border-color: var(--doc-border);
+    color: var(--doc-text);
+
+    &:hover {
+      background-color: rgba(255, 9, 9, 0.2);
+      border-color: vars.$color-base-danger-500;
+      color: vars.$color-base-danger-500;
+    }
+  }
+
+  &__badge {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}

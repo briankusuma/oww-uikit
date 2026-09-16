@@ -3,6 +3,14 @@
  * Handles theme toggling, toast notifications, code block copying, and TOC scrollspy.
  */
 
+// Immediate Theme Initialization (restores saved theme preference immediately)
+(function () {
+  try {
+    const saved = localStorage.getItem("oww-theme") || document.documentElement.getAttribute("data-theme") || "dark";
+    document.documentElement.setAttribute("data-theme", saved);
+  } catch (e) {}
+})();
+
 // Toast notification helper
 function showToast(message, duration = 2000) {
   const toast = document.getElementById('copyToast');
@@ -34,29 +42,67 @@ function copyCode(btn) {
   });
 }
 
-// Initialize Global UI Components
-function initGlobal() {
-  // Theme Toggle (Dark / Light)
-  const themeToggleBtn = document.getElementById('themeToggleBtn');
+// =============================================================================
+// Theme Management (Dark / Light) with LocalStorage Persistence
+// =============================================================================
+function applyTheme(theme) {
+  const htmlEl = document.documentElement;
   const iconSun = document.getElementById('themeIconSun');
   const iconMoon = document.getElementById('themeIconMoon');
-  const htmlEl = document.documentElement;
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
 
-  if (themeToggleBtn && iconSun && iconMoon) {
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = htmlEl.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      htmlEl.setAttribute('data-theme', newTheme);
-      
-      if (newTheme === 'light') {
-        iconSun.style.display = 'none';
-        iconMoon.style.display = 'block';
-      } else {
-        iconSun.style.display = 'block';
-        iconMoon.style.display = 'none';
+  htmlEl.setAttribute('data-theme', theme);
+  try {
+    localStorage.setItem('oww-theme', theme);
+  } catch (e) {
+    // Graceful fallback
+  }
+
+  if (iconSun && iconMoon) {
+    if (theme === 'light') {
+      iconSun.style.display = 'none';
+      iconMoon.style.display = 'block';
+      if (themeToggleBtn) {
+        themeToggleBtn.setAttribute('title', 'Switch to dark theme');
+        themeToggleBtn.setAttribute('aria-label', 'Switch to dark theme');
       }
+    } else {
+      iconSun.style.display = 'block';
+      iconMoon.style.display = 'none';
+      if (themeToggleBtn) {
+        themeToggleBtn.setAttribute('title', 'Switch to light theme');
+        themeToggleBtn.setAttribute('aria-label', 'Switch to light theme');
+      }
+    }
+  }
+}
+
+function initTheme() {
+  const htmlEl = document.documentElement;
+  let savedTheme = 'dark';
+  try {
+    savedTheme = localStorage.getItem('oww-theme') || htmlEl.getAttribute('data-theme') || 'dark';
+  } catch (e) {
+    savedTheme = htmlEl.getAttribute('data-theme') || 'dark';
+  }
+
+  applyTheme(savedTheme);
+
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  if (themeToggleBtn && !themeToggleBtn.dataset.themeBound) {
+    themeToggleBtn.dataset.themeBound = 'true';
+    themeToggleBtn.addEventListener('click', () => {
+      const current = htmlEl.getAttribute('data-theme') || 'dark';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
     });
   }
+}
+
+// Initialize Global UI Components
+function initGlobal() {
+  // Theme Manager
+  initTheme();
 
   // TOC Active ScrollSpy
   const sections = document.querySelectorAll('.doc-content__section');
@@ -357,6 +403,185 @@ function initGlobal() {
 
   initRangeSliders();
 
+  // ---------------------------------------------------------------------------
+  // File Upload Component Controller (Interactive Drag & Drop, Simulated Progress)
+  // ---------------------------------------------------------------------------
+  function initFileUploads() {
+    const uploadContainers = document.querySelectorAll(".oww-file-upload");
+
+    uploadContainers.forEach(container => {
+      const dropzone = container.querySelector(".oww-file-upload__dropzone");
+      const fileInput = container.querySelector("input[type='file']");
+      const bodyDefault = container.querySelector(".oww-file-upload__body--default");
+      const bodyUploading = container.querySelector(".oww-file-upload__body--uploading");
+      const bodyApplied = container.querySelector(".oww-file-upload__body--applied");
+      const bodyError = container.querySelector(".oww-file-upload__body--error");
+      const progressText = container.querySelector(".oww-file-upload__progress-text");
+      const progressBar = container.querySelector(".oww-file-upload__progress-bar");
+      const errorTextEl = container.querySelector(".oww-file-upload__error-text");
+
+      if (!dropzone) return;
+
+      let uploadTimer = null;
+
+      function setDropzoneState(state, customErrorMsg) {
+        dropzone.classList.remove("is-dragover", "is-uploading", "is-applied", "is-error");
+        if (bodyDefault) bodyDefault.style.display = "none";
+        if (bodyUploading) bodyUploading.style.display = "none";
+        if (bodyApplied) bodyApplied.style.display = "none";
+        if (bodyError) bodyError.style.display = "none";
+        if (errorTextEl) errorTextEl.style.display = "none";
+
+        if (state === "default") {
+          dropzone.style.backgroundImage = "";
+          if (bodyDefault) bodyDefault.style.display = "flex";
+          if (fileInput) fileInput.value = "";
+        } else if (state === "dragover") {
+          dropzone.classList.add("is-dragover");
+          if (bodyDefault) bodyDefault.style.display = "flex";
+        } else if (state === "uploading") {
+          dropzone.classList.add("is-uploading");
+          if (bodyUploading) bodyUploading.style.display = "flex";
+        } else if (state === "applied") {
+          dropzone.classList.add("is-applied");
+          if (bodyApplied) bodyApplied.style.display = "flex";
+        } else if (state === "error") {
+          dropzone.classList.add("is-error");
+          if (bodyError) bodyError.style.display = "flex";
+          if (errorTextEl) {
+            errorTextEl.style.display = "block";
+            if (customErrorMsg) errorTextEl.textContent = customErrorMsg;
+          }
+        }
+      }
+
+      function startUpload(file) {
+        // Validate file size: max 2MB (2 * 1024 * 1024 = 2097152 bytes)
+        if (file && file.size > 2 * 1024 * 1024) {
+          setDropzoneState("error", "File size exceeds 2 MB. Please upload a smaller image.");
+          showToast("Upload failed: File exceeds 2 MB limit");
+          return;
+        }
+
+        // Validate format
+        if (file && !file.type.match(/^image\/(jpeg|png|webp)$/i)) {
+          setDropzoneState("error", "Unsupported file format. Only JPG and PNG are accepted.");
+          showToast("Upload failed: Invalid format");
+          return;
+        }
+
+        setDropzoneState("uploading");
+        let progress = 0;
+        if (progressText) progressText.textContent = "0%";
+        if (progressBar) progressBar.style.width = "0%";
+
+        clearInterval(uploadTimer);
+        uploadTimer = setInterval(() => {
+          progress += Math.floor(Math.random() * 20) + 15;
+          if (progress >= 100) {
+            progress = 100;
+            clearInterval(uploadTimer);
+            if (progressText) progressText.textContent = "100%";
+            if (progressBar) progressBar.style.width = "100%";
+
+            setTimeout(() => {
+              if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                  dropzone.style.backgroundImage = "url(" + e.target.result + ")";
+                  setDropzoneState("applied");
+                  showToast("File uploaded successfully: " + file.name);
+                };
+                reader.readAsDataURL(file);
+              } else {
+                dropzone.style.backgroundImage = "url(./dist/assets/images/product-sample.png)";
+                setDropzoneState("applied");
+                showToast("File uploaded successfully!");
+              }
+            }, 300);
+          } else {
+            if (progressText) progressText.textContent = progress + "%";
+            if (progressBar) progressBar.style.width = progress + "%";
+          }
+        }, 150);
+      }
+
+      // Drag and Drop events
+      dropzone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!dropzone.classList.contains("is-uploading") && !dropzone.classList.contains("is-applied")) {
+          dropzone.classList.add("is-dragover");
+        }
+      });
+
+      dropzone.addEventListener("dragleave", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove("is-dragover");
+      });
+
+      dropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove("is-dragover");
+        if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+          startUpload(e.dataTransfer.files[0]);
+        }
+      });
+
+      // File input change
+      if (fileInput) {
+        fileInput.addEventListener("change", (e) => {
+          if (e.target.files && e.target.files.length) {
+            startUpload(e.target.files[0]);
+          }
+        });
+      }
+
+      // Cancel button during upload
+      const cancelBtn = container.querySelector(".oww-file-upload__cancel-btn");
+      if (cancelBtn) {
+        cancelBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          clearInterval(uploadTimer);
+          setDropzoneState("default");
+          showToast("Upload cancelled");
+        });
+      }
+
+      // Remove button on applied state
+      const removeBtn = container.querySelector(".oww-file-upload__remove-btn");
+      if (removeBtn) {
+        removeBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setDropzoneState("default");
+          showToast("Cover removed");
+        });
+      }
+
+      // Change Cover button on applied state
+      const changeBtn = container.querySelector(".oww-file-upload__change-btn");
+      if (changeBtn && fileInput) {
+        changeBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          fileInput.click();
+        });
+      }
+
+      // Store simulation helpers on DOM container
+      container._simulateUpload = () => startUpload(null);
+      container._simulateError = () => setDropzoneState("error", "Simulated error: Upload failed due to network timeout.");
+      container._resetUpload = () => setDropzoneState("default");
+    });
+  }
+
+  initFileUploads();
+
+
   // Sidebar Active Component / Page Sync based on current page URL
   const currentPath = window.location.pathname.split('/').pop() || 'introduction.html';
   const effectivePath = (currentPath === 'index.html' || currentPath === '') ? 'introduction.html' : currentPath;
@@ -413,10 +638,30 @@ function applyFilters(btn) {
 window.resetFilters = resetFilters;
 window.applyFilters = applyFilters;
 
+function removeMiniUpload(btn) {
+  const item = btn.closest(".oww-file-upload-mini");
+  if (item) {
+    item.style.transition = "opacity 0.2s ease, transform 0.2s ease";
+    item.style.opacity = "0";
+    item.style.transform = "scale(0.8)";
+    setTimeout(() => {
+      item.style.display = "none";
+    }, 200);
+    showToast("Media item removed");
+  }
+}
+
+window.removeMiniUpload = removeMiniUpload;
+window.applyTheme = applyTheme;
+window.initTheme = initTheme;
+
+
 window.copyCode = copyCode;
 window.showToast = showToast;
 
 // Auto-initialize when DOM is ready
+initTheme();
+
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initGlobal);
 } else {
