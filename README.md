@@ -18,27 +18,24 @@ Modern, scalable Design System & UI Kit built with Sass (SCSS) and Figma design 
 npm install
 ```
 
-### Build & Watch CSS
+### Development & Live Preview
 
 ```bash
-# Compile expanded CSS
-npm run build:css
+# Auto-compile SCSS + Auto-reload browser secara realtime (Rekomendasi)
+npm run dev
 
-# Compile minified production CSS
-npm run build:min
-
-# Watch SCSS changes
+# Atau hanya auto-compile SCSS saat save (tanpa live reload server)
 npm run watch
 ```
 
-### Live Preview
+### Production Build
 
 ```bash
-# Open preview directly in browser
-npm run open
+# Compile expanded CSS & sync assets
+npm run build
 
-# Or serve locally
-npm run serve
+# Compile minified production CSS
+npm run build:min
 ```
 
 ## Structure

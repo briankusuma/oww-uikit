@@ -9,6 +9,9 @@
     "build:min": "sass src/scss/uikit.scss dist/uikit.min.css --style=compressed --no-source-map",
     "build:assets": "node -e \"const fs = require('fs'); fs.cpSync('src/js', 'dist/js', { recursive: true }); fs.cpSync('src/assets', 'dist/assets', { recursive: true });\"",
     "watch": "sass --watch src/scss/uikit.scss dist/uikit.css --style=expanded",
+    "watch:css": "sass --watch src/scss/uikit.scss dist/uikit.css --style=expanded",
+    "serve:live": "browser-sync start --server --files \"dist/uikit.css, *.html\" --no-notify",
+    "dev": "concurrently -n \"sass,browser\" -c \"magenta,cyan\" \"npm run watch\" \"npm run serve:live\"",
     "open": "open index.html",
     "serve": "npx -y serve ."
   },
@@ -22,6 +25,8 @@
   "author": "Brian",
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "concurrently": "^10.0.5",
     "sass": "^1.85.0"
   }
 }
