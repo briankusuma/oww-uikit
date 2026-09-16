@@ -441,3 +441,44 @@ $file-upload-error-border:  $color-base-danger-500 !default; // #FF0909
 $file-upload-mini-width:    120px !default;
 $file-upload-mini-height:   96px !default;
 $file-upload-mini-radius:   $radius-lg !default; // 12px
+
+// =============================================================================
+// 11. COMPONENT TOKENS: FORM INPUT & CONTROLS (Figma: Form Input, Date Picker, Readable)
+// =============================================================================
+$input-bg-default:            $color-base-grey-100 !default; // #F8F8F8
+$input-border-color-default:  $color-base-primary-100 !default; // #E9E9E9
+$input-border-width:          1px !default;
+$input-text-color:            $color-base-primary-900 !default; // #000000
+$input-placeholder-color:     $color-base-primary-500 !default; // #7B7B7B
+$input-focus-shadow:          0px 0px 0px 1px #000000 !default; // Figma: 0px 0px 0px 1px rgba(0, 0, 0, 1)
+
+// Disabled State
+$input-bg-disabled:           $color-base-grey-200 !default; // #F1F1F1
+$input-border-disabled:       $color-base-grey-400 !default; // #C4C4C4
+$input-text-disabled:         $color-base-grey-400 !default; // #C4C4C4
+
+// Error State
+$input-bg-error:              $bg-soft-danger !default; // #FFE9EC
+$input-border-error:          $color-base-danger-500 !default; // #FF0909
+$input-text-error:            $color-base-danger-500 !default; // #FF0909
+
+// Sizing & Radii
+$input-height-lg:             56px !default;
+$input-height-md:             48px !default;
+$input-padding-lg:            16px !default;
+$input-padding-md:            14px 16px !default;
+$input-radius-lg:             14px !default; // Figma Large 14px
+$input-radius-md:             12px !default; // Figma Medium 12px
+
+// Label & Feedback
+$input-label-gap:             12px !default;
+$input-required-color:        $color-base-danger-500 !default; // #FF0909
+
+// Textarea
+$input-textarea-height:       150px !default;
+
+// Badge / Tag Input Chip
+$input-chip-bg:               $color-base-white-500 !default; // #FFFFFF
+$input-chip-border-color:     $color-base-primary-100 !default; // #E9E9E9
+$input-chip-radius:           16px !default;
+$input-chip-padding:          2px 6px 2px 8px !default;

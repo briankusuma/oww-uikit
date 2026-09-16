@@ -4,7 +4,7 @@ Dokumen ini mendefinisikan aturan yang wajib dipatuhi oleh seluruh AI agent / mo
 
 ---
 
-## 1. Desain Token & Anti-Hardcode (Single Source of Truth)
+## 1. Zero Hardcoded Values (Prinsip Tokenisasi)
 
 1. **Dilarang melakukan hardcode** pada nilai design seperti warna (hex, rgb, hsl), spacing (padding/margin), ukuran font, border radius, atau box shadow langsung di level komponen.
 

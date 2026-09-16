@@ -103,6 +103,7 @@ function initTheme() {
 function initGlobal() {
   // Theme Manager
   initTheme();
+  initBadgeInputs();
 
   // TOC Active ScrollSpy
   const sections = document.querySelectorAll('.doc-content__section');
@@ -652,6 +653,83 @@ function removeMiniUpload(btn) {
 }
 
 window.removeMiniUpload = removeMiniUpload;
+// =============================================================================
+// Form Input & Controls Interactive Helpers
+// =============================================================================
+
+function removeInputChip(btn) {
+  const chip = btn.closest(".oww-input-chip");
+  const container = btn.closest(".oww-input-badge");
+  if (chip) {
+    chip.style.transition = "opacity 0.15s ease, transform 0.15s ease";
+    chip.style.opacity = "0";
+    chip.style.transform = "scale(0.85)";
+    setTimeout(() => {
+      chip.remove();
+      if (container) {
+        const field = container.querySelector(".oww-input-badge__field");
+        if (field) field.focus();
+      }
+    }, 150);
+  }
+}
+
+function copyShareLink(btn) {
+  const container = btn.closest(".oww-input-readable") || btn.parentElement;
+  const input = container ? container.querySelector("input") : null;
+  const text = input ? input.value : "";
+  if (text) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast("Link copied to clipboard!");
+    }).catch(() => {
+      showToast("Failed to copy link");
+    });
+  }
+}
+
+function initBadgeInputs() {
+  document.querySelectorAll(".oww-input-badge").forEach(container => {
+    if (container.dataset.badgeBound) return;
+    container.dataset.badgeBound = "true";
+
+    const field = container.querySelector(".oww-input-badge__field");
+    if (!field) return;
+
+    // Focus field when clicking anywhere inside container
+    container.addEventListener("click", (e) => {
+      if (!e.target.closest(".oww-input-chip__remove")) {
+        field.focus();
+      }
+    });
+
+    field.addEventListener("keydown", (e) => {
+      const val = field.value.trim();
+      if (e.key === "Enter" || e.key === ",") {
+        e.preventDefault();
+        if (val) {
+          const cleanVal = val.replace(/^,+|,+$/g, "");
+          if (cleanVal) {
+            const chip = document.createElement("span");
+            chip.className = "oww-input-chip";
+            chip.innerHTML = `<span>${cleanVal}</span><button type="button" class="oww-input-chip__remove" onclick="removeInputChip(this)" aria-label="Remove tag"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
+            container.insertBefore(chip, field);
+            field.value = "";
+          }
+        }
+      } else if (e.key === "Backspace" && !field.value) {
+        const chips = container.querySelectorAll(".oww-input-chip");
+        if (chips.length > 0) {
+          chips[chips.length - 1].remove();
+        }
+      }
+    });
+  });
+}
+
+window.removeInputChip = removeInputChip;
+window.copyShareLink = copyShareLink;
+window.initBadgeInputs = initBadgeInputs;
+
 window.applyTheme = applyTheme;
 window.initTheme = initTheme;
 

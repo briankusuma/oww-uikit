@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avatar - OWW UIKit Documentation</title>
+  <title>Input &amp; Forms - OWW UIKit Documentation</title>
+  <meta name="description"
+    content="Production-ready Form Input component documentation for OWW UIKit. Features standard text inputs, tag badge collections, multiline textareas, phone number pickers, and date dropdowns.">
 
   <!-- Inter Font from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,10 +130,10 @@
               <a href="introduction.html" class="doc-sidebar__link">Introduction</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#overview" class="doc-sidebar__link">Overview</a>
+              <a href="input.html#overview" class="doc-sidebar__link">Overview</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#installation" class="doc-sidebar__link">Architecture &amp; Rules</a>
+              <a href="input.html#installation" class="doc-sidebar__link">Architecture &amp; Rules</a>
             </li>
           </ul>
         </div>
@@ -148,16 +150,16 @@
           </div>
           <ul class="doc-sidebar__list">
             <li class="doc-sidebar__item">
-              <a href="alert.html#design-tokens" class="doc-sidebar__link">Typography (Inter)</a>
+              <a href="input.html#design-tokens" class="doc-sidebar__link">Typography (Inter)</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#design-tokens" class="doc-sidebar__link">Colors &amp; Semantic</a>
+              <a href="input.html#design-tokens" class="doc-sidebar__link">Colors &amp; Semantic</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#design-tokens" class="doc-sidebar__link">Sizing &amp; Spacing</a>
+              <a href="input.html#design-tokens" class="doc-sidebar__link">Sizing &amp; Spacing</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#design-tokens" class="doc-sidebar__link">Radius Scale</a>
+              <a href="input.html#design-tokens" class="doc-sidebar__link">Radius Scale</a>
             </li>
           </ul>
         </div>
@@ -180,9 +182,9 @@
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
             </li>
-            <!-- Avatar (Active) -->
+            <!-- Avatar -->
             <li class="doc-sidebar__item">
-              <a href="avatar.html" class="doc-sidebar__link is-active">
+              <a href="avatar.html" class="doc-sidebar__link">
                 Avatar
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
@@ -250,9 +252,9 @@
                 <span class="doc-sidebar__link-badge">370</span>
               </a>
             </li>
-            <!-- Input & Forms -->
+            <!-- Input & Forms (Active) -->
             <li class="doc-sidebar__item">
-              <a href="input.html" class="doc-sidebar__link">
+              <a href="input.html" class="doc-sidebar__link is-active">
                 Input &amp; Forms
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
@@ -316,54 +318,82 @@
       <main class="doc-content">
         <!-- Breadcrumb -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="alert.html">Docs</a>
+          <a href="#">Docs</a>
           <span>/</span>
-          <a href="avatar.html">Components</a>
+          <a href="#">Components</a>
           <span>/</span>
-          <span style="color: var(--doc-text); font-weight: 500;">Avatar</span>
+          <span style="color: var(--doc-text); font-weight: 500;">Input &amp; Forms</span>
         </nav>
 
         <!-- Page Header -->
         <header class="doc-content__header">
-          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Avatar</h1>
+          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Input &amp; Forms</h1>
           <p class="doc-content__lead">
-            The Avatar component represents user entities, teams, or profile identities. Crafted with precision following official Figma specifications for Avatar and Initials Avatar component systems.
+            Contextual form controls, single-line text inputs, badge chip collections, multiline textareas, phone number pickers, date dropdowns, and shareable link fields.
           </p>
         </header>
 
-        <!-- =================================================================== -->
-        <!-- Section 1: Overview -->
-        <!-- =================================================================== -->
+        <!-- Section: Overview -->
         <section id="overview" class="doc-content__section">
           <h2 class="doc-content__section-title">Overview</h2>
           <p class="doc-content__section-desc">
-            Avatars support three primary display variants: <strong>Image</strong>, <strong>Initials</strong>, and <strong>Placeholder (Fallback)</strong>. The component comes in 4 standardized size scales: <code>xs (22px)</code>, <code>sm (32px)</code>, <code>md (40px)</code>, and <code>lg (48px)</code>.
+            The Form Input component adheres to BEM architecture with class name <code>.oww-input</code>. Form controls feature standard <code>56px</code> height (Large) and <code>48px</code> (Medium), rounded corners, placeholder styling, and responsive focus states.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview" style="gap: 32px;">
-              <!-- Image Avatar -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="User Avatar" class="oww-avatar__image">
+            <div class="doc-example__preview" style="display: flex; flex-direction: column; gap: 24px; max-width: 520px; width: 100%;">
+              <!-- Interactive Input -->
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label for="interactiveNameInput" class="oww-form-group__label">Campaign Title</label>
+                  <span class="oww-form-group__required">*</span>
                 </div>
-                <span class="avatar-preview-label">Image (48px)</span>
+                <input type="text" id="interactiveNameInput" class="oww-input" placeholder="e.g. Summer Mega Sale 2026" value="Summer Mega Sale 2026">
+                <div class="oww-form-group__hint">Enter a descriptive title for your advertising campaign.</div>
               </div>
 
-              <!-- Initials Avatar -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials">
-                  <span class="oww-avatar__initials">MA</span>
+              <!-- Interactive Badge Input -->
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Targeting Keywords</label>
                 </div>
-                <span class="avatar-preview-label">Initials (48px)</span>
+                <div class="oww-input-badge">
+                  <span class="oww-input-chip">
+                    <span>Branding</span>
+                    <button type="button" class="oww-input-chip__remove" onclick="removeInputChip(this)" aria-label="Remove tag">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </span>
+                  <span class="oww-input-chip">
+                    <span>Performance</span>
+                    <button type="button" class="oww-input-chip__remove" onclick="removeInputChip(this)" aria-label="Remove tag">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </span>
+                  <input type="text" class="oww-input-badge__field" placeholder="Type and press Enter...">
+                </div>
+                <div class="oww-form-group__hint">Press Enter or comma to add a tag. Click X or press Backspace to remove.</div>
               </div>
 
-              <!-- Dummy / Placeholder Avatar -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder">
-                  <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder Avatar" class="oww-avatar__image">
+              <!-- Interactive Share Link with Copy Action -->
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Shareable Link</label>
                 </div>
-                <span class="avatar-preview-label">Placeholder (48px)</span>
+                <div class="oww-input-readable">
+                  <input type="text" class="oww-input" readonly value="https://oww.design/campaign/summer-mega-sale">
+                  <button type="button" class="oww-input-readable__action" onclick="copyShareLink(this)" title="Copy link to clipboard" aria-label="Copy link to clipboard">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                      <path
+                        d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+                        fill="currentColor" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -375,68 +405,353 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;!-- Image Avatar --&gt;
-&lt;div class="oww-avatar oww-avatar--lg"&gt;
-  &lt;img src="avatar.png" alt="User" class="oww-avatar__image"&gt;
+              <pre><code>&lt;!-- Standard Form Input Group --&gt;
+&lt;div class="oww-form-group"&gt;
+  &lt;div class="oww-form-group__label-row"&gt;
+    &lt;label for="campaignTitle" class="oww-form-group__label"&gt;Campaign Title&lt;/label&gt;
+    &lt;span class="oww-form-group__required"&gt;*&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;input type="text" id="campaignTitle" class="oww-input" placeholder="e.g. Summer Mega Sale 2026"&gt;
+  &lt;div class="oww-form-group__hint"&gt;Enter a descriptive title for your advertising campaign.&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;!-- Initials Avatar --&gt;
-&lt;div class="oww-avatar oww-avatar--lg oww-avatar--initials"&gt;
-  &lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;
+&lt;!-- Tag / Badge Chip Input --&gt;
+&lt;div class="oww-form-group"&gt;
+  &lt;label class="oww-form-group__label"&gt;Keywords&lt;/label&gt;
+  &lt;div class="oww-input-badge"&gt;
+    &lt;span class="oww-input-chip"&gt;
+      &lt;span&gt;Branding&lt;/span&gt;
+      &lt;button type="button" class="oww-input-chip__remove" onclick="removeInputChip(this)" aria-label="Remove tag"&gt;
+        &lt;svg width="14" height="14" viewBox="0 0 20 20"&gt;...&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/span&gt;
+    &lt;input type="text" class="oww-input-badge__field" placeholder="Type and press Enter..."&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;!-- Placeholder Avatar --&gt;
-&lt;div class="oww-avatar oww-avatar--lg oww-avatar--placeholder"&gt;
-  &lt;img src="placeholder.png" alt="Placeholder" class="oww-avatar__image"&gt;
+&lt;!-- Readonly Link with Copy Action --&gt;
+&lt;div class="oww-input-readable"&gt;
+  &lt;input type="text" class="oww-input" readonly value="https://oww.design/share/123"&gt;
+  &lt;button type="button" class="oww-input-readable__action" onclick="copyShareLink(this)" aria-label="Copy link"&gt;
+    &lt;svg width="18" height="18" viewBox="0 0 20 20"&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
 &lt;/div&gt;</code></pre>
             </div>
           </div>
         </section>
 
-        <!-- =================================================================== -->
-        <!-- Section 2: Size Scale -->
-        <!-- =================================================================== -->
+        <!-- Section: Figma Variants -->
+        <section id="figma-variants" class="doc-content__section">
+          <h2 class="doc-content__section-title">Figma Variants</h2>
+          <p class="doc-content__section-desc">
+            Official variants defined in the Figma component design: <strong>Default Text Input</strong>, <strong>Badge Tag Input</strong>, <strong>Multiline Textarea</strong>, <strong>Phone Number with Country Selector</strong>, <strong>Segmented Date Picker</strong>, and <strong>Readable Share Link</strong>.
+          </p>
+
+          <!-- Variant 1: Default Text Input -->
+          <div class="doc-example">
+            <div class="doc-example__preview" style="max-width: 520px; width: 100%;">
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label for="variantInputDefault" class="oww-form-group__label">Email Address</label>
+                  <span class="oww-form-group__required">*</span>
+                </div>
+                <input type="email" id="variantInputDefault" class="oww-input" placeholder="name@company.com">
+                <div class="oww-form-group__hint">We will never share your email address.</div>
+              </div>
+            </div>
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+              <pre><code>&lt;div class="oww-form-group"&gt;
+  &lt;label for="email" class="oww-form-group__label"&gt;Email Address&lt;/label&gt;
+  &lt;input type="email" id="email" class="oww-input" placeholder="name@company.com"&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Variant 2: Badge Tag Input -->
+          <div class="doc-example">
+            <div class="doc-example__preview" style="max-width: 520px; width: 100%;">
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Category Badges</label>
+                </div>
+                <div class="oww-input-badge">
+                  <span class="oww-input-chip">
+                    <span>Technology</span>
+                    <button type="button" class="oww-input-chip__remove" onclick="removeInputChip(this)" aria-label="Remove tag">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </span>
+                  <span class="oww-input-chip">
+                    <span>Design</span>
+                    <button type="button" class="oww-input-chip__remove" onclick="removeInputChip(this)" aria-label="Remove tag">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </span>
+                  <input type="text" class="oww-input-badge__field" placeholder="Add tag...">
+                </div>
+              </div>
+            </div>
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+              <pre><code>&lt;div class="oww-input-badge"&gt;
+  &lt;span class="oww-input-chip"&gt;
+    &lt;span&gt;Technology&lt;/span&gt;
+    &lt;button type="button" class="oww-input-chip__remove" onclick="removeInputChip(this)" aria-label="Remove tag"&gt;
+      &lt;svg width="14" height="14" viewBox="0 0 20 20"&gt;...&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/span&gt;
+  &lt;input type="text" class="oww-input-badge__field" placeholder="Add tag..."&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Variant 3: Multiline Text Area -->
+          <div class="doc-example">
+            <div class="doc-example__preview" style="max-width: 520px; width: 100%;">
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Product Description</label>
+                  <span class="oww-form-group__required">*</span>
+                </div>
+                <textarea class="oww-textarea" placeholder="Provide a detailed description of your product or service..."></textarea>
+                <div class="oww-form-group__hint">Maximum 500 characters allowed.</div>
+              </div>
+            </div>
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+              <pre><code>&lt;div class="oww-form-group"&gt;
+  &lt;div class="oww-form-group__label-row"&gt;
+    &lt;label class="oww-form-group__label"&gt;Product Description&lt;/label&gt;
+    &lt;span class="oww-form-group__required"&gt;*&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;textarea class="oww-textarea" placeholder="Provide a detailed description..."&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Variant 4: Phone Number Input -->
+          <div class="doc-example">
+            <div class="doc-example__preview" style="max-width: 520px; width: 100%;">
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Phone Number</label>
+                  <span class="oww-form-group__required">*</span>
+                </div>
+                <div class="oww-input-phone">
+                  <div class="oww-input-phone__select" tabindex="0" role="button" aria-label="Select Country Code">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <rect width="20" height="20" rx="3" fill="#000000" />
+                      <rect y="4" width="20" height="3.5" fill="#FF0909" />
+                      <rect y="12.5" width="20" height="3.5" fill="#4AB632" />
+                      <polygon points="0,0 8,10 0,20" fill="#0077FF" />
+                      <polygon points="2.5,10 3.2,8.2 4.8,9.5 3,10.5 4.5,11.8" fill="#FFD900" />
+                    </svg>
+                    <span class="oww-input-phone__select__code">+211</span>
+                    <span class="oww-input-phone__select__caret">
+                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                  </div>
+                  <input type="tel" class="oww-input oww-input-phone__number" placeholder="812 3456 7890">
+                </div>
+              </div>
+            </div>
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+              <pre><code>&lt;div class="oww-input-phone"&gt;
+  &lt;div class="oww-input-phone__select" tabindex="0" role="button"&gt;
+    &lt;svg width="20" height="20" ...&gt;&lt;/svg&gt;
+    &lt;span class="oww-input-phone__select__code"&gt;+211&lt;/span&gt;
+    &lt;span class="oww-input-phone__select__caret"&gt;...&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;input type="tel" class="oww-input oww-input-phone__number" placeholder="812 3456 7890"&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Variant 5: Segmented Date Picker -->
+          <div class="doc-example">
+            <div class="doc-example__preview" style="max-width: 520px; width: 100%;">
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Date of Birth</label>
+                  <span class="oww-form-group__required">*</span>
+                </div>
+                <div class="oww-input-date">
+                  <div class="oww-input-date__item oww-input-date__item--month">
+                    <select>
+                      <option value="" disabled selected>Select a month</option>
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                    <span class="oww-input-date__caret">
+                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="oww-input-date__item oww-input-date__item--day">
+                    <select>
+                      <option value="" disabled selected>Day</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="15">15</option>
+                      <option value="31">31</option>
+                    </select>
+                    <span class="oww-input-date__caret">
+                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="oww-input-date__item oww-input-date__item--year">
+                    <select>
+                      <option value="" disabled selected>Year</option>
+                      <option value="2026">2026</option>
+                      <option value="2025">2025</option>
+                      <option value="2020">2020</option>
+                      <option value="2000">2000</option>
+                      <option value="1990">1990</option>
+                    </select>
+                    <span class="oww-input-date__caret">
+                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+              <pre><code>&lt;div class="oww-input-date"&gt;
+  &lt;div class="oww-input-date__item oww-input-date__item--month"&gt;
+    &lt;select&gt;
+      &lt;option value="" disabled selected&gt;Select a month&lt;/option&gt;
+      ...
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div class="oww-input-date__item oww-input-date__item--day"&gt;
+    &lt;select&gt;...&lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div class="oww-input-date__item oww-input-date__item--year"&gt;
+    &lt;select&gt;...&lt;/select&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Variant 6: Readable Share Link -->
+          <div class="doc-example">
+            <div class="doc-example__preview" style="max-width: 520px; width: 100%;">
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Share Link</label>
+                  <span class="oww-form-group__required">*</span>
+                </div>
+                <div class="oww-input-readable">
+                  <input type="text" class="oww-input" readonly value="https://example.com/product/123">
+                  <button type="button" class="oww-input-readable__action" onclick="copyShareLink(this)" aria-label="Copy share link" title="Copy share link">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                      <path
+                        d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+                        fill="currentColor" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+              <pre><code>&lt;div class="oww-input-readable"&gt;
+  &lt;input type="text" class="oww-input" readonly value="https://example.com/product/123"&gt;
+  &lt;button type="button" class="oww-input-readable__action" onclick="copyShareLink(this)" aria-label="Copy link"&gt;
+    &lt;svg width="18" height="18" viewBox="0 0 20 20"&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Sizes Scale -->
         <section id="sizes" class="doc-content__section">
           <h2 class="doc-content__section-title">Sizes Scale</h2>
           <p class="doc-content__section-desc">
-            Four standardized size scales defined in the OWW Design System: <code>--lg (48px)</code>, <code>--md (40px)</code>, <code>--sm (32px)</code>, and <code>--xs (22px)</code>.
+            Form inputs are available in two standard sizing scales: <strong>Large (56px)</strong> for primary desktop cards and forms, and <strong>Medium (48px)</strong> for compact layouts and mobile devices.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview avatar-preview-row">
-              <!-- Large -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="LG" class="oww-avatar__image">
+            <div class="doc-example__preview" style="display: flex; flex-direction: column; gap: 20px; max-width: 520px; width: 100%;">
+              <!-- Large Size (56px) -->
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Large Input (56px)</label>
+                  <span class="oww-form-group__required">*</span>
                 </div>
-                <span class="avatar-preview-label">lg · 48px</span>
+                <input type="text" class="oww-input" placeholder="Placeholder text...">
               </div>
 
-              <!-- Medium -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--md">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="MD" class="oww-avatar__image">
+              <!-- Medium Size (48px) -->
+              <div class="oww-form-group oww-form-group--md">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Medium Input (48px)</label>
+                  <span class="oww-form-group__required">*</span>
                 </div>
-                <span class="avatar-preview-label">md · 40px</span>
-              </div>
-
-              <!-- Small -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--sm">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="SM" class="oww-avatar__image">
-                </div>
-                <span class="avatar-preview-label">sm · 32px</span>
-              </div>
-
-              <!-- Extra Small -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--xs">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="XS" class="oww-avatar__image">
-                </div>
-                <span class="avatar-preview-label">xs · 22px</span>
+                <input type="text" class="oww-input oww-input--md" placeholder="Placeholder text...">
               </div>
             </div>
-
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
   <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
@@ -445,59 +760,53 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;div class="oww-avatar oww-avatar--lg"&gt;...&lt;/div&gt; &lt;!-- 48px --&gt;
-&lt;div class="oww-avatar oww-avatar--md"&gt;...&lt;/div&gt; &lt;!-- 40px (Default) --&gt;
-&lt;div class="oww-avatar oww-avatar--sm"&gt;...&lt;/div&gt; &lt;!-- 32px --&gt;
-&lt;div class="oww-avatar oww-avatar--xs"&gt;...&lt;/div&gt; &lt;!-- 22px --&gt;</code></pre>
+              <pre><code>&lt;!-- Large Input (Default 56px, Radius 14px) --&gt;
+&lt;input type="text" class="oww-input" placeholder="Placeholder..."&gt;
+
+&lt;!-- Medium Input (48px, Radius 12px) --&gt;
+&lt;input type="text" class="oww-input oww-input--md" placeholder="Placeholder..."&gt;</code></pre>
             </div>
           </div>
         </section>
 
-        <!-- =================================================================== -->
-        <!-- Section 3: Core Variants -->
-        <!-- =================================================================== -->
-        <section id="variants" class="doc-content__section">
-          <h2 class="doc-content__section-title">Core Variants</h2>
+        <!-- Section: Interactive States -->
+        <section id="states" class="doc-content__section">
+          <h2 class="doc-content__section-title">Interactive States</h2>
           <p class="doc-content__section-desc">
-            Three core visual variants adhering to design specifications.
+            Visual feedback across primary interaction states: <strong>Default</strong>, <strong>Focus</strong>, <strong>Disabled</strong>, and <strong>Error</strong>.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview" style="gap: 40px; justify-content: flex-start;">
-              <!-- Variant: Image -->
-              <div style="display: flex; flex-direction: column; gap: 12px;">
-                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">1. Image Variant</span>
-                <div class="avatar-preview-row">
-                  <div class="oww-avatar oww-avatar--lg"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--md"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--sm"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--xs"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
-                </div>
+            <div class="doc-example__preview" style="display: flex; flex-direction: column; gap: 20px; max-width: 520px; width: 100%;">
+              <!-- Focus State -->
+              <div class="oww-form-group">
+                <label class="oww-form-group__label">Focus State (High-Contrast Ring)</label>
+                <input type="text" class="oww-input is-focus" value="Active focused field input...">
               </div>
 
-              <!-- Variant: Initials -->
-              <div style="display: flex; flex-direction: column; gap: 12px;">
-                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">2. Initials Variant</span>
-                <div class="avatar-preview-row">
-                  <div class="oww-avatar oww-avatar--lg oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
-                  <div class="oww-avatar oww-avatar--md oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
-                  <div class="oww-avatar oww-avatar--sm oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
-                  <div class="oww-avatar oww-avatar--xs oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
-                </div>
+              <!-- Disabled State -->
+              <div class="oww-form-group">
+                <label class="oww-form-group__label">Disabled State</label>
+                <input type="text" class="oww-input" disabled value="Inactive readonly text...">
               </div>
 
-              <!-- Variant: Dummy / Placeholder -->
-              <div style="display: flex; flex-direction: column; gap: 12px;">
-                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">3. Placeholder Variant</span>
-                <div class="avatar-preview-row">
-                  <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--md oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--sm oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--xs oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
+              <!-- Error State -->
+              <div class="oww-form-group">
+                <div class="oww-form-group__label-row">
+                  <label class="oww-form-group__label">Error State</label>
+                  <span class="oww-form-group__required">*</span>
+                </div>
+                <input type="text" class="oww-input oww-input--error" value="invalid.email@domain">
+                <div class="oww-form-group__error-text">
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Please enter a valid email address with top-level domain.
                 </div>
               </div>
             </div>
-
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
   <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
@@ -506,273 +815,109 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;!-- 1. Image Variant --&gt;
-&lt;div class="oww-avatar oww-avatar--md"&gt;
-  &lt;img src="user.jpg" alt="Alex" class="oww-avatar__image"&gt;
-&lt;/div&gt;
+              <pre><code>&lt;!-- Focus State --&gt;
+&lt;input type="text" class="oww-input is-focus" value="..."&gt;
 
-&lt;!-- 2. Initials Variant (Theme tokens: bg=#E2F3FF, text=#0077FF) --&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials"&gt;
-  &lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;
-&lt;/div&gt;
+&lt;!-- Disabled State --&gt;
+&lt;input type="text" class="oww-input" disabled value="..."&gt;
 
-&lt;!-- 3. Placeholder Variant --&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--placeholder"&gt;
-  &lt;img src="placeholder.png" alt="Guest" class="oww-avatar__image"&gt;
+&lt;!-- Error State with Validation Text --&gt;
+&lt;div class="oww-form-group"&gt;
+  &lt;label class="oww-form-group__label"&gt;Error State&lt;/label&gt;
+  &lt;input type="text" class="oww-input oww-input--error" value="..."&gt;
+  &lt;div class="oww-form-group__error-text"&gt;
+    &lt;svg ...&gt;&lt;/svg&gt; Please enter a valid email address.
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
           </div>
         </section>
 
-        <!-- =================================================================== -->
-        <!-- Section 4: Initials Semantic Color Palettes -->
-        <!-- =================================================================== -->
-        <section id="initials" class="doc-content__section">
-          <h2 class="doc-content__section-title">Initials Color Palettes</h2>
-          <p class="doc-content__section-desc">
-            The initials variant supports harmonious semantic color combinations to differentiate user categories, departments, or team roles.
-          </p>
-
-          <div class="doc-example">
-            <div class="doc-example__preview avatar-preview-row" style="gap: 24px;">
-              <!-- Primary (Default Figma) -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--primary">
-                  <span class="oww-avatar__initials">MA</span>
-                </div>
-                <span class="avatar-preview-label">Primary (#0077FF)</span>
-              </div>
-
-              <!-- Success -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--success">
-                  <span class="oww-avatar__initials">BK</span>
-                </div>
-                <span class="avatar-preview-label">Success (#2E7D32)</span>
-              </div>
-
-              <!-- Warning -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--warning">
-                  <span class="oww-avatar__initials">AT</span>
-                </div>
-                <span class="avatar-preview-label">Warning (#ED6C02)</span>
-              </div>
-
-              <!-- Danger -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--danger">
-                  <span class="oww-avatar__initials">RD</span>
-                </div>
-                <span class="avatar-preview-label">Danger (#D32F2F)</span>
-              </div>
-
-              <!-- Neutral -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--neutral">
-                  <span class="oww-avatar__initials">OW</span>
-                </div>
-                <span class="avatar-preview-label">Neutral (#475569)</span>
-              </div>
-            </div>
-
-            <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
-  </svg>
-</button>
-              <pre><code>&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--primary"&gt;&lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;&lt;/div&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--success"&gt;&lt;span class="oww-avatar__initials"&gt;BK&lt;/span&gt;&lt;/div&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--warning"&gt;&lt;span class="oww-avatar__initials"&gt;AT&lt;/span&gt;&lt;/div&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--danger"&gt;&lt;span class="oww-avatar__initials"&gt;RD&lt;/span&gt;&lt;/div&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--neutral"&gt;&lt;span class="oww-avatar__initials"&gt;OW&lt;/span&gt;&lt;/div&gt;</code></pre>
-            </div>
-          </div>
-        </section>
-
-        <!-- =================================================================== -->
-        <!-- Section 5: Status Indicators -->
-        <!-- =================================================================== -->
-        <section id="status-indicator" class="doc-content__section">
-          <h2 class="doc-content__section-title">Status Indicators</h2>
-          <p class="doc-content__section-desc">
-            Presence badges positioned at the bottom-right corner of the avatar to communicate user availability and real-time state.
-          </p>
-
-          <div class="doc-example">
-            <div class="doc-example__preview avatar-preview-row" style="gap: 32px;">
-              <!-- Online -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="Online" class="oww-avatar__image">
-                  <span class="oww-avatar__status oww-avatar__status--online" title="Online"></span>
-                </div>
-                <span class="avatar-preview-label">Online</span>
-              </div>
-
-              <!-- Busy -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="Busy" class="oww-avatar__image">
-                  <span class="oww-avatar__status oww-avatar__status--busy" title="Busy"></span>
-                </div>
-                <span class="avatar-preview-label">Busy</span>
-              </div>
-
-              <!-- Away -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials">
-                  <span class="oww-avatar__initials">MA</span>
-                  <span class="oww-avatar__status oww-avatar__status--away" title="Away"></span>
-                </div>
-                <span class="avatar-preview-label">Away</span>
-              </div>
-
-              <!-- Offline -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder">
-                  <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Offline" class="oww-avatar__image">
-                  <span class="oww-avatar__status oww-avatar__status--offline" title="Offline"></span>
-                </div>
-                <span class="avatar-preview-label">Offline</span>
-              </div>
-            </div>
-
-            <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
-  </svg>
-</button>
-              <pre><code>&lt;div class="oww-avatar oww-avatar--lg"&gt;
-  &lt;img src="user.png" class="oww-avatar__image"&gt;
-  &lt;span class="oww-avatar__status oww-avatar__status--online"&gt;&lt;/span&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-          </div>
-        </section>
-
-        <!-- =================================================================== -->
-        <!-- Section 6: Avatar Group -->
-        <!-- =================================================================== -->
-        <section id="avatar-group" class="doc-content__section">
-          <h2 class="doc-content__section-title">Avatar Group</h2>
-          <p class="doc-content__section-desc">
-            Use the <code>.oww-avatar-group</code> class to stack multiple avatars horizontally with separating border rings and an overflow member counter (<code>.oww-avatar-group__more</code>).
-          </p>
-
-          <div class="doc-example">
-            <div class="doc-example__preview" style="flex-direction: column; align-items: flex-start; gap: 24px;">
-              <!-- Group with Mixed Avatars -->
-              <div class="oww-avatar-group">
-                <div class="oww-avatar oww-avatar--md">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="User 1" class="oww-avatar__image">
-                </div>
-                <div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--primary">
-                  <span class="oww-avatar__initials">MA</span>
-                </div>
-                <div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--success">
-                  <span class="oww-avatar__initials">BK</span>
-                </div>
-                <div class="oww-avatar oww-avatar--md oww-avatar--placeholder">
-                  <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="User 4" class="oww-avatar__image">
-                </div>
-                <span class="oww-avatar-group__more">+5</span>
-              </div>
-            </div>
-
-            <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
-  </svg>
-</button>
-              <pre><code>&lt;div class="oww-avatar-group"&gt;
-  &lt;div class="oww-avatar oww-avatar--md"&gt;&lt;img src="user1.png" class="oww-avatar__image"&gt;&lt;/div&gt;
-  &lt;div class="oww-avatar oww-avatar--md oww-avatar--initials"&gt;&lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;&lt;/div&gt;
-  &lt;div class="oww-avatar oww-avatar--md oww-avatar--placeholder"&gt;&lt;img src="dummy.png" class="oww-avatar__image"&gt;&lt;/div&gt;
-  &lt;span class="oww-avatar-group__more"&gt;+5&lt;/span&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-          </div>
-        </section>
-
-        <!-- =================================================================== -->
-        <!-- Section 7: Design Tokens -->
-        <!-- =================================================================== -->
+        <!-- Section: Design Tokens -->
         <section id="design-tokens" class="doc-content__section">
-          <h2 class="doc-content__section-title">Design Tokens</h2>
+          <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            Design token values used to construct the Avatar component adhering to design specifications.
+            All visual styles in Form Input reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
           <table class="token-table">
             <thead>
               <tr>
-                <th>Token</th>
-                <th>Specification Value</th>
-                <th>Design Source</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Size: LG</td>
-                <td><code class="token-badge">48px &times; 48px</code></td>
-                <td>Avatar Component Set (Large)</td>
+                <td>Input Background (Default)</td>
+                <td><code class="token-badge">$input-bg-default</code></td>
+                <td><span class="color-swatch" style="background: #F8F8F8;"></span> #F8F8F8</td>
               </tr>
               <tr>
-                <td>Size: MD</td>
-                <td><code class="token-badge">40px &times; 40px</code></td>
-                <td>Avatar Component Set (Medium)</td>
+                <td>Input Border (Default)</td>
+                <td><code class="token-badge">$input-border-color-default</code></td>
+                <td><span class="color-swatch" style="background: #E9E9E9;"></span> #E9E9E9</td>
               </tr>
               <tr>
-                <td>Size: SM</td>
-                <td><code class="token-badge">32px &times; 32px</code></td>
-                <td>Avatar Component Set (Small)</td>
+                <td>Input Focus Ring</td>
+                <td><code class="token-badge">$input-focus-shadow</code></td>
+                <td>0 0 0 1px #000000</td>
               </tr>
               <tr>
-                <td>Size: XS</td>
-                <td><code class="token-badge">22px &times; 22px</code></td>
-                <td>Avatar Component Set (Extra Small)</td>
+                <td>Input Background (Disabled)</td>
+                <td><code class="token-badge">$input-bg-disabled</code></td>
+                <td><span class="color-swatch" style="background: #F1F1F1;"></span> #F1F1F1</td>
               </tr>
               <tr>
-                <td>Border Radius</td>
-                <td><code class="token-badge">50% (Circle)</code></td>
-                <td>Circular Boundary (Full Radius)</td>
+                <td>Input Border (Disabled)</td>
+                <td><code class="token-badge">$input-border-disabled</code></td>
+                <td><span class="color-swatch" style="background: #C4C4C4;"></span> #C4C4C4</td>
               </tr>
               <tr>
-                <td>Initials Background</td>
-                <td><code class="token-badge">#E2F3FF</code></td>
-                <td>Primary Light Tint Palette</td>
+                <td>Input Background (Error)</td>
+                <td><code class="token-badge">$input-bg-error</code></td>
+                <td><span class="color-swatch" style="background: #FFE9EC;"></span> #FFE9EC</td>
               </tr>
               <tr>
-                <td>Initials Text Color</td>
-                <td><code class="token-badge">#0077FF</code></td>
-                <td>Primary Accent Tone</td>
+                <td>Input Border (Error)</td>
+                <td><code class="token-badge">$input-border-error</code></td>
+                <td><span class="color-swatch" style="background: #FF0909;"></span> #FF0909</td>
               </tr>
               <tr>
-                <td>Initials Typography</td>
-                <td><code class="token-badge">Inter SemiBold 600, -0.02em</code></td>
-                <td>Inter Typography Scale</td>
+                <td>Height Large (56px)</td>
+                <td><code class="token-badge">$input-height-lg</code></td>
+                <td>56px</td>
+              </tr>
+              <tr>
+                <td>Height Medium (48px)</td>
+                <td><code class="token-badge">$input-height-md</code></td>
+                <td>48px</td>
+              </tr>
+              <tr>
+                <td>Radius Large (14px)</td>
+                <td><code class="token-badge">$input-radius-lg</code></td>
+                <td>14px</td>
+              </tr>
+              <tr>
+                <td>Radius Medium (12px)</td>
+                <td><code class="token-badge">$input-radius-md</code></td>
+                <td>12px</td>
+              </tr>
+              <tr>
+                <td>Typography</td>
+                <td><code class="token-badge">@include text('sm', 'regular')</code></td>
+                <td>Inter, 14px, 400, -0.02em</td>
               </tr>
             </tbody>
           </table>
         </section>
 
-        <!-- =================================================================== -->
-        <!-- Section 8: Architecture & Installation -->
-        <!-- =================================================================== -->
+        <!-- Section: Installation / Rules -->
         <section id="installation" class="doc-content__section">
           <h2 class="doc-content__section-title">Architecture &amp; Rules</h2>
           <p class="doc-content__section-desc">
-            The Avatar component is cleanly isolated in <code>src/scss/components/_avatar.scss</code> and exported to the master stylesheet <code>src/scss/uikit.scss</code>.
+            This component adheres strictly to <code>AGENT.md</code> guidelines. Component styles are isolated in <code>src/scss/components/_input.scss</code> and imported via <code>src/scss/uikit.scss</code>.
           </p>
 
           <div class="doc-example">
@@ -785,17 +930,7 @@
   </svg>
 </button>
               <pre><code>// src/scss/uikit.scss
-@forward 'abstract/variables';
-@forward 'abstract/functions';
-@forward 'abstract/mixins';
-
-@use 'base/reset';
-@use 'base/typography';
-@use 'base/layout';
-
-@use 'components/alert';
-@use 'components/avatar';  // &lt;-- Avatar Component
-@use 'layout/docs';</code></pre>
+@use 'components/input';</code></pre>
             </div>
           </div>
         </section>
@@ -812,19 +947,13 @@
             <a href="#overview" class="doc-toc__link is-active">Overview</a>
           </li>
           <li class="doc-toc__item">
+            <a href="#figma-variants" class="doc-toc__link">Figma Variants</a>
+          </li>
+          <li class="doc-toc__item">
             <a href="#sizes" class="doc-toc__link">Sizes Scale</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#variants" class="doc-toc__link">Core Variants</a>
-          </li>
-          <li class="doc-toc__item">
-            <a href="#initials" class="doc-toc__link">Initials Colors</a>
-          </li>
-          <li class="doc-toc__item">
-            <a href="#status-indicator" class="doc-toc__link">Status Indicators</a>
-          </li>
-          <li class="doc-toc__item">
-            <a href="#avatar-group" class="doc-toc__link">Avatar Group</a>
+            <a href="#states" class="doc-toc__link">Interactive States</a>
           </li>
           <li class="doc-toc__item">
             <a href="#design-tokens" class="doc-toc__link">Design Tokens</a>

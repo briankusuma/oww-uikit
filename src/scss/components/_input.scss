@@ -1,0 +1,626 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/functions" as func;
+@use "../abstract/mixins" as mixins;
+
+// =============================================================================
+// Form Input & Controls Component
+// Derived from Figma: "Ad Platform Maker Athian Phase 2"
+// - Form Input Component Set (#19856:33)
+// - Date Picker (#19857:196)
+// - Readable / Share Link Input (#22993:42068)
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Form Group & Label
+// -----------------------------------------------------------------------------
+.oww-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$input-label-gap;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__label-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    user-select: none;
+  }
+
+  &__label {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-md); // 16px (Large default)
+    font-weight: vars.$font-weight-semibold; // 600
+    line-height: 1.5;
+    letter-spacing: vars.$letter-spacing-tight;
+    color: vars.$color-text-black;
+    margin: 0;
+  }
+
+  &__required {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-md);
+    font-weight: vars.$font-weight-semibold;
+    color: vars.$input-required-color; // #FF0909
+    line-height: 1.5;
+  }
+
+  &__hint {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm); // 14px
+    color: vars.$input-placeholder-color;
+    line-height: 1.4;
+    margin-top: 4px;
+  }
+
+  &__error-text {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm); // 14px
+    color: vars.$input-text-error; // #FF0909
+    line-height: 1.4;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+
+  // Size modifier: Medium
+  &--md {
+    .oww-form-group__label {
+      font-size: func.rem(vars.$font-size-sm); // 14px
+    }
+    .oww-form-group__required {
+      font-size: func.rem(vars.$font-size-sm);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Standard Single-Line Input (.oww-input)
+// -----------------------------------------------------------------------------
+.oww-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: vars.$input-bg-default;
+  border: vars.$input-border-width solid vars.$input-border-color-default;
+  color: vars.$input-text-color;
+  font-family: vars.$font-family-base;
+  letter-spacing: vars.$letter-spacing-tight;
+  outline: none;
+  transition: all vars.$transition-duration-fast vars.$transition-timing-base;
+
+  // Default: Large Size (Figma: Height 56px, Radius 14px, Padding 16px, Font 16px)
+  height: vars.$input-height-lg;
+  padding: 0 vars.$input-padding-lg;
+  font-size: func.rem(vars.$font-size-md);
+  border-radius: vars.$input-radius-lg;
+
+  &::placeholder {
+    color: vars.$input-placeholder-color;
+    opacity: 1;
+  }
+
+  // Size Modifier: Medium (Figma: Height 48px, Radius 12px, Padding 14px 16px, Font 14px)
+  &--md {
+    height: vars.$input-height-md;
+    padding: 0 16px;
+    font-size: func.rem(vars.$font-size-sm);
+    border-radius: vars.$input-radius-md;
+  }
+
+  // State: Focus
+  &:focus,
+  &.is-focus {
+    background-color: vars.$input-bg-default;
+    border-color: vars.$color-base-primary-900;
+    box-shadow: vars.$input-focus-shadow;
+  }
+
+  // State: Disabled
+  &:disabled,
+  &.is-disabled {
+    background-color: vars.$input-bg-disabled;
+    border-color: vars.$input-border-disabled;
+    color: vars.$input-text-disabled;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: vars.$input-text-disabled;
+    }
+  }
+
+  // State: Error
+  &.is-error,
+  &--error {
+    background-color: vars.$input-bg-error;
+    border-color: vars.$input-border-error;
+    color: vars.$input-text-error;
+
+    &::placeholder {
+      color: vars.$input-text-error;
+      opacity: 0.7;
+    }
+
+    &:focus,
+    &.is-focus {
+      border-color: vars.$input-border-error;
+      box-shadow: 0 0 0 1px vars.$input-border-error;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Multiline Text Area (.oww-textarea)
+// -----------------------------------------------------------------------------
+.oww-textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: vars.$input-bg-default;
+  border: vars.$input-border-width solid vars.$input-border-color-default;
+  color: vars.$input-text-color;
+  font-family: vars.$font-family-base;
+  letter-spacing: vars.$letter-spacing-tight;
+  line-height: 1.5;
+  outline: none;
+  resize: vertical;
+  transition: all vars.$transition-duration-fast vars.$transition-timing-base;
+
+  // Default: Large Size (Figma: Height 150px, Radius 14px, Padding 16px, Font 16px)
+  height: vars.$input-textarea-height;
+  padding: vars.$input-padding-lg;
+  font-size: func.rem(vars.$font-size-md);
+  border-radius: vars.$input-radius-lg;
+
+  &::placeholder {
+    color: vars.$input-placeholder-color;
+    opacity: 1;
+  }
+
+  // Size Modifier: Medium
+  &--md {
+    padding: vars.$input-padding-md;
+    font-size: func.rem(vars.$font-size-sm);
+    border-radius: vars.$input-radius-md;
+  }
+
+  &:focus,
+  &.is-focus {
+    background-color: vars.$input-bg-default;
+    border-color: vars.$color-base-primary-900;
+    box-shadow: vars.$input-focus-shadow;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    background-color: vars.$input-bg-disabled;
+    border-color: vars.$input-border-disabled;
+    color: vars.$input-text-disabled;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: vars.$input-text-disabled;
+    }
+  }
+
+  &.is-error,
+  &--error {
+    background-color: vars.$input-bg-error;
+    border-color: vars.$input-border-error;
+    color: vars.$input-text-error;
+
+    &::placeholder {
+      color: vars.$input-text-error;
+      opacity: 0.7;
+    }
+
+    &:focus,
+    &.is-focus {
+      border-color: vars.$input-border-error;
+      box-shadow: 0 0 0 1px vars.$input-border-error;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Badge / Tag Input (.oww-input-badge)
+// -----------------------------------------------------------------------------
+.oww-input-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: vars.$input-bg-default;
+  border: vars.$input-border-width solid vars.$input-border-color-default;
+  transition: all vars.$transition-duration-fast vars.$transition-timing-base;
+  cursor: text;
+
+  // Large Size
+  min-height: vars.$input-height-lg;
+  padding: 8px 16px;
+  border-radius: vars.$input-radius-lg;
+
+  // Medium Size
+  &--md {
+    min-height: vars.$input-height-md;
+    padding: 6px 14px;
+    border-radius: vars.$input-radius-md;
+  }
+
+  &:focus-within,
+  &.is-focus {
+    background-color: vars.$input-bg-default;
+    border-color: vars.$color-base-primary-900;
+    box-shadow: vars.$input-focus-shadow;
+  }
+
+  &.is-disabled {
+    background-color: vars.$input-bg-disabled;
+    border-color: vars.$input-border-disabled;
+    cursor: not-allowed;
+  }
+
+  &.is-error {
+    background-color: vars.$input-bg-error;
+    border-color: vars.$input-border-error;
+
+    &:focus-within,
+    &.is-focus {
+      border-color: vars.$input-border-error;
+      box-shadow: 0 0 0 1px vars.$input-border-error;
+    }
+  }
+
+  // Tag Chip (Figma: Input Badge #22416:5810)
+  .oww-input-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: vars.$input-chip-bg;
+    border: 1px solid vars.$input-chip-border-color;
+    border-radius: vars.$input-chip-radius;
+    padding: vars.$input-chip-padding;
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm);
+    color: vars.$color-text-black;
+    white-space: nowrap;
+    user-select: none;
+    transition: background-color 0.15s ease;
+
+    &__remove {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: vars.$color-base-primary-500;
+      border-radius: 50%;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: vars.$color-base-danger-500;
+      }
+    }
+  }
+
+  // Inline typing field
+  &__field {
+    flex: 1;
+    min-width: 90px;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-md);
+    color: vars.$input-text-color;
+    letter-spacing: vars.$letter-spacing-tight;
+    padding: 4px 0;
+
+    &::placeholder {
+      color: vars.$input-placeholder-color;
+    }
+  }
+
+  &--md &__field {
+    font-size: func.rem(vars.$font-size-sm);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Phone Number Input (.oww-input-phone)
+// -----------------------------------------------------------------------------
+.oww-input-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__select {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background-color: vars.$input-bg-default;
+    border: vars.$input-border-width solid vars.$input-border-color-default;
+    color: vars.$input-text-color;
+    font-family: vars.$font-family-base;
+    cursor: pointer;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: all vars.$transition-duration-fast vars.$transition-timing-base;
+
+    // Large Size (Figma: width 111px, height 56px, radius 14px)
+    height: vars.$input-height-lg;
+    padding: 0 16px;
+    border-radius: vars.$input-radius-lg;
+    min-width: 111px;
+
+    // Medium Size
+    &--md {
+      height: vars.$input-height-md;
+      padding: 0 14px;
+      border-radius: vars.$input-radius-md;
+      min-width: 100px;
+    }
+
+    &:focus-visible,
+    &:hover {
+      border-color: vars.$color-base-primary-900;
+    }
+
+    img,
+    svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      border-radius: 2px;
+    }
+
+    &__code {
+      font-size: func.rem(vars.$font-size-md);
+      font-weight: vars.$font-weight-medium;
+      color: vars.$color-text-black;
+    }
+
+    &--md &__code {
+      font-size: func.rem(vars.$font-size-sm);
+    }
+
+    &__caret {
+      color: vars.$color-base-primary-500;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  &__number {
+    flex: 1;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Segmented Date Picker Input (.oww-input-date)
+// -----------------------------------------------------------------------------
+.oww-input-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+    &--month {
+      flex: 3;
+    }
+
+    &--day {
+      flex: 1.5;
+    }
+
+    &--year {
+      flex: 2;
+    }
+
+    select {
+      appearance: none;
+      width: 100%;
+      height: vars.$input-height-lg;
+      padding: 0 36px 0 16px;
+      background-color: vars.$input-bg-default;
+      border: vars.$input-border-width solid vars.$input-border-color-default;
+      border-radius: vars.$input-radius-lg;
+      font-family: vars.$font-family-base;
+      font-size: func.rem(vars.$font-size-md);
+      color: vars.$input-text-color;
+      outline: none;
+      cursor: pointer;
+      transition: all vars.$transition-duration-fast vars.$transition-timing-base;
+
+      &:focus {
+        border-color: vars.$color-base-primary-900;
+        box-shadow: vars.$input-focus-shadow;
+      }
+
+      &:disabled {
+        background-color: vars.$input-bg-disabled;
+        border-color: vars.$input-border-disabled;
+        color: vars.$input-text-disabled;
+        cursor: not-allowed;
+      }
+    }
+
+    &__caret {
+      position: absolute;
+      right: 12px;
+      pointer-events: none;
+      display: inline-flex;
+      align-items: center;
+      color: vars.$color-base-primary-500;
+    }
+  }
+
+  &--md &__item select {
+    height: vars.$input-height-md;
+    font-size: func.rem(vars.$font-size-sm);
+    border-radius: vars.$input-radius-md;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Readable / Share Link Input with Copy Action (.oww-input-readable)
+// -----------------------------------------------------------------------------
+.oww-input-readable {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  .oww-input {
+    padding-right: 48px;
+    cursor: default;
+  }
+
+  &__action {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: vars.$radius-base-4; // 8px
+    border: none;
+    background: transparent;
+    color: vars.$color-base-primary-600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background-color: vars.$color-base-grey-200;
+      color: vars.$color-text-black;
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+  }
+}
+
+// =============================================================================
+// Dark Theme Overrides for Form Inputs
+// =============================================================================
+[data-theme="dark"] {
+  .oww-form-group {
+    &__label {
+      color: var(--doc-text);
+    }
+    &__hint {
+      color: var(--doc-text-muted);
+    }
+  }
+
+  .oww-input,
+  .oww-textarea,
+  .oww-input-badge,
+  .oww-input-phone__select,
+  .oww-input-date__item select {
+    background-color: var(--doc-surface);
+    border-color: var(--doc-border);
+    color: var(--doc-text);
+
+    &::placeholder {
+      color: var(--doc-text-dim);
+    }
+
+    &:focus,
+    &.is-focus,
+    &:focus-within {
+      background-color: var(--doc-surface);
+      border-color: var(--doc-text);
+      box-shadow: 0 0 0 1px var(--doc-text);
+    }
+
+    &:disabled,
+    &.is-disabled {
+      background-color: var(--doc-surface-hover);
+      border-color: var(--doc-border-subtle);
+      color: var(--doc-text-dim);
+
+      &::placeholder {
+        color: var(--doc-text-dim);
+      }
+    }
+
+    &.is-error,
+    &--error {
+      background-color: rgba(255, 9, 9, 0.12);
+      border-color: vars.$color-base-danger-500;
+      color: vars.$color-base-danger-500;
+
+      &::placeholder {
+        color: vars.$color-base-danger-500;
+      }
+
+      &:focus,
+      &.is-focus,
+      &:focus-within {
+        border-color: vars.$color-base-danger-500;
+        box-shadow: 0 0 0 1px vars.$color-base-danger-500;
+      }
+    }
+  }
+
+  .oww-input-chip {
+    background-color: var(--doc-surface-hover);
+    border-color: var(--doc-border);
+    color: var(--doc-text);
+
+    &__remove {
+      color: var(--doc-text-muted);
+      &:hover {
+        color: vars.$color-base-danger-500;
+      }
+    }
+  }
+
+  .oww-input-phone__select {
+    &__code {
+      color: var(--doc-text);
+    }
+    &__caret {
+      color: var(--doc-text-dim);
+    }
+  }
+
+  .oww-input-date__item__caret {
+    color: var(--doc-text-dim);
+  }
+
+  .oww-input-readable__action {
+    color: var(--doc-text-muted);
+
+    &:hover {
+      background-color: var(--doc-surface-hover);
+      color: var(--doc-text);
+    }
+  }
+}
