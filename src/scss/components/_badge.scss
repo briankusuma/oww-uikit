@@ -1,0 +1,199 @@
+@use '../abstract/variables' as vars;
+@use '../abstract/functions' as func;
+@use '../abstract/mixins' as mixins;
+
+// =============================================================================
+// Badge Components
+// Derived from Figma: "Ad Platform Maker Athian Phase 2"
+// - Badge (Input Badge & Text Category): #22416:5811
+// - Verified Badge (Business & Personal): #22712:21291
+// - Unread Badge (Desktop & Mobile): #22834:19863
+// - Image Pagination Badge: #22682:20678
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// 1. Base Badge (.oww-badge)
+// -----------------------------------------------------------------------------
+.oww-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: vars.$radius-xl; // 16px
+  border: 1px solid vars.$color-base-primary-100; // #E9E9E9
+  background-color: vars.$bg-white; // #FFFFFF
+  color: vars.$color-text-black; // #000000
+  font-family: vars.$font-family-base;
+  text-decoration: none;
+  box-sizing: border-box;
+  user-select: none;
+  transition: all vars.$transition-duration-base vars.$transition-timing-base;
+
+  // ---------------------------------------------------------------------------
+  // Variant: Input Badge (Figma: Function=Input Badge #22416:5811)
+  // ---------------------------------------------------------------------------
+  &--input {
+    padding: 2px 6px 2px 8px;
+    gap: 4px;
+    @include mixins.text('md', 'regular'); // 16px, 400
+
+    &:hover,
+    &.is-hover {
+      border-color: vars.$color-base-grey-400;
+    }
+
+    &:disabled,
+    &.is-disabled {
+      color: vars.$color-base-grey-400; // #C4C4C4
+      cursor: not-allowed;
+      border-color: vars.$color-base-primary-100;
+
+      .oww-badge__remove,
+      .oww-badge__icon {
+        color: vars.$color-base-grey-400;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Variant: Text Category Badge (Figma: Function=Text Category #22679:15385)
+  // ---------------------------------------------------------------------------
+  &--category {
+    height: 28px;
+    padding: 8px 12px;
+    gap: 4px;
+    @include mixins.text('sm', 'regular'); // 14px, 400
+
+    &:hover,
+    &.is-hover {
+      background-color: vars.$color-base-grey-100; // #F8F8F8
+      border-color: vars.$color-base-primary-100;
+    }
+
+    &:disabled,
+    &.is-disabled {
+      background-color: vars.$bg-white;
+      color: vars.$color-base-grey-400; // #C4C4C4
+      cursor: not-allowed;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Inner Elements: Text & Remove Icon
+  // ---------------------------------------------------------------------------
+  &__text {
+    display: inline-block;
+    line-height: inherit;
+  }
+
+  &__remove,
+  &__icon {
+    @include mixins.flex-center;
+    width: 16px;
+    height: 16px;
+    color: currentColor;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: opacity vars.$transition-duration-fast;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 2. Verified Badge (Figma: Bagde Verified #22712:21291)
+// -----------------------------------------------------------------------------
+.oww-badge-verified {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  vertical-align: middle;
+
+  svg,
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  // Business Variant (Green #4AB632)
+  &--business {
+    color: vars.$color-base-success-500;
+  }
+
+  // Personal Variant (Blue #0077FF)
+  &--personal {
+    color: vars.$color-base-info-700;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 3. Unread / Notification Badge (Figma: unread badge #22834:19863)
+// -----------------------------------------------------------------------------
+.oww-badge-unread {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  user-select: none;
+  border-radius: vars.$radius-full; // 100px / pill
+
+  // Desktop Variant: Soft pink background with danger red text (Figma: Device=Desktop)
+  &--desktop {
+    height: 24px;
+    min-width: 46px;
+    padding: 2px 14px;
+    background-color: vars.$bg-soft-danger; // #FFE9EC
+    color: vars.$color-base-danger-500; // #FF0909
+    @include mixins.text('sm', 'semibold'); // 14px, 600
+  }
+
+  // Mobile Variant: Danger red circle with white text (Figma: Device=Mobile)
+  &--mobile {
+    width: 18px;
+    height: 18px;
+    padding: 2px;
+    background-color: vars.$color-base-danger-500; // #FF0909
+    color: vars.$color-text-white; // #FFFFFF
+    font-family: vars.$font-family-base;
+    font-size: 10px;
+    font-weight: vars.$font-weight-semibold;
+    line-height: vars.$line-height-150;
+    letter-spacing: vars.$letter-spacing-tight;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 4. Image Pagination Badge (Figma: image pagination badge #22682:20678)
+// -----------------------------------------------------------------------------
+.oww-badge-pagination {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding: 2px 12px;
+  gap: 8px;
+  background-color: vars.$bg-white; // #FFFFFF
+  border: 1px solid vars.$color-base-grey-300; // #E4E4E4
+  border-radius: vars.$radius-full; // 100px
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  color: vars.$color-text-black; // #000000
+  @include mixins.text('sm', 'medium'); // 14px, 500
+  user-select: none;
+  box-sizing: border-box;
+}

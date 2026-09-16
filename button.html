@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avatar - OWW UIKit Documentation</title>
+  <title>Button - OWW UIKit Documentation</title>
 
   <!-- Inter Font from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,7 +162,7 @@
           </ul>
         </div>
 
-        <!-- Group 3: Components (Auto-expandable) -->
+        <!-- Group 3: Components (Strict A-Z Order) -->
         <div class="doc-sidebar__group">
           <div class="doc-sidebar__title">
             <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
@@ -180,9 +180,9 @@
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
             </li>
-            <!-- Avatar (Active) -->
+            <!-- Avatar -->
             <li class="doc-sidebar__item">
-              <a href="avatar.html" class="doc-sidebar__link is-active">
+              <a href="avatar.html" class="doc-sidebar__link">
                 Avatar
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
@@ -201,9 +201,9 @@
                 <span class="upcoming-tag">Soon</span>
               </a>
             </li>
-            <!-- Button -->
+            <!-- Button (Active) -->
             <li class="doc-sidebar__item">
-              <a href="button.html" class="doc-sidebar__link">
+              <a href="button.html" class="doc-sidebar__link is-active">
                 Button
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
@@ -309,18 +309,18 @@
       <main class="doc-content">
         <!-- Breadcrumb -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="alert.html">Docs</a>
+          <a href="introduction.html">Docs</a>
           <span>/</span>
-          <a href="avatar.html">Components</a>
+          <a href="button.html">Components</a>
           <span>/</span>
-          <span style="color: var(--doc-text); font-weight: 500;">Avatar</span>
+          <span style="color: var(--doc-text); font-weight: 500;">Button</span>
         </nav>
 
         <!-- Page Header -->
         <header class="doc-content__header">
-          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Avatar</h1>
+          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Button</h1>
           <p class="doc-content__lead">
-            The Avatar component represents user entities, teams, or profile identities. Crafted with precision following official Figma specifications for Avatar and Initials Avatar component systems.
+            Buttons trigger actions and choices with a single tap or click. Built in strict alignment with Figma specifications supporting Primary, Outline, Ghost, Danger Soft, and Verification Badge variants across 4 standard sizes (xs, sm, md, lg).
           </p>
         </header>
 
@@ -330,33 +330,54 @@
         <section id="overview" class="doc-content__section">
           <h2 class="doc-content__section-title">Overview</h2>
           <p class="doc-content__section-desc">
-            Avatars support three primary display variants: <strong>Image</strong>, <strong>Initials</strong>, and <strong>Placeholder (Fallback)</strong>. The component comes in 4 standardized size scales: <code>xs (22px)</code>, <code>sm (32px)</code>, <code>md (40px)</code>, and <code>lg (48px)</code>.
+            Explore the core button styling tiers designed for clear visual hierarchy across applications:
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview" style="gap: 32px;">
-              <!-- Image Avatar -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="User Avatar" class="oww-avatar__image">
+            <div class="doc-example__preview">
+              <div class="btn-preview-row">
+                <!-- Primary Button -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--primary oww-btn--md">
+                    <span class="oww-btn__text">Primary Button</span>
+                  </button>
+                  <span class="btn-preview-label">Primary</span>
                 </div>
-                <span class="avatar-preview-label">Image (48px)</span>
-              </div>
 
-              <!-- Initials Avatar -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials">
-                  <span class="oww-avatar__initials">MA</span>
+                <!-- Outline Button -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--outline oww-btn--md">
+                    <span class="oww-btn__text">Outline Button</span>
+                  </button>
+                  <span class="btn-preview-label">Outline</span>
                 </div>
-                <span class="avatar-preview-label">Initials (48px)</span>
-              </div>
 
-              <!-- Dummy / Placeholder Avatar -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder">
-                  <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder Avatar" class="oww-avatar__image">
+                <!-- Ghost Button -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--ghost oww-btn--md">
+                    <span class="oww-btn__text">Ghost Button</span>
+                  </button>
+                  <span class="btn-preview-label">Ghost</span>
                 </div>
-                <span class="avatar-preview-label">Placeholder (48px)</span>
+
+                <!-- Danger Button -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--danger oww-btn--sm">
+                    <span class="oww-btn__text">Delete</span>
+                  </button>
+                  <span class="btn-preview-label">Danger Soft</span>
+                </div>
+
+                <!-- Verification Button -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--verification oww-btn--sm">
+                    <span class="oww-btn__text">Get a verification badge</span>
+                    <span class="oww-btn__icon">
+                      <img src="./dist/assets/icons/badge-verified-business.svg" alt="Verified" width="16" height="16">
+                    </span>
+                  </button>
+                  <span class="btn-preview-label">Verification</span>
+                </div>
               </div>
             </div>
 
@@ -368,65 +389,70 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;!-- Image Avatar --&gt;
-&lt;div class="oww-avatar oww-avatar--lg"&gt;
-  &lt;img src="avatar.png" alt="User" class="oww-avatar__image"&gt;
-&lt;/div&gt;
+              <pre><code>&lt;!-- Primary Action --&gt;
+&lt;button type="button" class="oww-btn oww-btn--primary oww-btn--md"&gt;Primary Button&lt;/button&gt;
 
-&lt;!-- Initials Avatar --&gt;
-&lt;div class="oww-avatar oww-avatar--lg oww-avatar--initials"&gt;
-  &lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;
-&lt;/div&gt;
+&lt;!-- Outline Secondary Action --&gt;
+&lt;button type="button" class="oww-btn oww-btn--outline oww-btn--md"&gt;Outline Button&lt;/button&gt;
 
-&lt;!-- Placeholder Avatar --&gt;
-&lt;div class="oww-avatar oww-avatar--lg oww-avatar--placeholder"&gt;
-  &lt;img src="placeholder.png" alt="Placeholder" class="oww-avatar__image"&gt;
-&lt;/div&gt;</code></pre>
+&lt;!-- Ghost Subtle Action --&gt;
+&lt;button type="button" class="oww-btn oww-btn--ghost oww-btn--md"&gt;Ghost Button&lt;/button&gt;
+
+&lt;!-- Danger Action --&gt;
+&lt;button type="button" class="oww-btn oww-btn--danger oww-btn--sm"&gt;Delete&lt;/button&gt;
+
+&lt;!-- Verification Badge Button --&gt;
+&lt;button type="button" class="oww-btn oww-btn--verification oww-btn--sm"&gt;
+  &lt;span class="oww-btn__text"&gt;Get a verification badge&lt;/span&gt;
+  &lt;span class="oww-btn__icon"&gt;&lt;img src="./dist/assets/icons/badge-verified-business.svg" alt=""&gt;&lt;/span&gt;
+&lt;/button&gt;</code></pre>
             </div>
           </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- Section 2: Size Scale -->
+        <!-- Section 2: Sizes Scale -->
         <!-- =================================================================== -->
         <section id="sizes" class="doc-content__section">
           <h2 class="doc-content__section-title">Sizes Scale</h2>
           <p class="doc-content__section-desc">
-            Four standardized size scales defined in the OWW Design System: <code>--lg (48px)</code>, <code>--md (40px)</code>, <code>--sm (32px)</code>, and <code>--xs (22px)</code>.
+            Buttons are available in 4 standard heights: <code>xs (26px)</code>, <code>sm (32px)</code>, <code>md (40px)</code>, and <code>lg (48px)</code>.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview avatar-preview-row">
-              <!-- Large -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="LG" class="oww-avatar__image">
+            <div class="doc-example__preview">
+              <div class="btn-preview-row" style="align-items: center;">
+                <!-- Extra Small (26px) -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--primary oww-btn--xs">
+                    <span class="oww-btn__text">Extra Small (26px)</span>
+                  </button>
+                  <span class="btn-preview-label">xs (26px)</span>
                 </div>
-                <span class="avatar-preview-label">lg · 48px</span>
-              </div>
 
-              <!-- Medium -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--md">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="MD" class="oww-avatar__image">
+                <!-- Small (32px) -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--primary oww-btn--sm">
+                    <span class="oww-btn__text">Small (32px)</span>
+                  </button>
+                  <span class="btn-preview-label">sm (32px)</span>
                 </div>
-                <span class="avatar-preview-label">md · 40px</span>
-              </div>
 
-              <!-- Small -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--sm">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="SM" class="oww-avatar__image">
+                <!-- Medium (40px) -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--primary oww-btn--md">
+                    <span class="oww-btn__text">Medium (40px)</span>
+                  </button>
+                  <span class="btn-preview-label">md (40px) - Default</span>
                 </div>
-                <span class="avatar-preview-label">sm · 32px</span>
-              </div>
 
-              <!-- Extra Small -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--xs">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="XS" class="oww-avatar__image">
+                <!-- Large (48px) -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--primary oww-btn--lg">
+                    <span class="oww-btn__text">Large (48px)</span>
+                  </button>
+                  <span class="btn-preview-label">lg (48px)</span>
                 </div>
-                <span class="avatar-preview-label">xs · 22px</span>
               </div>
             </div>
 
@@ -438,10 +464,10 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;div class="oww-avatar oww-avatar--lg"&gt;...&lt;/div&gt; &lt;!-- 48px --&gt;
-&lt;div class="oww-avatar oww-avatar--md"&gt;...&lt;/div&gt; &lt;!-- 40px (Default) --&gt;
-&lt;div class="oww-avatar oww-avatar--sm"&gt;...&lt;/div&gt; &lt;!-- 32px --&gt;
-&lt;div class="oww-avatar oww-avatar--xs"&gt;...&lt;/div&gt; &lt;!-- 22px --&gt;</code></pre>
+              <pre><code>&lt;button class="oww-btn oww-btn--primary oww-btn--xs"&gt;Extra Small&lt;/button&gt;
+&lt;button class="oww-btn oww-btn--primary oww-btn--sm"&gt;Small&lt;/button&gt;
+&lt;button class="oww-btn oww-btn--primary oww-btn--md"&gt;Medium&lt;/button&gt;
+&lt;button class="oww-btn oww-btn--primary oww-btn--lg"&gt;Large&lt;/button&gt;</code></pre>
             </div>
           </div>
         </section>
@@ -449,45 +475,18 @@
         <!-- =================================================================== -->
         <!-- Section 3: Core Variants -->
         <!-- =================================================================== -->
-        <section id="variants" class="doc-content__section">
+        <section id="types" class="doc-content__section">
           <h2 class="doc-content__section-title">Core Variants</h2>
           <p class="doc-content__section-desc">
-            Three core visual variants adhering to design specifications.
+            The button system is divided into three primary functional tiers: <strong>Primary</strong> (solid black), <strong>Outline</strong> (light grey border), and <strong>Ghost</strong> (borderless).
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview" style="gap: 40px; justify-content: flex-start;">
-              <!-- Variant: Image -->
-              <div style="display: flex; flex-direction: column; gap: 12px;">
-                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">1. Image Variant</span>
-                <div class="avatar-preview-row">
-                  <div class="oww-avatar oww-avatar--lg"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--md"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--sm"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--xs"><img src="./src/assets/images/avatar/avatar-user.png" alt="Avatar" class="oww-avatar__image"></div>
-                </div>
-              </div>
-
-              <!-- Variant: Initials -->
-              <div style="display: flex; flex-direction: column; gap: 12px;">
-                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">2. Initials Variant</span>
-                <div class="avatar-preview-row">
-                  <div class="oww-avatar oww-avatar--lg oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
-                  <div class="oww-avatar oww-avatar--md oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
-                  <div class="oww-avatar oww-avatar--sm oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
-                  <div class="oww-avatar oww-avatar--xs oww-avatar--initials"><span class="oww-avatar__initials">MA</span></div>
-                </div>
-              </div>
-
-              <!-- Variant: Dummy / Placeholder -->
-              <div style="display: flex; flex-direction: column; gap: 12px;">
-                <span style="font-size: 13px; font-weight: 600; color: var(--doc-text);">3. Placeholder Variant</span>
-                <div class="avatar-preview-row">
-                  <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--md oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--sm oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
-                  <div class="oww-avatar oww-avatar--xs oww-avatar--placeholder"><img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Placeholder" class="oww-avatar__image"></div>
-                </div>
+            <div class="doc-example__preview">
+              <div class="btn-preview-row">
+                <button type="button" class="oww-btn oww-btn--primary oww-btn--md">Primary Variant</button>
+                <button type="button" class="oww-btn oww-btn--outline oww-btn--md">Outline Variant</button>
+                <button type="button" class="oww-btn oww-btn--ghost oww-btn--md">Ghost Variant</button>
               </div>
             </div>
 
@@ -499,73 +498,48 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;!-- 1. Image Variant --&gt;
-&lt;div class="oww-avatar oww-avatar--md"&gt;
-  &lt;img src="user.jpg" alt="Alex" class="oww-avatar__image"&gt;
-&lt;/div&gt;
-
-&lt;!-- 2. Initials Variant (Theme tokens: bg=#E2F3FF, text=#0077FF) --&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials"&gt;
-  &lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;!-- 3. Placeholder Variant --&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--placeholder"&gt;
-  &lt;img src="placeholder.png" alt="Guest" class="oww-avatar__image"&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code>&lt;button class="oww-btn oww-btn--primary oww-btn--md"&gt;Primary Variant&lt;/button&gt;
+&lt;button class="oww-btn oww-btn--outline oww-btn--md"&gt;Outline Variant&lt;/button&gt;
+&lt;button class="oww-btn oww-btn--ghost oww-btn--md"&gt;Ghost Variant&lt;/button&gt;</code></pre>
             </div>
           </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- Section 4: Initials Semantic Color Palettes -->
+        <!-- Section 4: Interactive States -->
         <!-- =================================================================== -->
-        <section id="initials" class="doc-content__section">
-          <h2 class="doc-content__section-title">Initials Color Palettes</h2>
+        <section id="states" class="doc-content__section">
+          <h2 class="doc-content__section-title">Interactive States</h2>
           <p class="doc-content__section-desc">
-            The initials variant supports harmonious semantic color combinations to differentiate user categories, departments, or team roles.
+            Buttons include complete visual representations for <strong>Default</strong>, <strong>Hover</strong>, <strong>Pressed/Active</strong>, <strong>Focus Ring</strong>, and <strong>Disabled</strong> states.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview avatar-preview-row" style="gap: 24px;">
-              <!-- Primary (Default Figma) -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--primary">
-                  <span class="oww-avatar__initials">MA</span>
+            <div class="doc-example__preview">
+              <div class="btn-preview-row">
+                <!-- Default -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--primary oww-btn--sm">Default</button>
+                  <span class="btn-preview-label">Default</span>
                 </div>
-                <span class="avatar-preview-label">Primary (#0077FF)</span>
-              </div>
 
-              <!-- Success -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--success">
-                  <span class="oww-avatar__initials">BK</span>
+                <!-- Hover -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--primary oww-btn--sm is-hover">Hover</button>
+                  <span class="btn-preview-label">Hover (#434343)</span>
                 </div>
-                <span class="avatar-preview-label">Success (#2E7D32)</span>
-              </div>
 
-              <!-- Warning -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--warning">
-                  <span class="oww-avatar__initials">AT</span>
+                <!-- Pressed -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--primary oww-btn--sm is-pressed">Pressed</button>
+                  <span class="btn-preview-label">Pressed</span>
                 </div>
-                <span class="avatar-preview-label">Warning (#ED6C02)</span>
-              </div>
 
-              <!-- Danger -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--danger">
-                  <span class="oww-avatar__initials">RD</span>
+                <!-- Disabled -->
+                <div class="btn-preview-card">
+                  <button type="button" class="oww-btn oww-btn--primary oww-btn--sm" disabled>Disabled</button>
+                  <span class="btn-preview-label">Disabled (#D9D9D9)</span>
                 </div>
-                <span class="avatar-preview-label">Danger (#D32F2F)</span>
-              </div>
-
-              <!-- Neutral -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials oww-avatar--neutral">
-                  <span class="oww-avatar__initials">OW</span>
-                </div>
-                <span class="avatar-preview-label">Neutral (#475569)</span>
               </div>
             </div>
 
@@ -577,60 +551,67 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--primary"&gt;&lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;&lt;/div&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--success"&gt;&lt;span class="oww-avatar__initials"&gt;BK&lt;/span&gt;&lt;/div&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--warning"&gt;&lt;span class="oww-avatar__initials"&gt;AT&lt;/span&gt;&lt;/div&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--danger"&gt;&lt;span class="oww-avatar__initials"&gt;RD&lt;/span&gt;&lt;/div&gt;
-&lt;div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--neutral"&gt;&lt;span class="oww-avatar__initials"&gt;OW&lt;/span&gt;&lt;/div&gt;</code></pre>
+              <pre><code>&lt;!-- Default state --&gt;
+&lt;button class="oww-btn oww-btn--primary oww-btn--sm"&gt;Default&lt;/button&gt;
+
+&lt;!-- Forced hover state class or native :hover --&gt;
+&lt;button class="oww-btn oww-btn--primary oww-btn--sm is-hover"&gt;Hover&lt;/button&gt;
+
+&lt;!-- Pressed state class or native :active --&gt;
+&lt;button class="oww-btn oww-btn--primary oww-btn--sm is-pressed"&gt;Pressed&lt;/button&gt;
+
+&lt;!-- Disabled button --&gt;
+&lt;button class="oww-btn oww-btn--primary oww-btn--sm" disabled&gt;Disabled&lt;/button&gt;</code></pre>
             </div>
           </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- Section 5: Status Indicators -->
+        <!-- Section 5: With Icons -->
         <!-- =================================================================== -->
-        <section id="status-indicator" class="doc-content__section">
-          <h2 class="doc-content__section-title">Status Indicators</h2>
+        <section id="icons" class="doc-content__section">
+          <h2 class="doc-content__section-title">Buttons with Icons</h2>
           <p class="doc-content__section-desc">
-            Presence badges positioned at the bottom-right corner of the avatar to communicate user availability and real-time state.
+            Pair buttons with icons on the left or right to enhance visual clarity and context.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview avatar-preview-row" style="gap: 32px;">
-              <!-- Online -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="Online" class="oww-avatar__image">
-                  <span class="oww-avatar__status oww-avatar__status--online" title="Online"></span>
-                </div>
-                <span class="avatar-preview-label">Online</span>
-              </div>
+            <div class="doc-example__preview">
+              <div class="btn-preview-row">
+                <!-- Left Icon -->
+                <button type="button" class="oww-btn oww-btn--primary oww-btn--md">
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M10 4.16666V15.8333M4.16666 10H15.8333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="oww-btn__text">Add Item</span>
+                </button>
 
-              <!-- Busy -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="Busy" class="oww-avatar__image">
-                  <span class="oww-avatar__status oww-avatar__status--busy" title="Busy"></span>
-                </div>
-                <span class="avatar-preview-label">Busy</span>
-              </div>
+                <!-- Right Icon -->
+                <button type="button" class="oww-btn oww-btn--outline oww-btn--md">
+                  <span class="oww-btn__text">Continue</span>
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M4.16666 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
 
-              <!-- Away -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--initials">
-                  <span class="oww-avatar__initials">MA</span>
-                  <span class="oww-avatar__status oww-avatar__status--away" title="Away"></span>
-                </div>
-                <span class="avatar-preview-label">Away</span>
-              </div>
-
-              <!-- Offline -->
-              <div class="avatar-preview-card">
-                <div class="oww-avatar oww-avatar--lg oww-avatar--placeholder">
-                  <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="Offline" class="oww-avatar__image">
-                  <span class="oww-avatar__status oww-avatar__status--offline" title="Offline"></span>
-                </div>
-                <span class="avatar-preview-label">Offline</span>
+                <!-- Both Icons -->
+                <button type="button" class="oww-btn oww-btn--ghost oww-btn--md">
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M15 8.33333H5M15 11.6667H5M15 15H5M15 5H5" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <span class="oww-btn__text">Filter List</span>
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M5 7.5L10 12.5L15 7.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -642,40 +623,77 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;div class="oww-avatar oww-avatar--lg"&gt;
-  &lt;img src="user.png" class="oww-avatar__image"&gt;
-  &lt;span class="oww-avatar__status oww-avatar__status--online"&gt;&lt;/span&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code>&lt;!-- Left Icon Button --&gt;
+&lt;button class="oww-btn oww-btn--primary oww-btn--md"&gt;
+  &lt;span class="oww-btn__icon"&gt;&lt;svg ...&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span class="oww-btn__text"&gt;Add Item&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- Right Icon Button --&gt;
+&lt;button class="oww-btn oww-btn--outline oww-btn--md"&gt;
+  &lt;span class="oww-btn__text"&gt;Continue&lt;/span&gt;
+  &lt;span class="oww-btn__icon"&gt;&lt;svg ...&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;/button&gt;</code></pre>
             </div>
           </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- Section 6: Avatar Group -->
+        <!-- Section 6: Icon-Only Buttons -->
         <!-- =================================================================== -->
-        <section id="avatar-group" class="doc-content__section">
-          <h2 class="doc-content__section-title">Avatar Group</h2>
+        <section id="icon-only" class="doc-content__section">
+          <h2 class="doc-content__section-title">Icon-Only Buttons</h2>
           <p class="doc-content__section-desc">
-            Use the <code>.oww-avatar-group</code> class to stack multiple avatars horizontally with separating border rings and an overflow member counter (<code>.oww-avatar-group__more</code>).
+            Circular icon-only buttons formatted for toolbars, actions, and media control. Includes the circular Delete Icon button with trashcan asset.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview" style="flex-direction: column; align-items: flex-start; gap: 24px;">
-              <!-- Group with Mixed Avatars -->
-              <div class="oww-avatar-group">
-                <div class="oww-avatar oww-avatar--md">
-                  <img src="./src/assets/images/avatar/avatar-user.png" alt="User 1" class="oww-avatar__image">
-                </div>
-                <div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--primary">
-                  <span class="oww-avatar__initials">MA</span>
-                </div>
-                <div class="oww-avatar oww-avatar--md oww-avatar--initials oww-avatar--success">
-                  <span class="oww-avatar__initials">BK</span>
-                </div>
-                <div class="oww-avatar oww-avatar--md oww-avatar--placeholder">
-                  <img src="./src/assets/images/avatar/avatar-placeholder.png" alt="User 4" class="oww-avatar__image">
-                </div>
-                <span class="oww-avatar-group__more">+5</span>
+            <div class="doc-example__preview">
+              <div class="btn-preview-row" style="align-items: center;">
+                <!-- xs icon button -->
+                <button type="button" class="oww-btn oww-btn--outline oww-btn--xs oww-btn--icon-only" aria-label="Comment">
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M15 10C15 13.3137 12.3137 16 9 16C7.81846 16 6.71987 15.6586 5.8 15.07L2.5 16L3.43 12.7C2.84139 11.7801 2.5 10.6815 2.5 9.5C2.5 6.18629 5.18629 3.5 8.5 3.5C11.8137 3.5 15 6.18629 15 10Z"/>
+                    </svg>
+                  </span>
+                </button>
+
+                <!-- sm icon button -->
+                <button type="button" class="oww-btn oww-btn--outline oww-btn--sm oww-btn--icon-only" aria-label="Comment">
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M15 10C15 13.3137 12.3137 16 9 16C7.81846 16 6.71987 15.6586 5.8 15.07L2.5 16L3.43 12.7C2.84139 11.7801 2.5 10.6815 2.5 9.5C2.5 6.18629 5.18629 3.5 8.5 3.5C11.8137 3.5 15 6.18629 15 10Z"/>
+                    </svg>
+                  </span>
+                </button>
+
+                <!-- md icon button -->
+                <button type="button" class="oww-btn oww-btn--outline oww-btn--md oww-btn--icon-only" aria-label="Comment">
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M15 10C15 13.3137 12.3137 16 9 16C7.81846 16 6.71987 15.6586 5.8 15.07L2.5 16L3.43 12.7C2.84139 11.7801 2.5 10.6815 2.5 9.5C2.5 6.18629 5.18629 3.5 8.5 3.5C11.8137 3.5 15 6.18629 15 10Z"/>
+                    </svg>
+                  </span>
+                </button>
+
+                <!-- lg icon button -->
+                <button type="button" class="oww-btn oww-btn--outline oww-btn--lg oww-btn--icon-only" aria-label="Comment">
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                      <path d="M15 10C15 13.3137 12.3137 16 9 16C7.81846 16 6.71987 15.6586 5.8 15.07L2.5 16L3.43 12.7C2.84139 11.7801 2.5 10.6815 2.5 9.5C2.5 6.18629 5.18629 3.5 8.5 3.5C11.8137 3.5 15 6.18629 15 10Z"/>
+                    </svg>
+                  </span>
+                </button>
+
+                <!-- Delete Icon Button (Figma #22870:21388) -->
+                <button type="button" class="oww-btn oww-btn--danger oww-btn--sm oww-btn--icon-only" aria-label="Delete item">
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M8.75 1A2.75 2.75 0 006 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 10.23 1.482l.149-.022.841 10.518A2.75 2.75 0 007.596 19h4.807a2.75 2.75 0 002.742-2.53l.841-10.52.149.023a.75.75 0 00.23-1.482A41.03 41.03 0 0014 4.193V3.75A2.75 2.75 0 0011.25 1h-2.5zM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4zM8.58 7.72a.75.75 0 00-1.5.06l.3 7.5a.75.75 0 101.5-.06l-.3-7.5zm4.34.06a.75.75 0 10-1.5-.06l-.3 7.5a.75.75 0 101.5.06l.3-7.5z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -687,85 +705,188 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;div class="oww-avatar-group"&gt;
-  &lt;div class="oww-avatar oww-avatar--md"&gt;&lt;img src="user1.png" class="oww-avatar__image"&gt;&lt;/div&gt;
-  &lt;div class="oww-avatar oww-avatar--md oww-avatar--initials"&gt;&lt;span class="oww-avatar__initials"&gt;MA&lt;/span&gt;&lt;/div&gt;
-  &lt;div class="oww-avatar oww-avatar--md oww-avatar--placeholder"&gt;&lt;img src="dummy.png" class="oww-avatar__image"&gt;&lt;/div&gt;
-  &lt;span class="oww-avatar-group__more"&gt;+5&lt;/span&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code>&lt;!-- Circular Icon-Only Button (Outline) --&gt;
+&lt;button class="oww-btn oww-btn--outline oww-btn--md oww-btn--icon-only" aria-label="Action"&gt;
+  &lt;span class="oww-btn__icon"&gt;&lt;svg ...&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- Delete Icon Button (Danger Soft) --&gt;
+&lt;button class="oww-btn oww-btn--danger oww-btn--sm oww-btn--icon-only" aria-label="Delete item"&gt;
+  &lt;span class="oww-btn__icon"&gt;&lt;svg ...&gt;&lt;/svg&gt;&lt;/span&gt;
+&lt;/button&gt;</code></pre>
             </div>
           </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- Section 7: Design Tokens -->
+        <!-- Section 7: Danger Button -->
+        <!-- =================================================================== -->
+        <section id="danger" class="doc-content__section">
+          <h2 class="doc-content__section-title">Danger Soft (Delete Button)</h2>
+          <p class="doc-content__section-desc">
+            A soft danger aesthetic featuring a soft pink background (<code>#FFE9EC</code>), light danger border (<code>#FFC7CB</code>), and red action text (<code>#FF0909</code>).
+          </p>
+
+          <div class="doc-example">
+            <div class="doc-example__preview">
+              <div class="btn-preview-row">
+                <!-- Delete Button with Icons -->
+                <button type="button" class="oww-btn oww-btn--danger oww-btn--sm">
+                  <span class="oww-btn__icon">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M8.75 1A2.75 2.75 0 006 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 10.23 1.482l.149-.022.841 10.518A2.75 2.75 0 007.596 19h4.807a2.75 2.75 0 002.742-2.53l.841-10.52.149.023a.75.75 0 00.23-1.482A41.03 41.03 0 0014 4.193V3.75A2.75 2.75 0 0011.25 1h-2.5zM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4zM8.58 7.72a.75.75 0 00-1.5.06l.3 7.5a.75.75 0 101.5-.06l-.3-7.5zm4.34.06a.75.75 0 10-1.5-.06l-.3 7.5a.75.75 0 101.5.06l.3-7.5z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                  <span class="oww-btn__text">Delete</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+              <pre><code>&lt;button type="button" class="oww-btn oww-btn--danger oww-btn--sm"&gt;
+  &lt;span class="oww-btn__icon"&gt;&lt;svg ...&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;span class="oww-btn__text"&gt;Delete&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- Section 8: Verification Button -->
+        <!-- =================================================================== -->
+        <section id="verification" class="doc-content__section">
+          <h2 class="doc-content__section-title">Verification Badge Button</h2>
+          <p class="doc-content__section-desc">
+            A promotional call-to-action button highlighting account certification, with soft green background (<code>#E9F6E7</code>) and official verified badge icon.
+          </p>
+
+          <div class="doc-example">
+            <div class="doc-example__preview">
+              <div class="btn-preview-row">
+                <button type="button" class="oww-btn oww-btn--verification oww-btn--sm">
+                  <span class="oww-btn__text">Get a verification badge</span>
+                  <span class="oww-btn__icon">
+                    <img src="./dist/assets/icons/badge-verified-business.svg" alt="Verified Business" width="16" height="16">
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+              <pre><code>&lt;button type="button" class="oww-btn oww-btn--verification oww-btn--sm"&gt;
+  &lt;span class="oww-btn__text"&gt;Get a verification badge&lt;/span&gt;
+  &lt;span class="oww-btn__icon"&gt;
+    &lt;img src="./dist/assets/icons/badge-verified-business.svg" alt="Verified" width="16" height="16"&gt;
+  &lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- Section 9: Design Tokens -->
         <!-- =================================================================== -->
         <section id="design-tokens" class="doc-content__section">
           <h2 class="doc-content__section-title">Design Tokens</h2>
           <p class="doc-content__section-desc">
-            Design token values used to construct the Avatar component adhering to design specifications.
+            All button properties are linked directly to Figma tokens defined in <code>src/scss/abstract/_variables.scss</code>.
           </p>
 
           <table class="token-table">
             <thead>
               <tr>
-                <th>Token</th>
-                <th>Specification Value</th>
-                <th>Design Source</th>
+                <th>Element / Variant</th>
+                <th>Figma Property</th>
+                <th>SCSS Variable</th>
+                <th>Output Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Size: LG</td>
-                <td><code class="token-badge">48px &times; 48px</code></td>
-                <td>Avatar Component Set (Large)</td>
+                <td>Primary Background</td>
+                <td>Fills</td>
+                <td><code>$color-base-black-500</code></td>
+                <td>#000000</td>
               </tr>
               <tr>
-                <td>Size: MD</td>
-                <td><code class="token-badge">40px &times; 40px</code></td>
-                <td>Avatar Component Set (Medium)</td>
+                <td>Primary Hover</td>
+                <td>Fills</td>
+                <td><code>#434343</code></td>
+                <td>#434343</td>
               </tr>
               <tr>
-                <td>Size: SM</td>
-                <td><code class="token-badge">32px &times; 32px</code></td>
-                <td>Avatar Component Set (Small)</td>
+                <td>Primary Disabled</td>
+                <td>Fills</td>
+                <td><code>#D9D9D9</code></td>
+                <td>#D9D9D9</td>
               </tr>
               <tr>
-                <td>Size: XS</td>
-                <td><code class="token-badge">22px &times; 22px</code></td>
-                <td>Avatar Component Set (Extra Small)</td>
+                <td>Outline Background</td>
+                <td>Fills</td>
+                <td><code>$color-base-grey-100</code></td>
+                <td>#F8F8F8</td>
               </tr>
               <tr>
+                <td>Outline Border</td>
+                <td>Stroke 1px Solid</td>
+                <td><code>$color-base-primary-100</code></td>
+                <td>#E9E9E9</td>
+              </tr>
+              <tr>
+                <td>Danger Background</td>
+                <td>Fills</td>
+                <td><code>$bg-soft-danger</code></td>
+                <td>#FFE9EC</td>
+              </tr>
+              <tr>
+                <td>Danger Border</td>
+                <td>Stroke 1px Solid</td>
+                <td><code>$color-border-danger</code></td>
+                <td>#FFC7CB</td>
+              </tr>
+              <tr>
+                <td>Danger Text / Icon</td>
+                <td>Fills</td>
+                <td><code>$color-base-danger-500</code></td>
+                <td>#FF0909</td>
+              </tr>
+              <tr>
+                <td>Verification Background</td>
+                <td>Fills</td>
+                <td><code>$bg-soft-success</code></td>
+                <td>#E9F6E7</td>
+              </tr>
+              <tr>
+                <td>Button Radius</td>
                 <td>Border Radius</td>
-                <td><code class="token-badge">50% (Circle)</code></td>
-                <td>Circular Boundary (Full Radius)</td>
-              </tr>
-              <tr>
-                <td>Initials Background</td>
-                <td><code class="token-badge">#E2F3FF</code></td>
-                <td>Primary Light Tint Palette</td>
-              </tr>
-              <tr>
-                <td>Initials Text Color</td>
-                <td><code class="token-badge">#0077FF</code></td>
-                <td>Primary Accent Tone</td>
-              </tr>
-              <tr>
-                <td>Initials Typography</td>
-                <td><code class="token-badge">Inter SemiBold 600, -0.02em</code></td>
-                <td>Inter Typography Scale</td>
+                <td><code>$radius-full</code></td>
+                <td>100px (Pill / Circular)</td>
               </tr>
             </tbody>
           </table>
         </section>
 
         <!-- =================================================================== -->
-        <!-- Section 8: Architecture & Installation -->
+        <!-- Section 10: Architecture & Installation -->
         <!-- =================================================================== -->
         <section id="installation" class="doc-content__section">
           <h2 class="doc-content__section-title">Architecture &amp; Rules</h2>
           <p class="doc-content__section-desc">
-            The Avatar component is cleanly isolated in <code>src/scss/components/_avatar.scss</code> and exported to the master stylesheet <code>src/scss/uikit.scss</code>.
+            The Button component is isolated in <code>src/scss/components/_button.scss</code> and compiled into <code>dist/uikit.css</code>.
           </p>
 
           <div class="doc-example">
@@ -787,7 +908,9 @@
 @use 'base/layout';
 
 @use 'components/alert';
-@use 'components/avatar';  // &lt;-- Avatar Component
+@use 'components/avatar';
+@use 'components/badge';
+@use 'components/button';  // &lt;-- Button Component System
 @use 'layout/docs';</code></pre>
             </div>
           </div>
@@ -808,22 +931,28 @@
             <a href="#sizes" class="doc-toc__link">Sizes Scale</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#variants" class="doc-toc__link">Core Variants</a>
+            <a href="#types" class="doc-toc__link">Core Variants</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#initials" class="doc-toc__link">Initials Colors</a>
+            <a href="#states" class="doc-toc__link">Interactive States</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#status-indicator" class="doc-toc__link">Status Indicators</a>
+            <a href="#icons" class="doc-toc__link">Buttons with Icons</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#avatar-group" class="doc-toc__link">Avatar Group</a>
+            <a href="#icon-only" class="doc-toc__link">Icon-Only Buttons</a>
+          </li>
+          <li class="doc-toc__item">
+            <a href="#danger" class="doc-toc__link">Danger Soft</a>
+          </li>
+          <li class="doc-toc__item">
+            <a href="#verification" class="doc-toc__link">Verification Badge</a>
           </li>
           <li class="doc-toc__item">
             <a href="#design-tokens" class="doc-toc__link">Design Tokens</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#installation" class="doc-toc__link">Architecture &amp; Rules</a>
+            <a href="#installation" class="doc-toc__link">Architecture</a>
           </li>
         </ul>
       </aside>

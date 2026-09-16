@@ -1,0 +1,650 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/functions" as func;
+@use "../abstract/mixins" as mixins;
+
+// =============================================================================
+// Dropdown Component
+// Derived from Figma: "Ad Platform Maker Athian Phase 2" (Canvas: ○ Dropdown)
+// - Dropdown (Scrollable Select): #22540:3110
+// - Dropdown Menu (Context Menu with Icons & Danger Action): #22624:8446
+// - Dropdown Month (Month Picker): #22540:3018
+// - Dropdown Country Code (Searchable Flag Picker): #22540:6506
+// - Dropdown Filter (Range Slider & Radio Sorter): #22652:9443
+// - Menu Item Component Set: #22540:3058
+// =============================================================================
+
+.oww-dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: vars.$font-family-base;
+
+  // ---------------------------------------------------------------------------
+  // Dropdown Trigger Buttons
+  // ---------------------------------------------------------------------------
+  &__trigger {
+    @include mixins.reset-button;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: vars.$spacing-2;
+    height: 40px;
+    padding: 0 vars.$spacing-4;
+    border-radius: vars.$radius-full;
+    border: 1px solid vars.$dropdown-border-color;
+    background-color: vars.$dropdown-bg;
+    color: vars.$color-text-black;
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm);
+    font-weight: vars.$font-weight-medium;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    transition: all vars.$transition-duration-fast vars.$transition-timing-base;
+
+    @include mixins.focus-ring;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: var(--doc-text-muted, #7B7B7B);
+      transition: transform vars.$transition-duration-fast;
+    }
+
+    &:hover {
+      background-color: vars.$color-base-grey-100;
+      border-color: vars.$color-base-primary-300;
+    }
+
+    &.is-open {
+      border-color: vars.$color-base-black-500;
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--icon-only {
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      justify-content: center;
+      border-radius: vars.$radius-full;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Floating / Static Dropdown Menu Surface (Figma Node: 14808:1636)
+  // ---------------------------------------------------------------------------
+  &__menu {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: vars.$dropdown-bg;
+    border: vars.$dropdown-border-width solid vars.$dropdown-border-color;
+    border-radius: vars.$dropdown-radius; // 14px
+    padding: vars.$dropdown-padding;       // 8px
+    gap: vars.$dropdown-gap;               // 4px
+    box-shadow: vars.$dropdown-shadow;     // 0px 1px 8px rgba(0, 0, 0, 0.12)
+    width: 200px;                          // Figma default width: 200px
+    color: vars.$color-text-black;
+    z-index: vars.$dropdown-z-index;
+    transition: opacity vars.$transition-duration-fast ease,
+                transform vars.$transition-duration-fast ease;
+
+    // When used inside an active dropdown trigger
+    .oww-dropdown & {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-4px);
+    }
+
+    .oww-dropdown.is-open & {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    // Static display modifier (for showcase/preview)
+    &--static {
+      position: static !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: none !important;
+    }
+
+    // Size & Type Modifiers
+    &--sm {
+      width: 180px;
+    }
+
+    &--md {
+      width: 200px; // Standard Figma 200px
+    }
+
+    &--lg,
+    &--country {
+      width: 270px; // Figma Country Code: 270px
+    }
+
+    &--filter {
+      width: 320px; // Figma Filter: 320px
+      gap: 12px;
+      padding: 8px;
+    }
+
+    // Scrollable Dropdown Menu with Figma Pill Scrollbar
+    &--scrollable {
+      max-height: 240px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #D9D9D9 transparent;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #D9D9D9;
+        border-radius: 99999px;
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Menu Item (Figma Component Set: menu-item #22540:3058)
+  // ---------------------------------------------------------------------------
+  &__item {
+    @include mixins.reset-button;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: vars.$dropdown-item-gap;          // 8px
+    width: 100%;
+    height: vars.$dropdown-item-height;    // 37px
+    padding: vars.$dropdown-item-padding-y vars.$dropdown-item-padding-x; // 8px
+    border-radius: vars.$dropdown-item-radius; // 10px
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm);  // 14px
+    font-weight: vars.$font-weight-medium;   // 500
+    line-height: 1.5;
+    letter-spacing: vars.$letter-spacing-tight;
+    color: vars.$dropdown-item-color;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    transition: background-color vars.$transition-duration-fast vars.$transition-timing-base,
+                color vars.$transition-duration-fast vars.$transition-timing-base;
+
+    @include mixins.focus-ring;
+
+    &:hover,
+    &.is-hover {
+      background-color: vars.$dropdown-item-hover-bg; // #F8F8F8
+      color: vars.$color-text-black;
+    }
+
+    &.is-selected,
+    &[aria-selected="true"] {
+      background-color: transparent;
+      font-weight: vars.$font-weight-semibold;
+
+      &:hover {
+        background-color: vars.$dropdown-item-hover-bg;
+      }
+    }
+
+    // Danger Item Modifier (Delete action in context menu)
+    &--danger {
+      color: vars.$color-base-danger-500; // #FF0909
+
+      .oww-dropdown__item-icon {
+        color: vars.$color-base-danger-500;
+      }
+
+      &:hover,
+      &.is-hover {
+        background-color: vars.$bg-soft-danger; // #FFE9EC
+        color: vars.$color-base-danger-500;
+      }
+    }
+
+    // Inner slots
+    &-icon {
+      width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: inherit;
+
+      svg,
+      img {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+    }
+
+    &-flag {
+      width: 20px;
+      height: 20px;
+      border-radius: vars.$radius-sm;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      img,
+      svg {
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    &-text {
+      flex: 1;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-check {
+      margin-left: auto;
+      width: 20px;
+      height: 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: inherit;
+
+      svg,
+      img {
+        width: 16px;
+        height: 16px;
+        display: block;
+      }
+    }
+
+    &.is-selected &-check,
+    &[aria-selected="true"] &-check {
+      display: inline-flex;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Divider & Subheaders
+  // ---------------------------------------------------------------------------
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: vars.$dropdown-divider-color; // #F1F1F1
+    border: none;
+    margin: 4px 0;
+  }
+
+  &__section-title {
+    padding: 2px 8px;
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm); // 14px
+    font-weight: vars.$font-weight-medium;   // 500
+    color: vars.$color-base-grey-500;       // #9D9D9D
+    user-select: none;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Search Box Header (Figma Country Code #22540:6506)
+  // ---------------------------------------------------------------------------
+  &__search {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-2;
+    height: vars.$dropdown-item-height;
+    padding: 0 vars.$spacing-2;
+    border-radius: vars.$dropdown-item-radius;
+    background-color: transparent;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: #7B7B7B;
+      flex-shrink: 0;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      font-family: vars.$font-family-base;
+      font-size: func.rem(vars.$font-size-sm);
+      color: inherit;
+      outline: none;
+      width: 100%;
+
+      &::placeholder {
+        color: #7B7B7B;
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Advanced Filter Slots (Figma Dropdown Filter #22652:9443)
+  // ---------------------------------------------------------------------------
+  &__filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__filter-label {
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm);
+    font-weight: vars.$font-weight-semibold;
+    color: inherit;
+    margin-bottom: 4px;
+  }
+
+  &__range-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding: 8px 0 4px 0;
+    box-sizing: border-box;
+    user-select: none;
+
+    &-track {
+      position: relative;
+      height: 6px;
+      width: 100%;
+      background-color: #D9D9D9;
+      border-radius: 99999px;
+      cursor: pointer;
+      touch-action: none;
+    }
+
+    &-fill {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background-color: vars.$color-base-black-500;
+      border-radius: 99999px;
+      pointer-events: none;
+      left: var(--range-left, 6.67%);
+      width: var(--range-width, 43.33%);
+      transition: none;
+    }
+
+    &-thumb {
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: vars.$color-base-black-500;
+      border: none;
+      box-shadow: 0px 0px 6.67px 0px rgba(0, 0, 0, 0.2);
+      transform: translate(-50%, -50%);
+      cursor: grab;
+      touch-action: none;
+      z-index: 2;
+      outline: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+      &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+      }
+
+      &:active,
+      &.is-dragging {
+        cursor: grabbing;
+        transform: translate(-50%, -50%) scale(1.15);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+        z-index: 3;
+      }
+
+      &:focus-visible {
+        box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.2), 0px 0px 6.67px rgba(0, 0, 0, 0.2);
+      }
+
+      &--min {
+        left: var(--thumb-min-left, 6.67%);
+      }
+
+      &--max {
+        left: var(--thumb-max-left, 50%);
+      }
+    }
+
+    &-values {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: vars.$font-family-base;
+      font-size: func.rem(vars.$font-size-sm);
+      font-weight: vars.$font-weight-regular;
+      line-height: 1.5;
+      letter-spacing: vars.$letter-spacing-tight;
+      color: vars.$color-text-black;
+    }
+  }
+
+  &__radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+  }
+
+  &__radio-item {
+    @include mixins.reset-button;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-2;
+    width: 100%;
+    height: vars.$dropdown-item-height;
+    padding: 0 vars.$spacing-2;
+    border-radius: vars.$dropdown-item-radius;
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-sm);
+    font-weight: vars.$font-weight-medium;
+    color: inherit;
+    cursor: pointer;
+    transition: background-color vars.$transition-duration-fast;
+
+    &:hover {
+      background-color: vars.$dropdown-item-hover-bg;
+    }
+
+    &-circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1.5px solid vars.$color-base-primary-300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      &::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: background-color vars.$transition-duration-fast;
+      }
+    }
+
+    &.is-active &-circle,
+    &.is-checked &-circle {
+      border-color: vars.$color-base-black-500;
+
+      &::after {
+        background-color: vars.$color-base-black-500;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-2;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 4px;
+
+    .oww-btn {
+      flex: 1;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Dark Theme Overrides for Dropdown
+// -----------------------------------------------------------------------------
+[data-theme="dark"] .oww-dropdown {
+  &__trigger {
+    background-color: var(--doc-surface);
+    border-color: var(--doc-border);
+    color: var(--doc-text);
+
+    &:hover {
+      background-color: var(--doc-surface-hover);
+      border-color: var(--doc-border);
+    }
+
+    &.is-open {
+      border-color: var(--doc-text);
+    }
+  }
+
+  &__menu {
+    background-color: var(--doc-surface);
+    border-color: var(--doc-border);
+    color: var(--doc-text);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4);
+
+    &--scrollable {
+      scrollbar-color: var(--doc-border) transparent;
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--doc-border);
+      }
+    }
+  }
+
+  &__item {
+    color: var(--doc-text);
+
+    &:hover,
+    &.is-hover {
+      background-color: var(--doc-surface-hover);
+      color: var(--doc-text);
+    }
+
+    &.is-selected {
+      background-color: transparent;
+
+      &:hover {
+        background-color: var(--doc-surface-hover);
+      }
+    }
+
+    &--danger {
+      color: vars.$color-base-danger-500;
+
+      &:hover,
+      &.is-hover {
+        background-color: rgba(255, 9, 9, 0.12);
+        color: vars.$color-base-danger-500;
+      }
+    }
+  }
+
+  &__divider {
+    background-color: var(--doc-border);
+  }
+
+  &__section-title {
+    color: var(--doc-text-muted);
+  }
+
+  &__search {
+    input {
+      color: var(--doc-text);
+
+      &::placeholder {
+        color: var(--doc-text-dim);
+      }
+    }
+  }
+
+  &__range-slider {
+    &-track {
+      background-color: var(--doc-border);
+    }
+
+    &-fill {
+      background-color: var(--doc-text);
+    }
+
+    &-thumb {
+      background-color: var(--doc-text);
+      box-shadow: 0px 0px 6.67px 0px rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.3);
+      }
+
+      &:active,
+      &.is-dragging {
+        box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.4);
+      }
+
+      &:focus-visible {
+        box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    &-values {
+      color: var(--doc-text);
+    }
+  }
+
+  &__radio-item {
+    &:hover {
+      background-color: var(--doc-surface-hover);
+    }
+
+    &-circle {
+      border-color: var(--doc-border);
+    }
+
+    &.is-active &-circle,
+    &.is-checked &-circle {
+      border-color: var(--doc-text);
+
+      &::after {
+        background-color: var(--doc-text);
+      }
+    }
+  }
+}

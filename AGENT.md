@@ -61,9 +61,74 @@ Dokumen ini mendefinisikan aturan ketat yang wajib dipatuhi oleh seluruh AI agen
 2. **Tanpa Nomor / Node ID Figma**: Dilarang keras menampilkan angka yang merujuk pada nomor komponen / node ID Figma (contoh: `#22451:417`, `#22847:16374`, `22517:4042`) di dalam teks preview HTML. Gunakan penamaan semantik yang bersih (contoh: `Avatar Component Set`, `Initials Avatar`). Aturan ini berlaku seterusnya untuk semua komponen.
 3. **Urutan Abjad Komponen Sidebar (A-Z Alphabetical Order)**: Daftar komponen pada sidebar kiri dokumentasi (`.doc-sidebar__list` pada grup Components) **wajib selalu diurutkan sesuai abjad dari A sampai Z** (contoh: Alert, Avatar, Badge, Button, Card, Icons & Flags, Input & Forms, Modal). Setiap penambahan komponen baru di masa mendatang harus disisipkan sesuai urutan abjad ini secara konsisten di semua halaman preview HTML.
 4. **Struktur Navigasi Atas (Top Navbar Links)**: Navigasi atas (`.doc-navbar__nav`) hanya terdiri dari 2 menu: **Docs** (selalu aktif dengan `is-active`, mengarah ke `index.html`) dan **Example** (hanya teks tanpa link aktif: `href="#" onclick="return false;"`). Jangan mencantumkan *Components* atau *Tokens* di navbar atas.
+5. **Zero Inline `<style>` di HTML (Pemisahan Total Styling ke SCSS)**:
+   - **Dilarang keras menyertakan tag `<style>`** di dalam file HTML mana pun (`index.html`, `introduction.html`, `alert.html`, dsb).
+   - Seluruh kebutuhan styling preview, layout dokumentasi, tabel token, card panduan, breadcrumb, step list, badge status, toast notification, maupun utilitas visual lainnya **wajib ditulis dan disatukan di dalam `src/scss/layout/_docs.scss`** (atau komponen SCSS terkait di `src/scss/components/`) dengan memanfaatkan token desain di `_variables.scss`.
+   - File HTML hanya boleh me-link file output CSS utama: `<link rel="stylesheet" href="./dist/uikit.css">`.
+   - Menjaga seluruh markup HTML tetap bersih, semantik, mudah dibaca, dan modular.
+   - Aturan ini berlaku mutlak untuk setiap pembuatan halaman HTML baru maupun saat refaktor/pembaruan halaman yang sudah ada seterusnya.
 
 ---
 
 ## 8. Aturan Git & Workflow
 1. **Jangan melakukan `git push`** kecuali secara eksplisit diperintahkan oleh pengguna.
 
+
+---
+
+## 9. Acuan Desain HTML Dokumentasi Komponen (Standard Component Blueprint)
+1. **Acuan Standar (Standard Reference)**:
+   - Setiap pembuatan atau penambahan halaman dokumentasi komponen baru wajib mengacu langsung pada struktur standar yang telah diterapkan secara seragam pada `button.html`, `badge.html`, dan `alert.html`.
+   - Tidak memerlukan file template terpisah (`component-template.html`). Cukup ikuti blueprint anatomi di bawah ini.
+
+2. **Anatomi & Struktur Wajib Setiap Halaman Komponen**:
+   - **Head & Styles**:
+     - Memuat CSS terkompilasi: `<link rel="stylesheet" href="./dist/uikit.css">`.
+     - **Dilarang keras menyertakan tag `<style>`** (Wajib mematuhi Aturan 7.5: Zero Inline Style).
+   - **Top Navbar (`.doc-navbar`)**:
+     - Brand logo/badge OWW UIKit.
+     - Navigasi 2 item: **Docs** (selalu aktif dengan class `.is-active`, mengarah ke `index.html`) dan **Example** (nonaktif: `href="#" onclick="return false;"`).
+     - Search bar dengan shortcut visual `⌘K`.
+     - Tombol toggle tema Sun/Moon (`#themeToggleBtn`).
+     - External link ke GitHub repository.
+   - **Shell Pembungkus Layout**:
+     - Menggunakan standar: `<section class="section"><div class="container doc-layout">`.
+   - **Left Sidebar (`.doc-sidebar`)**:
+     - **Getting Started**: Introduction (`introduction.html`), Quick Start (`index.html`).
+     - **Design Tokens**: Typography, Colors, Spacing, Shadows, Border Radius.
+     - **Components (Wajib Urut Abjad A-Z)**:
+       - Alert (`alert.html`)
+       - Avatar (`avatar.html`)
+       - Badge (`badge.html`)
+       - Button (`button.html`)
+       - Card
+       - Icons & Flags (`icons.html`)
+       - Input & Forms
+       - Modal
+       - *(Komponen baru wajib disisipkan sesuai posisi alfabetisnya di semua file HTML dokumentasi)*.
+       - Tautan komponen yang sedang dibuka wajib diberi class `.is-active`.
+   - **Center Main Content (`main.doc-content`)**:
+     - Breadcrumb semantik: `<nav class="breadcrumb">...</nav>` (`Docs` > `Components` > `[Nama Komponen]`).
+     - Header komponen: `<h1 class="text-5xl-bold doc-content__title">[Nama Komponen]</h1>` dan deskripsi ringkas `<p class="doc-content__lead">...</p>`.
+     - **Section Overview (`#overview`)**:
+       - Card demo: `<div class="doc-example">`.
+       - Preview area: `<div class="doc-example__preview">`.
+       - Code snippet area: `<div class="doc-example__code">`.
+       - **Tombol Copy Code**: Wajib berbentuk **icon-only tanpa teks** (`.doc-example__copy-btn` dengan icon SVG, `onclick="copyCode(this)"`, `aria-label="Copy code"`, `title="Copy code"`).
+     - **Section Varian & State**:
+       - Core Variants (`#variants`)
+       - Sizes Scale (`#sizes`)
+       - Interactive States / Modifiers (`#states`)
+     - **Section Design Tokens (`#design-tokens`)**:
+       - Tabel referensi token menggunakan `<table class="doc-table">` yang merinci Token Name, SCSS Variable, Value, dan Description.
+     - **Section Architecture / Rules (`#architecture` atau `#installation`)**:
+       - Panduan penggunaan semantik, best practices, dan import SCSS komponen.
+   - **Right Sidebar (On this page / TOC) (`aside.doc-toc`)**:
+     - Daftar tautan anchor TOC (`.doc-toc__list`) yang sinkron persis dengan ID setiap heading section di main content.
+   - **Toast Notification & Global Script**:
+     - Elemen toast: `<div id="copyToast" class="doc-toast">Copied to clipboard!</div>`.
+     - Script: `<script src="./src/js/main.js"></script>` diletakkan tepat sebelum `</body>`.
+
+3. **Bahasa & Kebersihan Konten**:
+   - Seluruh judul, paragraf, deskripsi, komentar kode, dan tabel wajib menggunakan **Bahasa Inggris (English)**.
+   - **Dilarang keras menyertakan Node ID / nomor komponen Figma** di teks halaman.

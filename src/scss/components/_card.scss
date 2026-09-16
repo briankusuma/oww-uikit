@@ -1,0 +1,324 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/functions" as func;
+@use "../abstract/mixins" as mixins;
+
+// =============================================================================
+// Card Components
+// Derived from Figma: "Ad Platform Maker Athian Phase 2"
+// - Deleted Confirmation Card: #22631:9832
+// - Product Card (Default, Hover, Fallback): #22592:7406
+// =============================================================================
+
+.oww-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: vars.$card-bg;
+  border: vars.$card-border-width solid vars.$card-border-color;
+  border-radius: vars.$card-radius-default;
+  color: vars.$color-text-black;
+  transition: box-shadow vars.$transition-duration-base vars.$transition-timing-base,
+              border-color vars.$transition-duration-base vars.$transition-timing-base,
+              transform vars.$transition-duration-base vars.$transition-timing-base;
+
+  // ---------------------------------------------------------------------------
+  // Card Sub-elements (Modular slots)
+  // ---------------------------------------------------------------------------
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: vars.$spacing-4;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-lg); // 18px
+    font-weight: vars.$font-weight-semibold;
+    line-height: 1.5;
+    letter-spacing: vars.$letter-spacing-tight;
+    color: inherit;
+  }
+
+  &__close-btn {
+    @include mixins.reset-button;
+    flex-shrink: 0;
+    width: vars.$card-close-btn-size; // 40px
+    height: vars.$card-close-btn-size;
+    border-radius: vars.$radius-full;
+    background-color: vars.$card-close-btn-bg; // #F1F1F1
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    cursor: pointer;
+    transition: background-color vars.$transition-duration-fast vars.$transition-timing-base,
+                color vars.$transition-duration-fast vars.$transition-timing-base;
+
+    @include mixins.focus-ring;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    &:hover {
+      background-color: vars.$card-close-btn-hover;
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: vars.$color-base-grey-200; // #F1F1F1
+    border: none;
+    margin: 0;
+  }
+
+  &__body {
+    margin: 0;
+    font-family: vars.$font-family-base;
+    font-size: func.rem(vars.$font-size-md); // 16px
+    font-weight: vars.$font-weight-regular;
+    line-height: 1.5;
+    letter-spacing: vars.$letter-spacing-tight;
+    color: vars.$color-base-black-600; // #555555
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: vars.$spacing-2; // 8px
+    width: 100%;
+    box-sizing: border-box;
+
+    .oww-btn {
+      min-width: 100px;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Variant: Confirmation / Dialog Card (Figma #22631:9832)
+  // ---------------------------------------------------------------------------
+  &--dialog,
+  &--confirmation {
+    padding: vars.$card-padding-dialog; // 20px
+    gap: vars.$card-gap-dialog;         // 20px
+    border-radius: vars.$card-radius-dialog; // 20px
+    border-color: vars.$card-border-color;   // #E4E4E4
+    box-shadow: vars.$shadow-dialog;         // 0px 4px 40px rgba(0, 0, 0, 0.16)
+    max-width: 627px;
+    width: 100%;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Variant: Product Card (Figma #22592:7406)
+  // ---------------------------------------------------------------------------
+  &--product {
+    width: 188px;
+    box-sizing: border-box;
+    padding: vars.$card-padding-product;     // 12px
+    gap: vars.$card-gap-product;             // 12px
+    border-radius: vars.$card-radius-product;// 14px
+    border-color: vars.$card-border-color-product; // #C4C4C4
+
+    &:hover {
+      box-shadow: vars.$shadow-card-hover; // 0px 1px 8px rgba(0, 0, 0, 0.08)
+    }
+
+    .oww-card__media {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      border-radius: vars.$card-media-radius; // 10px
+      overflow: hidden;
+      background-color: vars.$card-media-bg;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      &--fallback {
+        background-color: vars.$card-media-fallback-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: vars.$color-base-primary-300;
+
+        svg {
+          width: 40px;
+          height: 40px;
+          display: block;
+        }
+      }
+    }
+
+    .oww-card__action-btn {
+      @include mixins.reset-button;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: vars.$card-action-btn-size; // 32px
+      height: vars.$card-action-btn-size;
+      border-radius: vars.$radius-full;
+      background-color: vars.$card-action-btn-bg; // #F8F8F8
+      border: 1px solid vars.$card-action-btn-border; // #E9E9E9
+      box-shadow: vars.$shadow-card-action;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: vars.$color-text-black;
+      cursor: pointer;
+      z-index: 2;
+      transition: background-color vars.$transition-duration-fast vars.$transition-timing-base,
+                  transform vars.$transition-duration-fast vars.$transition-timing-base;
+
+      @include mixins.focus-ring;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+
+      &:hover {
+        background-color: vars.$color-base-grey-200;
+        transform: scale(1.05);
+      }
+    }
+
+    .oww-card__content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .oww-card__product-title {
+      margin: 0;
+      font-family: vars.$font-family-base;
+      font-size: func.rem(vars.$font-size-sm); // 14px
+      font-weight: vars.$font-weight-semibold;
+      line-height: 1.5;
+      letter-spacing: vars.$letter-spacing-tight;
+      color: inherit;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .oww-card__product-desc {
+      margin: 0;
+      font-family: vars.$font-family-base;
+      font-size: func.rem(vars.$font-size-xs); // 12px
+      font-weight: vars.$font-weight-regular;
+      line-height: 1.5;
+      letter-spacing: vars.$letter-spacing-tight;
+      color: vars.$color-base-black-600;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .oww-card__price {
+      margin: 0;
+      font-family: vars.$font-family-base;
+      font-size: func.rem(vars.$font-size-sm); // 14px
+      font-weight: vars.$font-weight-semibold;
+      line-height: 1.5;
+      letter-spacing: vars.$letter-spacing-tight;
+      color: inherit;
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Variant: Content Widget Card
+  // ---------------------------------------------------------------------------
+  &--content,
+  &--widget {
+    max-width: 340px;
+    width: 100%;
+    padding: vars.$spacing-5;
+    gap: vars.$spacing-3;
+
+    .oww-card__title {
+      font-size: func.rem(vars.$font-size-base); // 16px
+    }
+
+    .oww-card__body {
+      font-size: func.rem(vars.$font-size-sm); // 14px
+    }
+
+    .oww-card__footer {
+      margin-top: vars.$spacing-2;
+    }
+  }
+  // ---------------------------------------------------------------------------
+  // General Utility Modifiers
+  // ---------------------------------------------------------------------------
+  &--elevated {
+    box-shadow: vars.$shadow-md;
+  }
+
+  &--flat {
+    background-color: vars.$bg-soft-primary;
+    border: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Dark Theme Overrides for Card
+// -----------------------------------------------------------------------------
+[data-theme="dark"] .oww-card {
+  background-color: var(--doc-surface);
+  border-color: var(--doc-border);
+  color: var(--doc-text);
+
+  .oww-card__divider {
+    background-color: var(--doc-border);
+  }
+
+  .oww-card__body,
+  .oww-card__product-desc {
+    color: var(--doc-text-muted);
+  }
+
+  .oww-card__close-btn {
+    background-color: var(--doc-surface-hover);
+    color: var(--doc-text);
+
+    &:hover {
+      background-color: var(--doc-border);
+    }
+  }
+
+  &--product {
+    border-color: var(--doc-border);
+
+    .oww-card__action-btn {
+      background-color: var(--doc-surface);
+      border-color: var(--doc-border);
+      color: var(--doc-text);
+
+      &:hover {
+        background-color: var(--doc-surface-hover);
+      }
+    }
+
+    .oww-card__media--fallback {
+      background-color: var(--doc-surface-hover);
+      color: var(--doc-text-dim);
+    }
+  }
+}

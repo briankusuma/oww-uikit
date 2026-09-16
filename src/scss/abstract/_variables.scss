@@ -347,6 +347,10 @@ $shadow-sm:   0 1px 2px 0 rgba(0, 0, 0, 0.05) !default;
 $shadow-md:   0px 6px 12px 0px rgba(0, 0, 0, 0.08) !default; // Alert success shadow
 $shadow-lg:   0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
 $shadow-xl:   0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !default;
+$shadow-dialog:      0px 4px 40px 0px rgba(0, 0, 0, 0.16) !default; // Confirmation/Dialog card
+$shadow-card-hover:  0px 1px 8px 0px rgba(0, 0, 0, 0.08) !default;  // Product card hover
+$shadow-card-action: 0px 0px 8px 0px rgba(0, 0, 0, 0.2) !default;   // Action button in card
+$shadow-dropdown:    0px 1px 8px 0px rgba(0, 0, 0, 0.12) !default;  // Dropdown menu shadow
 
 // =============================================================================
 // 5. MOTION & TRANSITIONS
@@ -374,3 +378,49 @@ $section-width:       100% !default;
 $container-max-width: 1440px !default;
 $container-padding-x: $spacing-8 !default; // 24px (Base/Sizing/8)
 
+
+
+// =============================================================================
+// 8. COMPONENT TOKENS: CARD (Figma Node: 22631:9833)
+// =============================================================================
+$card-bg:                   $bg-white !default;
+$card-border-color:         $color-base-grey-300 !default; // #e4e4e4
+$card-border-color-product: $color-base-primary-300 !default; // #c4c4c4
+$card-border-width:         1px !default;
+$card-radius-default:       $radius-xl !default; // 16px
+$card-radius-dialog:        20px !default; // Figma Confirmation Card
+$card-radius-product:       14px !default; // Figma Product Card
+$card-padding-dialog:       $spacing-6 !default; // 20px
+$card-padding-product:      $spacing-3 !default; // 12px
+$card-gap-dialog:           $spacing-6 !default; // 20px
+$card-gap-product:          $spacing-3 !default; // 12px
+$card-media-radius:         10px !default;
+$card-media-bg:             #dee2e6 !default;
+$card-media-fallback-bg:    $color-base-grey-100 !default; // #f8f8f8
+$card-close-btn-size:       40px !default;
+$card-close-btn-bg:         $color-base-grey-200 !default; // #f1f1f1
+$card-close-btn-hover:      $color-base-grey-300 !default; // #e4e4e4
+$card-action-btn-size:      32px !default;
+$card-action-btn-bg:        $color-base-grey-100 !default; // #f8f8f8
+$card-action-btn-border:    $color-base-primary-100 !default; // #e9e9e9
+
+
+// =============================================================================
+// 9. COMPONENT TOKENS: DROPDOWN (Figma Node: 14808:1636)
+// =============================================================================
+$dropdown-bg:               $bg-white !default;
+$dropdown-border-color:     $color-base-grey-300 !default; // #e4e4e4
+$dropdown-border-width:     1px !default;
+$dropdown-radius:           14px !default; // Figma 14px
+$dropdown-padding:          $spacing-2 !default; // 8px
+$dropdown-gap:              4px !default;
+$dropdown-shadow:           0px 1px 8px 0px rgba(0, 0, 0, 0.12) !default;
+$dropdown-item-radius:      10px !default; // Figma 10px
+$dropdown-item-height:      37px !default; // Figma 37px
+$dropdown-item-padding-x:   $spacing-2 !default; // 8px
+$dropdown-item-padding-y:   $spacing-2 !default; // 8px
+$dropdown-item-gap:         $spacing-2 !default; // 8px
+$dropdown-item-hover-bg:    $color-base-grey-100 !default; // #f8f8f8
+$dropdown-item-color:       $color-text-black !default;
+$dropdown-divider-color:    $color-base-grey-200 !default; // #f1f1f1
+$dropdown-z-index:          $z-index-dropdown !default; // 1000

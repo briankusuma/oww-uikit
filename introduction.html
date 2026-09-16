@@ -18,172 +18,6 @@
 
   <!-- OWW UIKit Compiled CSS -->
   <link rel="stylesheet" href="./dist/uikit.css">
-
-  <style>
-    .intro-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin: 24px 0;
-    }
-
-    .intro-card {
-      background: var(--doc-surface);
-      border: 1px solid var(--doc-border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: all 200ms ease;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .intro-card:hover {
-      border-color: var(--doc-primary);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    .intro-card__icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--doc-surface-hover);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--doc-primary);
-      margin-bottom: 16px;
-    }
-
-    .intro-card__title {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--doc-text);
-      margin: 0 0 8px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .intro-card__desc {
-      font-size: 13px;
-      color: var(--doc-text-muted);
-      line-height: 1.55;
-      margin: 0;
-    }
-
-    .feature-list {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-      color: var(--doc-text-muted);
-      line-height: 1.5;
-    }
-
-    .feature-item svg {
-      color: #38C757;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .token-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      margin: 16px 0;
-    }
-
-    .token-table th,
-    .token-table td {
-      padding: 10px 14px;
-      text-align: left;
-      border-bottom: 1px solid var(--doc-border);
-    }
-
-    .token-table th {
-      color: var(--doc-text-dim);
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 11px;
-      letter-spacing: 0.05em;
-    }
-
-    .token-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-family: monospace;
-      font-size: 12px;
-      background: var(--doc-surface-hover);
-      border: 1px solid var(--doc-border);
-      color: var(--doc-text);
-    }
-
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--doc-text-dim);
-      margin-bottom: 12px;
-    }
-
-    .breadcrumb a {
-      color: var(--doc-text-muted);
-      text-decoration: none;
-    }
-
-    .breadcrumb a:hover {
-      color: var(--doc-primary);
-    }
-
-    .upcoming-tag {
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 2px 6px;
-      border-radius: 4px;
-      background: var(--doc-surface-hover);
-      color: var(--doc-text-dim);
-      border: 1px solid var(--doc-border);
-    }
-
-    .toast-copy {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #244bd6;
-      color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      box-shadow: 0 4px 16px rgba(36, 75, 214, 0.45);
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 250ms ease;
-      z-index: 9999;
-    }
-
-    .toast-copy.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  </style>
 </head>
 
 <body class="doc-body">
@@ -355,23 +189,51 @@
             </li>
             <!-- Badge -->
             <li class="doc-sidebar__item">
-              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+              <a href="badge.html" class="doc-sidebar__link">
                 Badge
+                <span class="doc-sidebar__link-badge">v1.0</span>
+              </a>
+            </li>
+            <!-- Breadcrumb -->
+            <li class="doc-sidebar__item">
+              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+                Breadcrumb
                 <span class="upcoming-tag">Soon</span>
               </a>
             </li>
             <!-- Button -->
             <li class="doc-sidebar__item">
-              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+              <a href="button.html" class="doc-sidebar__link">
                 Button
+                <span class="doc-sidebar__link-badge">v1.0</span>
+              </a>
+            </li>
+            <!-- Calendar -->
+            <li class="doc-sidebar__item">
+              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+                Calendar
                 <span class="upcoming-tag">Soon</span>
               </a>
             </li>
             <!-- Card -->
             <li class="doc-sidebar__item">
-              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+              <a href="card.html" class="doc-sidebar__link">
                 Card
+                <span class="doc-sidebar__link-badge">v1.0</span>
+              </a>
+            </li>
+            <!-- Checkbox -->
+            <li class="doc-sidebar__item">
+              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+                Checkbox
                 <span class="upcoming-tag">Soon</span>
+              </a>
+            </li>
+            <!-- Dropdown -->
+            <li class="doc-sidebar__item">
+              <a href="dropdown.html" class="doc-sidebar__link">
+                Dropdown
+                <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
             </li>
             <!-- Icons & Flags -->
@@ -392,6 +254,48 @@
             <li class="doc-sidebar__item">
               <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
                 Modal
+                <span class="upcoming-tag">Soon</span>
+              </a>
+            </li>
+            <!-- Pagination -->
+            <li class="doc-sidebar__item">
+              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+                Pagination
+                <span class="upcoming-tag">Soon</span>
+              </a>
+            </li>
+            <!-- Progress Bar -->
+            <li class="doc-sidebar__item">
+              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+                Progress Bar
+                <span class="upcoming-tag">Soon</span>
+              </a>
+            </li>
+            <!-- Tabs -->
+            <li class="doc-sidebar__item">
+              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+                Tabs
+                <span class="upcoming-tag">Soon</span>
+              </a>
+            </li>
+            <!-- Textarea -->
+            <li class="doc-sidebar__item">
+              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+                Textarea
+                <span class="upcoming-tag">Soon</span>
+              </a>
+            </li>
+            <!-- Toggle -->
+            <li class="doc-sidebar__item">
+              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+                Toggle
+                <span class="upcoming-tag">Soon</span>
+              </a>
+            </li>
+            <!-- Tooltips -->
+            <li class="doc-sidebar__item">
+              <a href="#" class="doc-sidebar__link" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
+                Tooltips
                 <span class="upcoming-tag">Soon</span>
               </a>
             </li>
@@ -416,7 +320,8 @@
         <header class="doc-content__header">
           <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Introduction</h1>
           <p class="doc-content__lead">
-            Welcome to <strong>OWW UIKit</strong>, an enterprise-grade design system and component library built with modern SCSS, modular token architecture, and high-fidelity Figma alignment.
+            Welcome to <strong>OWW UIKit</strong>, an enterprise-grade design system and component library built with
+            modern SCSS, modular token architecture, and high-fidelity Figma alignment.
           </p>
         </header>
 
@@ -426,33 +331,46 @@
         <section id="what-is-oww-uikit" class="doc-content__section">
           <h2 class="doc-content__section-title">What is OWW UIKit?</h2>
           <p class="doc-content__section-desc">
-            OWW UIKit is designed to accelerate frontend engineering workflows while enforcing consistent visual rhythm, accessible standards, and unified brand aesthetics across web applications.
+            OWW UIKit is designed to accelerate frontend engineering workflows while enforcing consistent visual rhythm,
+            accessible standards, and unified brand aesthetics across web applications.
           </p>
 
           <ul class="feature-list">
             <li class="feature-item">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.075 13.0594 8.91406 13.125 8.75 13.125C8.58594 13.125 8.425 13.0594 8.30781 12.9422L6.43281 11.0672C6.19844 10.8328 6.19844 10.4531 6.43281 10.2188C6.66719 9.98438 7.04688 9.98438 7.28125 10.2188L8.75 11.6875L12.7188 7.71875C12.9531 7.48438 13.3328 7.48438 13.5672 7.71875C13.8016 7.95312 13.8016 8.33281 13.5672 8.56719Z" fill="currentColor"/>
+                <path
+                  d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.075 13.0594 8.91406 13.125 8.75 13.125C8.58594 13.125 8.425 13.0594 8.30781 12.9422L6.43281 11.0672C6.19844 10.8328 6.19844 10.4531 6.43281 10.2188C6.66719 9.98438 7.04688 9.98438 7.28125 10.2188L8.75 11.6875L12.7188 7.71875C12.9531 7.48438 13.3328 7.48438 13.5672 7.71875C13.8016 7.95312 13.8016 8.33281 13.5672 8.56719Z"
+                  fill="currentColor" />
               </svg>
-              <span><strong>Design Token Driven</strong>: Every dimension, color, font size, and border radius originates from centralized SCSS variables with <code>!default</code> flags.</span>
+              <span><strong>Design Token Driven</strong>: Every dimension, color, font size, and border radius
+                originates from centralized SCSS variables with <code>!default</code> flags.</span>
             </li>
             <li class="feature-item">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.075 13.0594 8.91406 13.125 8.75 13.125C8.58594 13.125 8.425 13.0594 8.30781 12.9422L6.43281 11.0672C6.19844 10.8328 6.19844 10.4531 6.43281 10.2188C6.66719 9.98438 7.04688 9.98438 7.28125 10.2188L8.75 11.6875L12.7188 7.71875C12.9531 7.48438 13.3328 7.48438 13.5672 7.71875C13.8016 7.95312 13.8016 8.33281 13.5672 8.56719Z" fill="currentColor"/>
+                <path
+                  d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.075 13.0594 8.91406 13.125 8.75 13.125C8.58594 13.125 8.425 13.0594 8.30781 12.9422L6.43281 11.0672C6.19844 10.8328 6.19844 10.4531 6.43281 10.2188C6.66719 9.98438 7.04688 9.98438 7.28125 10.2188L8.75 11.6875L12.7188 7.71875C12.9531 7.48438 13.3328 7.48438 13.5672 7.71875C13.8016 7.95312 13.8016 8.33281 13.5672 8.56719Z"
+                  fill="currentColor" />
               </svg>
-              <span><strong>Modular &amp; Isolated</strong>: Components are strictly scoped using BEM methodology (e.g. <code>.oww-alert</code>, <code>.oww-avatar</code>) to prevent CSS conflicts.</span>
+              <span><strong>Modular &amp; Isolated</strong>: Components are strictly scoped using BEM methodology (e.g.
+                <code>.oww-alert</code>, <code>.oww-avatar</code>) to prevent CSS conflicts.</span>
             </li>
             <li class="feature-item">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.075 13.0594 8.91406 13.125 8.75 13.125C8.58594 13.125 8.425 13.0594 8.30781 12.9422L6.43281 11.0672C6.19844 10.8328 6.19844 10.4531 6.43281 10.2188C6.66719 9.98438 7.04688 9.98438 7.28125 10.2188L8.75 11.6875L12.7188 7.71875C12.9531 7.48438 13.3328 7.48438 13.5672 7.71875C13.8016 7.95312 13.8016 8.33281 13.5672 8.56719Z" fill="currentColor"/>
+                <path
+                  d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.075 13.0594 8.91406 13.125 8.75 13.125C8.58594 13.125 8.425 13.0594 8.30781 12.9422L6.43281 11.0672C6.19844 10.8328 6.19844 10.4531 6.43281 10.2188C6.66719 9.98438 7.04688 9.98438 7.28125 10.2188L8.75 11.6875L12.7188 7.71875C12.9531 7.48438 13.3328 7.48438 13.5672 7.71875C13.8016 7.95312 13.8016 8.33281 13.5672 8.56719Z"
+                  fill="currentColor" />
               </svg>
-              <span><strong>Light &amp; Dark Theme Ready</strong>: Built-in CSS custom property theming via <code>data-theme="dark"</code> or <code>data-theme="light"</code>.</span>
+              <span><strong>Light &amp; Dark Theme Ready</strong>: Built-in CSS custom property theming via
+                <code>data-theme="dark"</code> or <code>data-theme="light"</code>.</span>
             </li>
             <li class="feature-item">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.075 13.0594 8.91406 13.125 8.75 13.125C8.58594 13.125 8.425 13.0594 8.30781 12.9422L6.43281 11.0672C6.19844 10.8328 6.19844 10.4531 6.43281 10.2188C6.66719 9.98438 7.04688 9.98438 7.28125 10.2188L8.75 11.6875L12.7188 7.71875C12.9531 7.48438 13.3328 7.48438 13.5672 7.71875C13.8016 7.95312 13.8016 8.33281 13.5672 8.56719Z" fill="currentColor"/>
+                <path
+                  d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.075 13.0594 8.91406 13.125 8.75 13.125C8.58594 13.125 8.425 13.0594 8.30781 12.9422L6.43281 11.0672C6.19844 10.8328 6.19844 10.4531 6.43281 10.2188C6.66719 9.98438 7.04688 9.98438 7.28125 10.2188L8.75 11.6875L12.7188 7.71875C12.9531 7.48438 13.3328 7.48438 13.5672 7.71875C13.8016 7.95312 13.8016 8.33281 13.5672 8.56719Z"
+                  fill="currentColor" />
               </svg>
-              <span><strong>Accessibility First (WCAG AA)</strong>: High-contrast color ratios, explicit focus rings, and clean semantic structures.</span>
+              <span><strong>Accessibility First (WCAG AA)</strong>: High-contrast color ratios, explicit focus rings,
+                and clean semantic structures.</span>
             </li>
           </ul>
         </section>
@@ -466,63 +384,51 @@
             Get up and running with OWW UIKit in your HTML project in three easy steps:
           </p>
 
-          <!-- Step 1: Load Typography & UIKit Stylesheet -->
-          <div style="margin-top: 28px;">
-            <h3 class="text-xl-semibold" style="margin-bottom: 8px; color: var(--doc-text);">1. Load Typography &amp; UIKit Stylesheet</h3>
-            <p class="doc-content__section-desc">
-              Add the Google Fonts preconnect links for <strong>Inter</strong> and include the compiled <code>uikit.css</code> in your document's <code>&lt;head&gt;</code>:
-            </p>
-            <div class="doc-example">
-              <div class="doc-example__code">
-                <button class="doc-example__copy-btn" onclick="copyCode(this)">
-                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
-                    style="vertical-align: -2px; margin-right: 4px;">
-                    <path
-                      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                      fill="currentColor" />
-                  </svg>Copy</button>
-                <pre><code>&lt;!-- Inter Google Font --&gt;
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <div class="step-title">Load Typography &amp; UIKit Stylesheet</div>
+                <div class="step-desc">Add the Google Fonts preconnect links for <strong>Inter</strong> and include the
+                  compiled <code>uikit.css</code> in your document's <code>&lt;head&gt;</code>:</div>
+                <div class="doc-example">
+                  <div class="doc-example__code">
+                    <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+                    <pre><code>&lt;!-- Inter Google Font --&gt;
 &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
 &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
-&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"&gt;
+&lt;rel="stylesheet"&gt;
 
 &lt;!-- OWW UIKit CSS --&gt;
 &lt;link rel="stylesheet" href="./dist/uikit.css"&gt;</code></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 2: Use Component Classes in HTML -->
-          <div style="margin-top: 28px;">
-            <h3 class="text-xl-semibold" style="margin-bottom: 8px; color: var(--doc-text);">2. Use Component Classes in HTML</h3>
-            <p class="doc-content__section-desc">
-              Apply predefined BEM classes directly to your markup. Here is an example of an Alert and an Avatar:
-            </p>
-            <div class="doc-example">
-              <div class="doc-example__preview" style="gap: 16px;">
-                <div class="oww-alert oww-alert--success" style="width: 100%;">
-                  <span class="oww-alert__icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.075 13.0594 8.91406 13.125 8.75 13.125C8.58594 13.125 8.425 13.0594 8.30781 12.9422L6.43281 11.0672C6.19844 10.8328 6.19844 10.4531 6.43281 10.2188C6.66719 9.98438 7.04688 9.98438 7.28125 10.2188L8.75 11.6875L12.7188 7.71875C12.9531 7.48438 13.3328 7.48438 13.5672 7.71875C13.8016 7.95312 13.8016 8.33281 13.5672 8.56719Z" fill="currentColor"/>
-                    </svg>
-                  </span>
-                  <p class="oww-alert__text">Campaign published successfully!</p>
-                </div>
-                <div class="avatar-preview-row">
-                  <div class="oww-avatar oww-avatar--md oww-avatar--initials">
-                    <span class="oww-avatar__initials">JD</span>
                   </div>
                 </div>
               </div>
-              <div class="doc-example__code">
-                <button class="doc-example__copy-btn" onclick="copyCode(this)">
-                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
-                    style="vertical-align: -2px; margin-right: 4px;">
-                    <path
-                      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                      fill="currentColor" />
-                  </svg>Copy</button>
-                <pre><code>&lt;!-- Alert Component --&gt;
+            </div>
+
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <div class="step-title">Use Component Classes in HTML</div>
+                <div class="step-desc">Apply predefined BEM classes directly to your markup. Here is an example of an
+                  Alert and an Avatar:</div>
+                <div class="doc-example">
+                  <div class="doc-example__code">
+                    <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+                    <pre><code>&lt;!-- Alert Component --&gt;
 &lt;div class="oww-alert oww-alert--success"&gt;
   &lt;span class="oww-alert__icon"&gt;...&lt;/span&gt;
   &lt;p class="oww-alert__text"&gt;Campaign published successfully!&lt;/p&gt;
@@ -532,26 +438,29 @@
 &lt;div class="oww-avatar oww-avatar--md oww-avatar--initials"&gt;
   &lt;span class="oww-avatar__initials"&gt;JD&lt;/span&gt;
 &lt;/div&gt;</code></pre>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Step 3: Include Documentation Scripts -->
-          <div style="margin-top: 28px;">
-            <h3 class="text-xl-semibold" style="margin-bottom: 8px; color: var(--doc-text);">3. Optional: Include Documentation Scripts</h3>
-            <p class="doc-content__section-desc">
-              For live search in the icon gallery, toast notifications, and dark/light theme switching, include the global script before closing <code>&lt;/body&gt;</code>:
-            </p>
-            <div class="doc-example">
-              <div class="doc-example__code">
-                <button class="doc-example__copy-btn" onclick="copyCode(this)">
-                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
-                    style="vertical-align: -2px; margin-right: 4px;">
-                    <path
-                      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                      fill="currentColor" />
-                  </svg>Copy</button>
-                <pre><code>&lt;script src="./dist/js/main.js"&gt;&lt;/script&gt;</code></pre>
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <div class="step-title">Optional: Include Documentation Scripts</div>
+                <div class="step-desc">For live search in the icon gallery, toast notifications, and dark/light theme
+                  switching, include the global script before closing <code>&lt;/body&gt;</code>:</div>
+                <div class="doc-example">
+                  <div class="doc-example__code">
+                    <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
+                    <pre><code>&lt;script src="./dist/js/main.js"&gt;&lt;/script&gt;</code></pre>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -571,7 +480,9 @@
             <a href="alert.html" class="intro-card">
               <div class="intro-card__icon">
                 <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM10.625 14.375H9.375V9.375H10.625V14.375ZM10.625 7.5H9.375V6.25H10.625V7.5Z" fill="currentColor"/>
+                  <path
+                    d="M10 1.875C5.5125 1.875 1.875 5.5125 1.875 10C1.875 14.4875 5.5125 18.125 10 18.125C14.4875 18.125 18.125 14.4875 18.125 10C18.125 5.5125 14.4875 1.875 10 1.875ZM10.625 14.375H9.375V9.375H10.625V14.375ZM10.625 7.5H9.375V6.25H10.625V7.5Z"
+                    fill="currentColor" />
                 </svg>
               </div>
               <div class="intro-card__title">
@@ -587,7 +498,9 @@
             <a href="avatar.html" class="intro-card">
               <div class="intro-card__icon">
                 <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 10C12.0711 10 13.75 8.32107 13.75 6.25C13.75 4.17893 12.0711 2.5 10 2.5C7.92893 2.5 6.25 4.17893 6.25 6.25C6.25 8.32107 7.92893 10 10 10ZM10 11.875C6.875 11.875 2.5 13.4375 2.5 16.5625V17.5H17.5V16.5625C17.5 13.4375 13.125 11.875 10 11.875Z" fill="currentColor"/>
+                  <path
+                    d="M10 10C12.0711 10 13.75 8.32107 13.75 6.25C13.75 4.17893 12.0711 2.5 10 2.5C7.92893 2.5 6.25 4.17893 6.25 6.25C6.25 8.32107 7.92893 10 10 10ZM10 11.875C6.875 11.875 2.5 13.4375 2.5 16.5625V17.5H17.5V16.5625C17.5 13.4375 13.125 11.875 10 11.875Z"
+                    fill="currentColor" />
                 </svg>
               </div>
               <div class="intro-card__title">
@@ -595,7 +508,44 @@
                 <span class="token-badge">v1.0</span>
               </div>
               <p class="intro-card__desc">
-                Profile representations supporting photo images, initials typography, fallback placeholders, presence indicators, and group stacks.
+                Profile representations supporting photo images, initials typography, fallback placeholders, presence
+                indicators, and group stacks.
+              </p>
+            </a>
+
+                        <!-- Badge Card -->
+            <a href="badge.html" class="intro-card">
+              <div class="intro-card__icon">
+                <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M3.125 6.25C3.125 4.52411 4.52411 3.125 6.25 3.125H13.75C15.4759 3.125 16.875 4.52411 16.875 6.25V13.75C16.875 15.4759 15.4759 16.875 13.75 16.875H6.25C4.52411 16.875 3.125 15.4759 3.125 13.75V6.25ZM6.25 4.375C5.21447 4.375 4.375 5.21447 4.375 6.25V13.75C4.375 14.7855 5.21447 15.625 6.25 15.625H13.75C14.7855 15.625 15.625 14.7855 15.625 13.75V6.25C15.625 5.21447 14.7855 4.375 13.75 4.375H6.25ZM7.5 9.375C7.15482 9.375 6.875 9.65482 6.875 10C6.875 10.3452 7.15482 10.625 7.5 10.625H12.5C12.8452 10.625 13.125 10.3452 13.125 10C13.125 9.65482 12.8452 9.375 12.5 9.375H7.5Z"
+                    fill="currentColor" />
+                </svg>
+              </div>
+              <div class="intro-card__title">
+                Badge
+                <span class="token-badge">v1.0</span>
+              </div>
+              <p class="intro-card__desc">
+                Compact labels and status tags supporting input dismissals, text categories, verified seals, unread counters, and pagination indicators.
+              </p>
+            </a>
+
+                        <!-- Button Card -->
+            <a href="button.html" class="intro-card">
+              <div class="intro-card__icon">
+                <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M3.125 6.875C3.125 5.15 4.525 3.75 6.25 3.75H13.75C15.475 3.75 16.875 5.15 16.875 6.875V13.125C16.875 14.85 15.475 16.25 13.75 16.25H6.25C4.525 16.25 3.125 14.85 3.125 13.125V6.875ZM6.25 5C5.215 5 4.375 5.84 4.375 6.875V13.125C4.375 14.16 5.215 15 6.25 15H13.75C14.785 15 15.625 14.16 15.625 13.125V6.875C15.625 5.84 14.785 5 13.75 5H6.25ZM6.875 9.375H13.125C13.47 9.375 13.75 9.655 13.75 10C13.75 10.345 13.47 10.625 13.125 10.625H6.875C6.53 10.625 6.25 10.345 6.25 10C6.25 9.655 6.53 9.375 6.875 9.375Z"
+                    fill="currentColor" />
+                </svg>
+              </div>
+              <div class="intro-card__title">
+                Button
+                <span class="token-badge">v1.0</span>
+              </div>
+              <p class="intro-card__desc">
+                Interactive actions with Primary, Outline, Ghost, Danger Soft, and Verification Badge variants across 4 scale sizes with icon support.
               </p>
             </a>
 
@@ -603,7 +553,9 @@
             <a href="icons.html" class="intro-card">
               <div class="intro-card__icon">
                 <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
-                  <path d="M3.125 3.75H16.875V16.25H3.125V3.75ZM4.375 5V15H15.625V5H4.375ZM6.25 6.875H13.75V8.125H6.25V6.875ZM6.25 9.375H13.75V10.625H6.25V9.375ZM6.25 11.875H10.625V13.125H6.25V11.875Z" fill="currentColor"/>
+                  <path
+                    d="M3.125 3.75H16.875V16.25H3.125V3.75ZM4.375 5V15H15.625V5H4.375ZM6.25 6.875H13.75V8.125H6.25V6.875ZM6.25 9.375H13.75V10.625H6.25V9.375ZM6.25 11.875H10.625V13.125H6.25V11.875Z"
+                    fill="currentColor" />
                 </svg>
               </div>
               <div class="intro-card__title">
@@ -611,7 +563,8 @@
                 <span class="token-badge">370 Icons</span>
               </div>
               <p class="intro-card__desc">
-                Iconography suite containing 110 monochrome UI Icons (Fill/Outline) and 260 circular country flags with instant copy-to-clipboard.
+                Iconography suite containing 110 monochrome UI Icons (Fill/Outline) and 260 circular country flags with
+                instant copy-to-clipboard.
               </p>
             </a>
           </div>
@@ -623,18 +576,19 @@
         <section id="architecture" class="doc-content__section">
           <h2 class="doc-content__section-title">SCSS Architecture</h2>
           <p class="doc-content__section-desc">
-            The project follows the 7-1 Sass pattern with strict boundaries between tokens, base styling, and components:
+            The project follows the 7-1 Sass pattern with strict boundaries between tokens, base styling, and
+            components:
           </p>
 
           <div class="doc-example">
             <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
-                  style="vertical-align: -2px; margin-right: 4px;">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>Copy</button>
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
               <pre><code>oww-uikit/
 ├── src/
 │   ├── scss/
@@ -671,18 +625,20 @@
         <section id="theming" class="doc-content__section">
           <h2 class="doc-content__section-title">Theming &amp; Design Tokens</h2>
           <p class="doc-content__section-desc">
-            All colors, radii, and typography reference design tokens defined in <code>src/scss/abstract/_variables.scss</code>. Overriding tokens is straightforward thanks to Sass <code>!default</code> flags:
+            All colors, radii, and typography reference design tokens defined in
+            <code>src/scss/abstract/_variables.scss</code>. Overriding tokens is straightforward thanks to Sass
+            <code>!default</code> flags:
           </p>
 
           <div class="doc-example">
             <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"
-                  style="vertical-align: -2px; margin-right: 4px;">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>Copy</button>
+              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
+  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
+      fill="currentColor" />
+  </svg>
+</button>
               <pre><code>// Example of overriding OWW tokens in your custom stylesheet
 $oww-primary: #0066EE;
 $oww-border-radius-base: 8px;
