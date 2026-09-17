@@ -543,3 +543,52 @@ $range-label-font-weight:     $font-weight-semibold !default; // 600
 $range-value-color:           $color-base-primary-900 !default; // #000000
 $range-value-font-size:       $font-size-sm !default; // 14px
 $range-value-font-weight:     $font-weight-regular !default; // 400
+
+// =============================================================================
+// 14. COMPONENT TOKENS: SIDEBAR & NAV ITEM (Figma: #22546:8549, #22546:8286)
+// =============================================================================
+$sidebar-width:               302px !default; // Figma: 302px
+$sidebar-padding:             24px 0 !default;
+$sidebar-gap:                 20px !default;
+
+// Nav Item Dimensions & Radii
+$nav-item-padding:            20px 12px !default; // Figma: padding: 20px 12px
+$nav-item-gap:                20px !default;       // Figma: gap: 20px between icon and label
+$nav-item-radius:             14px !default;       // Figma: border-radius: 14px
+$nav-item-icon-size:          28px !default;       // Figma: 28x28px icon container
+
+// Nav Item Typography
+$nav-item-font-size:          20px !default;       // Figma: Text xl (20px)
+$nav-item-line-height:        1.2 !default;        // 1.2em
+$nav-item-font-weight-default: $font-weight-medium !default;   // 500 (Medium)
+$nav-item-font-weight-active:  $font-weight-semibold !default; // 600 (Semibold)
+
+// Nav Item Default Colors
+$nav-item-color-default:      #555555 !default;    // Figma: #555555
+$nav-item-bg-hover:           #F8F8F8 !default;    // Figma: #F8F8F8
+
+// Nav Item Active Colors
+$nav-item-color-active:       $color-base-primary-900 !default; // #000000
+$nav-item-bg-active:          transparent !default;
+$nav-item-bg-active-hover:    #F8F8F8 !default;
+
+// Nav Item Dark Mode Colors
+$nav-item-color-dark:         rgba(255, 255, 255, 0.65) !default;
+$nav-item-color-dark-active:  #FFFFFF !default;
+$nav-item-bg-dark-hover:      rgba(255, 255, 255, 0.08) !default;
+
+// Unread Badge (Desktop)
+$nav-badge-bg:                #FFE9EC !default;    // Figma: #FFE9EC
+$nav-badge-color:             #FF0909 !default;    // Figma: #FF0909
+$nav-badge-radius:            100px !default;      // Pill
+$nav-badge-padding:           2px 14px !default;   // Figma: padding 2px 14px
+$nav-badge-font-size:         14px !default;       // Text sm (14px)
+$nav-badge-font-weight:       $font-weight-semibold !default; // 600
+
+// Profile Footer Section
+$sidebar-profile-padding:     12px !default;
+$sidebar-profile-gap:         16px !default;
+$sidebar-avatar-size:         48px !default;
+$sidebar-profile-name-color:  $color-base-primary-900 !default; // #000000
+$sidebar-profile-more-size:   28px !default;
+$sidebar-profile-more-radius: 6px !default;

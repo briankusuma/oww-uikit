@@ -1,0 +1,299 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/functions" as fn;
+@use "../abstract/mixins" as mix;
+
+// =============================================================================
+// COMPONENT: APP SIDEBAR & NAV ITEM
+// Figma Component: Sidebar (#22546:8549), Component Set: nav-item (#22546:8286)
+// =============================================================================
+
+.oww-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: vars.$sidebar-width;
+  padding: vars.$sidebar-padding;
+  gap: vars.$sidebar-gap;
+  background-color: transparent;
+  user-select: none;
+  font-family: inherit;
+
+  // Header / Logo Container
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    height: 48px;
+    border-radius: vars.$nav-item-radius;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+
+    img,
+    svg {
+      display: block;
+      height: 24px;
+      width: auto;
+    }
+  }
+
+  // Navigation Group
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  // Profile Footer Area
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 0;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: vars.$sidebar-profile-padding;
+    gap: vars.$sidebar-profile-gap;
+    border-radius: vars.$nav-item-radius;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: vars.$nav-item-bg-hover;
+    }
+  }
+
+  &__avatar {
+    width: vars.$sidebar-avatar-size;
+    height: vars.$sidebar-avatar-size;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  &__profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__profile-name-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  &__profile-name {
+    font-size: 16px; // Text md (16px)
+    font-weight: vars.$font-weight-semibold;
+    color: vars.$sidebar-profile-name-color;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__badge-verified {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    img,
+    svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+  }
+
+  &__profile-more {
+    width: vars.$sidebar-profile-more-size;
+    height: vars.$sidebar-profile-more-size;
+    border-radius: vars.$sidebar-profile-more-radius;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+// =============================================================================
+// COMPONENT: NAV ITEM (Figma Component Set #22546:8286)
+// Type: Default / Active, State: Default / Hover
+// =============================================================================
+
+.oww-nav-item {
+  display: flex;
+  align-items: center;
+  gap: vars.$nav-item-gap;
+  padding: vars.$nav-item-padding;
+  border-radius: vars.$nav-item-radius;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: vars.$nav-item-color-default;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  // Icon container (28x28px)
+  &__icon {
+    width: vars.$nav-item-icon-size;
+    height: vars.$nav-item-icon-size;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    img,
+    svg {
+      width: 28px;
+      height: 28px;
+      display: block;
+      color: inherit;
+    }
+  }
+
+  // Label & Badge wrapper
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  // Label Typography (Inter 20px, Medium / Semibold, -0.02em, line-height 1.2)
+  &__text {
+    font-size: vars.$nav-item-font-size;
+    font-weight: vars.$nav-item-font-weight-default;
+    letter-spacing: -0.02em;
+    line-height: vars.$nav-item-line-height;
+    color: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Unread badge (Figma: width 46px, height 24px, pill, #FFE9EC / #FF0909)
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: vars.$nav-badge-padding;
+    background-color: vars.$nav-badge-bg;
+    color: vars.$nav-badge-color;
+    border-radius: vars.$nav-badge-radius;
+    font-size: vars.$nav-badge-font-size;
+    font-weight: vars.$nav-badge-font-weight;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    height: 24px;
+    min-width: 46px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
+  // Hover State (Type=Default, State=Hover)
+  &:hover {
+    background-color: vars.$nav-item-bg-hover;
+    color: vars.$nav-item-color-default;
+    text-decoration: none;
+  }
+
+  // Active State (Type=Active)
+  &.is-active,
+  &--active {
+    color: vars.$nav-item-color-active;
+
+    .oww-nav-item__text {
+      font-weight: vars.$nav-item-font-weight-active; // 600
+    }
+
+    &:hover {
+      background-color: vars.$nav-item-bg-active-hover;
+      color: vars.$nav-item-color-active;
+    }
+  }
+}
+
+// =============================================================================
+// DARK MODE SUPPORT
+// =============================================================================
+
+[data-theme="dark"] {
+  .oww-sidebar {
+    &__logo {
+      img,
+      svg {
+        filter: invert(1);
+      }
+    }
+
+    &__profile-name {
+      color: #FFFFFF;
+    }
+
+    &__profile:hover {
+      background-color: vars.$nav-item-bg-dark-hover;
+    }
+
+    &__profile-more:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .oww-nav-item {
+    color: vars.$nav-item-color-dark;
+
+    &:hover {
+      background-color: vars.$nav-item-bg-dark-hover;
+      color: #FFFFFF;
+    }
+
+    &.is-active,
+    &--active {
+      color: vars.$nav-item-color-dark-active;
+
+      &:hover {
+        background-color: vars.$nav-item-bg-dark-hover;
+        color: #FFFFFF;
+      }
+    }
+
+    &__badge {
+      background-color: rgba(255, 9, 9, 0.2);
+      color: #FF6B6B;
+    }
+  }
+}
