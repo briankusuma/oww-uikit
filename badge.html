@@ -420,34 +420,33 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;!-- Input Badge with dismiss action --&gt;
-&lt;div class="oww-badge oww-badge--input"&gt;
-  &lt;span class="oww-badge__text"&gt;Badge Text&lt;/span&gt;
-  &lt;button type="button" class="oww-badge__remove" aria-label="Remove"&gt;
-    &lt;svg viewBox="0 0 20 20" fill="currentColor"&gt;&lt;path .../&gt;&lt;/svg&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
+              <pre><code><span class="token-comment">&lt;!-- Input Badge with dismiss action --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge oww-badge--input"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge__text"</span><span class="token-punctuation">&gt;</span>Badge Text<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge__remove"</span> <span class="token-attr-name">aria-label</span><span class="token-punctuation">=</span><span class="token-attr-value">"Remove"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">svg</span> <span class="token-attr-name">viewBox</span><span class="token-punctuation">=</span><span class="token-attr-value">"0 0 20 20"</span> <span class="token-attr-name">fill</span><span class="token-punctuation">=</span><span class="token-attr-value">"currentColor"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">path</span> ...<span class="token-punctuation">/&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">svg</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Text Category Badge --&gt;
-&lt;span class="oww-badge oww-badge--category"&gt;Category Text&lt;/span&gt;
+<span class="token-comment">&lt;!-- Text Category Badge --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge oww-badge--category"</span><span class="token-punctuation">&gt;</span>Category Text<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Verified Badges (Business / Personal) --&gt;
-&lt;span class="oww-badge-verified oww-badge-verified--business"&gt;
-  &lt;img src="./dist/assets/icons/badge-verified-business.svg" alt="Verified"&gt;
-&lt;/span&gt;
+<span class="token-comment">&lt;!-- Verified Badges (Business / Personal) --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-verified oww-badge-verified--business"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/badge-verified-business.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">"Verified"</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Unread Counter Badges (Desktop / Mobile) --&gt;
-&lt;span class="oww-badge-unread oww-badge-unread--desktop"&gt;23&lt;/span&gt;
-&lt;span class="oww-badge-unread oww-badge-unread--mobile"&gt;23&lt;/span&gt;
+<span class="token-comment">&lt;!-- Unread Counter Badges (Desktop / Mobile) --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-unread oww-badge-unread--desktop"</span><span class="token-punctuation">&gt;</span>23<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-unread oww-badge-unread--mobile"</span><span class="token-punctuation">&gt;</span>23<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Image Pagination Badge --&gt;
-&lt;span class="oww-badge-pagination"&gt;1/4&lt;/span&gt;</code></pre>
+<span class="token-comment">&lt;!-- Image Pagination Badge --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-pagination"</span><span class="token-punctuation">&gt;</span>1/4<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -507,27 +506,26 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;!-- Default Input Badge --&gt;
-&lt;div class="oww-badge oww-badge--input"&gt;
-  &lt;span class="oww-badge__text"&gt;Default State&lt;/span&gt;
-  &lt;button type="button" class="oww-badge__remove" onclick="this.closest('.oww-badge').remove()"&gt;
-    &lt;svg viewBox="0 0 20 20" fill="currentColor"&gt;&lt;path .../&gt;&lt;/svg&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
+              <pre><code><span class="token-comment">&lt;!-- Default Input Badge --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge oww-badge--input"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge__text"</span><span class="token-punctuation">&gt;</span>Default State<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge__remove"</span> <span class="token-attr-name">onclick</span><span class="token-punctuation">=</span><span class="token-attr-value">"this.closest('.oww-badge').remove()"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">svg</span> <span class="token-attr-name">viewBox</span><span class="token-punctuation">=</span><span class="token-attr-value">"0 0 20 20"</span> <span class="token-attr-name">fill</span><span class="token-punctuation">=</span><span class="token-attr-value">"currentColor"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">path</span> ...<span class="token-punctuation">/&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">svg</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Disabled Input Badge --&gt;
-&lt;div class="oww-badge oww-badge--input is-disabled"&gt;
-  &lt;span class="oww-badge__text"&gt;Disabled State&lt;/span&gt;
-  &lt;button type="button" class="oww-badge__remove" disabled&gt;
-    &lt;svg viewBox="0 0 20 20" fill="currentColor"&gt;&lt;path .../&gt;&lt;/svg&gt;
-  &lt;/button&gt;
-&lt;/div&gt;</code></pre>
+<span class="token-comment">&lt;!-- Disabled Input Badge --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge oww-badge--input is-disabled"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge__text"</span><span class="token-punctuation">&gt;</span>Disabled State<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge__remove"</span> <span class="token-attr-name">disabled</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">svg</span> <span class="token-attr-name">viewBox</span><span class="token-punctuation">=</span><span class="token-attr-value">"0 0 20 20"</span> <span class="token-attr-name">fill</span><span class="token-punctuation">=</span><span class="token-attr-value">"currentColor"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">path</span> ...<span class="token-punctuation">/&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">svg</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -566,20 +564,19 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;!-- Category Default --&gt;
-&lt;span class="oww-badge oww-badge--category"&gt;Marketing&lt;/span&gt;
+              <pre><code><span class="token-comment">&lt;!-- Category Default --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge oww-badge--category"</span><span class="token-punctuation">&gt;</span>Marketing<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Category Hover (Automatic on mouse hover, or forced via .is-hover) --&gt;
-&lt;span class="oww-badge oww-badge--category is-hover"&gt;Design System&lt;/span&gt;
+<span class="token-comment">&lt;!-- Category Hover (Automatic on mouse hover, or forced via .is-hover) --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge oww-badge--category is-hover"</span><span class="token-punctuation">&gt;</span>Design System<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Category Disabled --&gt;
-&lt;span class="oww-badge oww-badge--category is-disabled"&gt;Archived&lt;/span&gt;</code></pre>
+<span class="token-comment">&lt;!-- Category Disabled --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge oww-badge--category is-disabled"</span><span class="token-punctuation">&gt;</span>Archived<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -643,29 +640,28 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;!-- Business Verified Seal (Green #4AB632) --&gt;
-&lt;span class="oww-badge-verified oww-badge-verified--business"&gt;
-  &lt;img src="./dist/assets/icons/badge-verified-business.svg" alt="Business Verified" width="20" height="20"&gt;
-&lt;/span&gt;
+              <pre><code><span class="token-comment">&lt;!-- Business Verified Seal (Green #4AB632) --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-verified oww-badge-verified--business"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/badge-verified-business.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">"Business Verified"</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Personal Verified Seal (Blue #0077FF) --&gt;
-&lt;span class="oww-badge-verified oww-badge-verified--personal"&gt;
-  &lt;img src="./dist/assets/icons/badge-verified-personal.svg" alt="Personal Verified" width="20" height="20"&gt;
-&lt;/span&gt;
+<span class="token-comment">&lt;!-- Personal Verified Seal (Blue #0077FF) --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-verified oww-badge-verified--personal"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/badge-verified-personal.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">"Personal Verified"</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Inline next to Username --&gt;
-&lt;div class="user-profile"&gt;
-  &lt;span class="user-name"&gt;OWW Studio&lt;/span&gt;
-  &lt;span class="oww-badge-verified oww-badge-verified--business" title="Verified"&gt;
-    &lt;img src="./dist/assets/icons/badge-verified-business.svg" alt="Verified" width="18" height="18"&gt;
-  &lt;/span&gt;
-&lt;/div&gt;</code></pre>
+<span class="token-comment">&lt;!-- Inline next to Username --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"user-profile"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"user-name"</span><span class="token-punctuation">&gt;</span>OWW Studio<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-verified oww-badge-verified--business"</span> <span class="token-attr-name">title</span><span class="token-punctuation">=</span><span class="token-attr-value">"Verified"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/badge-verified-business.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">"Verified"</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"18"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"18"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -716,23 +712,22 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;!-- Desktop Counter Badge (Soft danger pink #FFE9EC) --&gt;
-&lt;span class="oww-badge-unread oww-badge-unread--desktop"&gt;23&lt;/span&gt;
+              <pre><code><span class="token-comment">&lt;!-- Desktop Counter Badge (Soft danger pink #FFE9EC) --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-unread oww-badge-unread--desktop"</span><span class="token-punctuation">&gt;</span>23<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Mobile Counter Badge (Solid danger red circle #FF0909) --&gt;
-&lt;span class="oww-badge-unread oww-badge-unread--mobile"&gt;23&lt;/span&gt;
+<span class="token-comment">&lt;!-- Mobile Counter Badge (Solid danger red circle #FF0909) --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-unread oww-badge-unread--mobile"</span><span class="token-punctuation">&gt;</span>23<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Positioned on Icon --&gt;
-&lt;div class="icon-button" style="position: relative;"&gt;
-  &lt;svg ...&gt;&lt;/svg&gt;
-  &lt;span class="oww-badge-unread oww-badge-unread--mobile" style="position: absolute; top: -4px; right: -4px;"&gt;3&lt;/span&gt;
-&lt;/div&gt;</code></pre>
+<span class="token-comment">&lt;!-- Positioned on Icon --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"icon-button"</span> <span class="token-attr-name">style</span><span class="token-punctuation">=</span><span class="token-attr-value">"position: relative;"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">svg</span> ...<span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">svg</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-unread oww-badge-unread--mobile"</span> <span class="token-attr-name">style</span><span class="token-punctuation">=</span><span class="token-attr-value">"position: absolute; top: -4px; right: -4px;"</span><span class="token-punctuation">&gt;</span>3<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -767,20 +762,19 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;!-- Image Pagination Badge --&gt;
-&lt;span class="oww-badge-pagination"&gt;1/4&lt;/span&gt;
+              <pre><code><span class="token-comment">&lt;!-- Image Pagination Badge --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-pagination"</span><span class="token-punctuation">&gt;</span>1/4<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Overlaying on Image Gallery / Slider --&gt;
-&lt;div class="carousel-slide" style="position: relative;"&gt;
-  &lt;img src="hero-image.jpg" alt="Gallery Photo"&gt;
-  &lt;span class="oww-badge-pagination" style="position: absolute; top: 12px; right: 12px;"&gt;1/4&lt;/span&gt;
-&lt;/div&gt;</code></pre>
+<span class="token-comment">&lt;!-- Overlaying on Image Gallery / Slider --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"carousel-slide"</span> <span class="token-attr-name">style</span><span class="token-punctuation">=</span><span class="token-attr-value">"position: relative;"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"hero-image.jpg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">"Gallery Photo"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-badge-pagination"</span> <span class="token-attr-name">style</span><span class="token-punctuation">=</span><span class="token-attr-value">"position: absolute; top: 12px; right: 12px;"</span><span class="token-punctuation">&gt;</span>1/4<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -874,25 +868,24 @@
           <div class="doc-example">
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>// src/scss/uikit.scss
-@forward 'abstract/variables';
-@forward 'abstract/functions';
-@forward 'abstract/mixins';
+              <pre><code><span class="token-comment">// src/scss/uikit.scss</span>
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@forward</span> <span class=\"token-string\">'abstract/variables'</span>;
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@forward</span> <span class=\"token-string\">'abstract/functions'</span>;
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@forward</span> <span class=\"token-string\">'abstract/mixins'</span>;
 
-@use 'base/reset';
-@use 'base/typography';
-@use 'base/layout';
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">'base/reset'</span>;
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">'base/typography'</span>;
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">'base/layout'</span>;
 
-@use 'components/alert';
-@use 'components/avatar';
-@use 'components/badge';  // &lt;-- Badge Component System
-@use 'layout/docs';</code></pre>
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">'components/alert'</span>;
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">'components/avatar'</span>;
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">'components/badge'</span>;  // &lt;-- Badge Component System
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">'layout/docs'</span>;</code></pre>
             </div>
           </div>
         </section>

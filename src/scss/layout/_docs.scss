@@ -388,47 +388,116 @@ body.doc-body {
 
   &__code {
     position: relative;
-    background: var(--doc-bg);
-    padding: vars.$spacing-4 vars.$spacing-6;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: #1e2125;
+    padding: 16px 20px;
     margin: 0;
-    overflow-x: auto;
+    gap: 12px;
     font-family: vars.$font-family-mono;
     font-size: func.rem(vars.$font-size-xs);
     line-height: 1.6;
-    color: #38bdf8;
+    color: #e6edf3;
+    border-top: 1px solid var(--doc-border);
 
     pre {
+      order: 1;
+      flex: 1 1 auto;
+      min-width: 0;
       margin: 0;
+      overflow-x: auto;
+      padding-right: 8px;
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 3px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+        &:hover {
+          background: rgba(255, 255, 255, 0.35);
+        }
+      }
+    }
+
+    code {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      white-space: pre;
+      display: block;
+      color: #e6edf3;
+    }
+
+    // Token Syntax Highlighting (Bootstrap Docs Reference)
+    .token-tag {
+      color: #38bdf8;
+    }
+    .token-punctuation {
+      color: #868e96;
+    }
+    .token-attr-name {
+      color: #86efac;
+    }
+    .token-attr-value,
+    .token-string {
+      color: #d8b4fe;
+    }
+    .token-comment,
+    .token-doctype {
+      color: #6c757d;
+      font-style: italic;
+    }
+    .token-keyword {
+      color: #f472b6;
+    }
+    .token-variable {
+      color: #38bdf8;
+    }
+    .token-text {
+      color: #f8f9fa;
     }
   }
 
   &__copy-btn {
     @include mixins.reset-button;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 28px;
-    height: 28px;
+    order: 2;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     border-radius: vars.$radius-md;
-    background: var(--doc-surface);
-    border: 1px solid var(--doc-border);
-    color: var(--doc-text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #94a3b8;
+    cursor: pointer;
     transition: all 150ms ease;
 
     svg {
-      width: 14px;
-      height: 14px;
+      width: 15px;
+      height: 15px;
       display: block;
     }
 
     &:hover {
-      color: var(--doc-text);
-      background: var(--doc-surface-hover);
-      border-color: var(--doc-text-dim);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 }

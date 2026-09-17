@@ -32,11 +32,19 @@ function showToast(message, duration = 2000) {
 
 // Copy Code Snippet function
 function copyCode(btn) {
-  const pre = btn.nextElementSibling;
+  const container = btn.closest('.doc-example__code');
+  const pre = container ? container.querySelector('pre') : btn.nextElementSibling;
   if (!pre) return;
   const code = pre.innerText;
   navigator.clipboard.writeText(code).then(() => {
     showToast('Copied to clipboard!');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" style="color: #4AB632;">
+      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+    </svg>`;
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
+    }, 1500);
   }).catch(err => {
     console.error('Failed to copy code: ', err);
   });

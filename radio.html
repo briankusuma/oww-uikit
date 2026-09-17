@@ -391,24 +391,23 @@
             </div>
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;div class="oww-radio-group" role="radiogroup" aria-label="Subscription plan"&gt;
-  &lt;label class="oww-radio-item"&gt;
-    &lt;input type="radio" name="plan" class="oww-radio-input" checked&gt;
-    &lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class="oww-radio-item__label"&gt;Monthly Billing ($19/mo)&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label class="oww-radio-item"&gt;
-    &lt;input type="radio" name="plan" class="oww-radio-input"&gt;
-    &lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class="oww-radio-item__label"&gt;Annual Billing ($190/yr)&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-group"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"radiogroup"</span> <span class="token-attr-name">aria-label</span><span class="token-punctuation">=</span><span class="token-attr-value">"Subscription plan"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">label</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"radio"</span> <span class="token-attr-name">name</span><span class="token-punctuation">=</span><span class="token-attr-value">"plan"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-input"</span> <span class="token-attr-name">checked</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item__label"</span><span class="token-punctuation">&gt;</span>Monthly Billing ($19/mo)<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">label</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">label</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"radio"</span> <span class="token-attr-name">name</span><span class="token-punctuation">=</span><span class="token-attr-value">"plan"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-input"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item__label"</span><span class="token-punctuation">&gt;</span>Annual Billing ($190/yr)<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">label</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -450,20 +449,19 @@
             </div>
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;!-- Unchecked Default --&gt;
-&lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
+              <pre><code><span class="token-comment">&lt;!-- Unchecked Default --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Checked Default --&gt;
-&lt;span class="oww-radio is-checked"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
+<span class="token-comment">&lt;!-- Checked Default --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio is-checked"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Hover Halo Ring (Figma: 0px 0px 0px 5px #E9E9E9) --&gt;
-&lt;span class="oww-radio is-hover"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;</code></pre>
+<span class="token-comment">&lt;!-- Hover Halo Ring (Figma: 0px 0px 0px 5px #E9E9E9) --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio is-hover"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
 
@@ -502,18 +500,17 @@
             </div>
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;!-- Radio Menu Item --&gt;
-&lt;label class="oww-radio-item"&gt;
-  &lt;input type="radio" name="menu" class="oww-radio-input"&gt;
-  &lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="oww-radio-item__label"&gt;Menu Item&lt;/span&gt;
-&lt;/label&gt;</code></pre>
+              <pre><code><span class="token-comment">&lt;!-- Radio Menu Item --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">label</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"radio"</span> <span class="token-attr-name">name</span><span class="token-punctuation">=</span><span class="token-attr-value">"menu"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-input"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item__label"</span><span class="token-punctuation">&gt;</span>Menu Item<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">label</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
 
@@ -540,24 +537,23 @@
             </div>
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;div class="oww-radio-group oww-radio-group--horizontal"&gt;
-  &lt;label class="oww-radio-item"&gt;
-    &lt;input type="radio" name="gender" class="oww-radio-input" checked&gt;
-    &lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class="oww-radio-item__label"&gt;Male&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label class="oww-radio-item"&gt;
-    &lt;input type="radio" name="gender" class="oww-radio-input"&gt;
-    &lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class="oww-radio-item__label"&gt;Female&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-group oww-radio-group--horizontal"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">label</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"radio"</span> <span class="token-attr-name">name</span><span class="token-punctuation">=</span><span class="token-attr-value">"gender"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-input"</span> <span class="token-attr-name">checked</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item__label"</span><span class="token-punctuation">&gt;</span>Male<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">label</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">label</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"radio"</span> <span class="token-attr-name">name</span><span class="token-punctuation">=</span><span class="token-attr-value">"gender"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-input"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item__label"</span><span class="token-punctuation">&gt;</span>Female<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">label</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
 
@@ -584,20 +580,19 @@
             </div>
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;label class="oww-radio-card"&gt;
-  &lt;input type="radio" name="tier" class="oww-radio-input" checked&gt;
-  &lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;div class="oww-radio-card__content"&gt;
-    &lt;span class="oww-radio-card__title"&gt;Professional Plan&lt;/span&gt;
-    &lt;span class="oww-radio-card__desc"&gt;Full access to advanced components...&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/label&gt;</code></pre>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">label</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-card"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"radio"</span> <span class="token-attr-name">name</span><span class="token-punctuation">=</span><span class="token-attr-value">"tier"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-input"</span> <span class="token-attr-name">checked</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-card__content"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-card__title"</span><span class="token-punctuation">&gt;</span>Professional Plan<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-card__desc"</span><span class="token-punctuation">&gt;</span>Full access to advanced components...<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">label</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -643,25 +638,24 @@
             </div>
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>&lt;!-- Active Checked --&gt;
-&lt;label class="oww-radio-item"&gt;
-  &lt;input type="radio" name="state" class="oww-radio-input" checked&gt;
-  &lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="oww-radio-item__label"&gt;Active Checked&lt;/span&gt;
-&lt;/label&gt;
+              <pre><code><span class="token-comment">&lt;!-- Active Checked --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">label</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"radio"</span> <span class="token-attr-name">name</span><span class="token-punctuation">=</span><span class="token-attr-value">"state"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-input"</span> <span class="token-attr-name">checked</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item__label"</span><span class="token-punctuation">&gt;</span>Active Checked<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">label</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Disabled --&gt;
-&lt;label class="oww-radio-item is-disabled"&gt;
-  &lt;input type="radio" name="state" class="oww-radio-input" disabled&gt;
-  &lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class="oww-radio-item__label"&gt;Disabled Inactive&lt;/span&gt;
-&lt;/label&gt;</code></pre>
+<span class="token-comment">&lt;!-- Disabled --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">label</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item is-disabled"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"radio"</span> <span class="token-attr-name">name</span><span class="token-punctuation">=</span><span class="token-attr-value">"state"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-input"</span> <span class="token-attr-name">disabled</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio__dot"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-radio-item__label"</span><span class="token-punctuation">&gt;</span>Disabled Inactive<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">label</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -756,14 +750,13 @@
           <div class="doc-example">
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
   </svg>
 </button>
-              <pre><code>// src/scss/uikit.scss
-@use 'components/radio';</code></pre>
+              <pre><code><span class="token-comment">// src/scss/uikit.scss</span>
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">'components/radio'</span>;</code></pre>
             </div>
           </div>
         </section>

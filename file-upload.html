@@ -464,32 +464,31 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;div class="oww-file-upload"&gt;
-  &lt;div class="oww-file-upload__header"&gt;
-    &lt;label class="oww-file-upload__label"&gt;Cover Image&lt;/label&gt;
-    &lt;span class="oww-file-upload__required"&gt;*&lt;/span&gt;
-  &lt;/div&gt;
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__header"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">label</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__label"</span><span class="token-punctuation">&gt;</span>Cover Image<span class="token-punctuation">&lt;/</span><span class="token-tag">label</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__required"</span><span class="token-punctuation">&gt;</span>*<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
 
-  &lt;div class="oww-file-upload__dropzone"&gt;
-    &lt;input type="file" accept="image/jpeg,image/png,image/webp"&gt;
-    &lt;div class="oww-file-upload__body"&gt;
-      &lt;div class="oww-file-upload__icon"&gt;
-        &lt;img src="./dist/assets/icons/upload-fill.svg" alt="" width="24" height="24"&gt;
-      &lt;/div&gt;
-      &lt;div class="oww-file-upload__text-group"&gt;
-        &lt;div class="oww-file-upload__title"&gt;Choose a file or drag and drop here.&lt;/div&gt;
-        &lt;div class="oww-file-upload__subtitle"&gt;Formats: JPG, PNG. Max size 2 MB. Use a landscape image.&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;button type="button" class="oww-btn oww-btn--outline oww-btn--sm"&gt;Browse File&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__dropzone"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"file"</span> <span class="token-attr-name">accept</span><span class="token-punctuation">=</span><span class="token-attr-value">"image/jpeg,image/png,image/webp"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__body"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__icon"</span><span class="token-punctuation">&gt;</span>
+        <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/upload-fill.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">""</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"24"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"24"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__text-group"</span><span class="token-punctuation">&gt;</span>
+        <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__title"</span><span class="token-punctuation">&gt;</span>Choose a file or drag and drop here.<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+        <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__subtitle"</span><span class="token-punctuation">&gt;</span>Formats: JPG, PNG. Max size 2 MB. Use a landscape image.<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-btn oww-btn--outline oww-btn--sm"</span><span class="token-punctuation">&gt;</span>Browse File<span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -531,16 +530,15 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;div class="oww-file-upload__dropzone is-dragover"&gt;
-  &lt;div class="oww-file-upload__drag-badge"&gt;cover_image.jpg&lt;/div&gt;
-  &lt;!-- body content --&gt;
-&lt;/div&gt;</code></pre>
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__dropzone is-dragover"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__drag-badge"</span><span class="token-punctuation">&gt;</span>cover_image.jpg<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+  <span class="token-comment">&lt;!-- body content --&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
 
@@ -566,20 +564,19 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;div class="oww-file-upload__dropzone is-applied" style="background-image: url('cover.jpg');"&gt;
-  &lt;div class="oww-file-upload__body"&gt;
-    &lt;div class="oww-file-upload__actions"&gt;
-      &lt;button type="button" class="oww-btn oww-btn--outline oww-btn--sm"&gt;Change Cover&lt;/button&gt;
-      &lt;button type="button" class="oww-btn oww-btn--danger oww-btn--sm"&gt;Remove&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__dropzone is-applied"</span> <span class="token-attr-name">style</span><span class="token-punctuation">=</span><span class="token-attr-value">"background-image: url('cover.jpg');"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__body"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__actions"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-btn oww-btn--outline oww-btn--sm"</span><span class="token-punctuation">&gt;</span>Change Cover<span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-btn oww-btn--danger oww-btn--sm"</span><span class="token-punctuation">&gt;</span>Remove<span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
 
@@ -612,16 +609,15 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;div class="oww-file-upload__dropzone is-error"&gt;
-  &lt;!-- body content --&gt;
-&lt;/div&gt;
-&lt;div class="oww-file-upload__error-text"&gt;This is error text.&lt;/div&gt;</code></pre>
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__dropzone is-error"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-comment">&lt;!-- body content --&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__error-text"</span><span class="token-punctuation">&gt;</span>This is error text.<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -666,26 +662,25 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;!-- Image Uploaded Card (120x96px) --&gt;
-&lt;div class="oww-file-upload-mini oww-file-upload-mini--image" style="background-image: url('thumbnail.jpg');"&gt;
-  &lt;button type="button" class="oww-file-upload-mini__remove-btn" onclick="removeMiniUpload(this)" aria-label="Remove image"&gt;
-    &lt;img src="./dist/assets/icons/x-close.svg" alt="Close" width="14" height="14"&gt;
-  &lt;/button&gt;
-&lt;/div&gt;
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-comment">&lt;!-- Image Uploaded Card (120x96px) --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload-mini oww-file-upload-mini--image"</span> <span class="token-attr-name">style</span><span class="token-punctuation">=</span><span class="token-attr-value">"background-image: url('thumbnail.jpg');"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload-mini__remove-btn"</span> <span class="token-attr-name">onclick</span><span class="token-punctuation">=</span><span class="token-attr-value">"removeMiniUpload(this)"</span> <span class="token-attr-name">aria-label</span><span class="token-punctuation">=</span><span class="token-attr-value">"Remove image"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/x-close.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">"Close"</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"14"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"14"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
 
-&lt;!-- Video Uploaded Card with Duration Badge --&gt;
-&lt;div class="oww-file-upload-mini oww-file-upload-mini--video" style="background-image: url('video_thumb.jpg');"&gt;
-  &lt;button type="button" class="oww-file-upload-mini__remove-btn" onclick="removeMiniUpload(this)" aria-label="Remove video"&gt;
-    &lt;img src="./dist/assets/icons/x-close.svg" alt="Close" width="14" height="14"&gt;
-  &lt;/button&gt;
-  &lt;div class="oww-file-upload-mini__badge"&gt;00:21&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+<span class="token-comment">&lt;!-- Video Uploaded Card with Duration Badge --&gt;</span>
+<span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload-mini oww-file-upload-mini--video"</span> <span class="token-attr-name">style</span><span class="token-punctuation">=</span><span class="token-attr-value">"background-image: url('video_thumb.jpg');"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload-mini__remove-btn"</span> <span class="token-attr-name">onclick</span><span class="token-punctuation">=</span><span class="token-attr-value">"removeMiniUpload(this)"</span> <span class="token-attr-name">aria-label</span><span class="token-punctuation">=</span><span class="token-attr-value">"Remove video"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/x-close.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">"Close"</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"14"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"14"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload-mini__badge"</span><span class="token-punctuation">&gt;</span>00:21<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>

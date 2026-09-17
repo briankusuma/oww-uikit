@@ -457,27 +457,26 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;div class="oww-dropdown"&gt;
-  &lt;button type="button" class="oww-dropdown__trigger" aria-haspopup="true"&gt;
-    &lt;span class="oww-dropdown__trigger-text"&gt;Select Month&lt;/span&gt;
-    &lt;svg viewBox="0 0 20 20" fill="none"&gt;&lt;path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" /&gt;&lt;/svg&gt;
-  &lt;/button&gt;
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__trigger"</span> <span class="token-attr-name">aria-haspopup</span><span class="token-punctuation">=</span><span class="token-attr-value">"true"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__trigger-text"</span><span class="token-punctuation">&gt;</span>Select Month<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">svg</span> <span class="token-attr-name">viewBox</span><span class="token-punctuation">=</span><span class="token-attr-value">"0 0 20 20"</span> <span class="token-attr-name">fill</span><span class="token-punctuation">=</span><span class="token-attr-value">"none"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;</span><span class="token-tag">path</span> <span class="token-attr-name">d</span><span class="token-punctuation">=</span><span class="token-attr-value">"M5 7.5L10 12.5L15 7.5"</span> <span class="token-attr-name">stroke</span><span class="token-punctuation">=</span><span class="token-attr-value">"currentColor"</span> <span class="token-punctuation">/&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">svg</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
 
-  &lt;div class="oww-dropdown__menu oww-dropdown__menu--scrollable" role="menu"&gt;
-    &lt;button type="button" class="oww-dropdown__item" role="menuitem"&gt;
-      &lt;span class="oww-dropdown__item-text"&gt;January&lt;/span&gt;
-    &lt;/button&gt;
-    &lt;button type="button" class="oww-dropdown__item" role="menuitem"&gt;
-      &lt;span class="oww-dropdown__item-text"&gt;February&lt;/span&gt;
-    &lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__menu oww-dropdown__menu--scrollable"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menu"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menuitem"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-text"</span><span class="token-punctuation">&gt;</span>January<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menuitem"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-text"</span><span class="token-punctuation">&gt;</span>February<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -517,36 +516,35 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;div class="oww-dropdown__menu" role="menu"&gt;
-  &lt;button type="button" class="oww-dropdown__item" role="menuitem"&gt;
-    &lt;span class="oww-dropdown__item-icon"&gt;
-      &lt;img src="./dist/assets/icons/pencil.svg" alt="" width="20" height="20"&gt;
-    &lt;/span&gt;
-    &lt;span class="oww-dropdown__item-text"&gt;Edit&lt;/span&gt;
-  &lt;/button&gt;
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__menu"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menu"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menuitem"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-icon"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/pencil.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">""</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-text"</span><span class="token-punctuation">&gt;</span>Edit<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
 
-  &lt;button type="button" class="oww-dropdown__item" role="menuitem"&gt;
-    &lt;span class="oww-dropdown__item-icon"&gt;
-      &lt;img src="./dist/assets/icons/megaphone.svg" alt="" width="20" height="20"&gt;
-    &lt;/span&gt;
-    &lt;span class="oww-dropdown__item-text"&gt;Promote&lt;/span&gt;
-  &lt;/button&gt;
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menuitem"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-icon"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/megaphone.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">""</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-text"</span><span class="token-punctuation">&gt;</span>Promote<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
 
-  &lt;hr class="oww-dropdown__divider"&gt;
+  <span class="token-punctuation">&lt;</span><span class="token-tag">hr</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__divider"</span><span class="token-punctuation">&gt;</span>
 
-  &lt;button type="button" class="oww-dropdown__item oww-dropdown__item--danger" role="menuitem"&gt;
-    &lt;span class="oww-dropdown__item-icon"&gt;
-      &lt;img src="./dist/assets/icons/trash-bin.svg" alt="" width="20" height="20"&gt;
-    &lt;/span&gt;
-    &lt;span class="oww-dropdown__item-text"&gt;Delete&lt;/span&gt;
-  &lt;/button&gt;
-&lt;/div&gt;</code></pre>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item oww-dropdown__item--danger"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menuitem"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-icon"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/trash-bin.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">""</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-text"</span><span class="token-punctuation">&gt;</span>Delete<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -639,26 +637,25 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;div class="oww-dropdown__menu oww-dropdown__menu--scrollable" role="menu"&gt;
-  &lt;button type="button" class="oww-dropdown__item" role="menuitem"&gt;
-    &lt;span class="oww-dropdown__item-text"&gt;October&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;button type="button" class="oww-dropdown__item is-selected" role="menuitem" aria-selected="true"&gt;
-    &lt;span class="oww-dropdown__item-text"&gt;November&lt;/span&gt;
-    &lt;span class="oww-dropdown__item-check"&gt;
-      &lt;img src="./dist/assets/icons/check.svg" alt="" width="16" height="16"&gt;
-    &lt;/span&gt;
-  &lt;/button&gt;
-  &lt;button type="button" class="oww-dropdown__item" role="menuitem"&gt;
-    &lt;span class="oww-dropdown__item-text"&gt;December&lt;/span&gt;
-  &lt;/button&gt;
-&lt;/div&gt;</code></pre>
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__menu oww-dropdown__menu--scrollable"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menu"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menuitem"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-text"</span><span class="token-punctuation">&gt;</span>October<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item is-selected"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menuitem"</span> <span class="token-attr-name">aria-selected</span><span class="token-punctuation">=</span><span class="token-attr-value">"true"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-text"</span><span class="token-punctuation">&gt;</span>November<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-check"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/check.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">""</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"16"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"16"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menuitem"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-text"</span><span class="token-punctuation">&gt;</span>December<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -739,32 +736,31 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;div class="oww-dropdown__menu oww-dropdown__menu--country" role="menu"&gt;
-  &lt;div class="oww-dropdown__search"&gt;
-    &lt;img src="./dist/assets/icons/search.svg" alt="" width="20" height="20"&gt;
-    &lt;input type="text" placeholder="Search for countries"&gt;
-  &lt;/div&gt;
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__menu oww-dropdown__menu--country"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menu"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__search"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/search.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">""</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"text"</span> <span class="token-attr-name">placeholder</span><span class="token-punctuation">=</span><span class="token-attr-value">"Search for countries"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
 
-  &lt;hr class="oww-dropdown__divider"&gt;
+  <span class="token-punctuation">&lt;</span><span class="token-tag">hr</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__divider"</span><span class="token-punctuation">&gt;</span>
 
-  &lt;div class="oww-dropdown__menu--scrollable"&gt;
-    &lt;button type="button" class="oww-dropdown__item is-selected" role="menuitem"&gt;
-      &lt;span class="oww-dropdown__item-flag"&gt;
-        &lt;img src="./dist/assets/icons/flag-south-sudan.svg" alt="" width="20" height="20"&gt;
-      &lt;/span&gt;
-      &lt;span class="oww-dropdown__item-text"&gt;South Sudan (+211)&lt;/span&gt;
-      &lt;span class="oww-dropdown__item-check"&gt;
-        &lt;img src="./dist/assets/icons/check.svg" alt="" width="16" height="16"&gt;
-      &lt;/span&gt;
-    &lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__menu--scrollable"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item is-selected"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menuitem"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-flag"</span><span class="token-punctuation">&gt;</span>
+        <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/flag-south-sudan.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">""</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"20"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-text"</span><span class="token-punctuation">&gt;</span>South Sudan (+211)<span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__item-check"</span><span class="token-punctuation">&gt;</span>
+        <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/check.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">""</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"16"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"16"</span><span class="token-punctuation">&gt;</span>
+      <span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -836,33 +832,32 @@
 
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>&lt;div class="oww-dropdown__menu oww-dropdown__menu--filter" role="menu"&gt;
-  &lt;div class="oww-dropdown__filter-section"&gt;
-    &lt;div class="oww-dropdown__section-title"&gt;Filter by&lt;/div&gt;
-    &lt;div class="oww-dropdown__filter-label"&gt;Price Range&lt;/div&gt;
-    &lt;!-- Range Slider --&gt;
-  &lt;/div&gt;
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__menu oww-dropdown__menu--filter"</span> <span class="token-attr-name">role</span><span class="token-punctuation">=</span><span class="token-attr-value">"menu"</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__filter-section"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__section-title"</span><span class="token-punctuation">&gt;</span>Filter by<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__filter-label"</span><span class="token-punctuation">&gt;</span>Price Range<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+    <span class="token-comment">&lt;!-- Range Slider --&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
 
-  &lt;hr class="oww-dropdown__divider"&gt;
+  <span class="token-punctuation">&lt;</span><span class="token-tag">hr</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__divider"</span><span class="token-punctuation">&gt;</span>
 
-  &lt;div class="oww-dropdown__filter-section"&gt;
-    &lt;div class="oww-dropdown__section-title"&gt;Sort by&lt;/div&gt;
-    &lt;!-- Radio options --&gt;
-  &lt;/div&gt;
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__filter-section"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__section-title"</span><span class="token-punctuation">&gt;</span>Sort by<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+    <span class="token-comment">&lt;!-- Radio options --&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
 
-  &lt;hr class="oww-dropdown__divider"&gt;
+  <span class="token-punctuation">&lt;</span><span class="token-tag">hr</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__divider"</span><span class="token-punctuation">&gt;</span>
 
-  &lt;div class="oww-dropdown__footer"&gt;
-    &lt;button type="button" class="oww-btn oww-btn--outline oww-btn--sm"&gt;Reset&lt;/button&gt;
-    &lt;button type="button" class="oww-btn oww-btn--primary oww-btn--sm"&gt;Apply&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+  <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-dropdown__footer"</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-btn oww-btn--outline oww-btn--sm"</span><span class="token-punctuation">&gt;</span>Reset<span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+    <span class="token-punctuation">&lt;</span><span class="token-tag">button</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"button"</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-btn oww-btn--primary oww-btn--sm"</span><span class="token-punctuation">&gt;</span>Apply<span class="token-punctuation">&lt;/</span><span class="token-tag">button</span><span class="token-punctuation">&gt;</span>
+  <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
+<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span></code></pre>
             </div>
           </div>
         </section>
@@ -942,19 +937,18 @@
           <div class="doc-example">
             <div class="doc-example__code">
               <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-                    fill="currentColor" />
-                </svg>
-              </button>
-              <pre><code>// 1. SCSS Import
-@use "src/scss/components/dropdown";
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</button>
+              <pre><code><span class="token-comment">// 1. SCSS Import</span>
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">"src/scss/components/dropdown"</span>;
 
-// 2. Custom Token Override Example
-@use "src/scss/abstract/variables" with (
-  $dropdown-radius: 16px,
-  $dropdown-item-radius: 12px
+<span class="token-comment">// 2. Custom Token Override Example</span>
+<span class=\<span class=\"token-string\">"token-keyword\"</span>>@use</span> <span class=\"token-string\">"src/scss/abstract/variables"</span> with (
+  <span class=\"token-variable\">$dropdown-radius</span>: 16px,
+  <span class=\"token-variable\">$dropdown-item-radius</span>: 12px
 );</code></pre>
             </div>
           </div>
