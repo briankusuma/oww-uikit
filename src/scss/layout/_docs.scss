@@ -363,6 +363,9 @@ body.doc-body {
   overflow: hidden;
   margin-bottom: vars.$spacing-6;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 
   &__preview {
     padding: vars.$spacing-8;
@@ -400,6 +403,13 @@ body.doc-body {
     line-height: 1.6;
     color: #e6edf3;
     border-top: 1px solid var(--doc-border);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    &:first-child {
+      border-top: none;
+    }
 
     pre {
       order: 1;
@@ -965,6 +975,8 @@ body.doc-body {
   display: flex;
   gap: vars.$spacing-4;
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
 }
 
 .step-number {
@@ -983,6 +995,8 @@ body.doc-body {
 
 .step-content {
   flex: 1;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .step-title {
