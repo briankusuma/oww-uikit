@@ -357,7 +357,7 @@
         <header class="doc-content__header">
           <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Radio Button</h1>
           <p class="doc-content__lead">
-            Radio buttons enable users to select a single option from a mutually exclusive set. Designed with high fidelity following Figma specifications, featuring standalone 20px circles, interactive list items, and card selection patterns.
+            Radio buttons enable users to select a single option from a mutually exclusive set. Designed with high fidelity following design system specifications, featuring standalone 20px circles, interactive list items, and card selection patterns.
           </p>
         </header>
 
@@ -413,11 +413,11 @@
           </div>
         </section>
 
-        <!-- Section: Figma Variants -->
-        <section id="figma-variants" class="doc-content__section">
-          <h2 class="doc-content__section-title">Figma Variants</h2>
+        <!-- Section: Component Variants -->
+        <section id="variants" class="doc-content__section">
+          <h2 class="doc-content__section-title">Component Variants</h2>
           <p class="doc-content__section-desc">
-            Official components defined in Figma: <strong>Standalone Radio (#22639:10778)</strong> and <strong>Radio Menu-Item (#22641:9116)</strong>.
+            Available in two formats: <strong>Standalone Radio</strong> for form layouts and <strong>Radio Menu-Item</strong> for selectable menu lists.
           </p>
 
           <!-- Variant 1: Standalone Radio -->
@@ -473,28 +473,28 @@
               <div class="oww-radio-group">
                 <!-- Default State -->
                 <label class="oww-radio-item">
-                  <input type="radio" name="figma-menu-item" class="oww-radio-input">
+                  <input type="radio" name="menu-radio-item" class="oww-radio-input">
                   <span class="oww-radio"><span class="oww-radio__dot"></span></span>
                   <span class="oww-radio-item__label">Menu Item (Default)</span>
                 </label>
 
-                <!-- Hover State (Figma: #F8F8F8 background) -->
+                
                 <label class="oww-radio-item is-hover">
-                  <input type="radio" name="figma-menu-item" class="oww-radio-input">
+                  <input type="radio" name="menu-radio-item" class="oww-radio-input">
                   <span class="oww-radio is-hover"><span class="oww-radio__dot"></span></span>
                   <span class="oww-radio-item__label">Menu Item (Hover)</span>
                 </label>
 
                 <!-- Checked State -->
                 <label class="oww-radio-item">
-                  <input type="radio" name="figma-menu-item" class="oww-radio-input" checked>
+                  <input type="radio" name="menu-radio-item" class="oww-radio-input" checked>
                   <span class="oww-radio"><span class="oww-radio__dot"></span></span>
                   <span class="oww-radio-item__label">Menu Item (Checked)</span>
                 </label>
 
                 <!-- Disabled State -->
                 <label class="oww-radio-item is-disabled">
-                  <input type="radio" name="figma-menu-item" class="oww-radio-input" disabled>
+                  <input type="radio" name="menu-radio-item" class="oww-radio-input" disabled>
                   <span class="oww-radio"><span class="oww-radio__dot"></span></span>
                   <span class="oww-radio-item__label">Menu Item (Disabled)</span>
                 </label>
@@ -508,7 +508,7 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;!-- Radio Menu Item (Figma Node #22641:9116) --&gt;
+              <pre><code>&lt;!-- Radio Menu Item --&gt;
 &lt;label class="oww-radio-item"&gt;
   &lt;input type="radio" name="menu" class="oww-radio-input"&gt;
   &lt;span class="oww-radio"&gt;&lt;span class="oww-radio__dot"&gt;&lt;/span&gt;&lt;/span&gt;
@@ -780,7 +780,7 @@
             <a href="#overview" class="doc-toc__link is-active">Overview</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#figma-variants" class="doc-toc__link">Figma Variants</a>
+            <a href="#variants" class="doc-toc__link">Variants</a>
           </li>
           <li class="doc-toc__item">
             <a href="#states" class="doc-toc__link">Interactive States</a>

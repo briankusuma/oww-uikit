@@ -468,11 +468,11 @@
           </div>
         </section>
 
-        <!-- Section: Figma Variants -->
-        <section id="figma-variants" class="doc-content__section">
-          <h2 class="doc-content__section-title">Figma Variants</h2>
+        <!-- Section: Component Variants -->
+        <section id="variants" class="doc-content__section">
+          <h2 class="doc-content__section-title">Component Variants</h2>
           <p class="doc-content__section-desc">
-            Official variants defined in the Figma component design: <strong>Default Text Input</strong>, <strong>Badge Tag Input</strong>, <strong>Multiline Textarea</strong>, <strong>Phone Number with Country Selector</strong>, <strong>Segmented Date Picker</strong>, and <strong>Readable Share Link</strong>.
+            Core variants available in the component system: <strong>Default Text Input</strong>, <strong>Badge Tag Input</strong>, <strong>Multiline Textarea</strong>, <strong>Phone Number with Country Selector</strong>, <strong>Segmented Date Picker</strong>, and <strong>Readable Share Link</strong>.
           </p>
 
           <!-- Variant 1: Default Text Input -->
@@ -627,14 +627,14 @@
             </div>
           </div>
 
-          <!-- Variant 5: Segmented Date Picker (Figma Node #19857:196) -->
+          <!-- Variant 5: Segmented Date Picker -->
           <div class="doc-example">
             <div class="doc-example__preview" style="display: flex; flex-direction: column; gap: 32px; max-width: 560px; width: 100%;">
               <!-- Interactive Live Date Picker -->
               <div class="oww-date-picker">
                 <label class="oww-date-picker__label">Date of Birth</label>
                 <div class="oww-date-picker__group">
-                  <!-- Month Box (286px in Figma) -->
+                  <!-- Month Box (286px in the design system) -->
                   <div class="oww-date-picker__item oww-date-picker__item--month">
                     <div class="oww-date-picker__box">
                       <span class="oww-date-picker__sublabel">Month</span>
@@ -662,7 +662,7 @@
                     </div>
                   </div>
 
-                  <!-- Day Box (123px in Figma) -->
+                  <!-- Day Box (123px in the design system) -->
                   <div class="oww-date-picker__item oww-date-picker__item--day">
                     <div class="oww-date-picker__box">
                       <span class="oww-date-picker__sublabel">Day</span>
@@ -689,7 +689,7 @@
                     </div>
                   </div>
 
-                  <!-- Year Box (123px in Figma) -->
+                  <!-- Year Box (123px in the design system) -->
                   <div class="oww-date-picker__item oww-date-picker__item--year">
                     <div class="oww-date-picker__box">
                       <span class="oww-date-picker__sublabel">Year</span>
@@ -715,9 +715,9 @@
                 </div>
               </div>
 
-              <!-- Figma Variant: Selected (November 12, 2025) -->
+              <!-- State: Selected (November 12, 2025) -->
               <div class="oww-date-picker">
-                <div class="oww-date-picker__label" style="font-size: 13px; color: var(--doc-text-muted); font-weight: 500;">Figma Variant: Selected</div>
+                <div class="oww-date-picker__label" style="font-size: 13px; color: var(--doc-text-muted); font-weight: 500;">State: Selected</div>
                 <div class="oww-date-picker__group">
                   <div class="oww-date-picker__item oww-date-picker__item--month">
                     <div class="oww-date-picker__box">
@@ -755,9 +755,9 @@
                 </div>
               </div>
 
-              <!-- Figma Variant: Disabled -->
+              <!-- State: Disabledd -->
               <div class="oww-date-picker">
-                <div class="oww-date-picker__label" style="font-size: 13px; color: var(--doc-text-muted); font-weight: 500;">Figma Variant: Disable</div>
+                <div class="oww-date-picker__label" style="font-size: 13px; color: var(--doc-text-muted); font-weight: 500;">State: Disabled</div>
                 <div class="oww-date-picker__group">
                   <div class="oww-date-picker__item oww-date-picker__item--month">
                     <div class="oww-date-picker__box is-disabled">
@@ -803,7 +803,7 @@
       fill="currentColor" />
   </svg>
 </button>
-              <pre><code>&lt;!-- Date of Birth Picker (Figma Node #19857:196) --&gt;
+              <pre><code>&lt;!-- Date of Birth Picker --&gt;
 &lt;div class="oww-date-picker"&gt;
   &lt;label class="oww-date-picker__label"&gt;Date of Birth&lt;/label&gt;
   &lt;div class="oww-date-picker__group"&gt;
@@ -1105,7 +1105,7 @@
             <a href="#overview" class="doc-toc__link is-active">Overview</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#figma-variants" class="doc-toc__link">Figma Variants</a>
+            <a href="#variants" class="doc-toc__link">Variants</a>
           </li>
           <li class="doc-toc__item">
             <a href="#sizes" class="doc-toc__link">Sizes Scale</a>
