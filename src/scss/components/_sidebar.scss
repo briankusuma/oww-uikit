@@ -30,13 +30,14 @@
   &__logo {
     display: inline-flex;
     align-items: center;
+    width: 128px;
     height: 24px;
 
     img,
     svg {
       display: block;
+      width: 128px;
       height: 24px;
-      width: auto;
     }
   }
 
@@ -129,18 +130,26 @@
   }
 
   &__profile-more {
-    width: vars.$sidebar-profile-more-size;
-    height: vars.$sidebar-profile-more-size;
-    border-radius: vars.$sidebar-profile-more-radius;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: inherit;
     border: none;
     background: transparent;
+    padding: 0;
     cursor: pointer;
     flex-shrink: 0;
     transition: background-color 0.15s ease;
+
+    img,
+    svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
