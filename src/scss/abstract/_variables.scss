@@ -531,6 +531,9 @@ $range-thumb-radius:          50% !default;
 $range-thumb-bg:              $color-base-primary-900 !default; // #000000
 $range-thumb-bg-dark:         $color-base-white-500 !default; // #FFFFFF
 $range-thumb-shadow:          0px 0px 6.67px 0px rgba(0, 0, 0, 0.2) !default; // Figma: 0 0 6.67px rgba(0,0,0,0.2)
+$range-thumb-dot-size:        8.16px !default; // Figma: inner white dot diameter ~8.16px (radius 4.08px)
+$range-thumb-dot-bg:          $color-base-white-500 !default; // #FFFFFF
+$range-thumb-dot-bg-dark:     $color-base-primary-900 !default; // #000000
 $range-thumb-shadow-hover:    0px 0px 0px 4px rgba(0, 0, 0, 0.1), 0px 0px 6.67px 0px rgba(0, 0, 0, 0.25) !default;
 
 $range-label-color:           $color-base-primary-900 !default; // #000000

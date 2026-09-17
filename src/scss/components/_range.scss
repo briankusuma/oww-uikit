@@ -4,7 +4,7 @@
 
 // =============================================================================
 // COMPONENT: RANGE SLIDER (Figma Component Set #22652:10070)
-// Supports dual-point thumb slider with dynamic fill track and min/max labels.
+// Supports dual-point thumb slider with dynamic fill track, inner dot, and min/max labels.
 // =============================================================================
 
 .oww-range {
@@ -72,7 +72,7 @@
     transition: none;
   }
 
-  // Thumbs (Min & Max adjusters)
+  // Thumbs (Min & Max adjusters: 20px outer circle with inner dot)
   &__thumb {
     position: absolute;
     top: 50%;
@@ -87,6 +87,21 @@
     outline: none;
     touch-action: none;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // Inner White Dot matching Figma #22639:10643
+    &::after {
+      content: "";
+      display: block;
+      width: vars.$range-thumb-dot-size;
+      height: vars.$range-thumb-dot-size;
+      border-radius: 50%;
+      background-color: vars.$range-thumb-dot-bg;
+      pointer-events: none;
+      transition: transform 0.15s ease;
+    }
 
     &--min {
       left: var(--thumb-min-left, 0%);
@@ -161,6 +176,10 @@
     &__thumb {
       background-color: vars.$range-thumb-bg-dark;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+
+      &::after {
+        background-color: vars.$range-thumb-dot-bg-dark;
+      }
 
       &:hover {
         box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2), 0 0 8px rgba(0, 0, 0, 0.6);
