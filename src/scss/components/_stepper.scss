@@ -1,0 +1,238 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/functions" as fn;
+@use "../abstract/mixins" as mix;
+
+// =============================================================================
+// COMPONENT: STEPPER (Figma: Stepper Group #22465:55, Stepper Item #22465:54)
+// Multi-step progress indicator with Desktop (row) and Mobile (column) modes,
+// supporting Active, Completed, and Default states.
+// =============================================================================
+
+.oww-stepper {
+  display: flex;
+  align-items: center;
+  gap: vars.$stepper-group-gap; // 16px
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-family: inherit;
+
+  // Divider line spanning between items
+  &__divider {
+    flex: 1;
+    height: vars.$stepper-divider-height;
+    background-color: vars.$stepper-divider-color;
+    border: none;
+    margin: 0;
+    min-width: 24px;
+    align-self: center;
+
+    &.is-completed {
+      background-color: vars.$stepper-completed-circle-bg; // #4AB632
+    }
+  }
+}
+
+// =============================================================================
+// SUB-COMPONENT: STEPPER ITEM
+// Device: Desktop (row layout, 40px circle) vs Mobile (column layout, 32px circle)
+// =============================================================================
+
+.oww-stepper-item {
+  display: inline-flex;
+  align-items: center;
+  gap: vars.$stepper-gap-desktop; // 12px
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  flex-shrink: 0;
+
+  // Number Circle / Indicator Icon Frame
+  &__circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: vars.$stepper-circle-size-desktop; // 40px
+    height: vars.$stepper-circle-size-desktop;
+    border-radius: vars.$stepper-circle-radius; // 999px
+    box-sizing: border-box;
+    font-size: vars.$stepper-font-size-desktop;
+    font-weight: vars.$font-weight-semibold;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+
+    img,
+    svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+  }
+
+  // Label text
+  &__label {
+    font-size: vars.$stepper-font-size-desktop; // 16px
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  // ---------------------------------------------------------------------------
+  // STATE: DEFAULT / INACTIVE (State=Default)
+  // ---------------------------------------------------------------------------
+  &--default,
+  &.is-default {
+    .oww-stepper-item__circle {
+      background-color: transparent;
+      border: 1px solid vars.$stepper-default-circle-border; // #C4C4C4
+      color: vars.$stepper-default-circle-color;             // #7B7B7B
+    }
+
+    .oww-stepper-item__label {
+      color: vars.$stepper-default-label-color;              // #7B7B7B
+      font-weight: vars.$stepper-default-label-weight;       // 500
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // STATE: ACTIVE (State=Active)
+  // ---------------------------------------------------------------------------
+  &--active,
+  &.is-active {
+    .oww-stepper-item__circle {
+      background-color: vars.$stepper-active-circle-bg;       // #000000
+      border: 1px solid vars.$stepper-active-circle-bg;
+      color: vars.$stepper-active-circle-color;               // #FFFFFF
+    }
+
+    .oww-stepper-item__label {
+      color: vars.$stepper-active-label-color;                // #555555
+      font-weight: vars.$stepper-active-label-weight;         // 600
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // STATE: COMPLETED (State=Completed)
+  // ---------------------------------------------------------------------------
+  &--completed,
+  &.is-completed {
+    .oww-stepper-item__circle {
+      background-color: vars.$stepper-completed-circle-bg;    // #4AB632
+      border: 1px solid vars.$stepper-completed-circle-bg;
+      color: vars.$stepper-completed-icon-color;              // #FFFFFF
+    }
+
+    .oww-stepper-item__label {
+      color: vars.$stepper-completed-label-color;             // #7B7B7B
+      font-weight: vars.$stepper-completed-label-weight;      // 500
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // VARIANT: MOBILE (Device=Mobile)
+  // Stacked column layout: 32px circle on top, 14px label below, gap 4px
+  // ---------------------------------------------------------------------------
+  &--mobile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: vars.$stepper-gap-mobile; // 4px
+
+    .oww-stepper-item__circle {
+      width: vars.$stepper-circle-size-mobile; // 32px
+      height: vars.$stepper-circle-size-mobile;
+      font-size: vars.$stepper-font-size-mobile; // 14px
+
+      img,
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .oww-stepper-item__label {
+      font-size: vars.$stepper-font-size-mobile; // 14px
+      text-align: center;
+    }
+
+    &.is-active,
+    &--active {
+      .oww-stepper-item__label {
+        font-weight: vars.$font-weight-semibold;
+      }
+    }
+  }
+
+  // Clickable interactive modifier
+  &--interactive {
+    cursor: pointer;
+
+    &:hover {
+      .oww-stepper-item__circle {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// =============================================================================
+// DARK MODE SUPPORT
+// =============================================================================
+
+[data-theme="dark"] {
+  .oww-stepper {
+    &__divider {
+      background-color: vars.$stepper-divider-color-dark;
+
+      &.is-completed {
+        background-color: vars.$stepper-completed-circle-bg;
+      }
+    }
+  }
+
+  .oww-stepper-item {
+    &--default,
+    &.is-default {
+      .oww-stepper-item__circle {
+        border-color: rgba(255, 255, 255, 0.25);
+        color: #A0AEC0;
+      }
+
+      .oww-stepper-item__label {
+        color: #A0AEC0;
+      }
+    }
+
+    &--active,
+    &.is-active {
+      .oww-stepper-item__circle {
+        background-color: #FFFFFF;
+        border-color: #FFFFFF;
+        color: #000000;
+      }
+
+      .oww-stepper-item__label {
+        color: #FFFFFF;
+      }
+    }
+
+    &--completed,
+    &.is-completed {
+      .oww-stepper-item__circle {
+        background-color: vars.$stepper-completed-circle-bg;
+        border-color: vars.$stepper-completed-circle-bg;
+        color: #FFFFFF;
+      }
+
+      .oww-stepper-item__label {
+        color: #A0AEC0;
+      }
+    }
+  }
+}

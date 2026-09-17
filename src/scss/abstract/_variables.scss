@@ -592,3 +592,43 @@ $sidebar-avatar-size:         48px !default;
 $sidebar-profile-name-color:  $color-base-primary-900 !default; // #000000
 $sidebar-profile-more-size:   28px !default;
 $sidebar-profile-more-radius: 6px !default;
+
+// =============================================================================
+// 15. COMPONENT TOKENS: STEPPER (Figma: Stepper Group #22465:55, Stepper Item #22465:54)
+// =============================================================================
+// Stepper Circle Sizes
+$stepper-circle-size-desktop: 40px !default; // Figma: 40x40px
+$stepper-circle-size-mobile:  32px !default; // Figma: 32x32px
+$stepper-circle-radius:       999px !default; // Fully rounded pill/circle
+
+// Stepper Item Spacing & Gap
+$stepper-gap-desktop:         12px !default; // Figma: row gap 12px
+$stepper-gap-mobile:          4px !default;  // Figma: column gap 4px
+$stepper-group-gap:           16px !default; // Figma: gap 16px between items and divider
+
+// Stepper Divider Line
+$stepper-divider-height:      1px !default;
+$stepper-divider-color:       #C4C4C4 !default; // Figma: #C4C4C4
+$stepper-divider-color-dark:  rgba(255, 255, 255, 0.2) !default;
+
+// Active State
+$stepper-active-circle-bg:    $color-base-primary-900 !default; // #000000
+$stepper-active-circle-color: $color-base-white-500 !default;   // #FFFFFF
+$stepper-active-label-color:  #555555 !default;                 // Figma: #555555
+$stepper-active-label-weight: $font-weight-semibold !default;   // 600
+
+// Completed State
+$stepper-completed-circle-bg: #4AB632 !default;                 // Figma: #4AB632 (Success green)
+$stepper-completed-icon-color: $color-base-white-500 !default;  // #FFFFFF
+$stepper-completed-label-color: #7B7B7B !default;               // Figma: #7B7B7B
+$stepper-completed-label-weight: $font-weight-medium !default;  // 500
+
+// Default / Inactive State
+$stepper-default-circle-border: #C4C4C4 !default;               // Figma: #C4C4C4
+$stepper-default-circle-color:  #7B7B7B !default;               // Figma: #7B7B7B
+$stepper-default-label-color:   #7B7B7B !default;               // Figma: #7B7B7B
+$stepper-default-label-weight:  $font-weight-medium !default;   // 500
+
+// Typography
+$stepper-font-size-desktop:   16px !default;                    // Text md (16px)
+$stepper-font-size-mobile:    14px !default;                    // Text sm (14px)
