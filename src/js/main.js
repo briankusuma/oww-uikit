@@ -106,12 +106,14 @@ function initGlobal() {
   initBadgeInputs();
   initDatePickers();
 
-  // TOC Active ScrollSpy
+  // TOC & Sidebar Active ScrollSpy
   const sections = document.querySelectorAll('.doc-content__section');
   const tocLinks = document.querySelectorAll('.doc-toc__link');
+  const isTokensPage = window.location.pathname.endsWith('tokens.html');
+  const tokenSidebarLinks = document.querySelectorAll('.doc-sidebar__group:nth-of-type(2) .doc-sidebar__link');
 
-  if (sections.length > 0 && tocLinks.length > 0) {
-    window.addEventListener('scroll', () => {
+  if (sections.length > 0) {
+    function updateActive() {
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 120;
@@ -120,13 +122,28 @@ function initGlobal() {
         }
       });
 
-      tocLinks.forEach(link => {
-        link.classList.remove('is-active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('is-active');
-        }
-      });
-    });
+      if (tocLinks.length > 0) {
+        tocLinks.forEach(link => {
+          link.classList.remove('is-active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('is-active');
+          }
+        });
+      }
+
+      if (isTokensPage && tokenSidebarLinks.length > 0) {
+        tokenSidebarLinks.forEach(link => {
+          link.classList.remove('is-active');
+          const href = link.getAttribute('href') || '';
+          if (href.endsWith(`#${current}`)) {
+            link.classList.add('is-active');
+          }
+        });
+      }
+    }
+
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
   }
 
 

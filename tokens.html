@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Icons &amp; Flags - OWW UIKit Documentation</title>
+  <title>Introduction - OWW UIKit Documentation</title>
 
   <!-- Inter Font from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,7 +110,7 @@
     <div class="container doc-layout">
 
       <!-- --------------------------------------------------------------------- -->
-      <!-- Left Sidebar Navigation -->
+      <!-- Left Sidebar (Navigation) -->
       <!-- --------------------------------------------------------------------- -->
       <aside class="doc-sidebar">
         <!-- Group 1: Getting Started -->
@@ -128,7 +128,7 @@
               <a href="introduction.html" class="doc-sidebar__link">Introduction</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#overview" class="doc-sidebar__link">Overview</a>
+              <a href="tokens.html#typography" class="doc-sidebar__link">Overview</a>
             </li>
             <li class="doc-sidebar__item">
               <a href="alert.html#installation" class="doc-sidebar__link">Architecture &amp; Rules</a>
@@ -162,7 +162,7 @@
           </ul>
         </div>
 
-        <!-- Group 3: Components (Auto-expandable) -->
+        <!-- Group 3: Components (Alphabetical A-Z) -->
         <div class="doc-sidebar__group">
           <div class="doc-sidebar__title">
             <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
@@ -243,9 +243,9 @@
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
             </li>
-            <!-- Icons & Flags (Active) -->
+            <!-- Icons & Flags -->
             <li class="doc-sidebar__item">
-              <a href="icons.html" class="doc-sidebar__link is-active">
+              <a href="icons.html" class="doc-sidebar__link">
                 Icons &amp; Flags
                 <span class="doc-sidebar__link-badge">370</span>
               </a>
@@ -341,185 +341,369 @@
       <!-- --------------------------------------------------------------------- -->
       <!-- Center Main Content -->
       <!-- --------------------------------------------------------------------- -->
+            <!-- --------------------------------------------------------------------- -->
+      <!-- Center Main Content -->
+      <!-- --------------------------------------------------------------------- -->
       <main class="doc-content">
         <!-- Breadcrumb -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Docs</a>
+          <a href="#">Docs</a>
           <span>/</span>
-          <a href="icons.html">Components</a>
-          <span>/</span>
-          <span style="color: var(--doc-text);">Icons &amp; Flags</span>
+          <span style="color: var(--doc-text); font-weight: 500;">Design Tokens</span>
         </nav>
 
         <!-- Page Header -->
         <header class="doc-content__header">
-          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Icons &amp; Flags</h1>
+          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Design Tokens</h1>
           <p class="doc-content__lead">
-            Official iconography system of OWW Design System encompassing <strong>55 UI Icons</strong> (110 Outline &amp; Fill variants) alongside <strong>260 Country Flags</strong> (total <strong>370 icons</strong>).
+            Design tokens are the foundational visual atoms of the OWW design system. They store design decisions—typography, color palettes, sizing, spacing, and border radii—in a maintainable format registered with <code>!default</code> flags in SCSS.
           </p>
         </header>
 
         <!-- =================================================================== -->
-        <!-- Section 1: Overview -->
+        <!-- 1. TYPOGRAPHY -->
         <!-- =================================================================== -->
-        <section id="overview" class="doc-content__section">
-          <h2 class="doc-content__section-title">Overview</h2>
+        <section id="typography" class="doc-content__section">
+          <h2 class="doc-content__section-title">Typography (Inter)</h2>
           <p class="doc-content__section-desc">
-            All icons and flags are built on a standard <code>20px &times; 20px</code> grid base to ensure visual consistency and rhythm across all OWW platforms.
+            Primary font family is <strong>Inter</strong> with a tight letter spacing (<code>-0.02em</code>). Scales range from 12px (<code>text-xs</code>) up to 48px (<code>text-5xl</code>) across four font weights.
           </p>
 
-          <table class="token-table">
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Count</th>
-                <th>Grid Base</th>
-                <th>Color Characteristics</th>
-                <th>Design Source</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>UI Icons</strong></td>
-                <td><span class="token-badge">110 (55 Outline, 55 Fill)</span></td>
-                <td><code>20×20px</code></td>
-                <td>Monochrome <code>currentColor</code> (theme adaptive)</td>
-                <td>UI Icons Component Set</td>
-              </tr>
-              <tr>
-                <td><strong>Country Flags</strong></td>
-                <td><span class="token-badge">260 Countries</span></td>
-                <td><code>20×20px</code></td>
-                <td>Official Multi-color Circular Vectors</td>
-                <td>Country Flags Component Set</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="doc-example">
+            <div class="doc-example__preview" style="display: flex; flex-direction: column; gap: 28px; width: 100%;">
+              
+              <!-- Scale Showcase -->
+              <div style="display: flex; flex-direction: column; gap: 20px; width: 100%;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--doc-border); padding-bottom: 12px;">
+                  <span class="text-5xl-bold">Text 5xl (48px / Bold)</span>
+                  <code class="token-badge">$font-size-5xl &middot; 48px &middot; Line-height: 1.3</code>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--doc-border); padding-bottom: 12px;">
+                  <span class="text-4xl-bold">Text 4xl (36px / Bold)</span>
+                  <code class="token-badge">$font-size-4xl &middot; 36px &middot; Line-height: 1.3</code>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--doc-border); padding-bottom: 12px;">
+                  <span class="text-3xl-semibold">Text 3xl (30px / Semibold)</span>
+                  <code class="token-badge">$font-size-3xl &middot; 30px &middot; Line-height: 1.3</code>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--doc-border); padding-bottom: 12px;">
+                  <span class="text-2xl-semibold">Text 2xl (24px / Semibold)</span>
+                  <code class="token-badge">$font-size-2xl &middot; 24px &middot; Line-height: 1.2</code>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--doc-border); padding-bottom: 12px;">
+                  <span class="text-xl-medium">Text xl (20px / Medium)</span>
+                  <code class="token-badge">$font-size-xl &middot; 20px &middot; Line-height: 1.2</code>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--doc-border); padding-bottom: 12px;">
+                  <span class="text-lg-regular">Text lg (18px / Regular)</span>
+                  <code class="token-badge">$font-size-lg &middot; 18px &middot; Line-height: 1.5</code>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--doc-border); padding-bottom: 12px;">
+                  <span class="text-md-regular">Text md (16px / Base Body)</span>
+                  <code class="token-badge">$font-size-md &middot; 16px &middot; Line-height: 1.5</code>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--doc-border); padding-bottom: 12px;">
+                  <span class="text-sm-medium">Text sm (14px / Medium Label)</span>
+                  <code class="token-badge">$font-size-sm &middot; 14px &middot; Line-height: 1.5</code>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 4px;">
+                  <span class="text-xs-regular">Text xs (12px / Caption)</span>
+                  <code class="token-badge">$font-size-xs &middot; 12px &middot; Line-height: 1.5</code>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Token Table -->
+            <table class="doc-table" style="margin-top: 16px;">
+              <thead>
+                <tr>
+                  <th>Token Variable</th>
+                  <th>Weight / Value</th>
+                  <th>Utility Class</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>$font-weight-regular</code></td><td>400</td><td><code>.font-regular</code></td></tr>
+                <tr><td><code>$font-weight-medium</code></td><td>500</td><td><code>.font-medium</code></td></tr>
+                <tr><td><code>$font-weight-semibold</code></td><td>600</td><td><code>.font-semibold</code></td></tr>
+                <tr><td><code>$font-weight-bold</code></td><td>700</td><td><code>.font-bold</code></td></tr>
+                <tr><td><code>$letter-spacing-base</code></td><td>-0.02em</td><td>Default across all headings &amp; copy</td></tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- Section 2: Interactive Gallery -->
+        <!-- 2. COLORS & SEMANTIC -->
         <!-- =================================================================== -->
-        <section id="gallery" class="doc-content__section">
-          <h2 class="doc-content__section-title">Interactive Gallery</h2>
+        <section id="colors" class="doc-content__section">
+          <h2 class="doc-content__section-title">Colors &amp; Semantic</h2>
           <p class="doc-content__section-desc">
-            Explore the icons and flags collection. Use the instant search and filter tabs to quickly find any icon. <strong>Click any card to copy its SVG code to your clipboard.</strong>
+            Raw color swatches organized by brand palettes, functional semantic tints, and soft background fills.
           </p>
 
-          <div class="icon-gallery">
-            <div class="icon-gallery__toolbar">
-              <div class="icon-gallery__search">
-                <svg viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M17.9422 17.0578L14.0305 13.1469C15.1642 11.7857 15.7296 10.0398 15.6089 8.27244C15.4883 6.50506 14.6909 4.85223 13.3826 3.65779C12.0744 2.46334 10.356 1.81926 8.58493 1.85951C6.81388 1.89976 5.12654 2.62125 3.87389 3.87389C2.62125 5.12653 1.89976 6.81388 1.85951 8.58492C1.81926 10.356 2.46335 12.0744 3.65779 13.3826C4.85223 14.6909 6.50506 15.4883 8.27245 15.6089C10.0398 15.7296 11.7857 15.1642 13.1469 14.0305L17.0578 17.9422C17.1159 18.0003 17.1848 18.0463 17.2607 18.0777C17.3366 18.1092 17.4179 18.1253 17.5 18.1253C17.5821 18.1253 17.6634 18.1092 17.7393 18.0777C17.8152 18.0463 17.8841 18.0003 17.9422 17.9422C18.0003 17.8841 18.0463 17.8152 18.0777 17.7393C18.1092 17.6634 18.1254 17.5821 18.1254 17.5C18.1254 17.4179 18.1092 17.3366 18.0777 17.2607C18.0463 17.1848 18.0003 17.1159 17.9422 17.0578ZM3.125 8.75C3.125 7.63748 3.4549 6.54994 4.07299 5.62491C4.69107 4.69989 5.56957 3.97892 6.59741 3.55317C7.62524 3.12743 8.75624 3.01604 9.84739 3.23308C10.9385 3.45012 11.9408 3.98585 12.7275 4.77252C13.5141 5.55919 14.0499 6.56147 14.2669 7.65261C14.484 8.74376 14.3726 9.87475 13.9468 10.9026C13.5211 11.9304 12.8001 12.8089 11.8751 13.427C10.9501 14.0451 9.86252 14.375 8.75 14.375C7.25867 14.3733 5.82889 13.7802 4.77435 12.7256C3.71982 11.6711 3.12666 10.2413 3.125 8.75Z"
-                    fill="currentColor" />
-                </svg>
-                <input type="text" id="iconSearchInput"
-                  placeholder="Search icons or country flags (e.g. check, user, indonesia, japan)...">
+          <div class="doc-example">
+            <div class="doc-example__preview" style="display: flex; flex-direction: column; gap: 32px; width: 100%;">
+
+              <!-- Semantic Feedback Colors -->
+              <div>
+                <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--doc-text-muted); margin-bottom: 12px;">Semantic Status Colors</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px;">
+                  
+                  <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 10px;">
+                    <span style="width: 32px; height: 32px; border-radius: 8px; background: #4AB632; display: inline-block; flex-shrink: 0;"></span>
+                    <div>
+                      <div style="font-weight: 600; font-size: 14px;">Success</div>
+                      <code class="token-badge" style="font-size: 11px;">#4AB632</code>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 10px;">
+                    <span style="width: 32px; height: 32px; border-radius: 8px; background: #FF9809; display: inline-block; flex-shrink: 0;"></span>
+                    <div>
+                      <div style="font-weight: 600; font-size: 14px;">Warning</div>
+                      <code class="token-badge" style="font-size: 11px;">#FF9809</code>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 10px;">
+                    <span style="width: 32px; height: 32px; border-radius: 8px; background: #FF0909; display: inline-block; flex-shrink: 0;"></span>
+                    <div>
+                      <div style="font-weight: 600; font-size: 14px;">Danger</div>
+                      <code class="token-badge" style="font-size: 11px;">#FF0909</code>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 10px;">
+                    <span style="width: 32px; height: 32px; border-radius: 8px; background: #008BFF; display: inline-block; flex-shrink: 0;"></span>
+                    <div>
+                      <div style="font-weight: 600; font-size: 14px;">Info</div>
+                      <code class="token-badge" style="font-size: 11px;">#008BFF</code>
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
-              <div class="icon-gallery__filters">
-                <button class="icon-gallery__filter-btn is-active" data-filter="all">All</button>
-                <button class="icon-gallery__filter-btn" data-filter="outline">Outline</button>
-                <button class="icon-gallery__filter-btn" data-filter="fill">Fill</button>
-                <button class="icon-gallery__filter-btn" data-filter="flag">Flags</button>
+              <!-- Neutral Grayscale Scale -->
+              <div>
+                <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--doc-text-muted); margin-bottom: 12px;">Primary Neutral Ramp</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px;">
+                  
+                  <div style="display: flex; flex-direction: column; gap: 6px; padding: 8px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 8px;">
+                    <span style="width: 100%; height: 36px; border-radius: 6px; background: #000000; display: block;"></span>
+                    <span style="font-size: 12px; font-weight: 600;">900 (Black)</span>
+                    <code style="font-size: 10px;">#000000</code>
+                  </div>
+
+                  <div style="display: flex; flex-direction: column; gap: 6px; padding: 8px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 8px;">
+                    <span style="width: 100%; height: 36px; border-radius: 6px; background: #555555; display: block;"></span>
+                    <span style="font-size: 12px; font-weight: 600;">600</span>
+                    <code style="font-size: 10px;">#555555</code>
+                  </div>
+
+                  <div style="display: flex; flex-direction: column; gap: 6px; padding: 8px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 8px;">
+                    <span style="width: 100%; height: 36px; border-radius: 6px; background: #7B7B7B; display: block;"></span>
+                    <span style="font-size: 12px; font-weight: 600;">500</span>
+                    <code style="font-size: 10px;">#7B7B7B</code>
+                  </div>
+
+                  <div style="display: flex; flex-direction: column; gap: 6px; padding: 8px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 8px;">
+                    <span style="width: 100%; height: 36px; border-radius: 6px; background: #C4C4C4; display: block;"></span>
+                    <span style="font-size: 12px; font-weight: 600;">300</span>
+                    <code style="font-size: 10px;">#C4C4C4</code>
+                  </div>
+
+                  <div style="display: flex; flex-direction: column; gap: 6px; padding: 8px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 8px;">
+                    <span style="width: 100%; height: 36px; border-radius: 6px; background: #E9E9E9; display: block;"></span>
+                    <span style="font-size: 12px; font-weight: 600;">100</span>
+                    <code style="font-size: 10px;">#E9E9E9</code>
+                  </div>
+
+                  <div style="display: flex; flex-direction: column; gap: 6px; padding: 8px; background: var(--doc-surface); border: 1px solid var(--doc-border); border-radius: 8px;">
+                    <span style="width: 100%; height: 36px; border-radius: 6px; background: #F5F5F5; display: block; border: 1px solid #e0e0e0;"></span>
+                    <span style="font-size: 12px; font-weight: 600;">50</span>
+                    <code style="font-size: 10px;">#F5F5F5</code>
+                  </div>
+
+                </div>
               </div>
 
-              <span id="iconCountBadge" class="icon-gallery__count">Showing 370 icons (Click any card to copy SVG)</span>
-            </div>
+              <!-- Soft Background Tints -->
+              <div>
+                <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--doc-text-muted); margin-bottom: 12px;">Soft Background Tokens</div>
+                <table class="doc-table">
+                  <thead>
+                    <tr>
+                      <th>Token Variable</th>
+                      <th>Color Value</th>
+                      <th>Use Case</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><code>$bg-soft-success</code></td><td><span class="color-swatch" style="background:#E9F6E7;"></span> #E9F6E7</td><td>Success Alert &amp; Banner backdrops</td></tr>
+                    <tr><td><code>$bg-soft-warning</code></td><td><span class="color-swatch" style="background:#FFEACE;"></span> #FFEACE</td><td>Warning Notification backdrops</td></tr>
+                    <tr><td><code>$bg-soft-danger</code></td><td><span class="color-swatch" style="background:#FFE9EC;"></span> #FFE9EC</td><td>Error alerts, unread counter badges</td></tr>
+                    <tr><td><code>$bg-soft-info</code></td><td><span class="color-swatch" style="background:#E2F3FF;"></span> #E2F3FF</td><td>Info badges &amp; message banners</td></tr>
+                  </tbody>
+                </table>
+              </div>
 
-            <div id="iconGrid" class="icon-gallery__grid">
-              <!-- Rendered via JS -->
             </div>
           </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- Section 3: Usage & Implementation -->
+        <!-- 3. SIZING & SPACING -->
         <!-- =================================================================== -->
-        <section id="usage" class="doc-content__section">
-          <h2 class="doc-content__section-title">Usage &amp; Implementation</h2>
+        <section id="sizing" class="doc-content__section">
+          <h2 class="doc-content__section-title">Sizing &amp; Spacing</h2>
           <p class="doc-content__section-desc">
-            OWW UIKit icons can be implemented directly as inline SVG (recommended for dynamic color theming and animation) or referenced as external SVG files.
+            Standard spacing scale based on 4px increments. Spacing tokens control margins, paddings, and flex gap relationships.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__preview">
-              <div style="display: flex; gap: 16px; align-items: center;">
-                <span style="color: var(--doc-primary); display: inline-flex;">
-                  <svg width="24" height="24" viewBox="0 0 20 20" fill="none">
-                    <path d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.13415 13.0003 9.06522 13.0464 8.98934 13.0779C8.91347 13.1093 8.83214 13.1255 8.75 13.1255C8.66787 13.1255 8.58654 13.1093 8.51067 13.0779C8.43479 13.0464 8.36586 13.0003 8.30782 12.9422L6.43282 11.0672C6.31554 10.9499 6.24966 10.7909 6.24966 10.625C6.24966 10.4591 6.31554 10.3001 6.43282 10.1828C6.55009 10.0655 6.70915 9.99965 6.875 9.99965C7.04086 9.99965 7.19992 10.0655 7.31719 10.1828L8.75 11.6164L12.6828 7.68281C12.7409 7.62474 12.8098 7.57868 12.8857 7.54725C12.9616 7.51583 13.0429 7.49965 13.125 7.49965C13.2071 7.49965 13.2884 7.51583 13.3643 7.54725C13.4402 7.57868 13.5091 7.62474 13.5672 7.68281C13.6253 7.74088 13.6713 7.80982 13.7027 7.88569C13.7342 7.96156 13.7504 8.04288 13.7504 8.125C13.7504 8.20712 13.7342 8.28844 13.7027 8.36431C13.6713 8.44018 13.6253 8.50912 13.5672 8.56719Z" fill="currentColor"/>
-                  </svg>
-                </span>
-                <span style="display: inline-flex;">
-                  <img src="./src/assets/icons/flags/flag-indonesia.svg" width="24" height="24" alt="Indonesia Flag">
-                </span>
-                <span style="display: inline-flex;">
-                  <img src="./src/assets/icons/flags/flag-united-states.svg" width="24" height="24" alt="United States Flag">
-                </span>
-                <span style="display: inline-flex;">
-                  <img src="./src/assets/icons/flags/flag-japan.svg" width="24" height="24" alt="Japan Flag">
-                </span>
+            <div class="doc-example__preview" style="display: flex; flex-direction: column; gap: 20px; width: 100%;">
+              
+              <!-- Visual Bars -->
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <span style="width: 80px; font-size: 13px; font-weight: 500;">4px ($spacing-1)</span>
+                  <div style="height: 16px; width: 4px; background: var(--doc-primary, #244BD6); border-radius: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <span style="width: 80px; font-size: 13px; font-weight: 500;">8px ($spacing-2)</span>
+                  <div style="height: 16px; width: 8px; background: var(--doc-primary, #244BD6); border-radius: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <span style="width: 80px; font-size: 13px; font-weight: 500;">12px ($spacing-3)</span>
+                  <div style="height: 16px; width: 12px; background: var(--doc-primary, #244BD6); border-radius: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <span style="width: 80px; font-size: 13px; font-weight: 500;">16px ($spacing-4)</span>
+                  <div style="height: 16px; width: 16px; background: var(--doc-primary, #244BD6); border-radius: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <span style="width: 80px; font-size: 13px; font-weight: 500;">20px ($spacing-6)</span>
+                  <div style="height: 16px; width: 20px; background: var(--doc-primary, #244BD6); border-radius: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <span style="width: 80px; font-size: 13px; font-weight: 500;">24px ($spacing-8)</span>
+                  <div style="height: 16px; width: 24px; background: var(--doc-primary, #244BD6); border-radius: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <span style="width: 80px; font-size: 13px; font-weight: 500;">32px ($spacing-10)</span>
+                  <div style="height: 16px; width: 32px; background: var(--doc-primary, #244BD6); border-radius: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <span style="width: 80px; font-size: 13px; font-weight: 500;">48px ($sizing-12)</span>
+                  <div style="height: 16px; width: 48px; background: var(--doc-primary, #244BD6); border-radius: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <span style="width: 80px; font-size: 13px; font-weight: 500;">64px ($sizing-16)</span>
+                  <div style="height: 16px; width: 64px; background: var(--doc-primary, #244BD6); border-radius: 2px;"></div>
+                </div>
               </div>
-            </div>
-            <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
-  </svg>
-</button>
-              <pre><code>&lt;!-- 1. UI Icon as Inline SVG (Inherits parent text color via currentColor) --&gt;
-&lt;span style="color: var(--doc-primary);"&gt;
-  &lt;svg width="20" height="20" viewBox="0 0 20 20" fill="none"&gt;
-    &lt;path d="..." fill="currentColor"/&gt;
-  &lt;/svg&gt;
-&lt;/span&gt;
 
-&lt;!-- 2. Country Flag as Image Tag --&gt;
-&lt;img src="./src/assets/icons/flags/flag-indonesia.svg" width="20" height="20" alt="Indonesia Flag"&gt;</code></pre>
             </div>
+
+            <!-- Table -->
+            <table class="doc-table" style="margin-top: 16px;">
+              <thead>
+                <tr>
+                  <th>Token</th>
+                  <th>Value</th>
+                  <th>Usage Guidelines</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>$spacing-1</code></td><td>4px</td><td>Micro-gaps between text and badges, chip paddings</td></tr>
+                <tr><td><code>$spacing-2</code></td><td>8px</td><td>Small button padding, list item gaps, icon-to-text spacing</td></tr>
+                <tr><td><code>$spacing-3</code></td><td>12px</td><td>Input label gaps, alert inner padding, nav item horizontal padding</td></tr>
+                <tr><td><code>$spacing-4</code></td><td>16px</td><td>Standard component margins, card content padding, stepper group gaps</td></tr>
+                <tr><td><code>$spacing-6</code></td><td>20px</td><td>Form item vertical padding, sidebar group vertical gaps</td></tr>
+                <tr><td><code>$spacing-8</code></td><td>24px</td><td>Large container gutters, modal dialog paddings</td></tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- Section 4: Architecture & Assets -->
+        <!-- 4. RADIUS SCALE -->
         <!-- =================================================================== -->
-        <section id="architecture" class="doc-content__section">
-          <h2 class="doc-content__section-title">Architecture &amp; Assets</h2>
+        <section id="radius" class="doc-content__section">
+          <h2 class="doc-content__section-title">Radius Scale</h2>
           <p class="doc-content__section-desc">
-            Clean directory architecture for iconography assets and JavaScript modules:
+            Corner radius tokens enforcing consistent curvature across cards, buttons, badges, and modals.
           </p>
 
           <div class="doc-example">
-            <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
-  </svg>
-</button>
-              <pre><code>oww-uikit/
-├── src/
-│   ├── assets/
-│   │   └── icons/
-│   │       ├── flags/                     # 260 Country Flags (SVG)
-│   │       │   ├── flag-indonesia.svg
-│   │       │   ├── flag-united-states.svg
-│   │       │   └── ...
-│   │       ├── check-circle-fill.svg      # 110 UI Icons (Outline & Fill)
-│   │       ├── check-circle-outline.svg
-│   │       └── ...
-│   └── js/
-│       ├── main.js                        # Theme toggle, Toast, TOC ScrollSpy
-│       └── icons.js                       # 370 icons database & live gallery logic
-├── alert.html                             # Alert Component Documentation
-├── avatar.html                            # Avatar Component Documentation
-├── icons.html                             # Icons & Flags Component Documentation
-└── index.html                             # Default landing (Alert)</code></pre>
+            <div class="doc-example__preview" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: flex-start; width: 100%;">
+              
+              <!-- Radius 4px -->
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="width: 72px; height: 72px; background: var(--doc-surface); border: 2px solid var(--doc-border); border-radius: 4px;"></div>
+                <span style="font-size: 12px; font-weight: 600;">4px ($radius-sm)</span>
+              </div>
+
+              <!-- Radius 8px -->
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="width: 72px; height: 72px; background: var(--doc-surface); border: 2px solid var(--doc-border); border-radius: 8px;"></div>
+                <span style="font-size: 12px; font-weight: 600;">8px ($radius-md)</span>
+              </div>
+
+              <!-- Radius 12px -->
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="width: 72px; height: 72px; background: var(--doc-surface); border: 2px solid var(--doc-border); border-radius: 12px;"></div>
+                <span style="font-size: 12px; font-weight: 600;">12px ($radius-lg)</span>
+              </div>
+
+              <!-- Radius 14px -->
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="width: 72px; height: 72px; background: var(--doc-surface); border: 2px solid var(--doc-border); border-radius: 14px;"></div>
+                <span style="font-size: 12px; font-weight: 600;">14px (Nav / Input)</span>
+              </div>
+
+              <!-- Radius 16px -->
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="width: 72px; height: 72px; background: var(--doc-surface); border: 2px solid var(--doc-border); border-radius: 16px;"></div>
+                <span style="font-size: 12px; font-weight: 600;">16px ($radius-xl)</span>
+              </div>
+
+              <!-- Radius 20px -->
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="width: 72px; height: 72px; background: var(--doc-surface); border: 2px solid var(--doc-border); border-radius: 20px;"></div>
+                <span style="font-size: 12px; font-weight: 600;">20px (Card / Panel)</span>
+              </div>
+
+              <!-- Radius Full / Pill -->
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="width: 96px; height: 48px; background: var(--doc-surface); border: 2px solid var(--doc-border); border-radius: 999px;"></div>
+                <span style="font-size: 12px; font-weight: 600;">999px ($radius-full)</span>
+              </div>
+
             </div>
+
+            <!-- Table -->
+            <table class="doc-table" style="margin-top: 16px;">
+              <thead>
+                <tr>
+                  <th>Token</th>
+                  <th>Value</th>
+                  <th>Component Usage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>$radius-sm</code></td><td>4px</td><td>Checkboxes, tooltips, tiny badges</td></tr>
+                <tr><td><code>$radius-md</code></td><td>8px</td><td>Small buttons, action menus, menu items</td></tr>
+                <tr><td><code>$radius-lg</code></td><td>12px</td><td>Alert component, medium form inputs</td></tr>
+                <tr><td><code>$radius-14</code></td><td>14px</td><td>Large form inputs, sidebar nav items</td></tr>
+                <tr><td><code>$radius-xl</code></td><td>16px</td><td>File upload dropzone, dialog cards</td></tr>
+                <tr><td><code>$radius-20</code></td><td>20px</td><td>Application sidebar shell, product showcase cards</td></tr>
+                <tr><td><code>$radius-full</code></td><td>999px / Pill</td><td>Avatars, Stepper number circles, unread badges, range track ends</td></tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -532,31 +716,24 @@
         <div class="doc-toc__title">On this page</div>
         <ul class="doc-toc__list">
           <li class="doc-toc__item">
-            <a href="#overview" class="doc-toc__link is-active">Overview</a>
+            <a href="#typography" class="doc-toc__link is-active">Typography (Inter)</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#gallery" class="doc-toc__link">Interactive Gallery</a>
+            <a href="#colors" class="doc-toc__link">Colors &amp; Semantic</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#usage" class="doc-toc__link">Usage &amp; Implementation</a>
+            <a href="#sizing" class="doc-toc__link">Sizing &amp; Spacing</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#architecture" class="doc-toc__link">Architecture &amp; Assets</a>
+            <a href="#radius" class="doc-toc__link">Radius Scale</a>
           </li>
         </ul>
       </aside>
-
-    </div>
-  </section>
-
-  <!-- Toast Copy Notification -->
+<!-- Toast Copy Notification -->
   <div id="copyToast" class="toast-copy">Copied to clipboard!</div>
 
   <!-- Global Documentation Script -->
   <script src="./src/js/main.js"></script>
-
-  <!-- Icons Gallery Script -->
-  <script src="./src/js/icons.js"></script>
 
 </body>
 
