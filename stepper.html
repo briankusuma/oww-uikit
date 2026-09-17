@@ -571,57 +571,57 @@
         <section id="design-tokens" class="doc-content__section">
           <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            Component tokens defined in <code>src/scss/abstract/_variables.scss</code> following design system tokens and color palettes.
+            All visual styles in Stepper reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
-          <table class="doc-table">
+          <table class="token-table">
             <thead>
               <tr>
-                <th>SCSS Variable</th>
-                <th>Value</th>
-                <th>Description</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>$stepper-circle-size-desktop</code></td>
-                <td><code>40px</code></td>
-                <td>Circle diameter for Desktop variant.</td>
+                <td>Circle Size (Desktop)</td>
+                <td><code class="token-badge">-circle-size-desktop</code></td>
+                <td>40px &times; 40px</td>
               </tr>
               <tr>
-                <td><code>$stepper-circle-size-mobile</code></td>
-                <td><code>32px</code></td>
-                <td>Circle diameter for Mobile variant.</td>
+                <td>Circle Size (Mobile)</td>
+                <td><code class="token-badge">-circle-size-mobile</code></td>
+                <td>32px &times; 32px</td>
               </tr>
               <tr>
-                <td><code>$stepper-active-circle-bg</code></td>
-                <td><code>#000000</code> / <code>#FFFFFF</code> (Dark)</td>
-                <td>Solid background for active step number.</td>
+                <td>Active Step Circle Fill</td>
+                <td><code class="token-badge">-active-circle-bg</code></td>
+                <td><span class="color-swatch" style="background: #000000;"></span> #000000 / #FFFFFF (Dark)</td>
               </tr>
               <tr>
-                <td><code>$stepper-completed-circle-bg</code></td>
-                <td><code>#4AB632</code></td>
-                <td>Vibrant success green circle fill for completed step.</td>
+                <td>Completed Step Circle Fill</td>
+                <td><code class="token-badge">-completed-circle-bg</code></td>
+                <td><span class="color-swatch" style="background: #4AB632;"></span> #4AB632</td>
               </tr>
               <tr>
-                <td><code>$stepper-default-circle-border</code></td>
-                <td><code>#C4C4C4</code></td>
-                <td>1px outline border for upcoming default step.</td>
+                <td>Default Step Circle Border</td>
+                <td><code class="token-badge">-default-circle-border</code></td>
+                <td><span class="color-swatch" style="background: #C4C4C4;"></span> #C4C4C4</td>
               </tr>
               <tr>
-                <td><code>$stepper-divider-color</code></td>
-                <td><code>#C4C4C4</code></td>
-                <td>1px rail connector spanning between adjacent step items.</td>
+                <td>Connector Rail Color</td>
+                <td><code class="token-badge">-divider-color</code></td>
+                <td><span class="color-swatch" style="background: #C4C4C4;"></span> #C4C4C4</td>
               </tr>
               <tr>
-                <td><code>$stepper-gap-desktop</code></td>
-                <td><code>12px</code></td>
-                <td>Horizontal spacing between circle and label on desktop.</td>
+                <td>Step Gap (Desktop)</td>
+                <td><code class="token-badge">-gap-desktop</code></td>
+                <td>12px</td>
               </tr>
               <tr>
-                <td><code>$stepper-gap-mobile</code></td>
-                <td><code>4px</code></td>
-                <td>Vertical stacked spacing between circle and label on mobile.</td>
+                <td>Step Gap (Mobile)</td>
+                <td><code class="token-badge">-gap-mobile</code></td>
+                <td>4px</td>
               </tr>
             </tbody>
           </table>

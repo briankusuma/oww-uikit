@@ -692,80 +692,64 @@
 
         <!-- Section 4: Design Tokens -->
         <section id="design-tokens" class="doc-content__section">
-          <h2 class="doc-content__section-title">Design Tokens</h2>
+          <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            All design tokens and SCSS variables used by the File Upload component.
+            All visual styles in File Upload reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
-          <table class="doc-table">
+          <table class="token-table">
             <thead>
               <tr>
-                <th>Token Variable</th>
-                <th>Value</th>
-                <th>CSS Variable</th>
-                <th>Usage</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>$file-upload-radius</code></td>
-                <td><code>12px</code></td>
-                <td><code>--oww-radius-lg</code></td>
-                <td>Border radius for dropzone and mini cards</td>
+                <td>Dropzone Border Radius</td>
+                <td><code class="token-badge">-upload-radius</code></td>
+                <td>12px</td>
               </tr>
               <tr>
-                <td><code>$file-upload-height</code></td>
-                <td><code>200px</code></td>
-                <td>-</td>
-                <td>Fixed standard height for main dropzone</td>
+                <td>Main Dropzone Height</td>
+                <td><code class="token-badge">-upload-height</code></td>
+                <td>200px</td>
               </tr>
               <tr>
-                <td><code>$file-upload-padding</code></td>
-                <td><code>37px 70px</code></td>
-                <td>-</td>
-                <td>Standard inner padding for main dropzone</td>
+                <td>Main Dropzone Padding</td>
+                <td><code class="token-badge">-upload-padding</code></td>
+                <td>37px 70px</td>
               </tr>
               <tr>
-                <td><code>$file-upload-bg</code></td>
-                <td><code>#F8F8F8</code></td>
-                <td><code>--doc-surface</code></td>
-                <td>Default surface background color</td>
+                <td>Surface Background</td>
+                <td><code class="token-badge">-upload-bg</code></td>
+                <td><span class="color-swatch" style="background: #F8F8F8;"></span> #F8F8F8</td>
               </tr>
               <tr>
-                <td><code>$file-upload-border-color</code></td>
-                <td><code>#E9E9E9</code></td>
-                <td><code>--doc-border</code></td>
-                <td>Dashed border color in default state</td>
+                <td>Default Dashed Border</td>
+                <td><code class="token-badge">-upload-border-color</code></td>
+                <td><span class="color-swatch" style="background: #E9E9E9;"></span> #E9E9E9</td>
               </tr>
               <tr>
-                <td><code>$file-upload-drag-border</code></td>
-                <td><code>#000000</code></td>
-                <td><code>--doc-text</code></td>
-                <td>Dashed border color during active dragover</td>
+                <td>Active Dragover Border</td>
+                <td><code class="token-badge">-upload-drag-border</code></td>
+                <td><span class="color-swatch" style="background: #000000;"></span> #000000</td>
               </tr>
               <tr>
-                <td><code>$file-upload-error-bg</code></td>
-                <td><code>#FFE9EC</code></td>
-                <td><code>--bg-soft-danger</code></td>
-                <td>Soft red background in validation error state</td>
+                <td>Error Background</td>
+                <td><code class="token-badge">-upload-error-bg</code></td>
+                <td><span class="color-swatch" style="background: #FFE9EC;"></span> #FFE9EC</td>
               </tr>
               <tr>
-                <td><code>$file-upload-error-border</code></td>
-                <td><code>#FF0909</code></td>
-                <td><code>--color-danger</code></td>
-                <td>Dashed red border in validation error state</td>
+                <td>Error Dashed Border</td>
+                <td><code class="token-badge">-upload-error-border</code></td>
+                <td><span class="color-swatch" style="background: #FF0909;"></span> #FF0909</td>
               </tr>
               <tr>
-                <td><code>$file-upload-mini-width</code></td>
-                <td><code>120px</code></td>
-                <td>-</td>
-                <td>Width for compact mini upload cards</td>
-              </tr>
-              <tr>
-                <td><code>$file-upload-mini-height</code></td>
-                <td><code>96px</code></td>
-                <td>-</td>
-                <td>Height for compact mini upload cards</td>
+                <td>Mini Card Dimensions</td>
+                <td><code class="token-badge">-upload-mini-size</code></td>
+                <td>120px &times; 96px</td>
               </tr>
             </tbody>
           </table>

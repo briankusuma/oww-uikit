@@ -575,64 +575,64 @@
 
         <!-- Section 4: Design Tokens Table -->
         <section id="design-tokens" class="doc-content__section">
-          <h2 class="doc-content__section-title">Design Tokens</h2>
+          <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            Component tokens defining dimensions, hit-target offsets, track geometry, and dual-theme palettes.
+            All visual styles in Range reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
-          <table class="doc-table">
+          <table class="token-table">
             <thead>
               <tr>
-                <th>SCSS Variable</th>
-                <th>Value</th>
-                <th>Description</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>$range-track-height</code></td>
-                <td><code>6px</code></td>
-                <td>Height of the background rail and fill bar.</td>
+                <td>Rail Height</td>
+                <td><code class="token-badge">-track-height</code></td>
+                <td>6px</td>
               </tr>
               <tr>
-                <td><code>$range-track-radius</code></td>
-                <td><code>99999px</code></td>
-                <td>Pill radius for track and fill bar ends.</td>
+                <td>Track Border Radius</td>
+                <td><code class="token-badge">-track-radius</code></td>
+                <td>99999px (Pill)</td>
               </tr>
               <tr>
-                <td><code>$range-track-bg</code></td>
-                <td><code>#D9D9D9</code></td>
-                <td>Inactive track background color.</td>
+                <td>Inactive Track Background</td>
+                <td><code class="token-badge">-track-bg</code></td>
+                <td><span class="color-swatch" style="background: #D9D9D9;"></span> #D9D9D9</td>
               </tr>
               <tr>
-                <td><code>$range-fill-bg</code></td>
-                <td><code>#000000</code> / <code>#FFFFFF</code> (Dark)</td>
-                <td>Active track span between min and max thumbs.</td>
+                <td>Active Fill Background</td>
+                <td><code class="token-badge">-fill-bg</code></td>
+                <td><span class="color-swatch" style="background: #000000;"></span> #000000 / #FFFFFF (Dark)</td>
               </tr>
               <tr>
-                <td><code>$range-thumb-size</code></td>
-                <td><code>20px</code></td>
-                <td>Circular diameter of adjuster thumbs.</td>
+                <td>Thumb Outer Diameter</td>
+                <td><code class="token-badge">-thumb-size</code></td>
+                <td>20px &times; 20px</td>
               </tr>
               <tr>
-                <td><code>$range-thumb-shadow</code></td>
-                <td><code>0 0 6.67px rgba(0, 0, 0, 0.2)</code></td>
-                <td>Subtle depth shadow for elevated thumb handle.</td>
+                <td>Thumb Drop Shadow</td>
+                <td><code class="token-badge">-thumb-shadow</code></td>
+                <td>0 0 6.67px rgba(0, 0, 0, 0.2)</td>
               </tr>
               <tr>
-                <td><code>$range-thumb-dot-size</code></td>
-                <td><code>8.16px</code></td>
-                <td>Inner contrasting center dot indicator.</td>
+                <td>Thumb Center Dot Indicator</td>
+                <td><code class="token-badge">-thumb-dot-size</code></td>
+                <td>8.16px</td>
               </tr>
               <tr>
-                <td><code>$range-label-font-size</code></td>
-                <td><code>14px (0.875rem)</code></td>
-                <td>Semibold label typography.</td>
+                <td>Label Typography</td>
+                <td><code class="token-badge">-label-font-size</code></td>
+                <td>Inter, 14px, 600, -0.02em</td>
               </tr>
               <tr>
-                <td><code>$range-value-font-size</code></td>
-                <td><code>14px (0.875rem)</code></td>
-                <td>Regular helper value typography with tabular figures.</td>
+                <td>Value Typography</td>
+                <td><code class="token-badge">-value-font-size</code></td>
+                <td>Inter, 14px, 400, tabular-nums</td>
               </tr>
             </tbody>
           </table>

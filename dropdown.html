@@ -869,74 +869,64 @@
 
         <!-- Section 6: Design Tokens -->
         <section id="design-tokens" class="doc-content__section">
-          <h2 class="doc-content__section-title">Design Tokens</h2>
+          <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            All design tokens mapped to Dropdown component specifications from the design system.
+            All visual styles in Dropdown reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
-          <table class="doc-table">
+          <table class="token-table">
             <thead>
               <tr>
-                <th>Token Name</th>
-                <th>SCSS Variable</th>
-                <th>Value</th>
-                <th>Description</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>dropdown.bg</code></td>
-                <td><code>$dropdown-bg</code></td>
-                <td><code>#FFFFFF</code></td>
-                <td>Default dropdown menu surface color</td>
+                <td>Dropdown Background</td>
+                <td><code class="token-badge">-bg</code></td>
+                <td><span class="color-swatch" style="background: #FFFFFF;"></span> #FFFFFF</td>
               </tr>
               <tr>
-                <td><code>dropdown.border</code></td>
-                <td><code>$dropdown-border-color</code></td>
-                <td><code>#E4E4E4</code> (1px)</td>
-                <td>Menu outer border stroke</td>
+                <td>Menu Border</td>
+                <td><code class="token-badge">-border-color</code></td>
+                <td><span class="color-swatch" style="background: #E4E4E4;"></span> #E4E4E4</td>
               </tr>
               <tr>
-                <td><code>dropdown.radius</code></td>
-                <td><code>$dropdown-radius</code></td>
-                <td><code>14px</code></td>
-                <td>Container corner radius</td>
+                <td>Menu Corner Radius</td>
+                <td><code class="token-badge">-radius</code></td>
+                <td>14px</td>
               </tr>
               <tr>
-                <td><code>dropdown.padding</code></td>
-                <td><code>$dropdown-padding</code></td>
-                <td><code>8px ($spacing-2)</code></td>
-                <td>Container internal padding</td>
+                <td>Container Padding</td>
+                <td><code class="token-badge">-padding</code></td>
+                <td>8px (-2)</td>
               </tr>
               <tr>
-                <td><code>dropdown.shadow</code></td>
-                <td><code>$dropdown-shadow</code></td>
-                <td><code>0 1px 8px rgba(0,0,0,0.12)</code></td>
-                <td>Elevation drop shadow</td>
+                <td>Elevation Shadow</td>
+                <td><code class="token-badge">-shadow</code></td>
+                <td>0 1px 8px rgba(0, 0, 0, 0.12)</td>
               </tr>
               <tr>
-                <td><code>dropdown.item.radius</code></td>
-                <td><code>$dropdown-item-radius</code></td>
-                <td><code>10px</code></td>
-                <td>Corner radius for menu items</td>
+                <td>Item Corner Radius</td>
+                <td><code class="token-badge">-item-radius</code></td>
+                <td>10px</td>
               </tr>
               <tr>
-                <td><code>dropdown.item.height</code></td>
-                <td><code>$dropdown-item-height</code></td>
-                <td><code>37px</code></td>
-                <td>Fixed height for each menu item row</td>
+                <td>Item Row Height</td>
+                <td><code class="token-badge">-item-height</code></td>
+                <td>37px</td>
               </tr>
               <tr>
-                <td><code>dropdown.item.hover</code></td>
-                <td><code>$dropdown-item-hover-bg</code></td>
-                <td><code>#F8F8F8</code></td>
-                <td>Background on item hover state</td>
+                <td>Item Hover Background</td>
+                <td><code class="token-badge">-item-hover-bg</code></td>
+                <td><span class="color-swatch" style="background: #F8F8F8;"></span> #F8F8F8</td>
               </tr>
               <tr>
-                <td><code>dropdown.divider</code></td>
-                <td><code>$dropdown-divider-color</code></td>
-                <td><code>#F1F1F1</code></td>
-                <td>Divider line separating groups</td>
+                <td>Divider Stroke</td>
+                <td><code class="token-badge">-divider-color</code></td>
+                <td><span class="color-swatch" style="background: #F1F1F1;"></span> #F1F1F1</td>
               </tr>
             </tbody>
           </table>

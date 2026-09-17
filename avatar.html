@@ -736,59 +736,59 @@
         <!-- Section 7: Design Tokens -->
         <!-- =================================================================== -->
         <section id="design-tokens" class="doc-content__section">
-          <h2 class="doc-content__section-title">Design Tokens</h2>
+          <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            Design token values used to construct the Avatar component adhering to design specifications.
+            All visual styles in Avatar reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
           <table class="token-table">
             <thead>
               <tr>
-                <th>Token</th>
-                <th>Specification Value</th>
-                <th>Design Source</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Size: LG</td>
-                <td><code class="token-badge">48px &times; 48px</code></td>
-                <td>Avatar Component Set (Large)</td>
+                <td>Avatar Size (LG)</td>
+                <td><code class="token-badge">-size-lg</code></td>
+                <td>48px &times; 48px</td>
               </tr>
               <tr>
-                <td>Size: MD</td>
-                <td><code class="token-badge">40px &times; 40px</code></td>
-                <td>Avatar Component Set (Medium)</td>
+                <td>Avatar Size (MD)</td>
+                <td><code class="token-badge">-size-md</code></td>
+                <td>40px &times; 40px</td>
               </tr>
               <tr>
-                <td>Size: SM</td>
-                <td><code class="token-badge">32px &times; 32px</code></td>
-                <td>Avatar Component Set (Small)</td>
+                <td>Avatar Size (SM)</td>
+                <td><code class="token-badge">-size-sm</code></td>
+                <td>32px &times; 32px</td>
               </tr>
               <tr>
-                <td>Size: XS</td>
-                <td><code class="token-badge">22px &times; 22px</code></td>
-                <td>Avatar Component Set (Extra Small)</td>
+                <td>Avatar Size (XS)</td>
+                <td><code class="token-badge">-size-xs</code></td>
+                <td>22px &times; 22px</td>
               </tr>
               <tr>
                 <td>Border Radius</td>
-                <td><code class="token-badge">50% (Circle)</code></td>
-                <td>Circular Boundary (Full Radius)</td>
+                <td><code class="token-badge">-full</code></td>
+                <td>50% (Circle)</td>
               </tr>
               <tr>
                 <td>Initials Background</td>
-                <td><code class="token-badge">#E2F3FF</code></td>
-                <td>Primary Light Tint Palette</td>
+                <td><code class="token-badge">-soft-primary</code></td>
+                <td><span class="color-swatch" style="background: #E2F3FF;"></span> #E2F3FF</td>
               </tr>
               <tr>
                 <td>Initials Text Color</td>
-                <td><code class="token-badge">#0077FF</code></td>
-                <td>Primary Accent Tone</td>
+                <td><code class="token-badge">-primary-main</code></td>
+                <td><span class="color-swatch" style="background: #0077FF;"></span> #0077FF</td>
               </tr>
               <tr>
                 <td>Initials Typography</td>
-                <td><code class="token-badge">Inter SemiBold 600, -0.02em</code></td>
-                <td>Inter Typography Scale</td>
+                <td><code class="token-badge">@include text('sm', 'semibold')</code></td>
+                <td>Inter, 14px, 600, -0.02em</td>
               </tr>
             </tbody>
           </table>

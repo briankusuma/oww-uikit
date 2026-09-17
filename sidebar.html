@@ -629,62 +629,62 @@
         <section id="design-tokens" class="doc-content__section">
           <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            Tokens defined in <code>src/scss/abstract/_variables.scss</code> following design system tokens and color palettes.
+            All visual styles in Sidebar reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
-          <table class="doc-table">
+          <table class="token-table">
             <thead>
               <tr>
-                <th>SCSS Variable</th>
-                <th>Value</th>
-                <th>Description</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>$sidebar-width</code></td>
-                <td><code>302px</code></td>
-                <td>Width of standard desktop sidebar container.</td>
+                <td>Sidebar Container Width</td>
+                <td><code class="token-badge">-width</code></td>
+                <td>302px</td>
               </tr>
               <tr>
-                <td><code>$nav-item-padding</code></td>
-                <td><code>20px 12px</code></td>
-                <td>Inner padding of individual navigation row item.</td>
+                <td>Navigation Item Padding</td>
+                <td><code class="token-badge">-item-padding</code></td>
+                <td>20px 12px</td>
               </tr>
               <tr>
-                <td><code>$nav-item-radius</code></td>
-                <td><code>14px</code></td>
-                <td>Border radius for nav links and header logo container.</td>
+                <td>Navigation Item Radius</td>
+                <td><code class="token-badge">-item-radius</code></td>
+                <td>14px</td>
               </tr>
               <tr>
-                <td><code>$nav-item-icon-size</code></td>
-                <td><code>28px</code></td>
-                <td>Icon box dimension for navigation links.</td>
+                <td>Navigation Icon Size</td>
+                <td><code class="token-badge">-item-icon-size</code></td>
+                <td>28px &times; 28px</td>
               </tr>
               <tr>
-                <td><code>$nav-item-font-size</code></td>
-                <td><code>20px (1.25rem)</code></td>
-                <td>Inter Text xl typography matching design system specifications.</td>
+                <td>Navigation Item Typography</td>
+                <td><code class="token-badge">-item-font-size</code></td>
+                <td>Inter, 20px, 500, -0.02em</td>
               </tr>
               <tr>
-                <td><code>$nav-item-color-default</code></td>
-                <td><code>#555555</code></td>
-                <td>Default inactive nav item text and icon color.</td>
+                <td>Default Inactive Text &amp; Icon</td>
+                <td><code class="token-badge">-item-color-default</code></td>
+                <td><span class="color-swatch" style="background: #555555;"></span> #555555</td>
               </tr>
               <tr>
-                <td><code>$nav-item-bg-hover</code></td>
-                <td><code>#F8F8F8</code></td>
-                <td>Hover background fill for interactive row items.</td>
+                <td>Interactive Hover Background</td>
+                <td><code class="token-badge">-item-bg-hover</code></td>
+                <td><span class="color-swatch" style="background: #F8F8F8;"></span> #F8F8F8</td>
               </tr>
               <tr>
-                <td><code>$nav-badge-bg</code></td>
-                <td><code>#FFE9EC</code></td>
-                <td>Soft danger tint background for unread notification count.</td>
+                <td>Notification Badge Background</td>
+                <td><code class="token-badge">-badge-bg</code></td>
+                <td><span class="color-swatch" style="background: #FFE9EC;"></span> #FFE9EC</td>
               </tr>
               <tr>
-                <td><code>$nav-badge-color</code></td>
-                <td><code>#FF0909</code></td>
-                <td>Solid red text color for unread notification count.</td>
+                <td>Notification Badge Color</td>
+                <td><code class="token-badge">-badge-color</code></td>
+                <td><span class="color-swatch" style="background: #FF0909;"></span> #FF0909</td>
               </tr>
             </tbody>
           </table>

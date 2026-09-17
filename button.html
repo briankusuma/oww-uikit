@@ -836,80 +836,74 @@
         <!-- Section 9: Design Tokens -->
         <!-- =================================================================== -->
         <section id="design-tokens" class="doc-content__section">
-          <h2 class="doc-content__section-title">Design Tokens</h2>
+          <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            All button properties are linked directly to design system tokens defined in <code>src/scss/abstract/_variables.scss</code>.
+            All visual styles in Button reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
           <table class="token-table">
             <thead>
               <tr>
-                <th>Element / Variant</th>
-                <th>Design Token</th>
-                <th>SCSS Variable</th>
-                <th>Output Value</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Primary Background</td>
-                <td>Fills</td>
-                <td><code>$color-base-black-500</code></td>
-                <td>#000000</td>
+                <td><code class="token-badge">-base-black-500</code></td>
+                <td><span class="color-swatch" style="background: #000000;"></span> #000000</td>
               </tr>
               <tr>
                 <td>Primary Hover</td>
-                <td>Fills</td>
-                <td><code>#434343</code></td>
-                <td>#434343</td>
+                <td><code class="token-badge">-primary-hover-bg</code></td>
+                <td><span class="color-swatch" style="background: #434343;"></span> #434343</td>
               </tr>
               <tr>
                 <td>Primary Disabled</td>
-                <td>Fills</td>
-                <td><code>#D9D9D9</code></td>
-                <td>#D9D9D9</td>
+                <td><code class="token-badge">-disabled-bg</code></td>
+                <td><span class="color-swatch" style="background: #D9D9D9;"></span> #D9D9D9</td>
               </tr>
               <tr>
                 <td>Outline Background</td>
-                <td>Fills</td>
-                <td><code>$color-base-grey-100</code></td>
-                <td>#F8F8F8</td>
+                <td><code class="token-badge">-base-grey-100</code></td>
+                <td><span class="color-swatch" style="background: #F8F8F8;"></span> #F8F8F8</td>
               </tr>
               <tr>
                 <td>Outline Border</td>
-                <td>Stroke 1px Solid</td>
-                <td><code>$color-base-primary-100</code></td>
-                <td>#E9E9E9</td>
+                <td><code class="token-badge">-base-primary-100</code></td>
+                <td><span class="color-swatch" style="background: #E9E9E9;"></span> #E9E9E9</td>
               </tr>
               <tr>
                 <td>Danger Background</td>
-                <td>Fills</td>
-                <td><code>$bg-soft-danger</code></td>
-                <td>#FFE9EC</td>
+                <td><code class="token-badge">-soft-danger</code></td>
+                <td><span class="color-swatch" style="background: #FFE9EC;"></span> #FFE9EC</td>
               </tr>
               <tr>
                 <td>Danger Border</td>
-                <td>Stroke 1px Solid</td>
-                <td><code>$color-border-danger</code></td>
-                <td>#FFC7CB</td>
+                <td><code class="token-badge">-border-danger</code></td>
+                <td><span class="color-swatch" style="background: #FFC7CB;"></span> #FFC7CB</td>
               </tr>
               <tr>
                 <td>Danger Text / Icon</td>
-                <td>Fills</td>
-                <td><code>$color-base-danger-500</code></td>
-                <td>#FF0909</td>
+                <td><code class="token-badge">-base-danger-500</code></td>
+                <td><span class="color-swatch" style="background: #FF0909;"></span> #FF0909</td>
               </tr>
               <tr>
                 <td>Verification Background</td>
-                <td>Fills</td>
-                <td><code>$bg-soft-success</code></td>
-                <td>#E9F6E7</td>
+                <td><code class="token-badge">-soft-success</code></td>
+                <td><span class="color-swatch" style="background: #E9F6E7;"></span> #E9F6E7</td>
               </tr>
               <tr>
                 <td>Button Radius</td>
-                <td>Border Radius</td>
-                <td><code>$radius-full</code></td>
-                <td>100px (Pill / Circular)</td>
+                <td><code class="token-badge">-full</code></td>
+                <td>100px (Pill)</td>
+              </tr>
+              <tr>
+                <td>Typography</td>
+                <td><code class="token-badge">@include text('sm', 'medium')</code></td>
+                <td>Inter, 14px, 500, -0.02em</td>
               </tr>
             </tbody>
           </table>

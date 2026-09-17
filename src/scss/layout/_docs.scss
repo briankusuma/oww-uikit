@@ -708,8 +708,9 @@ body.doc-body {
   }
 }
 
-// Token Table & Badges
-.token-table {
+// Token Table & Badges (Standardized for .token-table and .doc-table)
+.token-table,
+.doc-table {
   width: 100%;
   border-collapse: collapse;
   font-size: func.rem(vars.$font-size-sm);
@@ -717,9 +718,10 @@ body.doc-body {
 
   th,
   td {
-    padding: 10px 14px;
+    padding: 12px 16px;
     text-align: left;
     border-bottom: 1px solid var(--doc-border);
+    vertical-align: middle;
   }
 
   th {
@@ -728,6 +730,22 @@ body.doc-body {
     text-transform: uppercase;
     font-size: 11px;
     letter-spacing: 0.05em;
+    background: var(--doc-surface);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr:hover td {
+    background-color: var(--doc-surface-hover);
+  }
+}
+
+.doc-example {
+  .token-table,
+  .doc-table {
+    margin: 0;
   }
 }
 

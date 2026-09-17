@@ -789,98 +789,74 @@
         <!-- Section 7: Design Tokens -->
         <!-- =================================================================== -->
         <section id="design-tokens" class="doc-content__section">
-          <h2 class="doc-content__section-title">Design Tokens</h2>
+          <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            All colors, font scales, and border radiuses adhere strictly to design system tokens defined in <code>src/scss/abstract/_variables.scss</code>.
+            All visual styles in Badge reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
           <table class="token-table">
             <thead>
               <tr>
-                <th>Component Element</th>
-                <th>Design Token</th>
-                <th>SCSS Variable</th>
-                <th>Output Value</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Input Badge Text</td>
-                <td>Text md/Regular</td>
-                <td><code>$typography-scale('md')</code></td>
-                <td>16px, Regular (400), -0.02em</td>
-              </tr>
-              <tr>
-                <td>Category Badge Text</td>
-                <td>Text sm/Regular</td>
-                <td><code>$typography-scale('sm')</code></td>
-                <td>14px, Regular (400), -0.02em</td>
-              </tr>
-              <tr>
-                <td>Unread Desktop Text</td>
-                <td>Text sm/Semibold</td>
-                <td><code>$typography-scale('sm') + 600</code></td>
-                <td>14px, Semi Bold (600), -0.02em</td>
-              </tr>
-              <tr>
-                <td>Unread Mobile Text</td>
-                <td>Text xs/Semibold</td>
-                <td><code>10px Semi Bold</code></td>
-                <td>10px, Semi Bold (600), -0.02em</td>
-              </tr>
-              <tr>
-                <td>Pagination Text</td>
-                <td>Text sm/Medium</td>
-                <td><code>$typography-scale('sm') + 500</code></td>
-                <td>14px, Medium (500), -0.02em</td>
-              </tr>
-              <tr>
                 <td>Input &amp; Category Border</td>
-                <td>Stroke 1px Solid</td>
-                <td><code>$color-base-primary-100</code></td>
-                <td>#E9E9E9</td>
+                <td><code class="token-badge">-base-primary-100</code></td>
+                <td><span class="color-swatch" style="background: #E9E9E9;"></span> #E9E9E9</td>
               </tr>
               <tr>
                 <td>Category Hover Fill</td>
-                <td>Fills</td>
-                <td><code>$color-base-grey-100</code></td>
-                <td>#F8F8F8</td>
+                <td><code class="token-badge">-base-grey-100</code></td>
+                <td><span class="color-swatch" style="background: #F8F8F8;"></span> #F8F8F8</td>
               </tr>
               <tr>
-                <td>Verified Business</td>
-                <td>Fills</td>
-                <td><code>$color-base-success-500</code></td>
-                <td>#4AB632</td>
+                <td>Verified Business Fill</td>
+                <td><code class="token-badge">-base-success-500</code></td>
+                <td><span class="color-swatch" style="background: #4AB632;"></span> #4AB632</td>
               </tr>
               <tr>
-                <td>Verified Personal</td>
-                <td>Fills</td>
-                <td><code>$color-base-info-700</code></td>
-                <td>#0077FF</td>
+                <td>Verified Personal Fill</td>
+                <td><code class="token-badge">-base-info-700</code></td>
+                <td><span class="color-swatch" style="background: #0077FF;"></span> #0077FF</td>
               </tr>
               <tr>
-                <td>Unread Desktop Fill</td>
-                <td>Fills</td>
-                <td><code>$bg-soft-danger</code></td>
-                <td>#FFE9EC</td>
+                <td>Unread Counter Fill</td>
+                <td><code class="token-badge">-soft-danger</code></td>
+                <td><span class="color-swatch" style="background: #FFE9EC;"></span> #FFE9EC</td>
               </tr>
               <tr>
-                <td>Unread Desktop Text</td>
-                <td>Fills</td>
-                <td><code>$color-base-danger-500</code></td>
-                <td>#FF0909</td>
+                <td>Unread Counter Text</td>
+                <td><code class="token-badge">-base-danger-500</code></td>
+                <td><span class="color-swatch" style="background: #FF0909;"></span> #FF0909</td>
               </tr>
               <tr>
                 <td>Pagination Shadow</td>
-                <td>Box Shadow</td>
-                <td><code>0px 0px 8px rgba(0, 0, 0, 0.2)</code></td>
-                <td>Elevation blur</td>
+                <td><code class="token-badge">-sm</code></td>
+                <td>0px 0px 8px rgba(0, 0, 0, 0.2)</td>
               </tr>
               <tr>
-                <td>Badge Radius</td>
-                <td>Border Radius</td>
-                <td><code>$radius-xl</code> / <code>$radius-full</code></td>
-                <td>16px (Chips) / 100px (Pills)</td>
+                <td>Badge Radius (Chips)</td>
+                <td><code class="token-badge">-xl</code></td>
+                <td>16px</td>
+              </tr>
+              <tr>
+                <td>Badge Radius (Pills)</td>
+                <td><code class="token-badge">-full</code></td>
+                <td>100px (Pill)</td>
+              </tr>
+              <tr>
+                <td>Typography (Regular)</td>
+                <td><code class="token-badge">@include text('sm', 'regular')</code></td>
+                <td>Inter, 14px, 400, -0.02em</td>
+              </tr>
+              <tr>
+                <td>Typography (Semibold)</td>
+                <td><code class="token-badge">@include text('sm', 'semibold')</code></td>
+                <td>Inter, 14px, 600, -0.02em</td>
               </tr>
             </tbody>
           </table>

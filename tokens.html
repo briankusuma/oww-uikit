@@ -415,20 +415,20 @@
             </div>
 
             <!-- Token Table -->
-            <table class="doc-table" style="margin-top: 16px;">
+            <table class="token-table">
               <thead>
                 <tr>
-                  <th>Token Variable</th>
+                  <th>Token SCSS</th>
                   <th>Weight / Value</th>
                   <th>Utility Class</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td><code>$font-weight-regular</code></td><td>400</td><td><code>.font-regular</code></td></tr>
-                <tr><td><code>$font-weight-medium</code></td><td>500</td><td><code>.font-medium</code></td></tr>
-                <tr><td><code>$font-weight-semibold</code></td><td>600</td><td><code>.font-semibold</code></td></tr>
-                <tr><td><code>$font-weight-bold</code></td><td>700</td><td><code>.font-bold</code></td></tr>
-                <tr><td><code>$letter-spacing-base</code></td><td>-0.02em</td><td>Default across all headings &amp; copy</td></tr>
+                <tr><td><code class="token-badge">-weight-regular</code></td><td>400</td><td><code>.font-regular</code></td></tr>
+                <tr><td><code class="token-badge">-weight-medium</code></td><td>500</td><td><code>.font-medium</code></td></tr>
+                <tr><td><code class="token-badge">-weight-semibold</code></td><td>600</td><td><code>.font-semibold</code></td></tr>
+                <tr><td><code class="token-badge">-weight-bold</code></td><td>700</td><td><code>.font-bold</code></td></tr>
+                <tr><td><code class="token-badge">-spacing-base</code></td><td>-0.02em</td><td>Default across all headings &amp; copy</td></tr>
               </tbody>
             </table>
           </div>
@@ -533,19 +533,19 @@
               <!-- Soft Background Tints -->
               <div>
                 <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--doc-text-muted); margin-bottom: 12px;">Soft Background Tokens</div>
-                <table class="doc-table">
+                <table class="token-table">
                   <thead>
                     <tr>
-                      <th>Token Variable</th>
-                      <th>Color Value</th>
+                      <th>Token SCSS</th>
+                      <th>Resolved Value</th>
                       <th>Use Case</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td><code>$bg-soft-success</code></td><td><span class="color-swatch" style="background:#E9F6E7;"></span> #E9F6E7</td><td>Success Alert &amp; Banner backdrops</td></tr>
-                    <tr><td><code>$bg-soft-warning</code></td><td><span class="color-swatch" style="background:#FFEACE;"></span> #FFEACE</td><td>Warning Notification backdrops</td></tr>
-                    <tr><td><code>$bg-soft-danger</code></td><td><span class="color-swatch" style="background:#FFE9EC;"></span> #FFE9EC</td><td>Error alerts, unread counter badges</td></tr>
-                    <tr><td><code>$bg-soft-info</code></td><td><span class="color-swatch" style="background:#E2F3FF;"></span> #E2F3FF</td><td>Info badges &amp; message banners</td></tr>
+                    <tr><td><code class="token-badge">-soft-success</code></td><td><span class="color-swatch" style="background:#E9F6E7;"></span> #E9F6E7</td><td>Success Alert &amp; Banner backdrops</td></tr>
+                    <tr><td><code class="token-badge">-soft-warning</code></td><td><span class="color-swatch" style="background:#FFEACE;"></span> #FFEACE</td><td>Warning Notification backdrops</td></tr>
+                    <tr><td><code class="token-badge">-soft-danger</code></td><td><span class="color-swatch" style="background:#FFE9EC;"></span> #FFE9EC</td><td>Error alerts, unread counter badges</td></tr>
+                    <tr><td><code class="token-badge">-soft-info</code></td><td><span class="color-swatch" style="background:#E2F3FF;"></span> #E2F3FF</td><td>Info badges &amp; message banners</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -609,21 +609,21 @@
             </div>
 
             <!-- Table -->
-            <table class="doc-table" style="margin-top: 16px;">
+            <table class="token-table">
               <thead>
                 <tr>
-                  <th>Token</th>
-                  <th>Value</th>
+                  <th>Token SCSS</th>
+                  <th>Resolved Value</th>
                   <th>Usage Guidelines</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td><code>$spacing-1</code></td><td>4px</td><td>Micro-gaps between text and badges, chip paddings</td></tr>
-                <tr><td><code>$spacing-2</code></td><td>8px</td><td>Small button padding, list item gaps, icon-to-text spacing</td></tr>
-                <tr><td><code>$spacing-3</code></td><td>12px</td><td>Input label gaps, alert inner padding, nav item horizontal padding</td></tr>
-                <tr><td><code>$spacing-4</code></td><td>16px</td><td>Standard component margins, card content padding, stepper group gaps</td></tr>
-                <tr><td><code>$spacing-6</code></td><td>20px</td><td>Form item vertical padding, sidebar group vertical gaps</td></tr>
-                <tr><td><code>$spacing-8</code></td><td>24px</td><td>Large container gutters, modal dialog paddings</td></tr>
+                <tr><td><code class="token-badge">-1</code></td><td>4px</td><td>Micro-gaps between text and badges, chip paddings</td></tr>
+                <tr><td><code class="token-badge">-2</code></td><td>8px</td><td>Small button padding, list item gaps, icon-to-text spacing</td></tr>
+                <tr><td><code class="token-badge">-3</code></td><td>12px</td><td>Input label gaps, alert inner padding, nav item horizontal padding</td></tr>
+                <tr><td><code class="token-badge">-4</code></td><td>16px</td><td>Standard component margins, card content padding, stepper group gaps</td></tr>
+                <tr><td><code class="token-badge">-6</code></td><td>20px</td><td>Form item vertical padding, sidebar group vertical gaps</td></tr>
+                <tr><td><code class="token-badge">-8</code></td><td>24px</td><td>Large container gutters, modal dialog paddings</td></tr>
               </tbody>
             </table>
           </div>
@@ -686,22 +686,22 @@
             </div>
 
             <!-- Table -->
-            <table class="doc-table" style="margin-top: 16px;">
+            <table class="token-table">
               <thead>
                 <tr>
-                  <th>Token</th>
-                  <th>Value</th>
+                  <th>Token SCSS</th>
+                  <th>Resolved Value</th>
                   <th>Component Usage</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td><code>$radius-sm</code></td><td>4px</td><td>Checkboxes, tooltips, tiny badges</td></tr>
-                <tr><td><code>$radius-md</code></td><td>8px</td><td>Small buttons, action menus, menu items</td></tr>
-                <tr><td><code>$radius-lg</code></td><td>12px</td><td>Alert component, medium form inputs</td></tr>
-                <tr><td><code>$radius-14</code></td><td>14px</td><td>Large form inputs, sidebar nav items</td></tr>
-                <tr><td><code>$radius-xl</code></td><td>16px</td><td>File upload dropzone, dialog cards</td></tr>
-                <tr><td><code>$radius-20</code></td><td>20px</td><td>Application sidebar shell, product showcase cards</td></tr>
-                <tr><td><code>$radius-full</code></td><td>999px / Pill</td><td>Avatars, Stepper number circles, unread badges, range track ends</td></tr>
+                <tr><td><code class="token-badge">-sm</code></td><td>4px</td><td>Checkboxes, tooltips, tiny badges</td></tr>
+                <tr><td><code class="token-badge">-md</code></td><td>8px</td><td>Small buttons, action menus, menu items</td></tr>
+                <tr><td><code class="token-badge">-lg</code></td><td>12px</td><td>Alert component, medium form inputs</td></tr>
+                <tr><td><code class="token-badge">-14</code></td><td>14px</td><td>Large form inputs, sidebar nav items</td></tr>
+                <tr><td><code class="token-badge">-xl</code></td><td>16px</td><td>File upload dropzone, dialog cards</td></tr>
+                <tr><td><code class="token-badge">-20</code></td><td>20px</td><td>Application sidebar shell, product showcase cards</td></tr>
+                <tr><td><code class="token-badge">-full</code></td><td>999px / Pill</td><td>Avatars, Stepper number circles, unread badges, range track ends</td></tr>
               </tbody>
             </table>
           </div>

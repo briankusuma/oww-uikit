@@ -612,92 +612,79 @@
 
         <!-- Section 4: Design Tokens -->
         <section id="design-tokens" class="doc-content__section">
-          <h2 class="doc-content__section-title">Design Tokens</h2>
+          <h2 class="doc-content__section-title">Design Tokens Mapping</h2>
           <p class="doc-content__section-desc">
-            All design tokens mapped to the Card component specifications from the design system.
+            All visual styles in Card reference registered SCSS design tokens defined with <code>!default</code> flags.
           </p>
 
-          <table class="doc-table">
+          <table class="token-table">
             <thead>
               <tr>
-                <th>Token Name</th>
-                <th>SCSS Variable</th>
-                <th>Value</th>
-                <th>Description</th>
+                <th>Element</th>
+                <th>Token SCSS</th>
+                <th>Resolved Value</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>card.bg</code></td>
-                <td><code>$card-bg</code></td>
-                <td><code>#FFFFFF</code></td>
-                <td>Default card surface background color</td>
+                <td>Card Background</td>
+                <td><code class="token-badge">-bg</code></td>
+                <td><span class="color-swatch" style="background: #FFFFFF;"></span> #FFFFFF</td>
               </tr>
               <tr>
-                <td><code>card.border.dialog</code></td>
-                <td><code>$card-border-color</code></td>
-                <td><code>#E4E4E4</code> (1px)</td>
-                <td>Confirmation dialog card border stroke</td>
+                <td>Confirmation Card Border</td>
+                <td><code class="token-badge">-border-color</code></td>
+                <td><span class="color-swatch" style="background: #E4E4E4;"></span> #E4E4E4</td>
               </tr>
               <tr>
-                <td><code>card.border.product</code></td>
-                <td><code>$card-border-color-product</code></td>
-                <td><code>#C4C4C4</code> (1px)</td>
-                <td>Product card border stroke</td>
+                <td>Product Card Border</td>
+                <td><code class="token-badge">-border-color-product</code></td>
+                <td><span class="color-swatch" style="background: #C4C4C4;"></span> #C4C4C4</td>
               </tr>
               <tr>
-                <td><code>card.radius.dialog</code></td>
-                <td><code>$card-radius-dialog</code></td>
-                <td><code>20px</code></td>
-                <td>Border radius for confirmation dialog card</td>
+                <td>Confirmation Card Radius</td>
+                <td><code class="token-badge">-radius-dialog</code></td>
+                <td>20px</td>
               </tr>
               <tr>
-                <td><code>card.radius.product</code></td>
-                <td><code>$card-radius-product</code></td>
-                <td><code>14px</code></td>
-                <td>Border radius for product catalog card</td>
+                <td>Product Card Radius</td>
+                <td><code class="token-badge">-radius-product</code></td>
+                <td>14px</td>
               </tr>
               <tr>
-                <td><code>card.radius.media</code></td>
-                <td><code>$card-media-radius</code></td>
-                <td><code>10px</code></td>
-                <td>Border radius for product image preview box</td>
+                <td>Media Box Radius</td>
+                <td><code class="token-badge">-media-radius</code></td>
+                <td>10px</td>
               </tr>
               <tr>
-                <td><code>card.padding.dialog</code></td>
-                <td><code>$card-padding-dialog</code></td>
-                <td><code>20px ($spacing-6)</code></td>
-                <td>Internal padding for confirmation dialog card</td>
+                <td>Dialog Internal Padding</td>
+                <td><code class="token-badge">-padding-dialog</code></td>
+                <td>20px (-6)</td>
               </tr>
               <tr>
-                <td><code>card.padding.product</code></td>
-                <td><code>$card-padding-product</code></td>
-                <td><code>12px ($spacing-3)</code></td>
-                <td>Internal padding for product card</td>
+                <td>Product Internal Padding</td>
+                <td><code class="token-badge">-padding-product</code></td>
+                <td>12px (-3)</td>
               </tr>
               <tr>
-                <td><code>card.shadow.dialog</code></td>
-                <td><code>$card-shadow-dialog</code></td>
-                <td><code>0 4px 40px rgba(0,0,0,0.16)</code></td>
-                <td>High elevation drop shadow for modal confirmation dialog</td>
+                <td>Dialog Drop Shadow</td>
+                <td><code class="token-badge">-shadow-dialog</code></td>
+                <td>0 4px 40px rgba(0, 0, 0, 0.16)</td>
               </tr>
               <tr>
-                <td><code>card.shadow.product.hover</code></td>
-                <td><code>$shadow-card-hover</code></td>
-                <td><code>0 1px 8px rgba(0,0,0,0.08)</code></td>
-                <td>Subtle elevation on product card hover</td>
+                <td>Product Hover Shadow</td>
+                <td><code class="token-badge">-card-hover</code></td>
+                <td>0 1px 8px rgba(0, 0, 0, 0.08)</td>
               </tr>
               <tr>
-                <td><code>card.close.size</code></td>
-                <td><code>$card-close-btn-size</code></td>
-                <td><code>40px &times; 40px</code></td>
-                <td>Circular close button dimensions</td>
+                <td>Close Button Size</td>
+                <td><code class="token-badge">-close-btn-size</code></td>
+                <td>40px &times; 40px</td>
               </tr>
               <tr>
-                <td><code>card.action.size</code></td>
-                <td><code>$card-action-btn-size</code></td>
-                <td><code>32px &times; 32px</code></td>
-                <td>Floating three-dots action button dimensions</td>
+                <td>Action Button Size</td>
+                <td><code class="token-badge">-action-btn-size</code></td>
+                <td>32px &times; 32px</td>
               </tr>
             </tbody>
           </table>
