@@ -18,6 +18,15 @@
   user-select: none;
   font-family: inherit;
 
+  // Standalone / Showcase Card Modifier
+  &--demo {
+    background-color: vars.$color-base-white-500;
+    border: 1px solid #E9E9E9;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+
   // Header / Logo Container
   &__header {
     display: flex;
@@ -262,6 +271,12 @@
 
 [data-theme="dark"] {
   .oww-sidebar {
+    &--demo {
+      background-color: var(--doc-surface);
+      border-color: var(--doc-border);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    }
+
     &__logo {
       img,
       svg {
@@ -277,22 +292,54 @@
       background-color: vars.$nav-item-bg-dark-hover;
     }
 
-    &__profile-more:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+    &__profile-more {
+      color: #FFFFFF;
+
+      img,
+      svg {
+        filter: invert(1);
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
     }
   }
 
   .oww-nav-item {
     color: vars.$nav-item-color-dark;
 
+    &__text {
+      color: inherit;
+    }
+
+    &__icon {
+      color: inherit;
+
+      img,
+      svg {
+        filter: invert(0.85) brightness(1.2);
+      }
+    }
+
     &:hover {
       background-color: vars.$nav-item-bg-dark-hover;
       color: #FFFFFF;
+
+      .oww-nav-item__icon img,
+      .oww-nav-item__icon svg {
+        filter: invert(1);
+      }
     }
 
     &.is-active,
     &--active {
       color: vars.$nav-item-color-dark-active;
+
+      .oww-nav-item__icon img,
+      .oww-nav-item__icon svg {
+        filter: invert(1);
+      }
 
       &:hover {
         background-color: vars.$nav-item-bg-dark-hover;
