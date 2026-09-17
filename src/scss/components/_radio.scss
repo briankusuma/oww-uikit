@@ -1,0 +1,362 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/functions" as func;
+@use "../abstract/mixins" as mixins;
+
+// =============================================================================
+// Radio Button Component
+// Derived from Figma: "Ad Platform Maker Athian Phase 2"
+// - Radio Component Set (#22639:10778)
+// - Radio Menu-Item Component Set (#22641:9116)
+// =============================================================================
+
+// Base Radio Control (20px x 20px)
+.oww-radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: vars.$radio-size; // 20px
+  height: vars.$radio-size; // 20px
+  flex-shrink: 0;
+  border-radius: vars.$radio-radius; // 50%
+  background-color: vars.$radio-bg-default;
+  border: vars.$radio-border-width solid vars.$radio-border-color-default;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all vars.$transition-duration-fast vars.$transition-timing-base;
+
+  // Inner dot for checked state (8px ellipse)
+  &__dot {
+    width: vars.$radio-checked-dot-size; // 8px
+    height: vars.$radio-checked-dot-size; // 8px
+    border-radius: 50%;
+    background-color: vars.$radio-checked-dot-color;
+    transform: scale(0);
+    transition: transform vars.$transition-duration-fast vars.$transition-timing-base;
+    pointer-events: none;
+  }
+
+  // Hover state (Figma: 0px 0px 0px 5px rgba(233, 233, 233, 1))
+  &:hover,
+  &.is-hover {
+    box-shadow: vars.$radio-hover-shadow;
+  }
+
+  // Checked state (Figma: #000000 background, 8px white dot)
+  &.is-checked,
+  &:checked {
+    background-color: vars.$radio-checked-bg;
+    border-color: vars.$radio-checked-border-color;
+
+    .oww-radio__dot {
+      transform: scale(1);
+    }
+  }
+
+  // Focus visible outline
+  &:focus-visible,
+  &.is-focus {
+    outline: none;
+    box-shadow: vars.$radio-hover-shadow;
+  }
+
+  // Disabled state
+  &.is-disabled,
+  &:disabled {
+    background-color: vars.$radio-disabled-bg;
+    border-color: vars.$radio-disabled-border;
+    cursor: not-allowed;
+    box-shadow: none;
+
+    .oww-radio__dot {
+      background-color: vars.$radio-disabled-border;
+    }
+  }
+}
+
+// Native input integration for accessible forms
+.oww-radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+
+  &:hover + .oww-radio {
+    box-shadow: vars.$radio-hover-shadow;
+  }
+
+  &:checked + .oww-radio {
+    background-color: vars.$radio-checked-bg;
+    border-color: vars.$radio-checked-border-color;
+
+    .oww-radio__dot {
+      transform: scale(1);
+    }
+
+    &:hover {
+      box-shadow: vars.$radio-hover-shadow;
+    }
+  }
+
+  &:focus-visible + .oww-radio {
+    box-shadow: vars.$radio-hover-shadow;
+  }
+
+  &:disabled + .oww-radio {
+    background-color: vars.$radio-disabled-bg;
+    border-color: vars.$radio-disabled-border;
+    cursor: not-allowed;
+    box-shadow: none;
+
+    .oww-radio__dot {
+      background-color: vars.$radio-disabled-border;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Radio Menu / List Item (.oww-radio-item) - Figma Node #22641:9116
+// -----------------------------------------------------------------------------
+.oww-radio-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: vars.$radio-item-gap; // 8px
+  padding: vars.$radio-item-padding; // 8px
+  border-radius: vars.$radio-item-radius; // 10px
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  transition: background-color vars.$transition-duration-fast vars.$transition-timing-base;
+  box-sizing: border-box;
+
+  &__label {
+    @include mixins.text('sm', 'medium'); // 14px, weight 500, -0.02em
+    color: vars.$radio-label-color;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  // Hover state (Figma: #F8F8F8 background, 10px radius)
+  &:hover,
+  &.is-hover {
+    background-color: vars.$radio-item-hover-bg;
+
+    .oww-radio {
+      box-shadow: vars.$radio-hover-shadow;
+    }
+  }
+
+  // Disabled state
+  &.is-disabled,
+  &:has(.oww-radio-input:disabled),
+  &:has(.oww-radio.is-disabled) {
+    cursor: not-allowed;
+    opacity: vars.$radio-disabled-opacity;
+
+    &:hover {
+      background-color: transparent;
+      .oww-radio {
+        box-shadow: none;
+      }
+    }
+
+    .oww-radio-item__label {
+      cursor: not-allowed;
+      color: vars.$color-base-grey-400;
+    }
+  }
+
+  // Full width modifier
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Radio Group Containers
+// -----------------------------------------------------------------------------
+.oww-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-sizing: border-box;
+
+  &--horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+// Card / Boxed Radio Variant (Rich presentation for modern forms)
+.oww-radio-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: vars.$radius-lg; // 12px
+  border: 1px solid vars.$color-base-primary-100;
+  background-color: vars.$color-base-white-500;
+  cursor: pointer;
+  transition: all vars.$transition-duration-fast vars.$transition-timing-base;
+  box-sizing: border-box;
+  width: 100%;
+
+  .oww-radio {
+    margin-top: 2px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  &__title {
+    @include mixins.text('sm', 'semibold');
+    color: vars.$color-text-black;
+  }
+
+  &__desc {
+    @include mixins.text('xs', 'regular');
+    color: vars.$color-base-primary-500;
+  }
+
+  &:hover {
+    border-color: #d0d0d0;
+    background-color: vars.$color-base-grey-100;
+  }
+
+  &:has(.oww-radio-input:checked),
+  &.is-checked {
+    border-color: vars.$color-text-black;
+    background-color: vars.$color-base-grey-100;
+    box-shadow: 0 0 0 1px vars.$color-text-black;
+  }
+}
+
+// =============================================================================
+// Dark Theme Overrides for Radio Button
+// =============================================================================
+[data-theme="dark"] {
+  .oww-radio {
+    background-color: var(--doc-surface);
+    border-color: var(--doc-border);
+
+    &:hover,
+    &.is-hover {
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.08);
+    }
+
+    &.is-checked,
+    &:checked {
+      background-color: var(--doc-text);
+      border-color: var(--doc-text);
+
+      .oww-radio__dot {
+        background-color: var(--doc-surface);
+      }
+    }
+
+    &:focus-visible,
+    &.is-focus {
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.12);
+    }
+
+    &.is-disabled,
+    &:disabled {
+      background-color: var(--doc-surface-hover);
+      border-color: var(--doc-border-subtle);
+
+      .oww-radio__dot {
+        background-color: var(--doc-text-dim);
+      }
+    }
+  }
+
+  .oww-radio-input {
+    &:hover + .oww-radio {
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.08);
+    }
+
+    &:checked + .oww-radio {
+      background-color: var(--doc-text);
+      border-color: var(--doc-text);
+
+      .oww-radio__dot {
+        background-color: var(--doc-surface);
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    &:focus-visible + .oww-radio {
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.12);
+    }
+
+    &:disabled + .oww-radio {
+      background-color: var(--doc-surface-hover);
+      border-color: var(--doc-border-subtle);
+
+      .oww-radio__dot {
+        background-color: var(--doc-text-dim);
+      }
+    }
+  }
+
+  .oww-radio-item {
+    &__label {
+      color: var(--doc-text);
+    }
+
+    &:hover,
+    &.is-hover {
+      background-color: var(--doc-surface-hover);
+
+      .oww-radio {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    &.is-disabled,
+    &:has(.oww-radio-input:disabled),
+    &:has(.oww-radio.is-disabled) {
+      .oww-radio-item__label {
+        color: var(--doc-text-dim);
+      }
+    }
+  }
+
+  .oww-radio-card {
+    background-color: var(--doc-surface);
+    border-color: var(--doc-border);
+
+    &__title {
+      color: var(--doc-text);
+    }
+
+    &__desc {
+      color: var(--doc-text-muted);
+    }
+
+    &:hover {
+      background-color: var(--doc-surface-hover);
+      border-color: var(--doc-border-hover);
+    }
+
+    &:has(.oww-radio-input:checked),
+    &.is-checked {
+      border-color: var(--doc-text);
+      background-color: var(--doc-surface-hover);
+      box-shadow: 0 0 0 1px var(--doc-text);
+    }
+  }
+}

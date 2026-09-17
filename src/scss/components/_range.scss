@@ -1,0 +1,182 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/functions" as fn;
+@use "../abstract/mixins" as mix;
+
+// =============================================================================
+// COMPONENT: RANGE SLIDER (Figma Component Set #22652:10070)
+// Supports dual-point thumb slider with dynamic fill track and min/max labels.
+// =============================================================================
+
+.oww-range {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 288px; // Figma width: 288px
+  gap: 20px;        // Figma: gap 20px between label and track area
+  user-select: none;
+  font-family: inherit;
+
+  &--fluid {
+    max-width: 100%;
+  }
+
+  // Label ("Range")
+  &__label {
+    font-size: vars.$range-label-font-size;
+    font-weight: vars.$range-label-font-weight;
+    color: vars.$range-label-color;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  // Body container: track + helpers
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; // Figma: gap 16px between track and labels
+    width: 100%;
+  }
+
+  // Track wrapper (hit area)
+  &__track-wrapper {
+    position: relative;
+    width: 100%;
+    height: 20px; // Gives comfortable hit target matching thumb diameter
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    touch-action: none;
+  }
+
+  // Visual Rail / Track
+  &__track {
+    position: relative;
+    width: 100%;
+    height: vars.$range-track-height;
+    background-color: vars.$range-track-bg;
+    border-radius: vars.$range-track-radius;
+    overflow: visible;
+  }
+
+  // Active Fill Bar between Min & Max
+  &__fill {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: vars.$range-fill-bg;
+    border-radius: vars.$range-track-radius;
+    pointer-events: none;
+    left: var(--range-left, 0%);
+    width: var(--range-width, 100%);
+    transition: none;
+  }
+
+  // Thumbs (Min & Max adjusters)
+  &__thumb {
+    position: absolute;
+    top: 50%;
+    width: vars.$range-thumb-size;
+    height: vars.$range-thumb-size;
+    border-radius: vars.$range-thumb-radius;
+    background-color: vars.$range-thumb-bg;
+    box-shadow: vars.$range-thumb-shadow;
+    cursor: grab;
+    transform: translate(-50%, -50%);
+    transition: box-shadow 0.15s ease, transform 0.1s ease;
+    outline: none;
+    touch-action: none;
+    z-index: 2;
+
+    &--min {
+      left: var(--thumb-min-left, 0%);
+    }
+
+    &--max {
+      left: var(--thumb-max-left, 100%);
+    }
+
+    &:hover {
+      box-shadow: vars.$range-thumb-shadow-hover;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2), vars.$range-thumb-shadow;
+    }
+
+    &.is-dragging {
+      cursor: grabbing;
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.15), vars.$range-thumb-shadow;
+      z-index: 3;
+    }
+  }
+
+  // Helper Labels: Min (value) & Max (value)
+  &__helpers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: vars.$range-value-font-size;
+    font-weight: vars.$range-value-font-weight;
+    color: vars.$range-value-color;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  &__val-min,
+  &__val-max {
+    font-variant-numeric: tabular-nums;
+  }
+
+  // Disabled State
+  &.is-disabled,
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+
+    .oww-range__thumb {
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Dark Mode Support
+[data-theme="dark"] {
+  .oww-range {
+    &__label {
+      color: #FFFFFF;
+    }
+
+    &__track {
+      background-color: vars.$range-track-bg-dark;
+    }
+
+    &__fill {
+      background-color: vars.$range-fill-bg-dark;
+    }
+
+    &__thumb {
+      background-color: vars.$range-thumb-bg-dark;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2), 0 0 8px rgba(0, 0, 0, 0.6);
+      }
+
+      &:focus-visible {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4), 0 0 8px rgba(0, 0, 0, 0.6);
+      }
+
+      &.is-dragging {
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3), 0 0 8px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    &__helpers {
+      color: #E0E0E0;
+    }
+  }
+}

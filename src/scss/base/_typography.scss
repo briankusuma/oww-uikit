@@ -64,7 +64,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -82,17 +82,28 @@ a {
 }
 
 // Font weight utilities
-.font-regular  { font-weight: vars.$font-weight-regular; }
-.font-medium   { font-weight: vars.$font-weight-medium; }
-.font-semibold { font-weight: vars.$font-weight-semibold; }
-.font-bold     { font-weight: vars.$font-weight-bold; }
+.font-regular {
+  font-weight: vars.$font-weight-regular;
+}
+
+.font-medium {
+  font-weight: vars.$font-weight-medium;
+}
+
+.font-semibold {
+  font-weight: vars.$font-weight-semibold;
+}
+
+.font-bold {
+  font-weight: vars.$font-weight-bold;
+}
 
 // Direct Figma compound classes (e.g. .text-sm-medium, .text-md-regular, etc.)
 $weights: (
-  'regular':  vars.$font-weight-regular,
-  'medium':   vars.$font-weight-medium,
+  'regular': vars.$font-weight-regular,
+  'medium': vars.$font-weight-medium,
   'semibold': vars.$font-weight-semibold,
-  'bold':     vars.$font-weight-bold
+  'bold': vars.$font-weight-bold
 );
 
 @each $size, $spec in vars.$typography-scale {

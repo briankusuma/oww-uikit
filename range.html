@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Icons &amp; Flags - OWW UIKit Documentation</title>
+  <title>Radio Button - OWW UIKit Documentation</title>
+  <meta name="description"
+    content="Production-ready Radio Button component documentation for OWW UIKit. Features standalone radio controls, menu list items, and card selection patterns.">
 
   <!-- Inter Font from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,13 +106,13 @@
   </header>
 
   <!-- ========================================================================= -->
-  <!-- 2. Main Section (Width 100%) with Container (Max-Width 1440px) -->
+  <!-- 2. Main Section with Container -->
   <!-- ========================================================================= -->
   <section class="section">
     <div class="container doc-layout">
 
       <!-- --------------------------------------------------------------------- -->
-      <!-- Left Sidebar Navigation -->
+      <!-- Left Sidebar (Navigation) -->
       <!-- --------------------------------------------------------------------- -->
       <aside class="doc-sidebar">
         <!-- Group 1: Getting Started -->
@@ -128,10 +130,10 @@
               <a href="introduction.html" class="doc-sidebar__link">Introduction</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#overview" class="doc-sidebar__link">Overview</a>
+              <a href="range.html#overview" class="doc-sidebar__link">Overview</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#installation" class="doc-sidebar__link">Architecture &amp; Rules</a>
+              <a href="range.html#installation" class="doc-sidebar__link">Architecture &amp; Rules</a>
             </li>
           </ul>
         </div>
@@ -148,21 +150,21 @@
           </div>
           <ul class="doc-sidebar__list">
             <li class="doc-sidebar__item">
-              <a href="alert.html#design-tokens" class="doc-sidebar__link">Typography (Inter)</a>
+              <a href="range.html#design-tokens" class="doc-sidebar__link">Typography (Inter)</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#design-tokens" class="doc-sidebar__link">Colors &amp; Semantic</a>
+              <a href="range.html#design-tokens" class="doc-sidebar__link">Colors &amp; Semantic</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#design-tokens" class="doc-sidebar__link">Sizing &amp; Spacing</a>
+              <a href="range.html#design-tokens" class="doc-sidebar__link">Sizing &amp; Spacing</a>
             </li>
             <li class="doc-sidebar__item">
-              <a href="alert.html#design-tokens" class="doc-sidebar__link">Radius Scale</a>
+              <a href="range.html#design-tokens" class="doc-sidebar__link">Radius Scale</a>
             </li>
           </ul>
         </div>
 
-        <!-- Group 3: Components (Auto-expandable) -->
+        <!-- Group 3: Components (A-Z) -->
         <div class="doc-sidebar__group">
           <div class="doc-sidebar__title">
             <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
@@ -243,9 +245,9 @@
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
             </li>
-            <!-- Icons & Flags (Active) -->
+            <!-- Icons & Flags -->
             <li class="doc-sidebar__item">
-              <a href="icons.html" class="doc-sidebar__link is-active">
+              <a href="icons.html" class="doc-sidebar__link">
                 Icons &amp; Flags
                 <span class="doc-sidebar__link-badge">370</span>
               </a>
@@ -285,9 +287,9 @@
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
             </li>
-            <!-- Range -->
+            <!-- Range (Active) -->
             <li class="doc-sidebar__item">
-              <a href="range.html" class="doc-sidebar__link">
+              <a href="range.html" class="doc-sidebar__link is-active">
                 Range
                 <span class="doc-sidebar__link-badge">v1.0</span>
               </a>
@@ -327,189 +329,294 @@
       <!-- --------------------------------------------------------------------- -->
       <!-- Center Main Content -->
       <!-- --------------------------------------------------------------------- -->
+            <!-- --------------------------------------------------------------------- -->
+      <!-- Main Content Area -->
+      <!-- --------------------------------------------------------------------- -->
       <main class="doc-content">
-        <!-- Breadcrumb -->
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Docs</a>
-          <span>/</span>
-          <a href="icons.html">Components</a>
-          <span>/</span>
-          <span style="color: var(--doc-text);">Icons &amp; Flags</span>
-        </nav>
 
         <!-- Page Header -->
         <header class="doc-content__header">
-          <h1 class="text-5xl-bold" style="letter-spacing: -0.03em;">Icons &amp; Flags</h1>
+          <div class="doc-content__title-wrap">
+            <h1 class="doc-content__title">Range</h1>
+            <span class="doc-content__version-badge">v1.0</span>
+          </div>
           <p class="doc-content__lead">
-            Official iconography system of OWW Design System encompassing <strong>55 UI Icons</strong> (110 Outline &amp; Fill variants) alongside <strong>260 Country Flags</strong> (total <strong>370 icons</strong>).
+            Dual-point rail slider component with continuous minimum and maximum value adjusters, live percentage track fill, and tabular numeric readout labels. Built to 100% fidelity with Figma node <code>22652:10070</code>.
           </p>
         </header>
 
-        <!-- =================================================================== -->
-        <!-- Section 1: Overview -->
-        <!-- =================================================================== -->
+        <!-- Section 1: Overview & Interactive Playground -->
         <section id="overview" class="doc-content__section">
-          <h2 class="doc-content__section-title">Overview</h2>
+          <h2 class="doc-content__section-title">Interactive Playground</h2>
           <p class="doc-content__section-desc">
-            All icons and flags are built on a standard <code>20px &times; 20px</code> grid base to ensure visual consistency and rhythm across all OWW platforms.
+            Drag the thumbs or click anywhere along the rail to adjust values. Supports pointer dragging with capture, arrow keyboard navigation, and mouse wheel adjustments.
           </p>
 
-          <table class="token-table">
+          <div class="doc-example">
+            <div class="doc-example__preview" style="display: flex; justify-content: center; align-items: center; min-height: 200px; padding: 40px 24px;">
+              
+              <!-- Interactive Range Component Demo -->
+              <div class="oww-range" data-min="0" data-max="300000" data-step="5000" data-val-min="20000" data-val-max="150000">
+                <label class="oww-range__label">Price Range</label>
+                <div class="oww-range__body">
+                  <div class="oww-range__track-wrapper">
+                    <div class="oww-range__track">
+                      <div class="oww-range__fill"></div>
+                      <div class="oww-range__thumb oww-range__thumb--min" role="slider" tabindex="0" aria-label="Minimum Value" aria-valuemin="0" aria-valuemax="300000" aria-valuenow="20000"></div>
+                      <div class="oww-range__thumb oww-range__thumb--max" role="slider" tabindex="0" aria-label="Maximum Value" aria-valuemin="0" aria-valuemax="300000" aria-valuenow="150000"></div>
+                    </div>
+                  </div>
+                  <div class="oww-range__helpers">
+                    <span class="oww-range__val-min">Min (20,000)</span>
+                    <span class="oww-range__val-max">Max (150,000)</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Code Snippet -->
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" title="Copy code" aria-label="Copy code">Copy</button>
+              <pre><code class="language-html">&lt;!-- Interactive Dual-Point Range Slider --&gt;
+&lt;div class="oww-range" data-min="0" data-max="300000" data-step="5000" data-val-min="20000" data-val-max="150000"&gt;
+  &lt;label class="oww-range__label"&gt;Price Range&lt;/label&gt;
+  &lt;div class="oww-range__body"&gt;
+    &lt;div class="oww-range__track-wrapper"&gt;
+      &lt;div class="oww-range__track"&gt;
+        &lt;div class="oww-range__fill"&gt;&lt;/div&gt;
+        &lt;div class="oww-range__thumb oww-range__thumb--min" role="slider" tabindex="0" aria-label="Minimum Value" aria-valuemin="0" aria-valuemax="300000" aria-valuenow="20000"&gt;&lt;/div&gt;
+        &lt;div class="oww-range__thumb oww-range__thumb--max" role="slider" tabindex="0" aria-label="Maximum Value" aria-valuemin="0" aria-valuemax="300000" aria-valuenow="150000"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="oww-range__helpers"&gt;
+      &lt;span class="oww-range__val-min"&gt;Min (20,000)&lt;/span&gt;
+      &lt;span class="oww-range__val-max"&gt;Max (150,000)&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Figma Component Variants -->
+        <section id="variants" class="doc-content__section">
+          <h2 class="doc-content__section-title">Figma Variants (State=Default vs State=Applied)</h2>
+          <p class="doc-content__section-desc">
+            Direct mapping to Figma Component Set <code>Range (#22652:10070)</code>. <code>Default</code> shows full span (0 to 300,000), while <code>Applied</code> demonstrates narrowed boundaries (20,000 to 150,000).
+          </p>
+
+          <div class="doc-example">
+            <div class="doc-example__preview" style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: center; align-items: flex-start; padding: 40px 24px;">
+
+              <!-- State=Default -->
+              <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--doc-text-muted);">State = Default (Full Span)</div>
+                <div class="oww-range" data-min="0" data-max="300000" data-step="5000" data-val-min="0" data-val-max="300000">
+                  <label class="oww-range__label">Range</label>
+                  <div class="oww-range__body">
+                    <div class="oww-range__track-wrapper">
+                      <div class="oww-range__track">
+                        <div class="oww-range__fill"></div>
+                        <div class="oww-range__thumb oww-range__thumb--min" role="slider" tabindex="0" aria-label="Min Value" aria-valuemin="0" aria-valuemax="300000" aria-valuenow="0"></div>
+                        <div class="oww-range__thumb oww-range__thumb--max" role="slider" tabindex="0" aria-label="Max Value" aria-valuemin="0" aria-valuemax="300000" aria-valuenow="300000"></div>
+                      </div>
+                    </div>
+                    <div class="oww-range__helpers">
+                      <span class="oww-range__val-min">Min (0)</span>
+                      <span class="oww-range__val-max">Max (300,000)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- State=Applied -->
+              <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--doc-text-muted);">State = Applied (Filtered)</div>
+                <div class="oww-range" data-min="0" data-max="300000" data-step="5000" data-val-min="20000" data-val-max="150000">
+                  <label class="oww-range__label">Range</label>
+                  <div class="oww-range__body">
+                    <div class="oww-range__track-wrapper">
+                      <div class="oww-range__track">
+                        <div class="oww-range__fill"></div>
+                        <div class="oww-range__thumb oww-range__thumb--min" role="slider" tabindex="0" aria-label="Min Value" aria-valuemin="0" aria-valuemax="300000" aria-valuenow="20000"></div>
+                        <div class="oww-range__thumb oww-range__thumb--max" role="slider" tabindex="0" aria-label="Max Value" aria-valuemin="0" aria-valuemax="300000" aria-valuenow="150000"></div>
+                      </div>
+                    </div>
+                    <div class="oww-range__helpers">
+                      <span class="oww-range__val-min">Min (20,000)</span>
+                      <span class="oww-range__val-max">Max (150,000)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Code Snippet -->
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" title="Copy code" aria-label="Copy code">Copy</button>
+              <pre><code class="language-html">&lt;!-- Default State (Min: 0, Max: 300,000) --&gt;
+&lt;div class="oww-range" data-min="0" data-max="300000" data-step="5000" data-val-min="0" data-val-max="300000"&gt;
+  ...
+&lt;/div&gt;
+
+&lt;!-- Applied State (Min: 20,000, Max: 150,000) --&gt;
+&lt;div class="oww-range" data-min="0" data-max="300000" data-step="5000" data-val-min="20000" data-val-max="150000"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Layout Modes & Disabled -->
+        <section id="modes" class="doc-content__section">
+          <h2 class="doc-content__section-title">Layout Options &amp; Disabled State</h2>
+          <p class="doc-content__section-desc">
+            By default the range component is fixed at <code>288px</code> matching Figma specifications. Use modifier <code>.oww-range--fluid</code> for full-width responsive layouts, or add <code>.is-disabled</code> to lock user interactions.
+          </p>
+
+          <div class="doc-example">
+            <div class="doc-example__preview" style="display: flex; flex-direction: column; gap: 36px; padding: 40px 24px;">
+
+              <!-- Fluid Full-Width Range -->
+              <div>
+                <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--doc-text-muted); margin-bottom: 12px;">Fluid Width (.oww-range--fluid)</div>
+                <div class="oww-range oww-range--fluid" data-min="0" data-max="1000" data-step="10" data-val-min="150" data-val-max="850">
+                  <label class="oww-range__label">Budget Limit (USD)</label>
+                  <div class="oww-range__body">
+                    <div class="oww-range__track-wrapper">
+                      <div class="oww-range__track">
+                        <div class="oww-range__fill"></div>
+                        <div class="oww-range__thumb oww-range__thumb--min" role="slider" tabindex="0" aria-label="Min Budget" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="150"></div>
+                        <div class="oww-range__thumb oww-range__thumb--max" role="slider" tabindex="0" aria-label="Max Budget" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="850"></div>
+                      </div>
+                    </div>
+                    <div class="oww-range__helpers">
+                      <span class="oww-range__val-min">Min (150)</span>
+                      <span class="oww-range__val-max">Max (850)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Disabled State -->
+              <div>
+                <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--doc-text-muted); margin-bottom: 12px;">Disabled State (.is-disabled)</div>
+                <div class="oww-range is-disabled" data-min="0" data-max="100" data-step="1" data-val-min="25" data-val-max="75">
+                  <label class="oww-range__label">Fixed Allocation</label>
+                  <div class="oww-range__body">
+                    <div class="oww-range__track-wrapper">
+                      <div class="oww-range__track">
+                        <div class="oww-range__fill"></div>
+                        <div class="oww-range__thumb oww-range__thumb--min" role="slider" tabindex="-1" aria-label="Min Allocation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25"></div>
+                        <div class="oww-range__thumb oww-range__thumb--max" role="slider" tabindex="-1" aria-label="Max Allocation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75"></div>
+                      </div>
+                    </div>
+                    <div class="oww-range__helpers">
+                      <span class="oww-range__val-min">Min (25)</span>
+                      <span class="oww-range__val-max">Max (75)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Code Snippet -->
+            <div class="doc-example__code">
+              <button class="doc-example__copy-btn" title="Copy code" aria-label="Copy code">Copy</button>
+              <pre><code class="language-html">&lt;!-- Fluid width range slider --&gt;
+&lt;div class="oww-range oww-range--fluid" data-min="0" data-max="1000" ...&gt;
+  ...
+&lt;/div&gt;
+
+&lt;!-- Disabled range slider --&gt;
+&lt;div class="oww-range is-disabled" data-min="0" data-max="100" ...&gt;
+  ...
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Design Tokens Table -->
+        <section id="design-tokens" class="doc-content__section">
+          <h2 class="doc-content__section-title">Design Tokens (Figma #22652:10070)</h2>
+          <p class="doc-content__section-desc">
+            Component tokens defining dimensions, hit-target offsets, track geometry, and dual-theme palettes.
+          </p>
+
+          <table class="doc-table">
             <thead>
               <tr>
-                <th>Category</th>
-                <th>Count</th>
-                <th>Grid Base</th>
-                <th>Color Characteristics</th>
-                <th>Design Source</th>
+                <th>SCSS Variable</th>
+                <th>Value</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>UI Icons</strong></td>
-                <td><span class="token-badge">110 (55 Outline, 55 Fill)</span></td>
-                <td><code>20×20px</code></td>
-                <td>Monochrome <code>currentColor</code> (theme adaptive)</td>
-                <td>UI Icons Component Set</td>
+                <td><code>$range-track-height</code></td>
+                <td><code>6px</code></td>
+                <td>Height of the background rail and fill bar.</td>
               </tr>
               <tr>
-                <td><strong>Country Flags</strong></td>
-                <td><span class="token-badge">260 Countries</span></td>
-                <td><code>20×20px</code></td>
-                <td>Official Multi-color Circular Vectors</td>
-                <td>Country Flags Component Set</td>
+                <td><code>$range-track-radius</code></td>
+                <td><code>99999px</code></td>
+                <td>Pill radius for track and fill bar ends.</td>
+              </tr>
+              <tr>
+                <td><code>$range-track-bg</code></td>
+                <td><code>#D9D9D9</code></td>
+                <td>Inactive track background color.</td>
+              </tr>
+              <tr>
+                <td><code>$range-fill-bg</code></td>
+                <td><code>#000000</code> / <code>#FFFFFF</code> (Dark)</td>
+                <td>Active track span between min and max thumbs.</td>
+              </tr>
+              <tr>
+                <td><code>$range-thumb-size</code></td>
+                <td><code>20px</code></td>
+                <td>Circular diameter of adjuster thumbs.</td>
+              </tr>
+              <tr>
+                <td><code>$range-thumb-shadow</code></td>
+                <td><code>0 0 6.67px rgba(0, 0, 0, 0.2)</code></td>
+                <td>Subtle depth shadow matching Figma spec.</td>
+              </tr>
+              <tr>
+                <td><code>$range-label-font-size</code></td>
+                <td><code>14px (0.875rem)</code></td>
+                <td>Semibold label typography.</td>
+              </tr>
+              <tr>
+                <td><code>$range-value-font-size</code></td>
+                <td><code>14px (0.875rem)</code></td>
+                <td>Regular helper value typography with tabular figures.</td>
               </tr>
             </tbody>
           </table>
         </section>
 
-        <!-- =================================================================== -->
-        <!-- Section 2: Interactive Gallery -->
-        <!-- =================================================================== -->
-        <section id="gallery" class="doc-content__section">
-          <h2 class="doc-content__section-title">Interactive Gallery</h2>
+        <!-- Section 5: Architecture & Rules -->
+        <section id="installation" class="doc-content__section">
+          <h2 class="doc-content__section-title">Architecture &amp; Rules</h2>
           <p class="doc-content__section-desc">
-            Explore the icons and flags collection. Use the instant search and filter tabs to quickly find any icon. <strong>Click any card to copy its SVG code to your clipboard.</strong>
+            Guidelines and technical considerations for incorporating dual-point range sliders.
           </p>
 
-          <div class="icon-gallery">
-            <div class="icon-gallery__toolbar">
-              <div class="icon-gallery__search">
-                <svg viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M17.9422 17.0578L14.0305 13.1469C15.1642 11.7857 15.7296 10.0398 15.6089 8.27244C15.4883 6.50506 14.6909 4.85223 13.3826 3.65779C12.0744 2.46334 10.356 1.81926 8.58493 1.85951C6.81388 1.89976 5.12654 2.62125 3.87389 3.87389C2.62125 5.12653 1.89976 6.81388 1.85951 8.58492C1.81926 10.356 2.46335 12.0744 3.65779 13.3826C4.85223 14.6909 6.50506 15.4883 8.27245 15.6089C10.0398 15.7296 11.7857 15.1642 13.1469 14.0305L17.0578 17.9422C17.1159 18.0003 17.1848 18.0463 17.2607 18.0777C17.3366 18.1092 17.4179 18.1253 17.5 18.1253C17.5821 18.1253 17.6634 18.1092 17.7393 18.0777C17.8152 18.0463 17.8841 18.0003 17.9422 17.9422C18.0003 17.8841 18.0463 17.8152 18.0777 17.7393C18.1092 17.6634 18.1254 17.5821 18.1254 17.5C18.1254 17.4179 18.1092 17.3366 18.0777 17.2607C18.0463 17.1848 18.0003 17.1159 17.9422 17.0578ZM3.125 8.75C3.125 7.63748 3.4549 6.54994 4.07299 5.62491C4.69107 4.69989 5.56957 3.97892 6.59741 3.55317C7.62524 3.12743 8.75624 3.01604 9.84739 3.23308C10.9385 3.45012 11.9408 3.98585 12.7275 4.77252C13.5141 5.55919 14.0499 6.56147 14.2669 7.65261C14.484 8.74376 14.3726 9.87475 13.9468 10.9026C13.5211 11.9304 12.8001 12.8089 11.8751 13.427C10.9501 14.0451 9.86252 14.375 8.75 14.375C7.25867 14.3733 5.82889 13.7802 4.77435 12.7256C3.71982 11.6711 3.12666 10.2413 3.125 8.75Z"
-                    fill="currentColor" />
-                </svg>
-                <input type="text" id="iconSearchInput"
-                  placeholder="Search icons or country flags (e.g. check, user, indonesia, japan)...">
-              </div>
-
-              <div class="icon-gallery__filters">
-                <button class="icon-gallery__filter-btn is-active" data-filter="all">All</button>
-                <button class="icon-gallery__filter-btn" data-filter="outline">Outline</button>
-                <button class="icon-gallery__filter-btn" data-filter="fill">Fill</button>
-                <button class="icon-gallery__filter-btn" data-filter="flag">Flags</button>
-              </div>
-
-              <span id="iconCountBadge" class="icon-gallery__count">Showing 370 icons (Click any card to copy SVG)</span>
-            </div>
-
-            <div id="iconGrid" class="icon-gallery__grid">
-              <!-- Rendered via JS -->
-            </div>
-          </div>
-        </section>
-
-        <!-- =================================================================== -->
-        <!-- Section 3: Usage & Implementation -->
-        <!-- =================================================================== -->
-        <section id="usage" class="doc-content__section">
-          <h2 class="doc-content__section-title">Usage &amp; Implementation</h2>
-          <p class="doc-content__section-desc">
-            OWW UIKit icons can be implemented directly as inline SVG (recommended for dynamic color theming and animation) or referenced as external SVG files.
-          </p>
-
-          <div class="doc-example">
-            <div class="doc-example__preview">
-              <div style="display: flex; gap: 16px; align-items: center;">
-                <span style="color: var(--doc-primary); display: inline-flex;">
-                  <svg width="24" height="24" viewBox="0 0 20 20" fill="none">
-                    <path d="M10 1.875C8.39303 1.875 6.82214 2.35152 5.486 3.24431C4.14985 4.1371 3.10844 5.40605 2.49348 6.8907C1.87852 8.37535 1.71762 10.009 2.03112 11.5851C2.34463 13.1612 3.11846 14.6089 4.25476 15.7452C5.39106 16.8815 6.8388 17.6554 8.4149 17.9689C9.99099 18.2824 11.6247 18.1215 13.1093 17.5065C14.594 16.8916 15.8629 15.8502 16.7557 14.514C17.6485 13.1779 18.125 11.607 18.125 10C18.1227 7.84581 17.266 5.78051 15.7427 4.25727C14.2195 2.73403 12.1542 1.87727 10 1.875ZM13.5672 8.56719L9.19219 12.9422C9.13415 13.0003 9.06522 13.0464 8.98934 13.0779C8.91347 13.1093 8.83214 13.1255 8.75 13.1255C8.66787 13.1255 8.58654 13.1093 8.51067 13.0779C8.43479 13.0464 8.36586 13.0003 8.30782 12.9422L6.43282 11.0672C6.31554 10.9499 6.24966 10.7909 6.24966 10.625C6.24966 10.4591 6.31554 10.3001 6.43282 10.1828C6.55009 10.0655 6.70915 9.99965 6.875 9.99965C7.04086 9.99965 7.19992 10.0655 7.31719 10.1828L8.75 11.6164L12.6828 7.68281C12.7409 7.62474 12.8098 7.57868 12.8857 7.54725C12.9616 7.51583 13.0429 7.49965 13.125 7.49965C13.2071 7.49965 13.2884 7.51583 13.3643 7.54725C13.4402 7.57868 13.5091 7.62474 13.5672 7.68281C13.6253 7.74088 13.6713 7.80982 13.7027 7.88569C13.7342 7.96156 13.7504 8.04288 13.7504 8.125C13.7504 8.20712 13.7342 8.28844 13.7027 8.36431C13.6713 8.44018 13.6253 8.50912 13.5672 8.56719Z" fill="currentColor"/>
-                  </svg>
-                </span>
-                <span style="display: inline-flex;">
-                  <img src="./src/assets/icons/flags/flag-indonesia.svg" width="24" height="24" alt="Indonesia Flag">
-                </span>
-                <span style="display: inline-flex;">
-                  <img src="./src/assets/icons/flags/flag-united-states.svg" width="24" height="24" alt="United States Flag">
-                </span>
-                <span style="display: inline-flex;">
-                  <img src="./src/assets/icons/flags/flag-japan.svg" width="24" height="24" alt="Japan Flag">
-                </span>
-              </div>
-            </div>
-            <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
-  </svg>
-</button>
-              <pre><code>&lt;!-- 1. UI Icon as Inline SVG (Inherits parent text color via currentColor) --&gt;
-&lt;span style="color: var(--doc-primary);"&gt;
-  &lt;svg width="20" height="20" viewBox="0 0 20 20" fill="none"&gt;
-    &lt;path d="..." fill="currentColor"/&gt;
-  &lt;/svg&gt;
-&lt;/span&gt;
-
-&lt;!-- 2. Country Flag as Image Tag --&gt;
-&lt;img src="./src/assets/icons/flags/flag-indonesia.svg" width="20" height="20" alt="Indonesia Flag"&gt;</code></pre>
-            </div>
-          </div>
-        </section>
-
-        <!-- =================================================================== -->
-        <!-- Section 4: Architecture & Assets -->
-        <!-- =================================================================== -->
-        <section id="architecture" class="doc-content__section">
-          <h2 class="doc-content__section-title">Architecture &amp; Assets</h2>
-          <p class="doc-content__section-desc">
-            Clean directory architecture for iconography assets and JavaScript modules:
-          </p>
-
-          <div class="doc-example">
-            <div class="doc-example__code">
-              <button class="doc-example__copy-btn" onclick="copyCode(this)" aria-label="Copy code" title="Copy code">
-  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-    <path
-      d="M16.875 2.5H6.875C6.70924 2.5 6.55027 2.56585 6.43306 2.68306C6.31585 2.80027 6.25 2.95924 6.25 3.125V6.25H3.125C2.95924 6.25 2.80027 6.31585 2.68306 6.43306C2.56585 6.55027 2.5 6.70924 2.5 6.875V16.875C2.5 17.0408 2.56585 17.1997 2.68306 17.3169C2.80027 17.4342 2.95924 17.5 3.125 17.5H13.125C13.2908 17.5 13.4497 17.4342 13.5669 17.3169C13.6842 17.1997 13.75 17.0408 13.75 16.875V13.75H16.875C17.0408 13.75 17.1997 13.6842 17.3169 13.5669C17.4342 13.4497 17.5 13.2908 17.5 13.125V3.125C17.5 2.95924 17.4342 2.80027 17.3169 2.68306C17.1997 2.56585 17.0408 2.5 16.875 2.5ZM12.5 16.25H3.75V7.5H12.5V16.25ZM16.25 12.5H13.75V6.875C13.75 6.70924 13.6842 6.55027 13.5669 6.43306C13.4497 6.31585 13.2908 6.25 13.125 6.25H7.5V3.75H16.25V12.5Z"
-      fill="currentColor" />
-  </svg>
-</button>
-              <pre><code>oww-uikit/
-├── src/
-│   ├── assets/
-│   │   └── icons/
-│   │       ├── flags/                     # 260 Country Flags (SVG)
-│   │       │   ├── flag-indonesia.svg
-│   │       │   ├── flag-united-states.svg
-│   │       │   └── ...
-│   │       ├── check-circle-fill.svg      # 110 UI Icons (Outline & Fill)
-│   │       ├── check-circle-outline.svg
-│   │       └── ...
-│   └── js/
-│       ├── main.js                        # Theme toggle, Toast, TOC ScrollSpy
-│       └── icons.js                       # 370 icons database & live gallery logic
-├── alert.html                             # Alert Component Documentation
-├── avatar.html                            # Avatar Component Documentation
-├── icons.html                             # Icons & Flags Component Documentation
-└── index.html                             # Default landing (Alert)</code></pre>
-            </div>
-          </div>
+          <ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8; color: var(--doc-text-muted);">
+            <li><strong>Pointer Capture:</strong> Thumbs implement <code>setPointerCapture</code>, guaranteeing smooth continuous drags even when the user cursor or touch moves beyond the track boundaries.</li>
+            <li><strong>Collision Prevention:</strong> The minimum and maximum thumbs automatically preserve a one-step separation gap, preventing thumbs from crossing or flipping values.</li>
+            <li><strong>Track Seek &amp; Drag:</strong> Clicking anywhere along the rail automatically snaps the closest thumb and initiates instant dragging.</li>
+            <li><strong>Keyboard Accessibility:</strong> Thumbs are full <code>role="slider"</code> elements navigable with <kbd>←</kbd> / <kbd>→</kbd> / <kbd>↑</kbd> / <kbd>↓</kbd> (step adjustments) and <kbd>Home</kbd> / <kbd>End</kbd> (limits).</li>
+            <li><strong>Universal Controller:</strong> The JavaScript controller seamlessly operates both standalone <code>.oww-range</code> elements and nested dropdown <code>.oww-dropdown__range-slider</code> instances.</li>
+          </ul>
         </section>
 
       </main>
+
 
       <!-- --------------------------------------------------------------------- -->
       <!-- Right Sidebar (On this page Indexing / TOC) -->
@@ -521,13 +628,16 @@
             <a href="#overview" class="doc-toc__link is-active">Overview</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#gallery" class="doc-toc__link">Interactive Gallery</a>
+            <a href="#figma-variants" class="doc-toc__link">Figma Variants</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#usage" class="doc-toc__link">Usage &amp; Implementation</a>
+            <a href="#states" class="doc-toc__link">Interactive States</a>
           </li>
           <li class="doc-toc__item">
-            <a href="#architecture" class="doc-toc__link">Architecture &amp; Assets</a>
+            <a href="#design-tokens" class="doc-toc__link">Design Tokens</a>
+          </li>
+          <li class="doc-toc__item">
+            <a href="#installation" class="doc-toc__link">Architecture &amp; Rules</a>
           </li>
         </ul>
       </aside>
@@ -540,9 +650,6 @@
 
   <!-- Global Documentation Script -->
   <script src="./src/js/main.js"></script>
-
-  <!-- Icons Gallery Script -->
-  <script src="./src/js/icons.js"></script>
 
 </body>
 

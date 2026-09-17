@@ -241,15 +241,17 @@ function initGlobal() {
     });
   });
 
-  // Price Range Slider Controller (Dual-Point Rail Slider: Min & Max Adjusters)
+  // Range Slider Controller (Dual-Point Rail Slider: Min & Max Adjusters)
+  // Supports both standalone .oww-range and dropdown .oww-dropdown__range-slider
   function initRangeSliders() {
-    const sliders = document.querySelectorAll(".oww-dropdown__range-slider");
+    const sliders = document.querySelectorAll(".oww-range, .oww-dropdown__range-slider");
     sliders.forEach(slider => {
-      const track = slider.querySelector(".oww-dropdown__range-slider-track");
-      const minThumb = slider.querySelector(".oww-dropdown__range-slider-thumb--min");
-      const maxThumb = slider.querySelector(".oww-dropdown__range-slider-thumb--max");
-      const minLabel = slider.querySelector(".oww-dropdown__range-val-min");
-      const maxLabel = slider.querySelector(".oww-dropdown__range-val-max");
+      // Find track, thumbs, labels for either .oww-range or .oww-dropdown__range-slider
+      const track = slider.querySelector(".oww-range__track, .oww-dropdown__range-slider-track");
+      const minThumb = slider.querySelector(".oww-range__thumb--min, .oww-dropdown__range-slider-thumb--min");
+      const maxThumb = slider.querySelector(".oww-range__thumb--max, .oww-dropdown__range-slider-thumb--max");
+      const minLabel = slider.querySelector(".oww-range__val-min, .oww-dropdown__range-val-min");
+      const maxLabel = slider.querySelector(".oww-range__val-max, .oww-dropdown__range-val-max");
 
       if (!track || !minThumb || !maxThumb) return;
 

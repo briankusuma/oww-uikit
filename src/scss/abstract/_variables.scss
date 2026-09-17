@@ -482,3 +482,61 @@ $input-chip-bg:               $color-base-white-500 !default; // #FFFFFF
 $input-chip-border-color:     $color-base-primary-100 !default; // #E9E9E9
 $input-chip-radius:           16px !default;
 $input-chip-padding:          2px 6px 2px 8px !default;
+
+// =============================================================================
+// 12. COMPONENT TOKENS: RADIO BUTTON (Figma: Radio #22639:10778, Menu-Item #22641:9116)
+// =============================================================================
+$radio-size:                  20px !default;
+$radio-border-width:          1.67px !default;
+$radio-radius:                50% !default;
+
+// Unchecked / Default
+$radio-bg-default:            $color-base-white-500 !default; // #FFFFFF
+$radio-border-color-default:  #E4E4E4 !default; // Figma: #E4E4E4
+$radio-hover-shadow:          0px 0px 0px 5px #E9E9E9 !default; // Figma: 0px 0px 0px 5px rgba(233, 233, 233, 1)
+
+// Checked
+$radio-checked-bg:            $color-base-primary-900 !default; // #000000
+$radio-checked-border-color:  $color-base-primary-900 !default; // #000000
+$radio-checked-dot-size:      8px !default;
+$radio-checked-dot-color:     $color-base-white-500 !default; // #FFFFFF
+
+// Disabled
+$radio-disabled-bg:           $color-base-grey-200 !default; // #F1F1F1
+$radio-disabled-border:       $color-base-grey-400 !default; // #C4C4C4
+$radio-disabled-opacity:      0.6 !default;
+
+// Radio Menu / List Item
+$radio-item-padding:          8px !default;
+$radio-item-radius:           10px !default; // Figma: 10px
+$radio-item-gap:              8px !default;
+$radio-item-hover-bg:         $color-base-grey-100 !default; // #F8F8F8
+$radio-label-color:           $color-base-primary-900 !default; // #000000
+$radio-label-font-size:       $font-size-sm !default; // 14px
+$radio-label-font-weight:     $font-weight-medium !default; // 500
+
+// =============================================================================
+// 13. COMPONENT TOKENS: RANGE SLIDER (Figma: Range #22652:10070)
+// =============================================================================
+$range-track-height:          6px !default;
+$range-track-radius:          99999px !default;
+$range-track-bg:              #D9D9D9 !default; // Figma: #D9D9D9
+$range-track-bg-dark:         rgba(255, 255, 255, 0.16) !default;
+
+$range-fill-bg:               $color-base-primary-900 !default; // #000000
+$range-fill-bg-dark:          $color-base-white-500 !default; // #FFFFFF
+
+$range-thumb-size:            20px !default;
+$range-thumb-radius:          50% !default;
+$range-thumb-bg:              $color-base-primary-900 !default; // #000000
+$range-thumb-bg-dark:         $color-base-white-500 !default; // #FFFFFF
+$range-thumb-shadow:          0px 0px 6.67px 0px rgba(0, 0, 0, 0.2) !default; // Figma: 0 0 6.67px rgba(0,0,0,0.2)
+$range-thumb-shadow-hover:    0px 0px 0px 4px rgba(0, 0, 0, 0.1), 0px 0px 6.67px 0px rgba(0, 0, 0, 0.25) !default;
+
+$range-label-color:           $color-base-primary-900 !default; // #000000
+$range-label-font-size:       $font-size-sm !default; // 14px
+$range-label-font-weight:     $font-weight-semibold !default; // 600
+
+$range-value-color:           $color-base-primary-900 !default; // #000000
+$range-value-font-size:       $font-size-sm !default; // 14px
+$range-value-font-weight:     $font-weight-regular !default; // 400
