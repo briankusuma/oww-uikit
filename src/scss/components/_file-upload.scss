@@ -181,7 +181,8 @@
     flex-shrink: 0;
 
     svg,
-    img {
+    img,
+    [class*="oww-icon--"] {
       width: 24px;
       height: 24px;
       display: block;
@@ -198,7 +199,8 @@
     animation: oww-spin 1s linear infinite;
 
     svg,
-    img {
+    img,
+    [class*="oww-icon--"] {
       width: 24px;
       height: 24px;
       display: block;
@@ -324,7 +326,8 @@
       animation: oww-spin 1s linear infinite;
 
       img,
-      svg {
+      svg,
+      [class*="oww-icon--"] {
         width: 24px;
         height: 24px;
         display: block;
@@ -378,7 +381,8 @@
     transition: all vars.$transition-duration-fast;
 
     svg,
-    img {
+    img,
+    [class*="oww-icon--"] {
       width: 14px;
       height: 14px;
       display: block;

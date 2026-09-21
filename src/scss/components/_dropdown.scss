@@ -228,7 +228,8 @@
       color: inherit;
 
       svg,
-      img {
+      img,
+      [class*="oww-icon--"] {
         width: 20px;
         height: 20px;
         display: block;
@@ -246,7 +247,8 @@
       justify-content: center;
 
       img,
-      svg {
+      svg,
+      [class*="oww-icon--"] {
         width: 20px;
         height: 20px;
         object-fit: cover;
@@ -272,7 +274,8 @@
       color: inherit;
 
       svg,
-      img {
+      img,
+      [class*="oww-icon--"] {
         width: 16px;
         height: 16px;
         display: block;

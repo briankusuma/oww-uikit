@@ -131,7 +131,8 @@
     justify-content: center;
 
     img,
-    svg {
+    svg,
+    [class*="oww-icon--"] {
       width: 16px;
       height: 16px;
       display: block;
@@ -154,7 +155,8 @@
     transition: background-color 0.15s ease;
 
     img,
-    svg {
+    svg,
+    [class*="oww-icon--"] {
       width: 20px;
       height: 20px;
       display: block;
@@ -194,7 +196,8 @@
     flex-shrink: 0;
 
     img,
-    svg {
+    svg,
+    [class*="oww-icon--"] {
       width: 28px;
       height: 28px;
       display: block;
@@ -279,7 +282,8 @@
 
     &__logo {
       img,
-      svg {
+      svg,
+      [class*="oww-icon--"] {
         filter: invert(1);
       }
     }
@@ -327,7 +331,8 @@
       color: #FFFFFF;
 
       .oww-nav-item__icon img,
-      .oww-nav-item__icon svg {
+      .oww-nav-item__icon svg,
+      .oww-nav-item__icon [class*="oww-icon--"] {
         filter: invert(1);
       }
     }
@@ -337,7 +342,8 @@
       color: vars.$nav-item-color-dark-active;
 
       .oww-nav-item__icon img,
-      .oww-nav-item__icon svg {
+      .oww-nav-item__icon svg,
+      .oww-nav-item__icon [class*="oww-icon--"] {
         filter: invert(1);
       }
 
