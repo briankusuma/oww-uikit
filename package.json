@@ -4,7 +4,7 @@
   "description": "OWW Design System & UI Kit Sass Architecture",
   "main": "dist/uikit.css",
   "scripts": {
-    "build": "npm run build:css && npm run build:assets",
+    "build": "npm run build:css && npm run build:min && npm run build:assets",
     "build:css": "sass src/scss/uikit.scss dist/uikit.css --style=expanded --no-source-map",
     "build:min": "sass src/scss/uikit.scss dist/uikit.min.css --style=compressed --no-source-map",
     "build:assets": "node -e \"const fs = require('fs'); fs.cpSync('src/js', 'dist/js', { recursive: true }); fs.cpSync('src/assets', 'dist/assets', { recursive: true });\"",
