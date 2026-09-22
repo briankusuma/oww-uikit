@@ -8238,6 +8238,10 @@ body.doc-body {
   transition: background-color 200ms ease, color 200ms ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .doc-navbar {
   position: sticky;
   top: 0;
@@ -9218,3 +9222,5 @@ body.doc-body {
   color: var(--doc-text-muted);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
+
+/*# sourceMappingURL=uikit.css.map */
