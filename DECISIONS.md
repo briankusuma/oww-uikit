@@ -22,5 +22,11 @@ Dokumen ini digunakan untuk mencatat keputusan teknis, kesepakatan desain, atau 
 
 ## 4. hilangkan info mengenai hasil perbaikan atau ketidaksesauian dan implementasi
 - 
+## 5. sesuaikan dengan style figma, dengan background putih, style component harusnya tidak terpengaruh oleh tema dari preview docs dark mode dan light mode, stick ke figma yg putih
 
 *Catatan: Keputusan yang terbukti stabil dan berlaku secara permanen di seluruh komponen dapat dipromosikan ke `AGENT.md` oleh pengguna.*
+
+## 6. Dynamic Theme Adaptation for Component Code Snippets & Copy
+- Code snippet box pada dokumentasi secara dinamis menyesuaikan attribute `data-theme="dark"` atau `data-theme="light"` dengan tema aktif yang sedang dipilih pengguna (light/dark mode toggle).
+- Logika JavaScript `copyCode` secara otomatis menyematkan / memperbarui `data-theme` sesuai mode tema aktif saat ini pada elemen root komponen yang disalin ke clipboard.
+- Seluruh komponen SCSS (`_file-upload.scss`, `_card.scss`, `_dropdown.scss`, `_input.scss`, `_radio.scss`, `_range.scss`, `_sidebar.scss`, `_stepper.scss`) mendukung selector eksplisit untuk `[data-theme="dark"]` dan `[data-theme="light"]`, baik disematkan pada parent container (`[data-theme="..."] .oww-...`) maupun langsung pada root komponen (`.oww-...[data-theme="..."]`).

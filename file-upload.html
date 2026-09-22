@@ -479,7 +479,7 @@
     <span class="token-punctuation">&lt;</span><span class="token-tag">input</span> <span class="token-attr-name">type</span><span class="token-punctuation">=</span><span class="token-attr-value">"file"</span> <span class="token-attr-name">accept</span><span class="token-punctuation">=</span><span class="token-attr-value">"image/jpeg,image/png,image/webp"</span><span class="token-punctuation">&gt;</span>
     <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__body"</span><span class="token-punctuation">&gt;</span>
       <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__icon"</span><span class="token-punctuation">&gt;</span>
-        <span class="token-punctuation">&lt;</span><span class="token-tag">img</span> <span class="token-attr-name">src</span><span class="token-punctuation">=</span><span class="token-attr-value">"./dist/assets/icons/upload-fill.svg"</span> <span class="token-attr-name">alt</span><span class="token-punctuation">=</span><span class="token-attr-value">""</span> <span class="token-attr-name">width</span><span class="token-punctuation">=</span><span class="token-attr-value">"24"</span> <span class="token-attr-name">height</span><span class="token-punctuation">=</span><span class="token-attr-value">"24"</span><span class="token-punctuation">&gt;</span>
+        <span class="token-punctuation">&lt;</span><span class="token-tag">span</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-icon--upload-fill"</span><span class="token-punctuation">&gt;</span><span class="token-punctuation">&lt;/</span><span class="token-tag">span</span><span class="token-punctuation">&gt;</span>
       <span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
       <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__text-group"</span><span class="token-punctuation">&gt;</span>
         <span class="token-punctuation">&lt;</span><span class="token-tag">div</span> <span class="token-attr-name">class</span><span class="token-punctuation">=</span><span class="token-attr-value">"oww-file-upload__title"</span><span class="token-punctuation">&gt;</span>Choose a file or drag and drop here.<span class="token-punctuation">&lt;/</span><span class="token-tag">div</span><span class="token-punctuation">&gt;</span>
@@ -551,7 +551,7 @@
                   <span class="oww-file-upload__required">*</span>
                 </div>
                 <div class="oww-file-upload__dropzone oww-file-upload__dropzone--applied"
-                  style="background-image: url('./dist/assets/images/product-sample.png');">
+                  style="background-image: url('https://cdn.jsdelivr.net/gh/briankusuma/oww-uikit@main/dist/assets/images/product-sample.png');">
                   <div class="oww-file-upload__body">
                     <div class="oww-file-upload__actions">
                       <button type="button" class="oww-btn oww-btn--outline oww-btn--sm">Change Cover</button>
@@ -642,7 +642,7 @@
 
               <!-- Mini State: Image Uploaded -->
               <div class="oww-file-upload-mini oww-file-upload-mini--image"
-                style="background-image: url('./dist/assets/images/product-sample.png');">
+                style="background-image: url('https://cdn.jsdelivr.net/gh/briankusuma/oww-uikit@main/dist/assets/images/product-sample.png');">
                 <button type="button" class="oww-file-upload-mini__remove-btn" onclick="removeMiniUpload(this)"
                   aria-label="Remove image" title="Remove image">
                   <span class="oww-icon--x-close" style="width: 14px; height: 14px;"></span>
@@ -651,7 +651,7 @@
 
               <!-- Mini State: Video Uploaded -->
               <div class="oww-file-upload-mini oww-file-upload-mini--video"
-                style="background-image: url('./dist/assets/images/product-sample.png');">
+                style="background-image: url('https://cdn.jsdelivr.net/gh/briankusuma/oww-uikit@main/dist/assets/images/product-sample.png');">
                 <button type="button" class="oww-file-upload-mini__remove-btn" onclick="removeMiniUpload(this)"
                   aria-label="Remove video" title="Remove video">
                   <span class="oww-icon--x-close" style="width: 14px; height: 14px;"></span>
@@ -757,32 +757,13 @@
             Guidelines and integration rules for implementing file upload components across the application.
           </p>
 
-          <div class="doc-rules">
-            <div class="doc-rule-card">
-              <div class="doc-rule-card__number">01</div>
-              <h3 class="doc-rule-card__title">Semantic Structure</h3>
-              <p class="doc-rule-card__desc">
-                Always maintain the hidden <code>&lt;input type="file"&gt;</code> accessible via keyboard focus or
-                programmatic click triggers, with explicit <code>accept</code> attribute restrictions.
-              </p>
-            </div>
-            <div class="doc-rule-card">
-              <div class="doc-rule-card__number">02</div>
-              <h3 class="doc-rule-card__title">File Validation</h3>
-              <p class="doc-rule-card__desc">
-                Enforce standard size constraints (max 2 MB) and MIME types (JPG, PNG, WebP) on the client side before
-                initiating network transfers to reduce server load.
-              </p>
-            </div>
-            <div class="doc-rule-card">
-              <div class="doc-rule-card__number">03</div>
-              <h3 class="doc-rule-card__title">State Clear &amp; Reset</h3>
-              <p class="doc-rule-card__desc">
-                When the remove button is triggered, clear the underlying <code>input.value</code> so the user can
-                re-select the same file name if needed.
-              </p>
-            </div>
-          </div>
+          <ul style="list-style-type: disc; margin-left: 20px; line-height: 1.8; color: var(--doc-text-muted);">
+            <li><strong>Semantic Structure:</strong> Always maintain the hidden <code>&lt;input type="file"&gt;</code> accessible via keyboard focus or programmatic click triggers, with explicit <code>accept</code> attribute restrictions.</li>
+            <li><strong>File Validation:</strong> Enforce standard size constraints (max 2 MB) and MIME types (JPG, PNG, WebP) on the client side before initiating network transfers to reduce server load.</li>
+            <li><strong>Drag &amp; Drop Interactivity:</strong> Implement drag event listeners (<code>dragenter</code>, <code>dragover</code>, <code>dragleave</code>, <code>drop</code>) to toggle <code>.is-dragover</code> on dropzone containers.</li>
+            <li><strong>State Clear &amp; Reset:</strong> When the remove button is triggered, clear the underlying <code>input.value</code> so the user can re-select the same file if needed.</li>
+            <li><strong>Dark &amp; Light Mode:</strong> Dropzone backgrounds and borders automatically adjust via <code>[data-theme="light"]</code> and <code>[data-theme="dark"]</code> custom property tokens.</li>
+          </ul>
         </section>
 
       </main>

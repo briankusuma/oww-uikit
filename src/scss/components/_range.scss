@@ -159,8 +159,10 @@
 }
 
 // Dark Mode Support
-[data-theme="dark"] {
-  .oww-range {
+[data-theme="dark"],
+.oww-range[data-theme="dark"] {
+  .oww-range,
+  &.oww-range {
     &__label {
       color: #FFFFFF;
     }
@@ -196,6 +198,50 @@
 
     &__helpers {
       color: #E0E0E0;
+    }
+  }
+}
+
+// Light Mode Support
+[data-theme="light"],
+.oww-range[data-theme="light"] {
+  .oww-range,
+  &.oww-range {
+    &__label {
+      color: vars.$range-label-color;
+    }
+
+    &__track {
+      background-color: vars.$range-track-bg;
+    }
+
+    &__fill {
+      background-color: vars.$range-fill-bg;
+    }
+
+    &__thumb {
+      background-color: vars.$range-thumb-bg;
+      box-shadow: vars.$range-thumb-shadow;
+
+      &::after {
+        background-color: vars.$range-thumb-dot-bg;
+      }
+
+      &:hover {
+        box-shadow: vars.$range-thumb-shadow-hover;
+      }
+
+      &:focus-visible {
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2), vars.$range-thumb-shadow;
+      }
+
+      &.is-dragging {
+        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.15), vars.$range-thumb-shadow;
+      }
+    }
+
+    &__helpers {
+      color: vars.$range-value-color;
     }
   }
 }

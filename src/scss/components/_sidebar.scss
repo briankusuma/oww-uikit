@@ -269,11 +269,14 @@
 }
 
 // =============================================================================
+// =============================================================================
 // DARK MODE SUPPORT
 // =============================================================================
 
-[data-theme="dark"] {
-  .oww-sidebar {
+[data-theme="dark"],
+.oww-sidebar[data-theme="dark"] {
+  .oww-sidebar,
+  &.oww-sidebar {
     &--demo {
       background-color: var(--doc-surface);
       border-color: var(--doc-border);
@@ -356,6 +359,100 @@
     &__badge {
       background-color: rgba(255, 9, 9, 0.2);
       color: #FF6B6B;
+    }
+  }
+}
+
+// =============================================================================
+// LIGHT MODE SUPPORT
+// =============================================================================
+
+[data-theme="light"],
+.oww-sidebar[data-theme="light"] {
+  .oww-sidebar,
+  &.oww-sidebar {
+    &--demo {
+      background-color: var(--doc-surface, #FFFFFF);
+      border-color: var(--doc-border, vars.$color-base-primary-100);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    &__logo {
+      img,
+      svg,
+      [class*="oww-icon--"] {
+        filter: none;
+      }
+    }
+
+    &__profile-name {
+      color: vars.$color-text-black;
+    }
+
+    &__profile:hover {
+      background-color: vars.$color-base-grey-100;
+    }
+
+    &__profile-more {
+      color: vars.$color-text-black;
+
+      img,
+      svg {
+        filter: none;
+      }
+
+      &:hover {
+        background-color: vars.$color-base-grey-200;
+      }
+    }
+  }
+
+  .oww-nav-item {
+    color: vars.$nav-item-color-default;
+
+    &__text {
+      color: inherit;
+    }
+
+    &__icon {
+      color: inherit;
+
+      img,
+      svg {
+        filter: none;
+      }
+    }
+
+    &:hover {
+      background-color: vars.$nav-item-bg-hover;
+      color: vars.$nav-item-color-default;
+
+      .oww-nav-item__icon img,
+      .oww-nav-item__icon svg,
+      .oww-nav-item__icon [class*="oww-icon--"] {
+        filter: none;
+      }
+    }
+
+    &.is-active,
+    &--active {
+      color: vars.$nav-item-color-active;
+
+      .oww-nav-item__icon img,
+      .oww-nav-item__icon svg,
+      .oww-nav-item__icon [class*="oww-icon--"] {
+        filter: none;
+      }
+
+      &:hover {
+        background-color: vars.$nav-item-bg-hover;
+        color: vars.$nav-item-color-active;
+      }
+    }
+
+    &__badge {
+      background-color: vars.$bg-soft-danger;
+      color: vars.$color-base-danger-500;
     }
   }
 }

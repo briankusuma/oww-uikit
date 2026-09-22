@@ -594,9 +594,13 @@
 }
 
 // =============================================================================
+// =============================================================================
 // Dark Theme Overrides for Form Inputs
 // =============================================================================
-[data-theme="dark"] {
+[data-theme="dark"],
+.oww-form-group[data-theme="dark"],
+.oww-input[data-theme="dark"],
+.oww-textarea[data-theme="dark"] {
   .oww-form-group {
     &__label {
       color: var(--doc-text);
@@ -606,11 +610,22 @@
     }
   }
 
+  &.oww-form-group {
+    .oww-form-group__label {
+      color: var(--doc-text);
+    }
+    .oww-form-group__hint {
+      color: var(--doc-text-muted);
+    }
+  }
+
   .oww-input,
   .oww-textarea,
   .oww-input-badge,
   .oww-input-phone__select,
-  .oww-input-date__item select {
+  .oww-input-date__item select,
+  &.oww-input,
+  &.oww-textarea {
     background-color: var(--doc-surface);
     border-color: var(--doc-border);
     color: var(--doc-text);
@@ -734,6 +749,165 @@
     &:hover {
       background-color: var(--doc-surface-hover);
       color: var(--doc-text);
+    }
+  }
+}
+
+// =============================================================================
+// Light Theme Overrides for Form Inputs
+// =============================================================================
+[data-theme="light"],
+.oww-form-group[data-theme="light"],
+.oww-input[data-theme="light"],
+.oww-textarea[data-theme="light"] {
+  .oww-form-group {
+    &__label {
+      color: var(--doc-text, vars.$color-text-black);
+    }
+    &__hint {
+      color: var(--doc-text-muted, vars.$color-base-grey-600);
+    }
+  }
+
+  &.oww-form-group {
+    .oww-form-group__label {
+      color: var(--doc-text, vars.$color-text-black);
+    }
+    .oww-form-group__hint {
+      color: var(--doc-text-muted, vars.$color-base-grey-600);
+    }
+  }
+
+  .oww-input,
+  .oww-textarea,
+  .oww-input-badge,
+  .oww-input-phone__select,
+  .oww-input-date__item select,
+  &.oww-input,
+  &.oww-textarea {
+    background-color: var(--doc-surface, vars.$color-base-grey-100);
+    border-color: var(--doc-border, vars.$color-base-primary-100);
+    color: var(--doc-text, vars.$color-text-black);
+
+    &::placeholder {
+      color: var(--doc-text-dim, vars.$color-base-grey-400);
+    }
+
+    &:focus,
+    &.is-focus,
+    &:focus-within {
+      background-color: var(--doc-surface, vars.$color-base-white-500);
+      border-color: var(--doc-text, vars.$color-base-black-500);
+      box-shadow: 0 0 0 1px vars.$color-base-black-500;
+    }
+
+    &:disabled,
+    &.is-disabled {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      border-color: var(--doc-border-subtle, vars.$color-base-primary-100);
+      color: var(--doc-text-dim, vars.$color-base-grey-400);
+
+      &::placeholder {
+        color: var(--doc-text-dim, vars.$color-base-grey-400);
+      }
+    }
+
+    &.is-error,
+    &--error {
+      background-color: vars.$bg-soft-danger;
+      border-color: vars.$color-base-danger-500;
+      color: vars.$color-base-danger-500;
+
+      &::placeholder {
+        color: vars.$color-base-danger-500;
+      }
+
+      &:focus,
+      &.is-focus,
+      &:focus-within {
+        border-color: vars.$color-base-danger-500;
+        box-shadow: 0 0 0 1px vars.$color-base-danger-500;
+      }
+    }
+  }
+
+  .oww-input-chip {
+    background-color: var(--doc-surface-hover, vars.$color-base-grey-200);
+    border-color: var(--doc-border, vars.$color-base-primary-100);
+    color: var(--doc-text, vars.$color-text-black);
+
+    &__remove {
+      color: var(--doc-text-muted, vars.$color-base-grey-600);
+      &:hover {
+        color: vars.$color-base-danger-500;
+      }
+    }
+  }
+
+  .oww-input-phone__select {
+    &__code {
+      color: var(--doc-text, vars.$color-text-black);
+    }
+    &__caret {
+      color: var(--doc-text-dim, vars.$color-base-grey-500);
+    }
+  }
+
+  .oww-date-picker,
+  .oww-input-date {
+    &__label {
+      color: var(--doc-text, vars.$color-text-black);
+    }
+
+    &__box {
+      background-color: var(--doc-surface, vars.$color-base-white-500);
+      border-color: var(--doc-border, vars.$color-base-primary-100);
+
+      &:hover {
+        border-color: var(--doc-border-hover, vars.$color-base-primary-300);
+      }
+
+      &:focus-within,
+      &.is-focus {
+        border-color: var(--doc-text, vars.$color-base-black-500);
+        box-shadow: 0 0 0 1px vars.$color-base-black-500;
+      }
+
+      &.is-disabled,
+      &:has(:disabled) {
+        background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+        border-color: var(--doc-border-subtle, vars.$color-base-primary-100);
+
+        .oww-date-picker__sublabel,
+        .oww-date-picker__value,
+        .oww-date-picker__chevron,
+        .oww-input-date__sublabel,
+        .oww-input-date__value,
+        .oww-input-date__chevron {
+          color: var(--doc-text-dim, vars.$color-base-grey-400);
+        }
+      }
+    }
+
+    &__sublabel {
+      color: var(--doc-text-muted, vars.$color-base-grey-600);
+    }
+
+    &__value {
+      color: var(--doc-text, vars.$color-text-black);
+    }
+
+    &__chevron {
+      color: var(--doc-text, vars.$color-text-black);
+    }
+  }
+
+  .oww-input-readable__action {
+    color: var(--doc-text-muted, vars.$color-base-grey-600);
+
+    &:hover {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      color: var(--doc-text, vars.$color-text-black);
     }
   }
 }

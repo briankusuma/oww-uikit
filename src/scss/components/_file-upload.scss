@@ -416,14 +416,22 @@
 }
 
 // -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Dark Theme Overrides for File Upload
 // -----------------------------------------------------------------------------
-[data-theme="dark"] .oww-file-upload {
-  &__label {
+[data-theme="dark"] .oww-file-upload,
+.oww-file-upload[data-theme="dark"],
+[data-theme="dark"] .oww-file-upload__dropzone,
+.oww-file-upload__dropzone[data-theme="dark"] {
+  .oww-file-upload__label {
     color: var(--doc-text);
   }
 
-  &__dropzone {
+  .oww-file-upload__dropzone,
+  &.oww-file-upload__dropzone {
     background-color: var(--doc-surface);
     border-color: var(--doc-border);
 
@@ -433,40 +441,40 @@
     }
 
     &.is-dragover,
-    &--drag {
+    &.oww-file-upload__dropzone--drag {
       background-color: var(--doc-surface-hover);
       border-color: var(--doc-text);
     }
 
     &.is-applied,
-    &--applied {
+    &.oww-file-upload__dropzone--applied {
       border-color: var(--doc-border);
     }
 
     &.is-error,
-    &--error {
+    &.oww-file-upload__dropzone--error {
       background-color: rgba(255, 9, 9, 0.12);
       border-color: vars.$color-base-danger-500;
     }
   }
 
-  &__icon {
+  .oww-file-upload__icon {
     color: var(--doc-text);
   }
 
-  &__spinner {
+  .oww-file-upload__spinner {
     color: var(--doc-text);
   }
 
-  &__title {
+  .oww-file-upload__title {
     color: var(--doc-text);
   }
 
-  &__subtitle {
+  .oww-file-upload__subtitle {
     color: var(--doc-text-muted);
   }
 
-  &__progress {
+  .oww-file-upload__progress {
     background-color: var(--doc-border);
 
     &-bar {
@@ -474,17 +482,18 @@
     }
   }
 
-  &__drag-badge {
+  .oww-file-upload__drag-badge {
     background-color: var(--doc-text);
     color: var(--doc-surface);
   }
 }
 
-[data-theme="dark"] .oww-file-upload-mini {
+[data-theme="dark"] .oww-file-upload-mini,
+.oww-file-upload-mini[data-theme="dark"] {
   background-color: var(--doc-surface);
   border-color: var(--doc-border);
 
-  &--uploading {
+  &.oww-file-upload-mini--uploading {
     .oww-file-upload-mini__spinner {
       color: var(--doc-text);
     }
@@ -494,12 +503,12 @@
     }
   }
 
-  &--image,
-  &--video {
+  &.oww-file-upload-mini--image,
+  &.oww-file-upload-mini--video {
     border-color: var(--doc-border);
   }
 
-  &__remove-btn {
+  .oww-file-upload-mini__remove-btn {
     background-color: var(--doc-surface);
     border-color: var(--doc-border);
     color: var(--doc-text);
@@ -511,9 +520,117 @@
     }
   }
 
-  &__badge {
+  .oww-file-upload-mini__badge {
     background-color: rgba(0, 0, 0, 0.85);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Light Theme Overrides for File Upload
+// -----------------------------------------------------------------------------
+[data-theme="light"] .oww-file-upload,
+.oww-file-upload[data-theme="light"],
+[data-theme="light"] .oww-file-upload__dropzone,
+.oww-file-upload__dropzone[data-theme="light"] {
+  .oww-file-upload__label {
+    color: vars.$color-text-black;
+  }
+
+  .oww-file-upload__dropzone,
+  &.oww-file-upload__dropzone {
+    background-color: var(--doc-surface, vars.$file-upload-bg);
+    border-color: var(--doc-border, vars.$file-upload-border-color);
+
+    &:hover {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-200);
+      border-color: var(--doc-text-muted, vars.$color-base-primary-300);
+    }
+
+    &.is-dragover,
+    &.oww-file-upload__dropzone--drag {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-200);
+      border-color: vars.$color-base-black-500;
+    }
+
+    &.is-applied,
+    &.oww-file-upload__dropzone--applied {
+      border-color: var(--doc-border, vars.$file-upload-border-color);
+    }
+
+    &.is-error,
+    &.oww-file-upload__dropzone--error {
+      background-color: vars.$file-upload-error-bg;
+      border-color: vars.$file-upload-error-border;
+    }
+  }
+
+  .oww-file-upload__icon {
+    color: vars.$color-text-black;
+  }
+
+  .oww-file-upload__spinner {
+    color: vars.$color-text-black;
+  }
+
+  .oww-file-upload__title {
+    color: vars.$color-text-black;
+  }
+
+  .oww-file-upload__subtitle {
+    color: vars.$color-base-grey-600;
+  }
+
+  .oww-file-upload__progress {
+    background-color: vars.$file-upload-border-color;
+
+    &-bar {
+      background-color: vars.$color-base-black-500;
+    }
+  }
+
+  .oww-file-upload__drag-badge {
+    background-color: vars.$color-base-black-500;
+    color: vars.$color-text-white;
+  }
+}
+
+[data-theme="light"] .oww-file-upload-mini,
+.oww-file-upload-mini[data-theme="light"] {
+  background-color: var(--doc-surface, vars.$file-upload-bg);
+  border-color: var(--doc-border, vars.$file-upload-border-color);
+
+  &.oww-file-upload-mini--uploading {
+    .oww-file-upload-mini__spinner {
+      color: vars.$color-base-grey-600;
+    }
+
+    .oww-file-upload-mini__text {
+      color: vars.$color-base-grey-600;
+    }
+  }
+
+  &.oww-file-upload-mini--image,
+  &.oww-file-upload-mini--video {
+    border-color: var(--doc-border, vars.$file-upload-border-color);
+  }
+
+  .oww-file-upload-mini__remove-btn {
+    background-color: vars.$color-base-grey-100;
+    border-color: vars.$color-base-primary-100;
+    color: vars.$color-text-black;
+
+    &:hover {
+      background-color: vars.$bg-soft-danger;
+      border-color: vars.$color-border-danger;
+      color: vars.$color-base-danger-500;
+    }
+  }
+
+  .oww-file-upload-mini__badge {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    border: none;
   }
 }

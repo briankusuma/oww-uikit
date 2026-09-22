@@ -534,10 +534,12 @@
 }
 
 // -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Dark Theme Overrides for Dropdown
 // -----------------------------------------------------------------------------
-[data-theme="dark"] .oww-dropdown {
-  &__trigger {
+[data-theme="dark"] .oww-dropdown,
+.oww-dropdown[data-theme="dark"] {
+  .oww-dropdown__trigger {
     background-color: var(--doc-surface);
     border-color: var(--doc-border);
     color: var(--doc-text);
@@ -552,7 +554,7 @@
     }
   }
 
-  &__menu {
+  .oww-dropdown__menu {
     background-color: var(--doc-surface);
     border-color: var(--doc-border);
     color: var(--doc-text);
@@ -567,7 +569,7 @@
     }
   }
 
-  &__item {
+  .oww-dropdown__item {
     color: var(--doc-text);
 
     &:hover,
@@ -595,15 +597,15 @@
     }
   }
 
-  &__divider {
+  .oww-dropdown__divider {
     background-color: var(--doc-border);
   }
 
-  &__section-title {
+  .oww-dropdown__section-title {
     color: var(--doc-text-muted);
   }
 
-  &__search {
+  .oww-dropdown__search {
     input {
       color: var(--doc-text);
 
@@ -613,7 +615,7 @@
     }
   }
 
-  &__range-slider {
+  .oww-dropdown__range-slider {
     &-track {
       background-color: var(--doc-border);
     }
@@ -645,7 +647,7 @@
     }
   }
 
-  &__radio-item {
+  .oww-dropdown__radio-item {
     &:hover {
       background-color: var(--doc-surface-hover);
     }
@@ -660,6 +662,139 @@
 
       &::after {
         background-color: var(--doc-text);
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Light Theme Overrides for Dropdown
+// -----------------------------------------------------------------------------
+[data-theme="light"] .oww-dropdown,
+.oww-dropdown[data-theme="light"] {
+  .oww-dropdown__trigger {
+    background-color: var(--doc-surface, vars.$color-base-white-500);
+    border-color: var(--doc-border, vars.$color-base-primary-100);
+    color: var(--doc-text, vars.$color-text-black);
+
+    &:hover {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      border-color: var(--doc-border, vars.$color-base-primary-200);
+    }
+
+    &.is-open {
+      border-color: var(--doc-text, vars.$color-base-black-500);
+    }
+  }
+
+  .oww-dropdown__menu {
+    background-color: var(--doc-surface, vars.$color-base-white-500);
+    border-color: var(--doc-border, vars.$color-base-primary-100);
+    color: var(--doc-text, vars.$color-text-black);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+
+    &--scrollable {
+      scrollbar-color: var(--doc-border, vars.$color-base-primary-200) transparent;
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--doc-border, vars.$color-base-primary-200);
+      }
+    }
+  }
+
+  .oww-dropdown__item {
+    color: var(--doc-text, vars.$color-text-black);
+
+    &:hover,
+    &.is-hover {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      color: var(--doc-text, vars.$color-text-black);
+    }
+
+    &.is-selected {
+      background-color: transparent;
+
+      &:hover {
+        background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      }
+    }
+
+    &--danger {
+      color: vars.$color-base-danger-500;
+
+      &:hover,
+      &.is-hover {
+        background-color: vars.$bg-soft-danger;
+        color: vars.$color-base-danger-500;
+      }
+    }
+  }
+
+  .oww-dropdown__divider {
+    background-color: var(--doc-border, vars.$color-base-primary-100);
+  }
+
+  .oww-dropdown__section-title {
+    color: var(--doc-text-muted, vars.$color-base-grey-600);
+  }
+
+  .oww-dropdown__search {
+    input {
+      color: var(--doc-text, vars.$color-text-black);
+
+      &::placeholder {
+        color: var(--doc-text-dim, vars.$color-base-grey-400);
+      }
+    }
+  }
+
+  .oww-dropdown__range-slider {
+    &-track {
+      background-color: var(--doc-border, vars.$color-base-primary-100);
+    }
+
+    &-fill {
+      background-color: var(--doc-text, vars.$color-base-black-500);
+    }
+
+    &-thumb {
+      background-color: var(--doc-surface, vars.$color-base-white-500);
+      box-shadow: 0px 0px 6.67px 0px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+      }
+
+      &:active,
+      &.is-dragging {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+      }
+
+      &:focus-visible {
+        box-shadow: 0px 0px 0px 3px rgba(36, 75, 214, 0.25);
+      }
+    }
+
+    &-values {
+      color: var(--doc-text, vars.$color-text-black);
+    }
+  }
+
+  .oww-dropdown__radio-item {
+    &:hover {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+    }
+
+    &-circle {
+      border-color: var(--doc-border, vars.$color-base-primary-200);
+    }
+
+    &.is-active &-circle,
+    &.is-checked &-circle {
+      border-color: var(--doc-text, vars.$color-base-black-500);
+
+      &::after {
+        background-color: var(--doc-text, vars.$color-base-black-500);
       }
     }
   }

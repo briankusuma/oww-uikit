@@ -278,9 +278,11 @@
 }
 
 // -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Dark Theme Overrides for Card
 // -----------------------------------------------------------------------------
-[data-theme="dark"] .oww-card {
+[data-theme="dark"] .oww-card,
+.oww-card[data-theme="dark"] {
   background-color: var(--doc-surface);
   border-color: var(--doc-border);
   color: var(--doc-text);
@@ -303,7 +305,7 @@
     }
   }
 
-  &--product {
+  &.oww-card--product {
     border-color: var(--doc-border);
 
     .oww-card__action-btn {
@@ -319,6 +321,53 @@
     .oww-card__media--fallback {
       background-color: var(--doc-surface-hover);
       color: var(--doc-text-dim);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Light Theme Overrides for Card
+// -----------------------------------------------------------------------------
+[data-theme="light"] .oww-card,
+.oww-card[data-theme="light"] {
+  background-color: var(--doc-surface, vars.$card-bg);
+  border-color: var(--doc-border, vars.$card-border-color);
+  color: var(--doc-text, vars.$color-text-black);
+
+  .oww-card__divider {
+    background-color: var(--doc-border, vars.$card-border-color);
+  }
+
+  .oww-card__body,
+  .oww-card__product-desc {
+    color: var(--doc-text-muted, vars.$color-base-grey-600);
+  }
+
+  .oww-card__close-btn {
+    background-color: var(--doc-surface-hover, vars.$card-close-btn-bg);
+    color: var(--doc-text, vars.$color-text-black);
+
+    &:hover {
+      background-color: var(--doc-border, vars.$color-base-grey-200);
+    }
+  }
+
+  &.oww-card--product {
+    border-color: var(--doc-border, vars.$card-border-color);
+
+    .oww-card__action-btn {
+      background-color: var(--doc-surface, vars.$color-base-white-500);
+      border-color: var(--doc-border, vars.$color-base-primary-100);
+      color: var(--doc-text, vars.$color-text-black);
+
+      &:hover {
+        background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      }
+    }
+
+    .oww-card__media--fallback {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      color: var(--doc-text-dim, vars.$color-base-grey-500);
     }
   }
 }

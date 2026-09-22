@@ -242,10 +242,15 @@
 }
 
 // =============================================================================
+// =============================================================================
 // Dark Theme Overrides for Radio Button
 // =============================================================================
-[data-theme="dark"] {
-  .oww-radio {
+[data-theme="dark"],
+.oww-radio[data-theme="dark"],
+.oww-radio-item[data-theme="dark"],
+.oww-radio-card[data-theme="dark"] {
+  .oww-radio,
+  &.oww-radio {
     background-color: var(--doc-surface);
     border-color: var(--doc-border);
 
@@ -335,15 +340,16 @@
     }
   }
 
-  .oww-radio-card {
+  .oww-radio-card,
+  &.oww-radio-card {
     background-color: var(--doc-surface);
     border-color: var(--doc-border);
 
-    &__title {
+    .oww-radio-card__title {
       color: var(--doc-text);
     }
 
-    &__desc {
+    .oww-radio-card__desc {
       color: var(--doc-text-muted);
     }
 
@@ -357,6 +363,131 @@
       border-color: var(--doc-text);
       background-color: var(--doc-surface-hover);
       box-shadow: 0 0 0 1px var(--doc-text);
+    }
+  }
+}
+
+// =============================================================================
+// Light Theme Overrides for Radio Button
+// =============================================================================
+[data-theme="light"],
+.oww-radio[data-theme="light"],
+.oww-radio-item[data-theme="light"],
+.oww-radio-card[data-theme="light"] {
+  .oww-radio,
+  &.oww-radio {
+    background-color: var(--doc-surface, vars.$color-base-white-500);
+    border-color: var(--doc-border, vars.$color-base-primary-100);
+
+    &:hover,
+    &.is-hover {
+      box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+    }
+
+    &.is-checked,
+    &:checked {
+      background-color: var(--doc-text, vars.$color-base-black-500);
+      border-color: var(--doc-text, vars.$color-base-black-500);
+
+      .oww-radio__dot {
+        background-color: var(--doc-surface, vars.$color-base-white-500);
+      }
+    }
+
+    &:focus-visible,
+    &.is-focus {
+      box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    &.is-disabled,
+    &:disabled {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      border-color: var(--doc-border-subtle, vars.$color-base-primary-100);
+
+      .oww-radio__dot {
+        background-color: var(--doc-text-dim, vars.$color-base-grey-400);
+      }
+    }
+  }
+
+  .oww-radio-input {
+    &:hover + .oww-radio {
+      box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+    }
+
+    &:checked + .oww-radio {
+      background-color: var(--doc-text, vars.$color-base-black-500);
+      border-color: var(--doc-text, vars.$color-base-black-500);
+
+      .oww-radio__dot {
+        background-color: var(--doc-surface, vars.$color-base-white-500);
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    &:focus-visible + .oww-radio {
+      box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    &:disabled + .oww-radio {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      border-color: var(--doc-border-subtle, vars.$color-base-primary-100);
+
+      .oww-radio__dot {
+        background-color: var(--doc-text-dim, vars.$color-base-grey-400);
+      }
+    }
+  }
+
+  .oww-radio-item {
+    &__label {
+      color: var(--doc-text, vars.$color-text-black);
+    }
+
+    &:hover,
+    &.is-hover {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+
+      .oww-radio {
+        box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    &.is-disabled,
+    &:has(.oww-radio-input:disabled),
+    &:has(.oww-radio.is-disabled) {
+      .oww-radio-item__label {
+        color: var(--doc-text-dim, vars.$color-base-grey-400);
+      }
+    }
+  }
+
+  .oww-radio-card,
+  &.oww-radio-card {
+    background-color: var(--doc-surface, vars.$color-base-white-500);
+    border-color: var(--doc-border, vars.$color-base-primary-100);
+
+    .oww-radio-card__title {
+      color: var(--doc-text, vars.$color-text-black);
+    }
+
+    .oww-radio-card__desc {
+      color: var(--doc-text-muted, vars.$color-base-grey-600);
+    }
+
+    &:hover {
+      background-color: var(--doc-surface-hover, vars.$color-base-grey-100);
+      border-color: var(--doc-border-hover, vars.$color-base-primary-200);
+    }
+
+    &:has(.oww-radio-input:checked),
+    &.is-checked {
+      border-color: var(--doc-text, vars.$color-base-black-500);
+      background-color: var(--doc-surface-hover, vars.$color-base-white-500);
+      box-shadow: 0 0 0 1px vars.$color-base-black-500;
     }
   }
 }

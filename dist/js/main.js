@@ -30,14 +30,84 @@ function showToast(message, duration = 2000) {
   }, duration);
 }
 
+/**
+ * Synchronizes code snippets with active theme (data-theme="dark" | "light")
+ */
+function injectOrUpdateThemeAttribute(code, theme) {
+  if (/data-theme=["'](dark|light)["']/.test(code)) {
+    return code.replace(/data-theme=["'](dark|light)["']/g, `data-theme="${theme}"`);
+  }
+  // Inject data-theme on the root component tag (skipping initial comments)
+  return code.replace(/(<[a-zA-Z0-9_-]+)([\s>])/m, (match, tag, after) => {
+    if (after === ">") {
+      return `${tag} data-theme="${theme}">`;
+    }
+    return `${tag} data-theme="${theme}"${after}`;
+  });
+}
+
+function updateCodeBlocksTheme(theme) {
+  const codeBlocks = document.querySelectorAll(".doc-example__code pre code");
+  codeBlocks.forEach(codeEl => {
+    // Check if tokenized data-theme attribute already exists
+    const attrNames = codeEl.querySelectorAll(".token-attr-name");
+    let foundDataTheme = false;
+
+    attrNames.forEach(attrNameEl => {
+      if (attrNameEl.textContent.trim() === "data-theme") {
+        foundDataTheme = true;
+        let next = attrNameEl.nextElementSibling;
+        while (next) {
+          if (next.classList.contains("token-attr-value")) {
+            next.textContent = `"${theme}"`;
+            break;
+          }
+          next = next.nextElementSibling;
+        }
+      }
+    });
+
+    // If it did not have tokenized data-theme, inject it into the syntax tokens
+    if (!foundDataTheme) {
+      const firstTag = codeEl.querySelector(".token-tag");
+      if (firstTag) {
+        const firstAttrVal = codeEl.querySelector(".token-attr-value");
+        const targetNode = firstAttrVal || firstTag;
+
+        const spanName = document.createElement("span");
+        spanName.className = "token-attr-name";
+        spanName.textContent = " data-theme";
+
+        const spanEq = document.createElement("span");
+        spanEq.className = "token-punctuation";
+        spanEq.textContent = "=";
+
+        const spanVal = document.createElement("span");
+        spanVal.className = "token-attr-value";
+        spanVal.textContent = `"${theme}"`;
+
+        targetNode.after(spanName, spanEq, spanVal);
+      } else if (codeEl.textContent) {
+        codeEl.textContent = injectOrUpdateThemeAttribute(codeEl.textContent, theme);
+      }
+    }
+  });
+}
+
 // Copy Code Snippet function
 function copyCode(btn) {
-  const container = btn.closest('.doc-example__code');
-  const pre = container ? container.querySelector('pre') : btn.nextElementSibling;
+  const container = btn.closest(".doc-example__code");
+  const pre = container ? container.querySelector("pre") : btn.nextElementSibling;
   if (!pre) return;
-  const code = pre.innerText;
+  
+  const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+  let code = pre.innerText;
+
+  // Ensure copied code matches current theme
+  code = injectOrUpdateThemeAttribute(code, currentTheme);
+
   navigator.clipboard.writeText(code).then(() => {
-    showToast('Copied to clipboard!');
+    showToast(`Copied ${currentTheme} theme component to clipboard!`);
     const originalHTML = btn.innerHTML;
     btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" style="color: #4AB632;">
       <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -46,7 +116,7 @@ function copyCode(btn) {
       btn.innerHTML = originalHTML;
     }, 1500);
   }).catch(err => {
-    console.error('Failed to copy code: ', err);
+    console.error("Failed to copy code: ", err);
   });
 }
 
@@ -55,31 +125,34 @@ function copyCode(btn) {
 // =============================================================================
 function applyTheme(theme) {
   const htmlEl = document.documentElement;
-  const iconSun = document.getElementById('themeIconSun');
-  const iconMoon = document.getElementById('themeIconMoon');
-  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const iconSun = document.getElementById("themeIconSun");
+  const iconMoon = document.getElementById("themeIconMoon");
+  const themeToggleBtn = document.getElementById("themeToggleBtn");
 
-  htmlEl.setAttribute('data-theme', theme);
+  htmlEl.setAttribute("data-theme", theme);
   try {
-    localStorage.setItem('oww-theme', theme);
+    localStorage.setItem("oww-theme", theme);
   } catch (e) {
     // Graceful fallback
   }
 
+  // Dynamically update code block examples to reflect the active theme
+  updateCodeBlocksTheme(theme);
+
   if (iconSun && iconMoon) {
-    if (theme === 'light') {
-      iconSun.style.display = 'none';
-      iconMoon.style.display = 'block';
+    if (theme === "light") {
+      iconSun.style.display = "none";
+      iconMoon.style.display = "block";
       if (themeToggleBtn) {
-        themeToggleBtn.setAttribute('title', 'Switch to dark theme');
-        themeToggleBtn.setAttribute('aria-label', 'Switch to dark theme');
+        themeToggleBtn.setAttribute("title", "Switch to dark theme");
+        themeToggleBtn.setAttribute("aria-label", "Switch to dark theme");
       }
     } else {
-      iconSun.style.display = 'block';
-      iconMoon.style.display = 'none';
+      iconSun.style.display = "block";
+      iconMoon.style.display = "none";
       if (themeToggleBtn) {
-        themeToggleBtn.setAttribute('title', 'Switch to light theme');
-        themeToggleBtn.setAttribute('aria-label', 'Switch to light theme');
+        themeToggleBtn.setAttribute("title", "Switch to light theme");
+        themeToggleBtn.setAttribute("aria-label", "Switch to light theme");
       }
     }
   }
@@ -199,7 +272,7 @@ function initGlobal() {
           if (!item.querySelector(".oww-dropdown__item-check")) {
             const checkSpan = document.createElement("span");
             checkSpan.className = "oww-dropdown__item-check";
-            checkSpan.innerHTML = '<img src="./dist/assets/icons/check.svg" alt="Selected" width="16" height="16">';
+            checkSpan.innerHTML = '<span class="oww-icon--check" style="width: 16px; height: 16px;"></span>';
             item.appendChild(checkSpan);
           }
         }
@@ -523,7 +596,7 @@ function initGlobal() {
                 };
                 reader.readAsDataURL(file);
               } else {
-                dropzone.style.backgroundImage = "url(./dist/assets/images/product-sample.png)";
+                dropzone.style.backgroundImage = "url(https://cdn.jsdelivr.net/gh/briankusuma/oww-uikit@main/dist/assets/images/product-sample.png)";
                 setDropzoneState("applied");
                 showToast("File uploaded successfully!");
               }

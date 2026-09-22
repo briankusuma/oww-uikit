@@ -182,10 +182,12 @@
 }
 
 // =============================================================================
+// =============================================================================
 // DARK MODE SUPPORT
 // =============================================================================
 
-[data-theme="dark"] {
+[data-theme="dark"],
+.oww-stepper[data-theme="dark"] {
   .oww-stepper {
     &__divider {
       background-color: vars.$stepper-divider-color-dark;
@@ -232,6 +234,63 @@
 
       .oww-stepper-item__label {
         color: #A0AEC0;
+      }
+    }
+  }
+}
+
+// =============================================================================
+// LIGHT MODE SUPPORT
+// =============================================================================
+
+[data-theme="light"],
+.oww-stepper[data-theme="light"] {
+  .oww-stepper {
+    &__divider {
+      background-color: vars.$stepper-divider-color;
+
+      &.is-completed {
+        background-color: vars.$stepper-completed-circle-bg;
+      }
+    }
+  }
+
+  .oww-stepper-item {
+    &--default,
+    &.is-default {
+      .oww-stepper-item__circle {
+        border-color: vars.$stepper-default-circle-border;
+        color: vars.$stepper-default-circle-color;
+      }
+
+      .oww-stepper-item__label {
+        color: vars.$stepper-default-label-color;
+      }
+    }
+
+    &--active,
+    &.is-active {
+      .oww-stepper-item__circle {
+        background-color: vars.$stepper-active-circle-bg;
+        border-color: vars.$stepper-active-circle-bg;
+        color: vars.$stepper-active-circle-color;
+      }
+
+      .oww-stepper-item__label {
+        color: vars.$stepper-active-label-color;
+      }
+    }
+
+    &--completed,
+    &.is-completed {
+      .oww-stepper-item__circle {
+        background-color: vars.$stepper-completed-circle-bg;
+        border-color: vars.$stepper-completed-circle-bg;
+        color: #FFFFFF;
+      }
+
+      .oww-stepper-item__label {
+        color: vars.$stepper-completed-label-color;
       }
     }
   }
