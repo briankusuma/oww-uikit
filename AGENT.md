@@ -128,7 +128,7 @@ Dokumen ini mendefinisikan aturan yang wajib dipatuhi oleh seluruh AI agent / mo
    `.doc-navbar__nav` hanya terdiri dari:
 
    * **Docs** — aktif dengan `is-active`, mengarah ke `index.html`.
-   * **Example** — nonaktif: `href="#" onclick="return false;"`.
+   * **Example** — mengarah ke live demo: `href="https://example-uikit.vercel.app/business-page"` dengan `target="_blank" rel="noopener"`.
 
 7. Jangan mencantumkan `Components` atau `Tokens` di navbar atas.
 
